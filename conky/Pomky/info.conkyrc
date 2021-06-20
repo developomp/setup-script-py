@@ -1,0 +1,46 @@
+-- wlp5s0 enp3s0
+conky.config = {
+    alignment = 'top_right',
+    double_buffer = true,
+    draw_shades = false,
+    gap_x = 10,
+    gap_y = 43,
+    own_window = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_argb_visual = true,
+	own_window_argb_value = 40,
+    own_window_type = 'dock',
+    update_interval = 2.0,
+    use_xft = true,
+
+    minimum_width = 376,
+    draw_graph_borders = true
+}
+
+conky.text = [[
+${font sans-serif:normal:size=8}${color grey}Conky:${color} ${conky_version}${alignr}${color grey}Kernel:${color} ${kernel}
+${font Audiowide:Regular:size=40}${alignc}{P}${font}
+
+${font sans-serif:bold:size=10}STORAGE ${hr 2}${font sans-serif:normal:size=8}
+
+(${fs_type /}) ${color grey}root${color}${alignr}${fs_used_perc /}%
+${fs_bar 6 /}
+${alignc}${color grey}Used:${color} ${fs_used /}  |  ${color grey}Free:${color} ${fs_free /}  |  ${color grey}Total:${color} ${fs_size /}
+
+(${fs_type /media/pomp/data}) ${color grey}/media/pomp/data${color}${alignr}${fs_used_perc /media/pomp/data}%
+${fs_bar 6 /media/pomp/data}
+${alignc}${color grey}Used:${color} ${fs_used /media/pomp/data}  |  ${color grey}Free:${color} ${fs_free /media/pomp/data}  |  ${color grey}Total:${color} ${fs_size /media/pomp/data}
+
+${font sans-serif:bold:size=10}NETWORK ${hr 2}
+${font sans-serif:normal:size=8}${alignc}${color grey}Ethernet
+Today
+Yesterday${color}
+${voffset -26}${alignr}${execi 60 vnstat -i enp3s0 | grep "today" | awk '{print $8" "substr ($9, 1, 3)}'}
+${alignr}${execi 60 vnstat -i enp3s0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 3)}'}
+
+${alignc}${color grey}WiFi
+Today
+Yesterday${color}
+${voffset -26}${alignr}${execi 60 vnstat -i wlp5s0 | grep "today" | awk '{print $8" "substr ($9, 1, 3)}'}
+${alignr}${execi 60 vnstat -i wlp5s0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 3)}'}
+]]
