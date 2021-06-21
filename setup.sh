@@ -604,20 +604,21 @@ echo
 log "TESTING phase complete!"
 
 # #################### [ MAIN ] ####################
-# this is not a hands-free operation blah blah
 
-run_install() {
-	install_essentials
-}
+title "MAIN"
 
-post_install() {
-	echo "login firefox & vscode"
-	echo "restore onetab"
-	echo "reboot using poweroff"
-	echo "gnome korean keyboard"
-	echo "sign into vscode"
-	echo "EDITOR=vim sudo visudo"
-	echo "Defaults pwfeedback"
-}
+log "installing..."
+# install_essentials
+
+
+# #################### [ DONE ] ####################
+# print some info after installation
 
 title "DONE"
+
+log_no_label "installation complete!"
+echo
+log_no_label "now:"
+log_no_label "- sign in to firefox & vscode"
+log_no_label "- restore onetab"
+log_no_label "- setup korean keyboard"
