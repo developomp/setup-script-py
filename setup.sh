@@ -71,7 +71,8 @@ yay_install() {
 backup() {
 	dconf dump / > $SCRIPT_DIR/dconf.conf
 	# copy /home/pomp directory
-	# make timeshift backup
+	# timeshift settings
+	sudo timeshift --create --comments "auto created by developomp setup script"
 }
 
 setup_essentials() {
@@ -603,7 +604,7 @@ log "TESTING phase complete!"
 # this is not a hands-free operation blah blah
 
 run_install() {
-	:
+	install_essentials
 }
 
 pre_installation() {
@@ -622,7 +623,5 @@ post_install() {
 	echo "EDITOR=vim sudo visudo"
 	echo "Defaults pwfeedback"
 }
-
-# install_essentials
 
 title "DONE"
