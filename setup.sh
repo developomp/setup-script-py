@@ -574,6 +574,7 @@ echo
 
 # #################### [ TESTING ] ####################
 # Tests if script is ready to be executed
+# some stuff has to be done manually
 
 title "TESTING"
 log "working directory: $RESET$BOLD$PWD"
@@ -590,12 +591,14 @@ if ! command -v sudo &> /dev/null; then
     exit 1
 fi
 
-# test if manual stuff has been done
-# check if /media/pomp/data exists
+log "checking partition"
 
-# test if user exists
+log "checking if $RESET$BOLD/media/pomp/data$GREEN exists in fstab and mounted"
 
-# test if OS is manjaro and not arch
+log "checking if OS is arch"
+# log "no manjaro support"
+
+log "checking if grub is installed and set up properly"
 
 echo
 log "TESTING phase complete!"
@@ -605,13 +608,6 @@ log "TESTING phase complete!"
 
 run_install() {
 	install_essentials
-}
-
-pre_installation() {
-	echo "do manual stuff (partitioning, bootloader, install sudo)"
-	echo "warning: not fully automatic. keep monitoring"
-	echo "grub"
-	# fstab add /media/pomp/data
 }
 
 post_install() {
