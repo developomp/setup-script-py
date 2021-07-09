@@ -6,35 +6,14 @@
 </p>
 
 <p align="center">
-  My <a href="https://www.archlinux.org">Arch linux</a> based desktop setup
+  My <a href="https://manjaro.org">Manjaro</a> desktop setup
 </p>
 
 ---
 
 Purpose:
 
-- To provide myself materials (script, guide, and other files) for cases when I need to transfer to other machine, or reinstall the OS.
-- To answer questions others might have about my setup (e.g. what browser you use?)
-
-If you have questions that are not answered in this repo, feel free to contact me via method listed in my [github profile page](https://github.com/developomp/developomp).
-
-# FAQ
-
-**Q:** Why don't you use more mainstream distros like Ubuntu?
-
-**A:**
-
-- arch is mainstream enough and has huge community behind it
-- their package repository is huge and is easy to use
-- has extensive wiki
-- their philosophy matches that of mine (e.g. [user centrality](https://wiki.archlinux.org/title/Arch_Linux#User_centrality) and the DIY attitude)
-- strikes a perfect balance between customizability and ease of use
-
-<br/>
-
-**Q:** Why don't you use easier arch-based distros like manjaro?
-
-**A:** Though Manjaro is great and adds some feature arch linux does not provide out of the box (such as [mhwd](https://wiki.manjaro.org/index.php/Manjaro_Hardware_Detection)), it's too bloated for my liking.
+- To provide myself materials (script, guide, and other files) for cases when I need to transfer to other machine or reinstall the OS.
 
 # Hardware
 
@@ -67,11 +46,11 @@ If you have questions that are not answered in this repo, feel free to contact m
 
 more information about efi partition can be found in [this](https://wiki.archlinux.org/title/GRUB) arch wiki.
 
-| drive id\* | format | size      | mount location   | purpose       |
-| ---------- | ------ | --------- | ---------------- | ------------- |
-| 1          | FAT32  | 300MiB    | /boot/efi        | EFI partition |
-| 1          | ext4   | 10000MiB  | /                | root          |
-| 2          | ext4   | 450000MiB | /media/pomp/data | data storage  |
+| drive id\* | format | size (2048 byte sectors) | mount location   | purpose       |
+| ---------- | ------ | ------------------------ | ---------------- | ------------- |
+| 1          | FAT32  | 614400                   | /boot/efi        | EFI partition |
+| 1          | ext4   | 614400                   | /                | root          |
+| 2          | ext4   | 921600000                | /media/pomp/data | data storage  |
 
 \*index from [storage](#Storage)
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# don't remove line after yay_install or pacman_install
+# don't remove line after package_install
 # it will result in this syntax error: unexpected end of file
 
 # #################### [ ESSENTIALS ] ####################
@@ -50,20 +50,8 @@ title() {
 	echo -e "$BOLD$GREEN====================[ $@ ]====================$RESET"
 }
 
-pacman_install() {
-	sudo pacman -S --needed --noconfirm $@
-}
-
-yay_install() {
-	# install a AUR package if it's not already installed
-
-	for package_name in "$@"; do
-		if ! yay -Qi $package_name > /dev/null 2>&1 ; then
-			log "yay: installing \"$package_name\""
-			yay -S --answerclean None --answerdiff None --answeredit None --aur $package_name
-		fi
-	done
-	exit
+package_install() {
+	pamac install $@
 }
 
 # #################### [ DEFINING ESSENTIAL SETUP ] ####################
@@ -80,43 +68,22 @@ setup_essentials() {
 	# enable multilib, color, parallel download, and total download in /etc/pacman.conf
 }
 
+remove_essentials() {
+	:
+	# epiphany
+	# gnome-color-manager
+	# kvantum-qt5
+	# totem
+}
+
 install_essentials() {
-	# install yay if it's not installed
-	if ! command -v yay &> /dev/null; then
-		sudo pacman -S --needed --noconfirm git base-devel
-		git clone https://aur.archlinux.org/yay.git
-		cd yay
-		makepkg -si
-		cd $SCRIPT_DIR
-	fi
-
-	yay_install \
+	package_install \
 		4kvideodownloader                  `# downloading videos and audio from youtube` \
-		figma-linux-font-helper            `# using local fonts in figma` \
-		grive                              `# google drive syncing` \
-		gwe                                `# nvidia GPU overclocking` \
-		jdk                                `# java development` \
-		mystiq                             `# video conversion` \
-		obs-input-overlay-bin              `# show inputs in OBS` \
-		osu-lazer                          `# Rhythm game` \
-		pamac-aur                          `# GUI for arch package management` \
-		timeshift                          `# system backup` \
-		unityhub                           `# game development` \
-		visual-studio-code-bin             `# programming & text editing` \
-		xinput-gui                         `# A simple GUI for Xorg's Xinput tool` \
-		xmousepasteblock-git               `# force disable middle click paste` \
-		zoom                               `# video conference` \
-		matcha-gtk-theme                   `# gtk theme` \
-
-	pacman_install \
 		alacarte                           `# editing apps in gnome menu` \
 		audacity                           `# editing audio` \
 		blender                            `# 3D modeling, simulations, and video editing` \
-		conky                              `# system monitoring` \
 		dotnet-sdk                         `# C# development (for unity)` \
 		filezilla                          `# FTP client` \
-		firefox-developer-edition          `# browser` \
-		gimp                               `# image editing` \
 		git                                `# version control system` \
 		go                                 `# golang development` \
 		gpa                                `# PGP key management` \
@@ -125,13 +92,9 @@ install_essentials() {
 		hardinfo                           `# seeing system hardware information` \
 		htop                               `# managing processes` \
 		ibus-hangul                        `# ` \
-		inkscape                           `# vector editing tool` \
-		intellij-idea-community-edition    `# java development` \
 		lldb                               `# debugger` \
+		mystiq                             `# video conversion` \
 		networkmanager                     `# Network connection manager` \
-		nodejs                             `# ` \
-		npm                                `# javascript development` \
-		obs-studio                         `# screen recording and streaming` \
 		pavucontrol                        `# ` \
 		piper                              `# changing gaming mouse settings` \
 		putty                              `# ` \
@@ -140,17 +103,13 @@ install_essentials() {
 		sqlitebrowser                      `# ` \
 		steam                              `# ` \
 		steam-native-runtime               `# ` \
-		sudo                               `# To run commands as root` \
-		tmux                               `# running task independent of session` \
-		transmission-gtk                   `# ` \
+		timeshift                          `# system backup` \
+		transmission-gtk                   `# torrent client` \
+		unityhub                           `# game development` \
 		vim                                `# the good text editor` \
-		vlc                                `# audio & video playback` \
-		vnstat                             `# network traffic statistics (for conky)` \
-		wine                               `# ` \
-		wine-gecko                         `# ` \
-		wine-mono                          `# ` \
-		winetricks                         `# ` \
-		wireshark                          `# ` \
+		visual-studio-code-bin             `# programming & text editing` \
+		xinput-gui                         `# A simple GUI for Xorg's Xinput tool` \
+		xmousepasteblock-git               `# force disable middle click paste` \
 		yarn                               `# ` \
 
 }
@@ -160,7 +119,7 @@ install_essentials() {
 # Assumes all essential packages are installed already (git, vim, etc.)
 
 setup_gnome() {
-	pacman_install \
+	package_install \
 		baobab                    `# Disk usage analysis` \
 		cheese                    `# Capturing photo / video with webcam` \
 		dconf-editor              `# GUI for dconf` \
@@ -185,9 +144,6 @@ setup_gnome() {
 		gnome-usage               `# System resource statistics` \
 		mutter                    `# window manager` \
 		nautilus                  `# File management` \
-		simple-scan               `# Scanning utility` \
-
-	yay_install \
 		gnome-terminal-transparency            `# Transparent gnome terminal` \
 		gnome-shell-extension-installer        `# Installation of gnome extensions from command line` \
 		gnome-shell-extension-pop-shell-git    `# switching between stacked mode and tiling mode` \
@@ -220,11 +176,10 @@ setup_gnome() {
 }
 
 setup_discord() {
-	pacman_install discord
-
-	yay_install \
-	betterdiscord-installer    `# installer for betterdiscord` \
-	discord-overlay-git        `# overlay for discord` \
+	package_install \
+		discord                    `# discord` \
+		betterdiscord-installer    `# installer for betterdiscord` \
+		discord-overlay-git        `# overlay for discord` \
 
 	# BD plugins
 	# https://betterdiscord.app/plugin/Avatar%20Hover
@@ -253,6 +208,7 @@ setup_discord() {
 	# https://betterdiscord.app/plugin/PermissionsViewer
 	# https://betterdiscord.app/plugin/PlatformIndicators
 	# https://betterdiscord.app/plugin/QuickMention
+	# https://betterdiscord.app/plugin/ReadAllNotificationsButton
 	# https://betterdiscord.app/plugin/RedditMentions
 	# https://betterdiscord.app/plugin/RevealAllSpoilersOption
 	# https://betterdiscord.app/plugin/SecretRingTone
@@ -273,7 +229,8 @@ setup_cpu_undervolting() {
 	# Undervolting for intel CPU
 	# https://wiki.archlinux.org/index.php/Undervolting_CPU
 
-	pacman_install intel-undervolt
+	package_install \
+		intel-undervolt \
 
 	config_file=/etc/intel-undervolt.conf
 
@@ -345,23 +302,15 @@ setup_font() {
 	# cleanup
 	rm -rf $fonts_directory
 
-	pacman_install \
+	package_install \
 		noto-fonts-emoji    `# ` \
-
-	yay_install \
-		ttf-wps-fonts                `# ` \
 		ttf-ms-win10                 `# ` \
 		nerd-fonts-noto-sans-mono    `# Terminal font` \
 
 }
 
-setup_pamac() {
-	:
-	# enable AUR package.
-}
-
 setup_wireshart() {
-	:
+	package_install wireshark-gtk2
 	sudo usermod -a -G wireshark $USER
 }
 
@@ -371,14 +320,13 @@ setup_middleclickpaste() {
 }
 
 setup_node() {
-	:
+	package_install \
+		nodejs                             `# ` \
+		npm                                `# javascript development` \
+		deno                               `# node++ thingy` \
+
 	# https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 	# export PATH="$(yarn global bin):$PATH"
-}
-
-setup_pamac() {
-	:
-	# enable AUR on pamac
 }
 
 setup_dns() {
@@ -387,7 +335,7 @@ setup_dns() {
 }
 
 setup_unity() {
-	yay_install unityhub
+	package_install unityhub
 
 	# editors location for unity hub (`/media/pomp/data/programs/Unity Hub/Unity Editors`)
 	# vscode setup
@@ -396,12 +344,11 @@ setup_unity() {
 setup_virtualbox() {
 	# https://wiki.archlinux.org/title/VirtualBox
 
-	pacman_install \
+	package_install \
 		virtualbox                      `# OS emulation` \
 		virtualbox-host-modules-arch    `# ` \
 		virtualbox-guest-iso            `# ` \
-	
-	yay_install virtualbox-ext-oracle
+		virtualbox-ext-oracle
 
 	sudo vboxreload
 	sudo modprobe vboxdrv
@@ -412,8 +359,8 @@ setup_optimus_manager() {
 	# read this wiki[1] about power management with acpi call for more information
 	# [1] https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options#configuration-4--acpi_call
 
-	yay_install \
-		gwe                   `# https://gitlab.com/leinardi/gwe` \
+	package_install \
+		gwe                   `# nvidia GPU overclocking https://gitlab.com/leinardi/gwe` \
 		optimus-manager       `# https://github.com/Askannz/optimus-manager` \
 		optimus-manager-qt    `# https://github.com/Shatur/optimus-manager-qt` \
 
@@ -425,7 +372,7 @@ setup_optimus_manager() {
 }
 
 setup_minecraft() {
-	yay_install \
+	package_install \
 		minecraft-launcher      `# ` \
 		worldpainter            `# ` \
 		minecraft-overviewer    `# ` \
@@ -434,7 +381,7 @@ setup_minecraft() {
 }
 
 setup_user_directories() {
-	pacman_install xdg-user-dirs
+	package_install xdg-user-dirs
 
 	# edit `~/.config/user-dirs.dirs`:
 
@@ -450,12 +397,11 @@ setup_user_directories() {
 }
 
 setup_wine() {
-	pacman_install \
+	package_install \
 		wine \
-
-	# - wine-mono
-	# - winetricks
-	# - wine-gecko
+		wine-gecko \
+		wine-mono \
+		winetricks \
 
 	# - `WINEARCH=win32 WINEPREFIX=~/.win32/ winecfg`
 	# - `winetricks allfonts`
@@ -466,7 +412,7 @@ setup_nvidia() {
 	# https://wiki.archlinux.org/title/NVIDIA
 	# https://wiki.archlinux.org/title/Vulkan
 
-	pacman_install \
+	package_install \
 		cuda                       `# ` \
 		cuda-tools                 `# ` \
 		lib32-nvidia-utils         `# ` \
@@ -481,16 +427,17 @@ setup_nvidia() {
 setup_steam() {
 	#https://wiki.archlinux.org/title/Steam
 
-	pacman_install steam
+	package_install \
+		steam \
 
 	# change steam library directory (/media/pomp/data/programs/SteamLibrary)
 	# enable steam proton play
 }
 
 setup_conky() {
-	pacman_install \
-		conky     `# ` \
-		vnstat    `# ` \
+	package_install \
+		conky \
+		vnstat    `# network traffic statistics (for conky)` \
 
 	# enable on startup
 	# sudo systemctl enable vnstat
@@ -527,13 +474,16 @@ setup_local() {
 	if [[ -d /media/pomp/data/programs/tor-browser ]]; then
 		echo "tor"
 	fi
+
+	# krunker
+	# --no-sandbox
 }
 
 setup_plymouth() {
 	# must be done after optimus
 	# https://wiki.archlinux.org/title/plymouth
 
-	yay_install \
+	package_install \
 		plymouth                    `# ` \
 		gdm-plymouth-prime          `# ` \
 		plymouth-theme-arch-logo    `# ` \
@@ -543,7 +493,7 @@ setup_plymouth() {
 setup_grub_theme() {
 	# only show when esc is pressed
 	# check how manjaro did it
-	pacman_install grub-theme-vimix
+	package_install grub-theme-vimix
 }
 
 setup_kdenlive() {
@@ -552,18 +502,86 @@ setup_kdenlive() {
 	# no kde dependencies
 }
 
+setup_firefox() {
+	package_install firefox-developer-edition
+	# DNS https cloudflare
+}
 
+setup_java() {
+	package_install \
+		intellij-idea-community-edition    `# java development` \
+		jdk                                `# oracle java development kit` \
+		jdk8                               `# ` \
 
+}
 
+setup_gimp() {
+	package_install \
+		gimp                               `# image editing` \
+
+}
+
+setup_inkscape() {
+	package_install \
+		inkscape \
+
+}
+
+setup_obs() {
+	package_install \
+		obs-plugin-input-overlay-bin       `# show inputs in OBS` \
+		obs-studio                         `# screen recording and streaming` \
+
+}
+
+setup_osu() {
+	package_install \
+		osu-lazer \
+		osu \
+
+	# akatsuki server
+}
+
+setup_wps_office() {
+	package_install \
+		wps-office \
+		ttf-wps-fonts \
+
+}
+
+setup_go() {
+	package_install \
+		go \
+
+}
+
+setup_vlc() {
+	package_install \
+		vlc                                `# audio & video playback` \
+
+}
+
+setup_zoom() {
+	package_install zoom
+}
+
+setup() {
+	setup_zoom
+}
 
 # #################### [ START ] ####################
 
+echo
+warn_no_label "NOTICE"
 warn_no_label "This is not a completely hands off process."
 warn_no_label "You need to monitor the process and take appropriate actions."
 echo
 
+log_no_label "working directory: $RESET$BOLD$PWD"
+echo
+
 # https://stackoverflow.com/a/1885534/12979111
-read -p "Press (y) to continue. Press (any other key) to exit. " -n 1 -r
+read -p "Press (y) to continue. Press any other key to exit: " -n 1 -r
 if [[ $REPLY =~ ^[^Yy]$ ]]; then
 	echo
     log "canceled"
@@ -572,44 +590,35 @@ fi
 
 echo
 
-# #################### [ TESTING ] ####################
+# #################### [ TEST ] ####################
 # Tests if script is ready to be executed
 # some stuff has to be done manually
 
-title "TESTING"
-log "working directory: $RESET$BOLD$PWD"
+title "TEST"
+log "testing if script is ready to be exdecuted"
 
-log "checking if script is running with root privilege"
 if [[ ! $EUID -ne 0 ]]; then
 	error "DO NOT RUN THIS SCRIPT AS ROOT"
 	exit 1
 fi
 
-log "checking if sudo exists"
-if ! command -v sudo &> /dev/null; then
-    error "cannot find sudo!"
-    exit 1
-fi
+# check partition
 
-log "checking partition"
+# check if $RESET$BOLD/media/pomp/data$GREEN exists in fstab and is mounted
 
-log "checking if $RESET$BOLD/media/pomp/data$GREEN exists in fstab and mounted"
-
-log "checking if OS is arch"
-# log "no manjaro support"
-
-log "checking if grub is installed and set up properly"
+# check if OS is manjaro
 
 echo
-log "TESTING phase complete!"
+log "TEST phase complete!"
 
 # #################### [ MAIN ] ####################
 
 title "MAIN"
 
-log "installing..."
-# install_essentials
+log "installing essential packages..."
+install_essentials
 
+setup
 
 # #################### [ DONE ] ####################
 # print some info after installation
