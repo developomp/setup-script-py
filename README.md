@@ -2,7 +2,18 @@
 > **THIS PROJECT IS STILL UNDER DEVELOPMENT**
 
 <p align="center">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square">
+  <a href="./LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
+  </a>
+
+  <a href="https://github.com/prettier/prettier">
+    <img src="https://img.shields.io/badge/markdown_formatter-prettier-blue?style=flat-square" />
+  </a>
+
+  <a href="https://github.com/koalaman/shellcheck">
+    <img src="https://img.shields.io/badge/shell_formatter-shellcheck-lightgrey?style=flat-square" />
+  </a>
+
 </p>
 
 <p align="center">
