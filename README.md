@@ -26,6 +26,10 @@ Purpose:
 
 - To provide myself materials (script, guide, and other files) for cases when I need to transfer to other machine or reinstall the OS.
 
+# OS
+
+Manjaro gnome minimal version. Download link can be found in the [official manjaro website](https://manjaro.org/downloads/official/gnome)
+
 # Hardware
 
 | name    | model                                  |
