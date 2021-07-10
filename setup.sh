@@ -73,44 +73,37 @@ remove_essentials() {
 	# totem
 }
 
-install_essentials() {
-	# todo: move to its own setup functions
-
-	package_install \
-		4kvideodownloader                  `# downloading videos and audio from youtube` \
-		alacarte                           `# editing apps in gnome menu` \
-		blender                            `# 3D modeling, simulations, and video editing` \
-		dotnet-sdk                         `# C# development (for unity)` \
-		filezilla                          `# FTP client` \
-		git                                `# version control system` \
-		go                                 `# golang development` \
-		gpa                                `# PGP key management` \
-		gpick                              `# screen color picking` \
-		gsmartcontrol                      `# SSD health check` \
-		hardinfo                           `# seeing system hardware information` \
-		htop                               `# managing processes` \
-		lldb                               `# debugger` \
-		mystiq                             `# video conversion` \
-		networkmanager                     `# Network connection manager` \
-		pavucontrol                        `# ` \
-		piper                              `# changing gaming mouse settings` \
-		putty                              `# ` \
-		python-pip                         `# python package management` \
-		ranger                             `# CLI File manager` \
-		sqlitebrowser                      `# ` \
-		timeshift                          `# system backup` \
-		transmission-gtk                   `# torrent client` \
-		unityhub                           `# game development` \
-		vim                                `# the good text editor` \
-		xinput-gui                         `# A simple GUI for Xorg's Xinput tool` \
-		xmousepasteblock-git               `# force disable middle click paste` \
-		yarn                               `# ` \
-
-}
-
 # #################### [ DEFINING SETUP ] ####################
 # Define instructions on how to setup applications & stuff
-# Assumes all essential packages are installed already (git, vim, etc.)
+
+# future:
+# vim                                `# the good text editor` \
+# 4kvideodownloader                  `# downloading videos and audio from youtube` \
+# alacarte                           `# editing apps in gnome menu` \
+# blender                            `# 3D modeling, simulations, and video editing` \
+# dotnet-sdk                         `# C# development (for unity)` \
+# filezilla                          `# FTP client` \
+# go                                 `# golang development` \
+# gpa                                `# PGP key management` \
+# gpick                              `# screen color picking` \
+# gsmartcontrol                      `# SSD health check` \
+# hardinfo                           `# seeing system hardware information` \
+# htop                               `# managing processes` \
+# lldb                               `# debugger` \
+# mystiq                             `# video conversion` \
+# pavucontrol                        `# ` \
+# piper                              `# changing gaming mouse settings` \
+# putty                              `# ` \
+# python-pip                         `# python package management` \
+# ranger                             `# CLI File manager` \
+# sqlitebrowser                      `# ` \
+# timeshift                          `# system backup` \
+# transmission-gtk                   `# torrent client` \
+# unityhub                           `# game development` \
+# xinput-gui                         `# A simple GUI for Xorg's Xinput tool` \
+# xmousepasteblock-git               `# force disable middle click paste` \
+# yarn                               `# ` \
+
 
 setup_conky() {
 	package_install \
@@ -360,9 +353,9 @@ setup_java() {
 }
 
 setup_kdenlive() {
-	:
-	# Use appimage package
-	# no kde dependencies
+	package_install \
+		kdenlive-appimage \
+
 }
 
 setup_keyboard() {
@@ -568,14 +561,21 @@ setup_wps_office() {
 }
 
 setup_zoom() {
-	package_install zoom
+	package_install \
+		zoom \
+
 }
 
 setup() {
-	setup_discord
-	setup_gnome
-	setup_virtualbox
-	setup_zoom
+	:
+	# uncomment setup functions that you want to run
+
+	# setup_discord
+	# setup_gnome
+	# setup_kdenlive
+	# setup_virtualbox
+	# setup_wps_office
+	# setup_zoom
 }
 
 # #################### [ START ] ####################
@@ -630,9 +630,6 @@ log "TEST phase complete!"
 
 title "MAIN"
 
-log "installing essential packages..."
-install_essentials
-
 setup
 
 # #################### [ DONE ] ####################
@@ -643,8 +640,10 @@ title "DONE"
 log_no_label "installation complete!"
 echo
 
-log_no_label "now:"
-for doWhat in "${POST_INSTALL[@]}"
-do
-     log_no_label "- $doWhat"
-done
+if [ ! ${#POST_INSTALL[@]} -eq 0 ]; then
+    log_no_label "now:"
+
+	for doWhat in "${POST_INSTALL[@]}"; do
+		log_no_label "  - $doWhat"
+	done
+fi
