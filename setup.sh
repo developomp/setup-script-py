@@ -158,53 +158,64 @@ setup_dconf() {
 }
 
 setup_discord() {
-	package_install \
-		discord                    `# discord` \
-		betterdiscord-installer    `# installer for betterdiscord` \
-		discord-overlay-git        `# overlay for discord` \
+	# assumes that plugins are stored in ~/.config/BetterDiscord/plugins
 
-	# BD plugins
-	# https://betterdiscord.app/plugin/Avatar%20Hover
-	# https://betterdiscord.app/plugin/BadgesEverywhere
-	# https://betterdiscord.app/plugin/BetterCodeblocks
-	# https://betterdiscord.app/plugin/BetterNsfwTag
-	# https://betterdiscord.app/plugin/BetterSearchPage
-	# https://betterdiscord.app/plugin/CallTimeCounter
-	# https://betterdiscord.app/plugin/CharCounter
-	# https://betterdiscord.app/plugin/CompleteTimestamps
-	# https://betterdiscord.app/plugin/Copier
-	# https://betterdiscord.app/plugin/CopyRawMessage
-	# https://betterdiscord.app/plugin/CreationDate
-	# https://betterdiscord.app/plugin/DoNotTrack
-	# https://betterdiscord.app/plugin/EmoteReplacer
-	# https://betterdiscord.app/plugin/FreeEmojis
-	# https://betterdiscord.app/plugin/GoogleTranslateOption
-	# https://betterdiscord.app/plugin/GrammarCorrect
-	# https://betterdiscord.app/plugin/GuildProfile
-	# https://betterdiscord.app/plugin/ImageUtilities
-	# https://betterdiscord.app/plugin/InvisibleTyping
-	# https://betterdiscord.app/plugin/JoinedAtDate
-	# https://betterdiscord.app/plugin/LastMessageDate
-	# https://betterdiscord.app/plugin/Link-Profile-Picture
-	# https://betterdiscord.app/plugin/MemberCount
-	# https://betterdiscord.app/plugin/PermissionsViewer
-	# https://betterdiscord.app/plugin/PlatformIndicators
-	# https://betterdiscord.app/plugin/QuickMention
-	# https://betterdiscord.app/plugin/ReadAllNotificationsButton
-	# https://betterdiscord.app/plugin/RedditMentions
-	# https://betterdiscord.app/plugin/RevealAllSpoilersOption
-	# https://betterdiscord.app/plugin/SecretRingTone
-	# https://betterdiscord.app/plugin/SendLargeMessages
-	# https://betterdiscord.app/plugin/ServerCounter
-	# https://betterdiscord.app/plugin/ShowAllActivities
-	# https://betterdiscord.app/plugin/ShowConnections
-	# https://betterdiscord.app/plugin/ShowHiddenChannels
-	# https://betterdiscord.app/plugin/SpellCheck
-	# https://betterdiscord.app/plugin/StaffTag
-	# https://betterdiscord.app/plugin/SuppressReplyMentions
-	# https://betterdiscord.app/plugin/Typing%20Users%20Avatars
-	# https://betterdiscord.app/plugin/TypingIndicator
-	# https://betterdiscord.app/plugin/UserDetails
+	package_install \
+		discord                 `# discord` \
+		betterdiscordctl-git    `# for installing betterdiscord` \
+		discord-overlay-git     `# overlay for discord` \
+
+	BD_PLUGINS=(
+		134    # https://betterdiscord.app/plugin/Avatar%20Hover
+		60     # https://betterdiscord.app/plugin/BadgesEverywhere
+		119    # https://betterdiscord.app/plugin/BetterCodeblocks
+		62     # https://betterdiscord.app/plugin/BetterNsfwTag
+		63     # https://betterdiscord.app/plugin/BetterSearchPage
+		228    # https://betterdiscord.app/plugin/CallTimeCounter
+		64     # https://betterdiscord.app/plugin/CharCounter
+		67     # https://betterdiscord.app/plugin/CompleteTimestamps
+		176    # https://betterdiscord.app/plugin/Copier
+		68     # https://betterdiscord.app/plugin/CopyRawMessage
+		69     # https://betterdiscord.app/plugin/CreationDate
+		186    # https://betterdiscord.app/plugin/DoNotTrack
+		132    # https://betterdiscord.app/plugin/EmoteReplacer
+		245    # https://betterdiscord.app/plugin/FreeEmojis
+		81     # https://betterdiscord.app/plugin/GoogleTranslateOption
+		284    # https://betterdiscord.app/plugin/GrammarCorrect
+		220    # https://betterdiscord.app/plugin/GuildProfile
+		83     # https://betterdiscord.app/plugin/ImageUtilities
+		295    # https://betterdiscord.app/plugin/InvisibleTyping
+		84     # https://betterdiscord.app/plugin/JoinedAtDate
+		85     # https://betterdiscord.app/plugin/LastMessageDate
+		287    # https://betterdiscord.app/plugin/Link-Profile-Picture
+		11     # https://betterdiscord.app/plugin/MemberCount
+		29     # https://betterdiscord.app/plugin/PermissionsViewer
+		158    # https://betterdiscord.app/plugin/PlatformIndicators
+		93     # https://betterdiscord.app/plugin/QuickMention
+		94     # https://betterdiscord.app/plugin/ReadAllNotificationsButton
+		179    # https://betterdiscord.app/plugin/RedditMentions
+		97     # https://betterdiscord.app/plugin/RevealAllSpoilersOption
+		139    # https://betterdiscord.app/plugin/SecretRingTone
+		98     # https://betterdiscord.app/plugin/SendLargeMessages
+		99     # https://betterdiscord.app/plugin/ServerCounter
+		159    # https://betterdiscord.app/plugin/ShowAllActivities
+		291    # https://betterdiscord.app/plugin/ShowConnections
+		103	   # https://betterdiscord.app/plugin/ShowHiddenChannels
+		104    # https://betterdiscord.app/plugin/SpellCheck
+		162    # https://betterdiscord.app/plugin/StaffTag
+		8      # https://betterdiscord.app/plugin/SuppressReplyMentions
+		253    # https://betterdiscord.app/plugin/Typing%20Users%20Avatars
+		196    # https://betterdiscord.app/plugin/TypingIndicator
+		293    # https://betterdiscord.app/plugin/UserDetails
+	)
+
+	log "installing betterdiscord plugins"
+
+	for id in "${BD_PLUGINS[@]}"; do
+		BD_PLUGIN_URL="https://betterdiscord.app/Download?id=$id"
+		log "installing $BD_PLUGIN_URL"
+		wget --content-disposition --no-clobber -P ~/.config/BetterDiscord/plugins "$BD_PLUGIN_URL"
+	done
 }
 
 setup_dns() {
@@ -510,16 +521,14 @@ setup_user_directories() {
 }
 
 setup_virtualbox() {
-	# https://wiki.archlinux.org/title/VirtualBox
+	# https://wiki.manjaro.org/index.php/VirtualBox
 
 	package_install \
-		virtualbox                      `# OS emulation` \
-		virtualbox-host-modules-arch    `# ` \
-		virtualbox-guest-iso            `# ` \
-		virtualbox-ext-oracle
+		virtualbox \
+		linux510-virtualbox-host-modules \
+		virtualbox-ext-oracle \
 
 	sudo vboxreload
-	sudo modprobe vboxdrv
 }
 
 setup_vscode() {
@@ -564,7 +573,9 @@ setup_zoom() {
 }
 
 setup() {
+	setup_discord
 	setup_gnome
+	setup_virtualbox
 	setup_zoom
 }
 
@@ -612,6 +623,7 @@ fi
 
 # check if OS is manjaro
 
+echo
 echo
 log "TEST phase complete!"
 
