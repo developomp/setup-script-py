@@ -8,6 +8,8 @@
 
 # https://stackoverflow.com/a/246128/12979111
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+POST_INSTALL=()
+
 
 BOLD="\e[1m"
 RESET="\e[0m"
@@ -72,6 +74,8 @@ remove_essentials() {
 }
 
 install_essentials() {
+	# todo: move to its own setup functions
+
 	package_install \
 		4kvideodownloader                  `# downloading videos and audio from youtube` \
 		alacarte                           `# editing apps in gnome menu` \
@@ -86,7 +90,6 @@ install_essentials() {
 		gsmartcontrol                      `# SSD health check` \
 		hardinfo                           `# seeing system hardware information` \
 		htop                               `# managing processes` \
-		ibus-hangul                        `# ` \
 		lldb                               `# debugger` \
 		mystiq                             `# video conversion` \
 		networkmanager                     `# Network connection manager` \
@@ -100,7 +103,6 @@ install_essentials() {
 		transmission-gtk                   `# torrent client` \
 		unityhub                           `# game development` \
 		vim                                `# the good text editor` \
-		visual-studio-code-bin             `# programming & text editing` \
 		xinput-gui                         `# A simple GUI for Xorg's Xinput tool` \
 		xmousepasteblock-git               `# force disable middle click paste` \
 		yarn                               `# ` \
@@ -211,13 +213,19 @@ setup_dns() {
 }
 
 setup_firefox() {
-	package_install firefox-developer-edition
+	package_install \
+		firefox-developer-edition \
+
 	# DNS https cloudflare
+	POST_INSTALL+=(
+		"log in to firefox"
+		"restore onetab"
+	)
 }
 
 setup_fonts() {
-	echo "installing fonts"
-	
+	log "installing fonts"
+
 	# path to temporarily save font related files
 	fonts_directory="./fonts"
 
@@ -279,59 +287,40 @@ setup_gimp() {
 
 setup_gnome() {
 	package_install \
-		baobab                    `# Disk usage analysis` \
-		cheese                    `# Capturing photo / video with webcam` \
-		dconf-editor              `# GUI for dconf` \
-		eog                       `# image viewer` \
-		evince                    `# document viewer` \
-		file-roller               `# compression and decompression` \
-		gedit                     `# text editing when nautilus is on admin mode` \
-		gnome-calculator          `# Quick calculation` \
-		gnome-characters          `# Search for emojis, special characters, and symbols` \
-		gnome-clocks              `# For multiple clocks for different time zones` \
-		gnome-control-center      `# Essential settings` \
-		gnome-disk-utility        `# Disk management` \
-		gnome-font-viewer         `# Managing fonts` \
-		gnome-keyring             `# Store passwords and keys` \
-		gnome-logs                `# GUI for system journal` \
-		gnome-screenshot          `# Quick screenshot` \
-		gnome-shell               `# Graphical interface` \
-		gnome-shell-extensions    `# Extensions for gnome` \
-		gnome-system-monitor      `# Process management` \
-		gnome-terminal            `# Terminal emulation` \
-		gnome-tweaks              `# Advanced settings` \
-		gnome-usage               `# System resource statistics` \
-		mutter                    `# window manager` \
-		nautilus                  `# File management` \
-		gnome-terminal-transparency            `# Transparent gnome terminal` \
-		gnome-shell-extension-installer        `# Installation of gnome extensions from command line` \
-		gnome-shell-extension-pop-shell-git    `# switching between stacked mode and tiling mode` \
+		baobab                             `# Disk usage analysis` \
+		dconf-editor                       `# GUI for dconf` \
+		gnome-characters                   `# Search for emojis, special characters, and symbols` \
+		gnome-clocks                       `# For multiple clocks for different time zones` \
+		gnome-font-viewer                  `# Managing fonts` \
+		gnome-logs                         `# GUI for system journal` \
+		gnome-usage                        `# System resource statistics` \
+		gnome-terminal-transparency        `# Transparent gnome terminal` \
+		gnome-shell-extension-installer    `# Installation of gnome extensions from command line` \
 
 	# install gnome extensions
-	echo "installing gnome extensions"
+	log "installing gnome extensions"
 	extension_ids=(
-		36    # lock-keys
-		131   # touchpad-indicator
-		355   # status-area-horizontal-spacing
-		657   # shelltile
-		750   # openweather
-		800   # remove-dropdown-arrows
-		841   # freon
-		906   # sound-output-device-chooser
-		945   # cpu-power-manager
-		2741  # remove-alttab-delay-v2
-		2890  # tray-icons-reloaded
-		4000  # babar
+		36      # lock-keys
+		131     # touchpad-indicator
+		355     # status-area-horizontal-spacing
+		750     # openweather
+		800     # remove-dropdown-arrows
+		841     # freon
+		906     # sound-output-device-chooser
+		945     # cpu-power-manager
+		2741    # remove-alttab-delay-v2
+		4000    # babar
 	)
-	
-	echo "Installing:"
+
 	for extension_id in "${extension_ids[@]}"; do
-		echo "- https://extensions.gnome.org/extension/$extension_id"
+		log "- https://extensions.gnome.org/extension/$extension_id"
 		gnome-shell-extension-installer --yes $extension_id
 	done
 
-	echo "Restarting gnome shell"
+	log "Restarting gnome shell"
 	killall -3 gnome-shell
+
+	POST_INSTALL+=("enable gnome extensions")
 }
 
 setup_go() {
@@ -366,29 +355,36 @@ setup_kdenlive() {
 	# no kde dependencies
 }
 
+setup_keyboard() {
+	package_install \
+		ibus-hangul \
+
+	POST_INSTALL+=("setup korean keyboard and reboot")
+}
+
 setup_local() {
 	# setup for applications in second drive
 	# add to application menu
 	# office 2019 wine
 
 	if [[ -d /media/pomp/data/programs/dnSpy-net-win32 ]]; then
-		echo "dnspy"
+		log "dnspy"
 	fi
 
 	if [[ -d /media/pomp/data/programs/amidst ]]; then
-		echo "amidst"
+		log "amidst"
 	fi
 
 	if [[ -d /media/pomp/data/programs/mcaselector ]]; then
-		echo "mcaselector"
+		log "mcaselector"
 	fi
 
 	if [[ -d /media/pomp/data/programs/mineways ]]; then
-		echo "mineways"
+		log "mineways"
 	fi
 
 	if [[ -d /media/pomp/data/programs/tor-browser ]]; then
-		echo "tor"
+		log "tor"
 	fi
 
 	# krunker
@@ -526,6 +522,13 @@ setup_virtualbox() {
 	sudo modprobe vboxdrv
 }
 
+setup_vscode() {
+	package_install \
+		visual-studio-code-bin             `# programming & text editing` \
+
+	POST_INSTALL+=("log in to vscode")
+}
+
 setup_vlc() {
 	package_install \
 		vlc                                `# audio & video playback` \
@@ -561,6 +564,7 @@ setup_zoom() {
 }
 
 setup() {
+	setup_gnome
 	setup_zoom
 }
 
@@ -627,7 +631,9 @@ title "DONE"
 
 log_no_label "installation complete!"
 echo
+
 log_no_label "now:"
-log_no_label "- sign in to firefox & vscode"
-log_no_label "- restore onetab"
-log_no_label "- setup korean keyboard after reboot"
+for doWhat in "${POST_INSTALL[@]}"
+do
+     log_no_label "- $doWhat"
+done
