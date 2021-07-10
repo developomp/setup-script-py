@@ -79,7 +79,6 @@ install_essentials() {
 	package_install \
 		4kvideodownloader                  `# downloading videos and audio from youtube` \
 		alacarte                           `# editing apps in gnome menu` \
-		audacity                           `# editing audio` \
 		blender                            `# 3D modeling, simulations, and video editing` \
 		dotnet-sdk                         `# C# development (for unity)` \
 		filezilla                          `# FTP client` \
