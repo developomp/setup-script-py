@@ -232,7 +232,7 @@ setup_fonts() {
 	log "installing fonts"
 
 	# path to temporarily save font related files
-	fonts_directory="./fonts"
+	fonts_directory="$SCRIPT_DIR/tmp/fonts"
 
 	# fonts to download
 	font_names=(
@@ -278,8 +278,7 @@ setup_fonts() {
 	rm -rf $fonts_directory
 
 	package_install \
-		noto-fonts-emoji    `# ` \
-		ttf-ms-win10                 `# ` \
+		noto-fonts-emoji \
 		nerd-fonts-noto-sans-mono    `# Terminal font` \
 
 }
@@ -568,6 +567,7 @@ setup() {
 
 	# setup_blender
 	# setup_discord
+	# setup_fonts
 	# setup_gimp
 	# setup_gnome
 	# setup_go
