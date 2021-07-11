@@ -10,8 +10,8 @@
     <img src="https://img.shields.io/badge/markdown_formatter-prettier-blue?style=flat-square" />
   </a>
 
-  <a href="https://github.com/koalaman/shellcheck">
-    <img src="https://img.shields.io/badge/shell_formatter-shellcheck-lightgrey?style=flat-square" />
+  <a href="https://github.com/foxundermoon/vs-shell-format">
+    <img src="https://img.shields.io/badge/shell_formatter-shell--format_-lightgrey?style=flat-square" />
   </a>
 
 </p>
