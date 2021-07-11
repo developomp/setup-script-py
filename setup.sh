@@ -221,8 +221,8 @@ setup_firefox() {
 
 	# DNS https cloudflare
 	POST_INSTALL+=(
-		"log in to firefox"
-		"restore onetab"
+		"firefox: log in"
+		"firefox: restore onetab"
 	)
 }
 
@@ -323,7 +323,7 @@ setup_gnome() {
 	log "Restarting gnome shell"
 	killall -3 gnome-shell
 
-	POST_INSTALL+=("enable gnome extensions")
+	POST_INSTALL+=("gnome: enable gnome extensions")
 }
 
 setup_go() {
@@ -362,7 +362,7 @@ setup_keyboard() {
 	package_install \
 		ibus-hangul \
 
-	POST_INSTALL+=("setup korean keyboard and reboot")
+	POST_INSTALL+=("keyboard: setup korean keyboard and reboot")
 }
 
 setup_local() {
@@ -527,7 +527,7 @@ setup_vscode() {
 	package_install \
 		visual-studio-code-bin             `# programming & text editing` \
 
-	POST_INSTALL+=("log in to vscode")
+	POST_INSTALL+=("vscode: log in")
 }
 
 setup_vlc() {
@@ -548,9 +548,12 @@ setup_wine() {
 	# - `winetricks settings fontsmooth=rgb`
 }
 
-setup_wireshart() {
-	package_install wireshark-gtk2
+setup_wireshark() {
+	package_install \
+		wireshark-gtk2 \
+
 	sudo usermod -a -G wireshark $USER
+	POST_INSTALL+=("wireshark: reboot")
 }
 
 setup_wps_office() {
@@ -577,6 +580,7 @@ setup() {
 	# setup_gnome
 	# setup_kdenlive
 	# setup_virtualbox
+	# setup_wireshark
 	# setup_wps_office
 	# setup_zoom
 }
