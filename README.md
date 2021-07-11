@@ -30,6 +30,18 @@ Purpose:
 
 Manjaro gnome minimal version. Download link can be found in the [official manjaro website](https://manjaro.org/downloads/official/gnome)
 
+- boot with open source driver
+
+installer config:
+
+- Location
+  - region: Asia, Seoul
+  - language & locale: en_US.UTF-8 (American English)
+- Keyboard
+  - Korean, default
+- Partitions
+  - Erase disk, no swap, no encryption
+
 # Hardware
 
 | name    | model                                  |
