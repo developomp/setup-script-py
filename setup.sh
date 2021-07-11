@@ -567,8 +567,11 @@ setup_zoom() {
 }
 
 setup() {
-	:
 	# uncomment setup functions that you want to run
+
+	# this does absolutely nothing.
+	# this is only here to prevent bash syntax error
+	cat /dev/null
 
 	# setup_discord
 	# setup_gnome
