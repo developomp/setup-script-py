@@ -77,32 +77,35 @@ remove_essentials() {
 # Define instructions on how to setup applications & stuff
 
 # future:
-# vim                                `# the good text editor` \
-# 4kvideodownloader                  `# downloading videos and audio from youtube` \
-# alacarte                           `# editing apps in gnome menu` \
-# blender                            `# 3D modeling, simulations, and video editing` \
-# dotnet-sdk                         `# C# development (for unity)` \
-# filezilla                          `# FTP client` \
-# gpa                                `# PGP key management` \
-# gpick                              `# screen color picking` \
-# gsmartcontrol                      `# SSD health check` \
-# hardinfo                           `# seeing system hardware information` \
-# htop                               `# managing processes` \
-# lldb                               `# debugger` \
-# mystiq                             `# video conversion` \
-# pavucontrol                        `# ` \
-# piper                              `# changing gaming mouse settings` \
-# putty                              `# ` \
-# python-pip                         `# python package management` \
-# ranger                             `# CLI File manager` \
-# sqlitebrowser                      `# ` \
-# timeshift                          `# system backup` \
-# transmission-gtk                   `# torrent client` \
-# unityhub                           `# game development` \
-# xinput-gui                         `# A simple GUI for Xorg's Xinput tool` \
-# xmousepasteblock-git               `# force disable middle click paste` \
-# yarn                               `# ` \
+# 4kvideodownloader \
+# alacarte \
+# dotnet-sdk \
+# filezilla \
+# gpa \
+# gpick \
+# gsmartcontrol \
+# hardinfo \
+# htop \
+# lldb \
+# mystiq \
+# pavucontrol \
+# piper \
+# putty \
+# python-pip \
+# sqlitebrowser \
+# timeshift \
+# transmission-gtk \
+# unityhub \
+# xinput-gui \
+# xmousepasteblock-git \
+# yarn \
 
+
+setup_blender() {
+	package_install \
+		blender \
+
+}
 
 setup_conky() {
 	package_install \
@@ -511,6 +514,12 @@ setup_vscode() {
 	POST_INSTALL+=("vscode: log in")
 }
 
+setup_vim() {
+	package_install \
+		vim \
+
+}
+
 setup_vlc() {
 	package_install \
 		vlc \
@@ -557,6 +566,7 @@ setup() {
 	# this is only here to prevent bash syntax error
 	cat /dev/null
 
+	# setup_blender
 	# setup_discord
 	# setup_gimp
 	# setup_gnome
@@ -564,6 +574,7 @@ setup() {
 	# setup_inkscape
 	# setup_kdenlive
 	# setup_obs
+	# setup_vim
 	# setup_virtualbox
 	# setup_vlc
 	# setup_vscode
