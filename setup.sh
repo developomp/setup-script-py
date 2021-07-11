@@ -83,7 +83,6 @@ remove_essentials() {
 # blender                            `# 3D modeling, simulations, and video editing` \
 # dotnet-sdk                         `# C# development (for unity)` \
 # filezilla                          `# FTP client` \
-# go                                 `# golang development` \
 # gpa                                `# PGP key management` \
 # gpick                              `# screen color picking` \
 # gsmartcontrol                      `# SSD health check` \
@@ -284,7 +283,7 @@ setup_fonts() {
 
 setup_gimp() {
 	package_install \
-		gimp                               `# image editing` \
+		gimp \
 
 }
 
@@ -333,9 +332,9 @@ setup_go() {
 }
 
 setup_grub_theme() {
-	# only show when esc is pressed
-	# check how manjaro did it
-	package_install grub-theme-vimix
+	package_install \
+		grub-theme-vimix \
+
 }
 
 setup_inkscape() {
@@ -418,26 +417,10 @@ setup_node() {
 	# export PATH="$(yarn global bin):$PATH"
 }
 
-setup_nvidia() {
-	# https://wiki.archlinux.org/title/NVIDIA
-	# https://wiki.archlinux.org/title/Vulkan
-
-	package_install \
-		cuda                       `# ` \
-		cuda-tools                 `# ` \
-		lib32-nvidia-utils         `# ` \
-		lib32-vulkan-icd-loader    `# ` \
-		nvidia                     `# ` \
-		nvidia-settings            `# ` \
-		nvidia-utils               `# ` \
-		vulkan-icd-loader          `# ` \
-
-}
-
 setup_obs() {
 	package_install \
-		obs-plugin-input-overlay-bin       `# show inputs in OBS` \
-		obs-studio                         `# screen recording and streaming` \
+		obs-plugin-input-overlay-bin    `# show inputs in OBS` \
+		obs-studio                      `# screen recording and streaming` \
 
 }
 
@@ -460,10 +443,9 @@ setup_optimus_manager() {
 
 setup_osu() {
 	package_install \
-		osu-lazer \
 		osu \
 
-	# akatsuki server
+	# https://akatsuki.pw/doc/linux
 }
 
 setup_plymouth() {
@@ -490,15 +472,15 @@ setup_shfmt() {
 }
 
 setup_unity() {
-	package_install unityhub
+	package_install \
+		unityhub \
 
 	# editors location for unity hub (`/media/pomp/data/programs/Unity Hub/Unity Editors`)
 	# vscode setup
 }
 
 setup_user_directories() {
-	package_install xdg-user-dirs
-
+	:
 	# edit `~/.config/user-dirs.dirs`:
 
 	# XDG_DESKTOP_DIR="$HOME/Desktop"
@@ -509,7 +491,6 @@ setup_user_directories() {
 	# XDG_MUSIC_DIR="/media/pomp/data/Music"
 	# XDG_PICTURES_DIR="/media/pomp/data/Pictures"
 	# XDG_VIDEOS_DIR="/media/pomp/data/Videos"
-
 }
 
 setup_virtualbox() {
@@ -525,14 +506,14 @@ setup_virtualbox() {
 
 setup_vscode() {
 	package_install \
-		visual-studio-code-bin             `# programming & text editing` \
+		visual-studio-code-bin \
 
 	POST_INSTALL+=("vscode: log in")
 }
 
 setup_vlc() {
 	package_install \
-		vlc                                `# audio & video playback` \
+		vlc \
 
 }
 
@@ -577,9 +558,15 @@ setup() {
 	cat /dev/null
 
 	# setup_discord
+	# setup_gimp
 	# setup_gnome
+	# setup_go
+	# setup_inkscape
 	# setup_kdenlive
+	# setup_obs
 	# setup_virtualbox
+	# setup_vlc
+	# setup_vscode
 	# setup_wireshark
 	# setup_wps_office
 	# setup_zoom
