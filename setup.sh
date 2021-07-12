@@ -108,13 +108,14 @@ setup_blender() {
 }
 
 setup_conky() {
+	# enable on startup
+
 	package_install \
 		conky \
-		vnstat    `# network traffic statistics (for conky)` \
+		vnstat    `# network traffic statistics` \
 
-	# enable on startup
-	# sudo systemctl enable vnstat
-	# sudo systemctl start vnstat
+	sudo systemctl enable vnstat
+	sudo systemctl start vnstat
 }
 
 setup_cpu_undervolting() {
