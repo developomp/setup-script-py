@@ -107,6 +107,17 @@ setup_blender() {
 
 }
 
+setup_brave() {
+	package_install \
+		brave-beta-bin \
+
+	# DNS https cloudflare
+	POST_INSTALL+=(
+		"brave: sync device"
+		"brave: restore onetab"
+	)
+}
+
 setup_conky() {
 	# enable on startup
 
@@ -216,17 +227,6 @@ setup_discord() {
 setup_dns() {
 	:
 	# https://1.1.1.1
-}
-
-setup_firefox() {
-	package_install \
-		firefox-developer-edition \
-
-	# DNS https cloudflare
-	POST_INSTALL+=(
-		"firefox: log in"
-		"firefox: restore onetab"
-	)
 }
 
 setup_fonts() {
