@@ -71,6 +71,8 @@ remove_essentials() {
 	# gnome-color-manager
 	# kvantum-qt5
 	# totem
+	# steam-native
+	# steam-manjaro
 }
 
 # #################### [ DEFINING SETUP ] ####################
@@ -399,15 +401,6 @@ setup_local() {
 setup_middleclickpaste() {
 	:
 	# make it autostart
-}
-
-setup_minecraft() {
-	package_install \
-		minecraft-launcher      `# ` \
-		worldpainter            `# ` \
-		minecraft-overviewer    `# ` \
-
-	# mcaselector (/usr/lib/jvm/java-15-openjdk/bin/java --module-path /media/pomp/data/master_folder/programming/java/javafx-sdk-16/lib --add-modules ALL-MODULE-PATH -jar /usr/share/java/mcaselector.jar)
 }
 
 setup_node() {
