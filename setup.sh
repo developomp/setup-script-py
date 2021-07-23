@@ -444,13 +444,6 @@ setup_optimus_manager() {
 	# Energy Saver: -155, -365
 }
 
-setup_osu() {
-	package_install \
-		osu \
-
-	# https://akatsuki.pw/doc/linux
-}
-
 setup_plymouth() {
 	# must be done after optimus
 	# https://wiki.archlinux.org/title/plymouth
@@ -460,14 +453,6 @@ setup_plymouth() {
 		gdm-plymouth-prime          `# ` \
 		plymouth-theme-arch-logo    `# ` \
 
-}
-
-setup_steam() {
-	package_install \
-		steam-manjaro \
-
-	# change steam library directory (/media/pomp/data/programs/SteamLibrary)
-	# enable steam proton play
 }
 
 setup_shfmt() {
