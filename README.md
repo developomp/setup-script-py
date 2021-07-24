@@ -79,7 +79,7 @@ more information about efi partition can be found in [this](https://wiki.archlin
 | drive id\* | format | size (2048 byte sectors) | mount location   | purpose       |
 | ---------- | ------ | ------------------------ | ---------------- | ------------- |
 | 1          | FAT32  | 614400                   | /boot/efi        | EFI partition |
-| 1          | ext4   | 614400                   | /                | root          |
+| 1          | ext4   | 249449294                | /                | root          |
 | 2          | ext4   | 921600000                | /media/pomp/data | data storage  |
 
 \*index from [storage](#Storage)
