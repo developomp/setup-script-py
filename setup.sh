@@ -165,6 +165,12 @@ setup_dconf() {
 	dconf load / < $SCRIPT_DIR/dconf.conf
 }
 
+setup_deno() {
+	package_install \
+		deno \
+
+}
+
 setup_discord() {
 	# assumes that plugins are stored in ~/.config/BetterDiscord/plugins
 
@@ -336,6 +342,11 @@ setup_go() {
 
 }
 
+setup_graphics() {
+	# https://wiki.manjaro.org/index.php/Configure_Graphics_Cards#Automated_Identification_and_Installation
+	sudo mhwd -a pci nonfree 0300
+}
+
 setup_grub_theme() {
 	package_install \
 		grub-theme-vimix \
@@ -350,7 +361,6 @@ setup_inkscape() {
 
 setup_java() {
 	package_install \
-		intellij-idea-community-edition    `# java development` \
 		jdk                                `# oracle java development kit` \
 		jdk8                               `# ` \
 
@@ -437,14 +447,9 @@ setup_optimus_manager() {
 	# Energy Saver: -155, -365
 }
 
-setup_plymouth() {
-	# must be done after optimus
-	# https://wiki.archlinux.org/title/plymouth
-
+setup_rust() {
 	package_install \
-		plymouth                    `# ` \
-		gdm-plymouth-prime          `# ` \
-		plymouth-theme-arch-logo    `# ` \
+		rust \
 
 }
 
@@ -545,14 +550,17 @@ setup() {
 	cat /dev/null
 
 	# setup_blender
+	# setup_deno
 	# setup_discord
 	# setup_fonts
 	# setup_gimp
 	# setup_gnome
 	# setup_go
+	# setup_graphics
 	# setup_inkscape
 	# setup_kdenlive
 	# setup_obs
+	# setup_rust
 	# setup_vim
 	# setup_virtualbox
 	# setup_vlc
