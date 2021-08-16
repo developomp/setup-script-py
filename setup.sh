@@ -81,27 +81,20 @@ remove_essentials() {
 # future:
 # 4kvideodownloader \
 # alacarte \
-# dotnet-sdk \
 # filezilla \
 # gpa \
 # gpick \
-# gsmartcontrol \
 # hardinfo \
-# htop \
-# lldb \
+# llvm & lldb \
 # mystiq \
 # pavucontrol \
-# piper \
 # putty \
 # python-pip \
 # sqlitebrowser \
 # timeshift \
 # transmission-gtk \
-# unityhub \
 # xinput-gui \
 # xmousepasteblock-git \
-# yarn \
-
 
 setup_blender() {
 	package_install \
@@ -111,9 +104,9 @@ setup_blender() {
 
 setup_brave() {
 	package_install \
-		brave-beta-bin \
+		brave-beta-browser \
 
-	# DNS https cloudflare
+	# settings: DNS https cloudflare
 	POST_INSTALL+=(
 		"brave: sync device"
 		"brave: restore onetab"
@@ -122,6 +115,7 @@ setup_brave() {
 
 setup_conky() {
 	# enable on startup
+	# copy conky files
 
 	package_install \
 		conky \
@@ -292,6 +286,12 @@ setup_fonts() {
 
 }
 
+setup_dotnet() {
+	package_install \
+		dotnet-sdk \
+
+}
+
 setup_gimp() {
 	package_install \
 		gimp \
@@ -342,14 +342,20 @@ setup_go() {
 
 }
 
+setup_godot() {
+	package_install \
+		godot \
+
+}
+
 setup_graphics() {
 	# https://wiki.manjaro.org/index.php/Configure_Graphics_Cards#Automated_Identification_and_Installation
 	sudo mhwd -a pci nonfree 0300
 }
 
-setup_grub_theme() {
+setup_gsmartcontrol() {
 	package_install \
-		grub-theme-vimix \
+		gsmartcontrol \
 
 }
 
@@ -403,9 +409,6 @@ setup_local() {
 	if [[ -d /media/pomp/data/programs/tor-browser ]]; then
 		log "tor"
 	fi
-
-	# krunker
-	# --no-sandbox
 }
 
 setup_middleclickpaste() {
@@ -415,9 +418,9 @@ setup_middleclickpaste() {
 
 setup_node() {
 	package_install \
-		nodejs                             `# ` \
-		npm                                `# javascript development` \
-		deno                               `# node++ thingy` \
+		nodejs                             `# Javascript on servers!` \
+        yarn                               `# better node package manager` \
+		deno                               `# node++ or smth` \
 
 	# https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 	# export PATH="$(yarn global bin):$PATH"
@@ -432,19 +435,32 @@ setup_obs() {
 
 setup_optimus_manager() {
 	# Not using power switching
-	# read this wiki[1] about power management with acpi call for more information
-	# [1] https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options#configuration-4--acpi_call
+	# read this wiki[^1] about power management with acpi call for more information
+	# [^1]: https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options#configuration-4--acpi_call
 
 	package_install \
 		gwe                   `# nvidia GPU overclocking https://gitlab.com/leinardi/gwe` \
 		optimus-manager       `# https://github.com/Askannz/optimus-manager` \
 		optimus-manager-qt    `# https://github.com/Shatur/optimus-manager-qt` \
+		gdm-prime             `# ` \
 
 	# launch on startup
 	# nvidia as default
 
 	# Performance: 265, 750
 	# Energy Saver: -155, -365
+}
+
+setup_osu() {
+	package_install \
+		osu \
+
+}
+
+setup_piper() {
+	package_install \
+		piper \
+
 }
 
 setup_rust() {
@@ -461,8 +477,8 @@ setup_unity() {
 	package_install \
 		unityhub \
 
-	# editors location for unity hub (`/media/pomp/data/programs/Unity Hub/Unity Editors`)
-	# vscode setup
+	POST_INSTALL+=("Setup vscode for Unity")
+	POST_INSTALL+=("Change editor location")
 }
 
 setup_user_directories() {
@@ -542,34 +558,6 @@ setup_zoom() {
 
 }
 
-setup() {
-	# uncomment setup functions that you want to run
-
-	# this does absolutely nothing.
-	# this is only here to prevent bash syntax error
-	cat /dev/null
-
-	# setup_blender
-	# setup_deno
-	# setup_discord
-	# setup_fonts
-	# setup_gimp
-	# setup_gnome
-	# setup_go
-	# setup_graphics
-	# setup_inkscape
-	# setup_kdenlive
-	# setup_obs
-	# setup_rust
-	# setup_vim
-	# setup_virtualbox
-	# setup_vlc
-	# setup_vscode
-	# setup_wireshark
-	# setup_wps_office
-	# setup_zoom
-}
-
 # #################### [ START ] ####################
 
 cd "$SCRIPT_DIR" || {
@@ -622,7 +610,33 @@ log "TEST phase complete!"
 
 title "MAIN"
 
-setup
+# uncomment setup functions that you want to run
+# setup_blender
+# setup_deno
+# setup_discord
+# setup_dotnet
+# setup_fonts
+# setup_gimp
+# setup_gnome
+# setup_go
+# setup_godot
+# setup_graphics
+# setup_gsmartcontrol
+# setup_inkscape
+# setup_kdenlive
+# setup_keyboard
+# setup_obs
+# setup_osu
+# setup_piper
+# setup_rust
+# setup_unity
+# setup_vim
+# setup_virtualbox
+# setup_vlc
+# setup_vscode
+# setup_wireshark
+# setup_wps_office
+# setup_zoom
 
 # #################### [ DONE ] ####################
 # print some info after installation
