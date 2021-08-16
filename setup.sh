@@ -169,9 +169,11 @@ setup_discord() {
 	# assumes that plugins are stored in ~/.config/BetterDiscord/plugins
 
 	package_install \
-		discord                 `# discord` \
-		betterdiscordctl-git    `# for installing betterdiscord` \
-		discord-overlay-git     `# overlay for discord` \
+		discord \
+		betterdiscordctl-git \
+		discord-overlay-git \
+
+	betterdiscordctl install
 
 	BD_PLUGINS=(
 		134    # https://betterdiscord.app/plugin/Avatar%20Hover
