@@ -1,13 +1,10 @@
-> **!! WARNING !!**\
-> **THIS PROJECT IS STILL UNDER DEVELOPMENT**
-
 <p align="center">
   <a href="./LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
   </a>
 
   <a href="https://github.com/prettier/prettier">
-    <img src="https://img.shields.io/badge/markdown_formatter-prettier-blue?style=flat-square" />
+    <img src="https://img.shields.io/badge/markdown_formatter-prettier-ff69b4?style=flat-square" />
   </a>
 
   <a href="https://github.com/foxundermoon/vs-shell-format">
@@ -22,16 +19,30 @@
 
 ---
 
-Purpose:
+## Purpose
 
-- To provide myself materials (script, guide, and other files) for cases when I need to transfer to other machine or reinstall the OS.
+To provide myself materials (script, guide, and other files) for cases when I need to transfer to other machine or reinstall the OS.
 
-Result:
+Result:<br />
 ![result image](./result.png)
 
-# OS
+## Instructions
 
-Manjaro gnome minimal version. Download link can be found in the [official manjaro website](https://manjaro.org/downloads/official/gnome)
+1. Open [`setup.sh`](./setup.sh).
+2. Go to the `MAIN` section (search for the word `MAIN`).
+3. Uncomment packages to install.
+4. Execute the script.
+
+Full setup could easily take more than a hour depending on the internet speed.
+
+Execution:
+![Execution](./execution.png)
+
+## OS
+
+Manjaro gnome minimal, non-LTS version. Download link can be found in the [official manjaro website](https://manjaro.org/downloads/official/gnome).
+
+Latest version as of writing: `manjaro-gnome-21.0.7-minimal-210614-linux510.iso`
 
 - boot with open source driver
 
@@ -45,7 +56,7 @@ installer config:
 - Partitions
   - Erase disk, no swap, no encryption
 
-# Hardware
+## Hardware
 
 | name    | model                                  |
 | ------- | -------------------------------------- |
@@ -53,14 +64,14 @@ installer config:
 | CPU     | intel i5-8250U                         |
 | GPU     | Nvidia MX 150                          |
 
-## RAM
+### RAM
 
 | model                             | size |
 | --------------------------------- | ---- |
 | SK Hynix HMA81GS6AFR8N-UH (stock) | 8GB  |
 | Samsung M471A1K43CB1-CRC (added)  | 8GB  |
 
-## Storage
+### Storage
 
 | ID\* | model                                  | Size  |
 | ---- | -------------------------------------- | ----- |
@@ -69,7 +80,7 @@ installer config:
 
 \*arbitrary index I gave. Has no meaning.
 
-## Partitioning
+### Partitioning
 
 - unallocated space at the end are for overprovisioning
 - no swap partition
@@ -84,7 +95,7 @@ more information about efi partition can be found in [this](https://wiki.archlin
 
 \*index from [storage](#Storage)
 
-## Peripherals
+### Peripherals
 
 |    peripheral | model                                                                                                                                                                                                        |
 | ------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -92,11 +103,9 @@ more information about efi partition can be found in [this](https://wiki.archlin
 |     headphone | [NOX-2](https://www.e-nox.co.kr/theme/s007/index/product_view01.php?wr_id=16)                                                                                                                                |
 | laptop cooler | [ABKO NCORE NC500](http://ncore.co.kr/shop/product_item.php?ItId=2586312930)                                                                                                                                 |
 
-# Sources
+## Sources
 
-## wallpapers
-
-### wallpaper 1
+### Wallpaper 1
 
 <img alt="wallpaper 1. Cozy cafe with large window" src="./wallpaper1.png" width="75%">
 
@@ -104,13 +113,13 @@ more information about efi partition can be found in [this](https://wiki.archlin
 - Artwork by [Jeff Östberg](https://jeffostberg.se​)
 - Animation by [Geneviève Delacroix](http://www.genevievelacroix.com)
 
-### wallpaper 2
+### Wallpaper 2
 
 <img alt="wallpaper 2. An astronaut on moon looking at earth" src="./wallpaper2.png" width="75%">
 
 - image from [wallpaperaccess](https://wallpaperaccess.com/full/2752569.png)
 - the [image list](https://wallpaperaccess.com/simple-earth) I found it from
 
-# future
+## Future
 
 1TB hard drive for backup + redundancy
