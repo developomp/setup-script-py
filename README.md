@@ -35,7 +35,7 @@ Result:<br />
 
 Full setup could easily take more than a hour depending on the internet speed.
 
-Execution:
+Execution:<br />
 ![Execution](./execution.png)
 
 ## OS
