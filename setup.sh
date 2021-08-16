@@ -166,7 +166,7 @@ setup_deno() {
 }
 
 setup_discord() {
-	# assumes that plugins are stored in ~/.config/BetterDiscord/plugins
+	# assumes that plugins are located in ~/.config/BetterDiscord/plugins
 
 	package_install \
 		discord \
@@ -249,7 +249,7 @@ setup_fonts() {
 
 	# create fonts directory if it does not exist
 	if [ ! -d "$fonts_directory" ]; then
-		mkdir "$fonts_directory"
+		mkdir -p "$fonts_directory"
 	fi
 
 	# download and unzip font files if they're not downloaded already
@@ -268,7 +268,7 @@ setup_fonts() {
 
 	# create local fonts directory if it does not exist already
 	if [ ! -d "$font_install_dir" ]; then
-		mkdir "$font_install_dir"
+		mkdir -p "$font_install_dir"
 	fi
 
 	# "install" all fonts
@@ -485,7 +485,7 @@ setup_unity() {
 
 setup_user_directories() {
 	:
-	# edit `~/.config/user-dirs.dirs`:
+	# edit ~/.config/user-dirs.dirs:
 
 	# XDG_DESKTOP_DIR="$HOME/Desktop"
 	# XDG_DOWNLOAD_DIR="/media/pomp/data/Downloads"
@@ -639,6 +639,10 @@ title "MAIN"
 # setup_wireshark
 # setup_wps_office
 # setup_zoom
+
+# #################### [ CLEANUP ] ####################
+
+rm -rf "$SCRIPT_DIR/tmp"
 
 # #################### [ DONE ] ####################
 # print some info after installation
