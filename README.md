@@ -38,6 +38,9 @@ Full setup could easily take more than a hour depending on the internet speed.
 Execution:<br />
 ![Execution](./execution.png)
 
+Selection Menu:<br />
+![Menu](./menu.png)
+
 ## OS
 
 Manjaro gnome minimal, non-LTS version. Download link can be found in the [official manjaro website](https://manjaro.org/downloads/official/gnome).

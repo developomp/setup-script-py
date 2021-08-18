@@ -81,8 +81,6 @@ remove_essentials() {
 # future:
 # 4kvideodownloader \
 # alacarte \
-# filezilla \
-# gpa \
 # gpick \
 # hardinfo \
 # llvm & lldb \
@@ -353,6 +351,13 @@ setup_godot() {
 setup_graphics() {
 	# https://wiki.manjaro.org/index.php/Configure_Graphics_Cards#Automated_Identification_and_Installation
 	sudo mhwd -a pci nonfree 0300
+
+	# /etc/X11/Xwrapper.config write:
+	# allowed_users=anybody
+	# needs_root_rights=yes
+
+	# sudo chmod u+s /usr/lib/Xorg.wrap
+	POST_INSTALL+=("Graphics: Reboot")
 }
 
 setup_gsmartcontrol() {
@@ -562,6 +567,8 @@ setup_zoom() {
 
 # #################### [ START ] ####################
 
+pamac install dialog &> /dev/null
+
 cd "$SCRIPT_DIR" || {
 	error "FAILED TO FIND SCRIPT DIRECTORY"
 	exit
@@ -569,18 +576,14 @@ cd "$SCRIPT_DIR" || {
 
 echo
 warn_no_label "NOTICE"
-warn_no_label "This is not a completely hands off process."
-warn_no_label "You need to monitor the process and take appropriate actions."
-echo
-
-log_no_label "working directory: $RESET$BOLD$PWD"
+warn_no_label "  This is not a completely hands off process."
+warn_no_label "  You need to monitor the process and take appropriate actions."
 echo
 
 # https://stackoverflow.com/a/1885534/12979111
 read -p "Press (y) to continue. Press any other key to exit: " -n 1 -r
 if [[ $REPLY =~ ^[^Yy]$ ]]; then
 	echo
-    log "canceled"
 	exit
 fi
 
@@ -610,35 +613,94 @@ log "TEST phase complete!"
 
 # #################### [ MAIN ] ####################
 
-title "MAIN"
+cmd=(dialog --separate-output --checklist "Select Setup Operations to perform" 20 50 5) 
 
-# uncomment setup functions that you want to run
-# setup_blender
-# setup_deno
-# setup_discord
-# setup_dotnet
-# setup_fonts
-# setup_gimp
-# setup_gnome
-# setup_go
-# setup_godot
-# setup_graphics
-# setup_gsmartcontrol
-# setup_inkscape
-# setup_kdenlive
-# setup_keyboard
-# setup_obs
-# setup_osu
-# setup_piper
-# setup_rust
-# setup_unity
-# setup_vim
-# setup_virtualbox
-# setup_vlc
-# setup_vscode
-# setup_wireshark
-# setup_wps_office
-# setup_zoom
+options=(
+	"blender"        ""  off
+	"deno"           ""  off
+	"discord"        ""  off
+	"dotnet"         ""  off
+	"fonts"          ""  off
+	"gimp"           ""  off
+	"gnome"          ""  off
+	"go"             ""  off
+	"godot"          ""  off
+	"graphics"       ""  off
+	"gsmartcontrol"  ""  off
+	"inkscape"       ""  off
+	"kdenlive"       ""  off
+	"keyboard"       ""  off
+	"obs"            ""  off
+	"osu"            ""  off
+	"piper"          ""  off
+	"rust"           ""  off
+	"unity"          ""  off
+	"vim"            ""  off
+	"virtualbox"     ""  off
+	"vlc"            ""  off
+	"vscode"         ""  off
+	"wireshark"      ""  off
+	"wps office"     ""  off
+	"zoom"           ""  off
+)
+
+choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
+clear
+for choice in $choices; do
+	case "$choice" in
+		"blender")
+			setup_blender;;
+		"deno")
+			setup_deno;;
+		"discord")
+			setup_discord;;
+		"dotnet")
+			setup_dotnet;;
+		"fonts")
+			setup_fonts;;
+		"gimp")
+			setup_gimp;;
+		"gnome")
+			setup_gnome;;
+		"go")
+			setup_go;;
+		"godot")
+			setup_godot;;
+		"gsmartcontrol")
+			setup_gsmartcontrol;;
+		"inkscape")
+			setup_inkscape;;
+		"kdenlive")
+			setup_kdenlive;;
+		"keyboard")
+			setup_keyboard;;
+		"obs")
+			setup_obs;;
+		"osu")
+			setup_osu;;
+		"piper")
+			setup_piper;;
+		"rust")
+			setup_rust;;
+		"unity")
+			setup_unity;;
+		"vim")
+			setup_vim;;
+		"virtualbox")
+			setup_virtualbox;;
+		"vlc")
+			setup_vlc;;
+		"vscode")
+			setup_vscode;;
+		"wireshark")
+			setup_wireshark;;
+		"wps office")
+			setup_wps_office;;
+		"zoom")
+			setup_zoom;;
+	esac
+done
+
 
 # #################### [ CLEANUP ] ####################
 
@@ -649,7 +711,6 @@ rm -rf "$SCRIPT_DIR/tmp"
 
 title "DONE"
 
-log_no_label "installation complete!"
 echo
 
 if [ ! ${#POST_INSTALL[@]} -eq 0 ]; then
