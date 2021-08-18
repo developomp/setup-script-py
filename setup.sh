@@ -81,18 +81,6 @@ remove_essentials() {
 # #################### [ DEFINING SETUP ] ####################
 # Define instructions on how to setup applications & stuff
 
-# future:
-# llvm & lldb \
-# mystiq \
-# pavucontrol \
-# putty \
-# python-pip \
-# sqlitebrowser \
-# timeshift \
-# transmission-gtk \
-# xinput-gui \
-# xmousepasteblock-git \
-
 setup_4kvideodownloader() {
 	package_install \
 		4kvideodownloader \
@@ -446,6 +434,12 @@ setup_middleclickpaste() {
 	# make it autostart
 }
 
+setup_mystiq() {
+	package_install \
+		mystiq \
+
+}
+
 setup_node() {
 	package_install \
 		nodejs                             `# Javascript on servers!` \
@@ -487,6 +481,18 @@ setup_osu() {
 
 }
 
+setup_pavucontrol() {
+	package_install \
+		pavucontrol \
+
+}
+
+setup_pip() {
+	package_install \
+		python-pip \
+
+}
+
 setup_piper() {
 	package_install \
 		piper \
@@ -501,6 +507,18 @@ setup_rust() {
 
 setup_shfmt() {
 	:
+}
+
+setup_timeshift() {
+	package_install \
+		timeshift \
+
+}
+
+setup_transmission() {
+	package_install \
+		transmission-gtk \
+
 }
 
 setup_unity() {
