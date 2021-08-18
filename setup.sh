@@ -658,7 +658,9 @@ cmd=(dialog --separate-output --checklist "Select Setup Operations to perform" 2
 
 options=(
 	"remove_unnecessary_packages"  ""  off
+	"4k_video_downloader"          ""  off
 	"blender"                      ""  off
+	"brave"                        ""  off
 	"deno"                         ""  off
 	"discord"                      ""  off
 	"dotnet"                       ""  off
@@ -676,6 +678,7 @@ options=(
 	"osu"                          ""  off
 	"piper"                        ""  off
 	"rust"                         ""  off
+	"transmission"                 ""  off
 	"unity"                        ""  off
 	"vim"                          ""  off
 	"virtualbox"                   ""  off
@@ -692,6 +695,10 @@ for choice in $choices; do
 	case "$choice" in
 		"remove_unnecessary_packages")
 			remove_essentials;;
+		"4k_video_downloader")
+			setup_4kvideodownloader;;
+		"brave")
+			setup_brave;;
 		"blender")
 			setup_blender;;
 		"deno")
@@ -726,6 +733,8 @@ for choice in $choices; do
 			setup_piper;;
 		"rust")
 			setup_rust;;
+		"transmission")
+			setup_transmission;;
 		"unity")
 			setup_unity;;
 		"vim")
