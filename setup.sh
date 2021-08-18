@@ -51,6 +51,10 @@ package_install() {
 	pamac install "$@"
 }
 
+package_remove() {
+	pamac remove "$@"
+}
+
 # #################### [ DEFINING ESSENTIAL SETUP ] ####################
 
 backup() {
@@ -66,20 +70,20 @@ setup_essentials() {
 }
 
 remove_essentials() {
-	:
-	# epiphany
-	# gnome-color-manager
-	# kvantum-qt5
-	# totem
-	# steam-native
-	# steam-manjaro
+	echo "hi"
+
+	package_remove \
+		epiphany \
+		totem \
+		kvantum-qt5 \
+		gnome-color-manager \
+
 }
 
 # #################### [ DEFINING SETUP ] ####################
 # Define instructions on how to setup applications & stuff
 
 # future:
-# hardinfo \
 # llvm & lldb \
 # mystiq \
 # pavucontrol \
@@ -381,6 +385,12 @@ setup_gsmartcontrol() {
 
 }
 
+setup_hardinfo() {
+	package_install \
+		hardinfo \
+
+}
+
 setup_inkscape() {
 	package_install \
 		inkscape \
@@ -631,38 +641,41 @@ log "TEST phase complete!"
 cmd=(dialog --separate-output --checklist "Select Setup Operations to perform" 20 50 5) 
 
 options=(
-	"blender"        ""  off
-	"deno"           ""  off
-	"discord"        ""  off
-	"dotnet"         ""  off
-	"fonts"          ""  off
-	"gimp"           ""  off
-	"gnome"          ""  off
-	"go"             ""  off
-	"godot"          ""  off
-	"graphics"       ""  off
-	"gsmartcontrol"  ""  off
-	"inkscape"       ""  off
-	"kdenlive"       ""  off
-	"keyboard"       ""  off
-	"obs"            ""  off
-	"osu"            ""  off
-	"piper"          ""  off
-	"rust"           ""  off
-	"unity"          ""  off
-	"vim"            ""  off
-	"virtualbox"     ""  off
-	"vlc"            ""  off
-	"vscode"         ""  off
-	"wireshark"      ""  off
-	"wps office"     ""  off
-	"zoom"           ""  off
+	"remove_unnecessary_packages"  ""  off
+	"blender"                      ""  off
+	"deno"                         ""  off
+	"discord"                      ""  off
+	"dotnet"                       ""  off
+	"fonts"                        ""  off
+	"gimp"                         ""  off
+	"gnome"                        ""  off
+	"go"                           ""  off
+	"godot"                        ""  off
+	"graphics"                     ""  off
+	"gsmartcontrol"                ""  off
+	"inkscape"                     ""  off
+	"kdenlive"                     ""  off
+	"keyboard"                     ""  off
+	"obs"                          ""  off
+	"osu"                          ""  off
+	"piper"                        ""  off
+	"rust"                         ""  off
+	"unity"                        ""  off
+	"vim"                          ""  off
+	"virtualbox"                   ""  off
+	"vlc"                          ""  off
+	"vscode"                       ""  off
+	"wireshark"                    ""  off
+	"wps_office"                   ""  off
+	"zoom"                         ""  off
 )
 
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices; do
 	case "$choice" in
+		"remove_unnecessary_packages")
+			remove_essentials;;
 		"blender")
 			setup_blender;;
 		"deno")
@@ -709,7 +722,7 @@ for choice in $choices; do
 			setup_vscode;;
 		"wireshark")
 			setup_wireshark;;
-		"wps office")
+		"wps_office")
 			setup_wps_office;;
 		"zoom")
 			setup_zoom;;
