@@ -79,9 +79,6 @@ remove_essentials() {
 # Define instructions on how to setup applications & stuff
 
 # future:
-# 4kvideodownloader \
-# alacarte \
-# gpick \
 # hardinfo \
 # llvm & lldb \
 # mystiq \
@@ -93,6 +90,18 @@ remove_essentials() {
 # transmission-gtk \
 # xinput-gui \
 # xmousepasteblock-git \
+
+setup_4kvideodownloader() {
+	package_install \
+		4kvideodownloader \
+
+}
+
+setup_alacarte() {
+	package_install \
+		alacarte \
+
+}
 
 setup_blender() {
 	package_install \
@@ -334,6 +343,12 @@ setup_gnome() {
 	killall -3 gnome-shell
 
 	POST_INSTALL+=("gnome: enable gnome extensions")
+}
+
+setup_gpick() {
+	package_install \
+		gpick \
+
 }
 
 setup_go() {
