@@ -28,10 +28,8 @@ Result:<br />
 
 ## Instructions
 
-1. Open [`setup.sh`](./setup.sh).
-2. Go to the `MAIN` section (search for the word `MAIN`).
-3. Uncomment packages to install.
-4. Execute the script.
+1. Execute the [`setup.sh`](./setup.sh) script.
+2. Profit.
 
 Full setup could easily take more than a hour depending on the internet speed.
 
