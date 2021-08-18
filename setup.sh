@@ -70,8 +70,6 @@ setup_essentials() {
 }
 
 remove_essentials() {
-	echo "hi"
-
 	package_remove \
 		epiphany \
 		totem \
