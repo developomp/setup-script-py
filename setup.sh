@@ -75,6 +75,8 @@ remove_essentials() {
 		totem \
 		kvantum-qt5 \
 		gnome-color-manager \
+		manjaro-hello \
+		gnome-layout-switcher \
 
 }
 
@@ -453,7 +455,7 @@ setup_node() {
 setup_obs() {
 	package_install \
 		obs-plugin-input-overlay-bin    `# show inputs in OBS` \
-		obs-studio                      `# screen recording and streaming` \
+		obs-studio-browser              `# screen recording and streaming` \
 
 }
 
