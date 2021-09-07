@@ -517,9 +517,9 @@ setup_timeshift() {
 
 }
 
-setup_transmission() {
+setup_webtorrent_desktop() {
 	package_install \
-		transmission-gtk \
+		webtorrent-desktop-bin \
 
 }
 
@@ -680,7 +680,7 @@ options=(
 	"osu"                          ""  off
 	"piper"                        ""  off
 	"rust"                         ""  off
-	"transmission"                 ""  off
+	"webtorrent_desktop"           ""  off
 	"unity"                        ""  off
 	"vim"                          ""  off
 	"virtualbox"                   ""  off
@@ -735,8 +735,8 @@ for choice in $choices; do
 			setup_piper;;
 		"rust")
 			setup_rust;;
-		"transmission")
-			setup_transmission;;
+		"webtorrent_desktop")
+			setup_webtorrent_desktop;;
 		"unity")
 			setup_unity;;
 		"vim")
