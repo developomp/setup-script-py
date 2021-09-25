@@ -152,10 +152,16 @@ setup_cpu_undervolting() {
 	sudo systemctl enable intel-undervolt
 }
 
+setup_cpupower_gui() {
+	package_install \
+		cpupower-gui \
+
+}
+
 setup_dconf() {
-	# todo: freon GPU, decimal, and unit
+	:
 	# must be done after install to make sure configs are not overwritten
-	dconf load / < $SCRIPT_DIR/dconf.conf
+	# dconf load / < $SCRIPT_DIR/dconf.conf
 }
 
 setup_deno() {
@@ -317,11 +323,9 @@ setup_gnome() {
 		36      # lock-keys
 		131     # touchpad-indicator
 		355     # status-area-horizontal-spacing
-		750     # openweather
 		800     # remove-dropdown-arrows
 		841     # freon
 		906     # sound-output-device-chooser
-		945     # cpu-power-manager
 		2741    # remove-alttab-delay-v2
 		4000    # babar
 	)
@@ -517,9 +521,9 @@ setup_timeshift() {
 
 }
 
-setup_webtorrent_desktop() {
+setup_torrential() {
 	package_install \
-		webtorrent-desktop-bin \
+		torrential \
 
 }
 
@@ -680,7 +684,7 @@ options=(
 	"osu"                          ""  off
 	"piper"                        ""  off
 	"rust"                         ""  off
-	"webtorrent_desktop"           ""  off
+	"torrential"                   ""  off
 	"unity"                        ""  off
 	"vim"                          ""  off
 	"virtualbox"                   ""  off
@@ -735,8 +739,8 @@ for choice in $choices; do
 			setup_piper;;
 		"rust")
 			setup_rust;;
-		"webtorrent_desktop")
-			setup_webtorrent_desktop;;
+		"torrential")
+			setup_torrential;;
 		"unity")
 			setup_unity;;
 		"vim")
