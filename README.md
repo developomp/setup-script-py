@@ -81,9 +81,9 @@ installer config:
 - unallocated space at the end are for overprovisioning
 - no swap partition
 
-more information about efi partition can be found in [this](https://wiki.archlinux.org/title/GRUB) arch wiki.
+more information about efi partition can be found in [this](https://wiki.archlinux.org/title/GRUB) arch wiki page.
 
-| drive id\* | format | size (2048 byte sectors) | mount location   | purpose       |
+| drive id\* | format | size (unit: 2048 byte sectors) | mount location   | purpose       |
 | ---------- | ------ | ------------------------ | ---------------- | ------------- |
 | 1          | FAT32  | 614400                   | /boot/efi        | EFI partition |
 | 1          | ext4   | 249449294                | /                | root          |
@@ -96,7 +96,7 @@ more information about efi partition can be found in [this](https://wiki.archlin
 |    peripheral | model                                                                                                                                                                                                        |
 | ------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |         mouse | [Logitech G402 Hyperion fury](https://www.logitechg.com/en-eu/products/gaming-mice/g402-hyperion-fury-fps-gaming-mouse.html) I got from a [giveaway event](https://blog.naver.com/yjcomicsblog/221432692995) |
-|     headphone | [NOX-2](https://www.e-nox.co.kr/theme/s007/index/product_view01.php?wr_id=16)                                                                                                                                |
+|     headphone | [NOX NX-2](https://www.e-nox.co.kr/theme/s007/index/product_view01.php?wr_id=16)                                                                                                                                |
 | laptop cooler | [ABKO NCORE NC500](http://ncore.co.kr/shop/product_item.php?ItId=2586312930)                                                                                                                                 |
 
 ## Sources
