@@ -3,6 +3,7 @@
 # don't remove line after package_install
 # it will result in this syntax error: unexpected end of file
 
+
 # #################### [ ESSENTIALS ] ####################
 # Installs essential packages and defining important functions
 
@@ -48,14 +49,12 @@ title() {
 }
 
 package_install() {
-	pamac install "$@"
+	paru -S --noconfirm "$@"
 }
 
 package_remove() {
-	pamac remove "$@"
+	paru -R --noconfirm "$@"
 }
-
-# #################### [ DEFINING ESSENTIAL SETUP ] ####################
 
 backup() {
 	dconf dump / > "$SCRIPT_DIR/dconf.conf"
@@ -64,8 +63,25 @@ backup() {
 	sudo timeshift --create --comments "auto created by developomp setup script"
 }
 
+install_paru() {
+	log "installing paru"
+
+	cd /tmp || (error "failed to move to /tmp for paru installation" && exit 1)
+	sudo pacman --noconfirm -S --needed base-devel git
+	git clone https://aur.archlinux.org/paru.git
+	cd ./paru && makepkg -si
+	cd .. && rm -rf ./paru
+
+	cd "$SCRIPT_DIR" || (error "failed to come back to working directory after installing paru" && exit 1)
+}
+
 setup_essentials() {
-	:
+	# install paru if it does not exist
+	if ! command -v paru &> /dev/null; then
+		install_paru
+	fi
+
+	package_install dialog &> /dev/null
 	# enable multilib, color, parallel download, and total download in /etc/pacman.conf
 }
 
@@ -74,11 +90,13 @@ remove_essentials() {
 		epiphany \
 		totem \
 		kvantum-qt5 \
+		gnome-firmware \
 		gnome-color-manager \
 		manjaro-hello \
 		gnome-layout-switcher \
 
 }
+
 
 # #################### [ DEFINING SETUP ] ####################
 # Define instructions on how to setup applications & stuff
@@ -418,18 +436,6 @@ setup_local() {
 		log "dnspy"
 	fi
 
-	if [[ -d /media/pomp/data/programs/amidst ]]; then
-		log "amidst"
-	fi
-
-	if [[ -d /media/pomp/data/programs/mcaselector ]]; then
-		log "mcaselector"
-	fi
-
-	if [[ -d /media/pomp/data/programs/mineways ]]; then
-		log "mineways"
-	fi
-
 	if [[ -d /media/pomp/data/programs/tor-browser ]]; then
 		log "tor"
 	fi
@@ -612,9 +618,24 @@ setup_zoom() {
 
 }
 
-# #################### [ START ] ####################
 
-pamac install dialog &> /dev/null
+# #################### [ TEST ] ####################
+# Tests if script is ready to be executed
+# some stuff has to be done manually
+
+if [[ ! $EUID -ne 0 ]]; then
+	error "DO NOT RUN THIS SCRIPT AS ROOT"
+	exit 1
+fi
+
+# check partition
+
+# check if $RESET$BOLD/media/pomp/data$GREEN exists in fstab and is mounted
+
+# check if OS is manjaro
+
+
+# #################### [ START ] ####################
 
 cd "$SCRIPT_DIR" || {
 	error "FAILED TO FIND SCRIPT DIRECTORY"
@@ -636,29 +657,10 @@ fi
 
 echo
 
-# #################### [ TEST ] ####################
-# Tests if script is ready to be executed
-# some stuff has to be done manually
-
-title "TEST"
-log "testing if script is ready to be exdecuted"
-
-if [[ ! $EUID -ne 0 ]]; then
-	error "DO NOT RUN THIS SCRIPT AS ROOT"
-	exit 1
-fi
-
-# check partition
-
-# check if $RESET$BOLD/media/pomp/data$GREEN exists in fstab and is mounted
-
-# check if OS is manjaro
-
-echo
-echo
-log "TEST phase complete!"
 
 # #################### [ MAIN ] ####################
+
+setup_essentials
 
 cmd=(dialog --separate-output --checklist "Select Setup Operations to perform" 20 50 5) 
 
@@ -764,6 +766,7 @@ done
 # #################### [ CLEANUP ] ####################
 
 rm -rf "$SCRIPT_DIR/tmp"
+
 
 # #################### [ DONE ] ####################
 # print some info after installation
