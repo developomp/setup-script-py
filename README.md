@@ -1,18 +1,10 @@
 <p align="center">
-  <a href="./LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
-  </a>
-
-  <a href="https://github.com/prettier/prettier">
-    <img src="https://img.shields.io/badge/markdown_formatter-prettier-ff69b4?style=flat-square" />
-  </a>
-</p>
-
-<p align="center">
-  My <a href="https://manjaro.org">Manjaro</a> desktop setup
+  My <a href="https://archlinux.org">Arch linux</a> desktop setup
 </p>
 
 ---
+
+[![LICENSE: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](./LICENSE)
 
 ## Purpose
 
@@ -25,8 +17,15 @@ Result:<br />
 
 > **WARNING:** This script is written for my laptop ONLY. If you're looking for a arch installer, there's [archfi](https://github.com/MatMoul/archfi) and [anarchy installer](https://gitlab.com/anarchyinstaller/installer).
 
-1. Execute the [`setup.sh`](./setup.sh) script.
-2. Profit.
+Install script: https://github.com/MatMoul/archfi
+
+1. Install arch linux via [archfi](https://github.com/MatMoul/archfi).
+
+   - latest version as of writing: `2021.10.01`
+   - DE: gdm
+
+2. Execute the [`setup.sh`](./setup.sh) script.
+3. Profit.
 
 Full setup could easily take more than a hour depending on the internet speed.
 
@@ -35,24 +34,6 @@ Execution:<br />
 
 Selection Menu:<br />
 ![Menu](./menu.png)
-
-## OS
-
-Manjaro gnome minimal, non-LTS version. Download link can be found in the [official manjaro website](https://manjaro.org/downloads/official/gnome).
-
-Latest version as of writing: `manjaro-gnome-21.0.7-minimal-210614-linux510.iso`
-
-- boot with open source driver
-
-installer config:
-
-- Location
-  - region: Asia, Seoul
-  - language & locale: en_US.UTF-8 (American English)
-- Keyboard
-  - Korean, default
-- Partitions
-  - Erase disk, no swap, no encryption
 
 ## Hardware
 
@@ -85,11 +66,13 @@ installer config:
 
 more information about efi partition can be found in [this](https://wiki.archlinux.org/title/GRUB) arch wiki page.
 
-| drive id\* | format | size (unit: 2048 byte sectors) | mount location   | purpose       |
-| ---------- | ------ | ------------------------------ | ---------------- | ------------- |
-| 1          | FAT32  | 614400                         | /boot/efi        | EFI partition |
-| 1          | ext4   | 249449294                      | /                | root          |
-| 2          | ext4   | 921600000                      | /media/pomp/data | data storage  |
+partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/tree/disk-utils/fdisk.c), [man](https://man7.org/linux/man-pages/man8/fdisk.8.html)).
+
+| drive id\* | format | size                           | mount location   | purpose                           |
+| ---------- | ------ | ------------------------------ | ---------------- | --------------------------------- |
+| 1          | FAT32  | +300M                          | /boot/efi        | EFI partition                     |
+| 1          | ext4   | -15G                           | /                | root                              |
+| 2          | ext4   | default (all available sector) | /media/pomp/data | data storage (D drive equivalent) |
 
 \*index from [storage](#Storage)
 
