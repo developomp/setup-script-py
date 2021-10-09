@@ -48,6 +48,14 @@ title() {
 	echo -e "$BOLD$GREEN====================[ $* ]====================$RESET"
 }
 
+smart_mkdir() {
+	# make directory recursively if it doesn't exist already
+
+	if [ ! -d "$1" ]; then
+		mkdir -p "$1"
+	fi
+}
+
 package_install() {
 	paru -S --noconfirm "$@"
 }
@@ -66,11 +74,11 @@ backup() {
 install_paru() {
 	log "installing paru"
 
-	cd /tmp || (error "failed to move to /tmp for paru installation" && exit 1)
+	smart_mkdir "$SCRIPT_DIR/tmp"
+	cd "$SCRIPT_DIR/tmp" || (error "failed to move to $SCRIPT_DIR/tmp for paru installation" && exit 1)
 	sudo pacman --noconfirm -S --needed base-devel git
 	git clone https://aur.archlinux.org/paru.git
 	cd ./paru && makepkg -si
-	cd .. && rm -rf ./paru
 
 	cd "$SCRIPT_DIR" || (error "failed to come back to working directory after installing paru" && exit 1)
 }
@@ -83,18 +91,6 @@ setup_essentials() {
 
 	package_install dialog &> /dev/null
 	# enable multilib, color, parallel download, and total download in /etc/pacman.conf
-}
-
-remove_essentials() {
-	package_remove \
-		epiphany \
-		totem \
-		kvantum-qt5 \
-		gnome-firmware \
-		gnome-color-manager \
-		manjaro-hello \
-		gnome-layout-switcher \
-
 }
 
 
@@ -628,6 +624,13 @@ if [[ ! $EUID -ne 0 ]]; then
 	exit 1
 fi
 
+# check internet connection
+if ! ping -c 1 archlinux.org &> /dev/null; then
+	error "You are not connected to the internet"
+fi
+
+exit 1
+
 # check partition
 
 # check if $RESET$BOLD/media/pomp/data$GREEN exists in fstab and is mounted
@@ -701,8 +704,6 @@ choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices; do
 	case "$choice" in
-		"remove_unnecessary_packages")
-			remove_essentials;;
 		"4k_video_downloader")
 			setup_4kvideodownloader;;
 		"brave")
@@ -782,3 +783,5 @@ if [ ! ${#POST_INSTALL[@]} -eq 0 ]; then
 		log_no_label "  - $doWhat"
 	done
 fi
+
+exit 0
