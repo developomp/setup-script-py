@@ -77,10 +77,16 @@ install_paru() {
 setup_essentials() {
 	# install paru if it does not exist
 	if ! command -v paru &> /dev/null; then
+		log "paru was not installed already. Installing now..."
 		install_paru
 	fi
 
-	package_install dialog &> /dev/null
+	# install dialog if it's not installed already
+	if ! command -v dialog &> /dev/null; then
+		log "dialog was not installed already. Installing now..."
+		package_install dialog
+	fi
+
 	# enable multilib, color, parallel download, and total download in /etc/pacman.conf
 }
 
@@ -639,6 +645,7 @@ fi
 
 # #################### [ START ] ####################
 
+# move to script directory (repo root)
 cd "$SCRIPT_DIR" || {
 	error "FAILED TO FIND SCRIPT DIRECTORY"
 	exit
@@ -655,8 +662,6 @@ if [[ $REPLY =~ ^[^Yy]$ ]]; then
 	echo
 	exit
 fi
-
-echo
 
 
 # #################### [ MAIN ] ####################
