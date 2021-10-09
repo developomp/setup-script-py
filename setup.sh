@@ -629,8 +629,6 @@ if ! ping -c 1 archlinux.org &> /dev/null; then
 	error "You are not connected to the internet"
 fi
 
-exit 1
-
 # check partition
 
 # check if $RESET$BOLD/media/pomp/data$GREEN exists in fstab and is mounted
