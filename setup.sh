@@ -783,5 +783,3 @@ if [ ! ${#POST_INSTALL[@]} -eq 0 ]; then
 		log_no_label "  - $doWhat"
 	done
 fi
-
-exit 0
