@@ -486,6 +486,12 @@ setup_osu() {
 
 }
 
+setup_pamac() {
+	package_install \
+		pamac_aur \
+
+}
+
 setup_pavucontrol() {
 	package_install \
 		pavucontrol \
@@ -611,6 +617,10 @@ setup_zoom() {
 
 }
 
+setup_zsh() {
+	:
+}
+
 
 # #################### [ INSTALL ] ####################
 
@@ -671,7 +681,6 @@ setup_essentials
 cmd=(dialog --separate-output --checklist "Select Setup Operations to perform" 20 50 5) 
 
 options=(
-	"remove_unnecessary_packages"  ""  off
 	"4k_video_downloader"          ""  off
 	"blender"                      ""  off
 	"brave"                        ""  off
@@ -683,7 +692,6 @@ options=(
 	"gnome"                        ""  off
 	"go"                           ""  off
 	"godot"                        ""  off
-	"graphics"                     ""  off
 	"gsmartcontrol"                ""  off
 	"inkscape"                     ""  off
 	"kdenlive"                     ""  off
@@ -709,10 +717,10 @@ for choice in $choices; do
 	case "$choice" in
 		"4k_video_downloader")
 			setup_4kvideodownloader;;
-		"brave")
-			setup_brave;;
 		"blender")
 			setup_blender;;
+		"brave")
+			setup_brave;;
 		"deno")
 			setup_deno;;
 		"discord")
