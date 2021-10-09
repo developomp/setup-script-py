@@ -7,10 +7,8 @@
 # #################### [ ESSENTIALS ] ####################
 # Installs essential packages and defining important functions
 
-# https://stackoverflow.com/a/246128/12979111
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 POST_INSTALL=()
-
 
 BOLD="\e[1m"
 RESET="\e[0m"
@@ -62,13 +60,6 @@ package_install() {
 
 package_remove() {
 	paru -R --noconfirm "$@"
-}
-
-backup() {
-	dconf dump / > "$SCRIPT_DIR/dconf.conf"
-	# copy /home/pomp directory
-	# timeshift settings
-	sudo timeshift --create --comments "auto created by developomp setup script"
 }
 
 install_paru() {
@@ -615,10 +606,26 @@ setup_zoom() {
 }
 
 
+# #################### [ INSTALL ] ####################
+
+backup() {
+	dconf dump / > "$SCRIPT_DIR/dconf.conf"
+	# copy /home/pomp directory
+	# timeshift settings
+	sudo timeshift --create --comments "auto created by developomp setup script"
+}
+
+install_arch() {
+	:
+	# check if drives exist
+	# if $RESET$BOLD/media/pomp/data$GREEN exists in fstab and is mounted
+}
+
+
 # #################### [ TEST ] ####################
 # Tests if script is ready to be executed
-# some stuff has to be done manually
 
+# check if script is running as root
 if [[ ! $EUID -ne 0 ]]; then
 	error "DO NOT RUN THIS SCRIPT AS ROOT"
 	exit 1
@@ -628,12 +635,6 @@ fi
 if ! ping -c 1 archlinux.org &> /dev/null; then
 	error "You are not connected to the internet"
 fi
-
-# check partition
-
-# check if $RESET$BOLD/media/pomp/data$GREEN exists in fstab and is mounted
-
-# check if OS is manjaro
 
 
 # #################### [ START ] ####################
@@ -649,7 +650,6 @@ warn_no_label "  This is not a completely hands off process."
 warn_no_label "  You need to monitor the process and take appropriate actions."
 echo
 
-# https://stackoverflow.com/a/1885534/12979111
 read -p "Press (y) to continue. Press any other key to exit: " -n 1 -r
 if [[ $REPLY =~ ^[^Yy]$ ]]; then
 	echo
@@ -764,6 +764,7 @@ done
 
 # #################### [ CLEANUP ] ####################
 
+# remove temporary directory
 rm -rf "$SCRIPT_DIR/tmp"
 
 
@@ -774,6 +775,7 @@ title "DONE"
 
 echo
 
+# show what to do manually
 if [ ! ${#POST_INSTALL[@]} -eq 0 ]; then
     log_no_label "now:"
 
