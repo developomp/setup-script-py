@@ -8,6 +8,7 @@
 # Installs essential packages and defining important functions
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+DATA_PATH="/media/pomp/data"
 POST_INSTALL=()
 
 BOLD="\e[1m"
@@ -86,8 +87,14 @@ setup_essentials() {
 		log "dialog was not installed already. Installing now..."
 		package_install dialog
 	fi
+}
 
-	# enable multilib, color, parallel download, and total download in /etc/pacman.conf
+remove_unused() {
+	# unused packages from https://gitlab.archlinux.org/archlinux/archiso/-/blob/master/configs/releng/packages.x86_64
+
+	package_remove \
+		irssi \
+
 }
 
 
@@ -95,25 +102,25 @@ setup_essentials() {
 # Define instructions on how to setup applications & stuff
 
 setup_4kvideodownloader() {
-	package_install \
+	package_install       \
 		4kvideodownloader \
 
 }
 
 setup_alacarte() {
 	package_install \
-		alacarte \
+		alacarte    \
 
 }
 
 setup_blender() {
 	package_install \
-		blender \
+		blender     \
 
 }
 
 setup_brave() {
-	package_install \
+	package_install        \
 		brave-beta-browser \
 
 	# settings: DNS https cloudflare
@@ -127,8 +134,8 @@ setup_conky() {
 	# enable on startup
 	# copy conky files
 
-	package_install \
-		conky \
+	package_install                              \
+		conky                                    \
 		vnstat    `# network traffic statistics` \
 
 	sudo systemctl enable vnstat
@@ -139,8 +146,8 @@ setup_cpu_undervolting() {
 	# Undervolting for intel CPU
 	# https://wiki.archlinux.org/index.php/Undervolting_CPU
 
-	package_install \
-		intel-undervolt \
+	package_install                                                                 \
+		intel-undervolt    `# CPU undervolting for less heat and power consumption` \
 
 	config_file=/etc/intel-undervolt.conf
 
@@ -164,30 +171,24 @@ setup_cpu_undervolting() {
 }
 
 setup_cpupower_gui() {
-	package_install \
-		cpupower-gui \
+	package_install                       \
+		cpupower-gui `# CPU overclocking` \
 
 }
 
 setup_dconf() {
 	:
 	# must be done after install to make sure configs are not overwritten
-	# dconf load / < $SCRIPT_DIR/dconf.conf
-}
-
-setup_deno() {
-	package_install \
-		deno \
-
+	# dconf load / < dconf/configuration.conf
 }
 
 setup_discord() {
 	# assumes that plugins are located in ~/.config/BetterDiscord/plugins
 
-	package_install \
-		discord \
-		betterdiscordctl-git \
-		discord-overlay-git \
+	package_install                                            \
+		discord                                                \
+		betterdiscordctl-git    `# BetterDiscord installer`    \
+		discord-overlay-git     `# Discord voice chat overlay` \
 
 	betterdiscordctl install
 
@@ -298,34 +299,53 @@ setup_fonts() {
 	# cleanup
 	rm -rf $fonts_directory
 
-	package_install \
-		noto-fonts-emoji \
+	package_install                                    \
+		noto-fonts-emoji                               \
 		nerd-fonts-noto-sans-mono    `# Terminal font` \
 
 }
 
 setup_dotnet() {
-	package_install \
-		dotnet-sdk \
+	package_install                \
+		dotnet-sdk    `# .NET SDK` \
 
 }
 
 setup_gimp() {
-	package_install \
-		gimp \
+	package_install                    \
+		gimp    `# photoshop but FOSS` \
 
 }
 
 setup_gnome() {
+	# nvidia driver, optimus manager, etc.
+
+	# Not using power switching
+	# read this wiki[^1] about power management with acpi call for more information
+	# [^1]: https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options#configuration-4--acpi_call
+
 	package_install \
-		baobab                             `# Disk usage analysis` \
-		dconf-editor                       `# GUI for dconf` \
+		gwe                   `# nvidia GPU overclocking https://gitlab.com/leinardi/gwe` \
+		optimus-manager       `# https://github.com/Askannz/optimus-manager`              \
+		optimus-manager-qt    `# https://github.com/Shatur/optimus-manager-qt`            \
+		gdm-prime             `# `                                                        \
+
+	# launch on startup
+	# nvidia as default
+
+	# Performance: 265, 750
+	# Energy Saver: -155, -365
+
+	package_install                                                                               \
+		baobab                             `# Disk usage analysis`                                \
+		gpick                              `# color picker`                                       \
+		dconf-editor                       `# GUI for dconf`                                      \
 		gnome-characters                   `# Search for emojis, special characters, and symbols` \
-		gnome-clocks                       `# For multiple clocks for different time zones` \
-		gnome-font-viewer                  `# Managing fonts` \
-		gnome-logs                         `# GUI for system journal` \
-		gnome-usage                        `# System resource statistics` \
-		gnome-terminal-transparency        `# Transparent gnome terminal` \
+		gnome-clocks                       `# For multiple clocks for different time zones`       \
+		gnome-font-viewer                  `# Managing fonts`                                     \
+		gnome-logs                         `# GUI for system journal`                             \
+		gnome-usage                        `# System resource statistics`                         \
+		gnome-terminal-transparency        `# Transparent gnome terminal`                         \
 		gnome-shell-extension-installer    `# Installation of gnome extensions from command line` \
 
 	# install gnome extensions
@@ -350,72 +370,49 @@ setup_gnome() {
 	killall -3 gnome-shell
 
 	POST_INSTALL+=("gnome: enable gnome extensions")
-}
-
-setup_gpick() {
-	package_install \
-		gpick \
-
+	POST_INSTALL+=("gnome: reboot")
 }
 
 setup_go() {
 	package_install \
-		go \
+		go          \
 
 }
 
 setup_godot() {
-	package_install \
-		godot \
+	package_install              \
+		godot    `# game engine` \
 
-}
-
-setup_graphics() {
-	# https://wiki.manjaro.org/index.php/Configure_Graphics_Cards#Automated_Identification_and_Installation
-	sudo mhwd -a pci nonfree 0300
-
-	# /etc/X11/Xwrapper.config write:
-	# allowed_users=anybody
-	# needs_root_rights=yes
-
-	# sudo chmod u+s /usr/lib/Xorg.wrap
-	POST_INSTALL+=("Graphics: Reboot")
 }
 
 setup_gsmartcontrol() {
-	package_install \
-		gsmartcontrol \
-
-}
-
-setup_hardinfo() {
-	package_install \
-		hardinfo \
+	package_install                              \
+		gsmartcontrol    `# disk health checker` \
 
 }
 
 setup_inkscape() {
-	package_install \
-		inkscape \
+	package_install                                \
+		inkscape    `# adobe illustrator but FOSS` \
 
 }
 
 setup_java() {
-	package_install \
-		jdk                                `# oracle java development kit` \
-		jdk8                               `# ` \
+	package_install                                                              \
+		jdk                                `# oracle java development kit`       \
+		jdk8                               `# oracle JDK but license is not gay` \
 
 }
 
 setup_kdenlive() {
-	package_install \
-		kdenlive-appimage \
+	package_install                            \
+		kdenlive-appimage    `# video editing` \
 
 }
 
 setup_keyboard() {
-	package_install \
-		ibus-hangul \
+	package_install                                \
+		ibus-hangul    `# Korean keyboard support` \
 
 	POST_INSTALL+=("keyboard: setup korean keyboard and reboot")
 }
@@ -423,90 +420,78 @@ setup_keyboard() {
 setup_local() {
 	# setup for applications in second drive
 	# add to application menu
-	# office 2019 wine
 
 	if [[ -d /media/pomp/data/programs/dnSpy-net-win32 ]]; then
 		log "dnspy"
 	fi
 
 	if [[ -d /media/pomp/data/programs/tor-browser ]]; then
-		log "tor"
+		log "tor browser"
 	fi
 }
 
 setup_middleclickpaste() {
-	:
-	# make it autostart
+	package_install                                             \
+		xmousepasteblock-git    `# prevents middle click paste` \
+
+	# todo: make it autostart
 }
 
 setup_mystiq() {
-	package_install \
-		mystiq \
+	package_install                   \
+		mystiq    `# video converter` \
 
 }
 
 setup_node() {
-	package_install \
-		nodejs                             `# Javascript on servers!` \
-        yarn                               `# better node package manager` \
-		deno                               `# node++ or smth` \
+	package_install                               \
+		nodejs    `# Javascript on servers!`      \
+        yarn      `# better node package manager` \
 
 	# https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 	# export PATH="$(yarn global bin):$PATH"
 }
 
 setup_obs() {
-	package_install \
-		obs-plugin-input-overlay-bin    `# show inputs in OBS` \
-		obs-studio-browser              `# screen recording and streaming` \
+	package_install                                                                                     \
+		obs-plugin-input-overlay-bin    `# show inputs in OBS`                                          \
+		obs-studio-browser              `# screen recording and streaming with browser overlay support` \
 
-}
-
-setup_optimus_manager() {
-	# Not using power switching
-	# read this wiki[^1] about power management with acpi call for more information
-	# [^1]: https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options#configuration-4--acpi_call
-
-	package_install \
-		gwe                   `# nvidia GPU overclocking https://gitlab.com/leinardi/gwe` \
-		optimus-manager       `# https://github.com/Askannz/optimus-manager` \
-		optimus-manager-qt    `# https://github.com/Shatur/optimus-manager-qt` \
-		gdm-prime             `# ` \
-
-	# launch on startup
-	# nvidia as default
-
-	# Performance: 265, 750
-	# Energy Saver: -155, -365
 }
 
 setup_osu() {
-	package_install \
-		osu \
+	package_install                     \
+		osu              `# osu stable` \
+		osu-lazer-bin    `# osu lazer`  \
 
 }
 
+setup_pacman() {
+	# enable multilib, color, parallel download, and total download in /etc/pacman.conf
+	:
+}
+
 setup_pamac() {
-	package_install \
-		pamac_aur \
+	package_install                                           \
+		pamac_aur    `# package manager GUI with AUR support` \
 
 }
 
 setup_pavucontrol() {
-	package_install \
-		pavucontrol \
+	package_install                                                                                    \
+		pavucontrol    `# PulseAudio settings I use for redirecting desktop audio to microphone input` \
 
 }
 
 setup_pip() {
-	package_install \
-		python-pip \
+	package_install                                    \
+		python-pip    `# package installer for python` \
 
 }
 
 setup_piper() {
-	package_install \
-		piper \
+	package_install                            \
+		piper    `# gaming mouse settings GUI` \
 
 }
 
@@ -516,125 +501,127 @@ setup_rust() {
 
 }
 
-setup_shfmt() {
-	:
-}
-
 setup_timeshift() {
-	package_install \
-		timeshift \
+	package_install                                \
+		timeshift    `# backup and restore system` \
 
 }
 
 setup_torrential() {
-	package_install \
-		torrential \
+	package_install                    \
+		torrential    `torrent client` \
 
 }
 
 setup_unity() {
-	package_install \
-		unityhub \
+	package_install                 \
+		unityhub    `# game engine` \
 
-	POST_INSTALL+=("Setup vscode for Unity")
-	POST_INSTALL+=("Change editor location")
+	POST_INSTALL+=("Change editors location")
 }
 
 setup_user_directories() {
-	:
-	# edit ~/.config/user-dirs.dirs:
-
-	# XDG_DESKTOP_DIR="$HOME/Desktop"
-	# XDG_DOWNLOAD_DIR="/media/pomp/data/Downloads"
-	# XDG_TEMPLATES_DIR="$HOME/Templates"
-	# XDG_PUBLICSHARE_DIR="$HOME/Public"
-	# XDG_DOCUMENTS_DIR="/media/pomp/data/Documents"
-	# XDG_MUSIC_DIR="/media/pomp/data/Music"
-	# XDG_PICTURES_DIR="/media/pomp/data/Pictures"
-	# XDG_VIDEOS_DIR="/media/pomp/data/Videos"
+	cat > ~/.config/user-dirs.dirs <<EOL
+XDG_DESKTOP_DIR="$HOME/Desktop"
+XDG_DOWNLOAD_DIR="/media/pomp/data/Downloads"
+XDG_TEMPLATES_DIR="$HOME/Templates"
+XDG_PUBLICSHARE_DIR="$HOME/Public"
+XDG_DOCUMENTS_DIR="/media/pomp/data/Documents"
+XDG_MUSIC_DIR="/media/pomp/data/Music"
+XDG_PICTURES_DIR="/media/pomp/data/Pictures"
+XDG_VIDEOS_DIR="/media/pomp/data/Videos"
+EOL
 }
 
 setup_virtualbox() {
-	# https://wiki.manjaro.org/index.php/VirtualBox
+	# https://wiki.archlinux.org/title/VirtualBox
 
-	package_install \
-		virtualbox \
-		linux510-virtualbox-host-modules \
-		virtualbox-ext-oracle \
+	package_install                  \
+		virtualbox                   \
+		virtualbox-host-modules-arch \
+		virtualbox-ext-oracle        \
 
-	sudo vboxreload
+	sudo systemctl enable systemd-modules-load
+	sudo systemctl start systemd-modules-load
+	sudo modprobe vboxdrv
 }
 
 setup_vscode() {
-	package_install \
-		visual-studio-code-bin \
+	package_install                                            \
+		visual-studio-code-bin    `# proprietary vscode build` \
 
 	POST_INSTALL+=("vscode: log in")
 }
 
 setup_vim() {
 	package_install \
-		vim \
+		vim-plug    `# vim plugin manager` \
 
+	# todo: install plugins
 }
 
 setup_vlc() {
-	package_install \
-		vlc \
+	package_install                                                       \
+		vlc-luajit    `# media player compatible with obs-studio-browser` \
 
 }
 
 setup_wine() {
-	package_install \
-		wine \
-		wine-gecko \
-		wine-mono \
-		winetricks \
+	package_install                                  \
+		wine          `# compatibility layer`        \
+		wine-gecko    `# internet explorer for wine` \
+		wine-mono     `# .NET runtime for wine`      \
+		winetricks    `# wine helper script`         \
 
-	# - `WINEARCH=win32 WINEPREFIX=~/.win32/ winecfg`
-	# - `winetricks allfonts`
-	# - `winetricks settings fontsmooth=rgb`
+	# WINEARCH=win32 WINEPREFIX=~/.win32/ winecfg
+	# winetricks allfonts
+	# winetricks settings fontsmooth=rgb
 }
 
 setup_wireshark() {
-	package_install \
-		wireshark-gtk2 \
+	package_install                                                       \
+		wireshark-gtk2    `# network protocol analyzer with gtk frontend` \
 
 	sudo usermod -a -G wireshark $USER
 	POST_INSTALL+=("wireshark: reboot")
 }
 
 setup_wps_office() {
-	package_install \
-		wps-office \
-		ttf-wps-fonts \
+	package_install                             \
+		wps-office       `# MS office but free` \
+		ttf-wps-fonts    `# WPS office fonts`   \
 
 }
 
 setup_zoom() {
-	package_install \
-		zoom \
+	package_install                          \
+		zoom    `# gay video conference app` \
 
 }
 
 setup_zsh() {
-	:
+	package_install                                         \
+		oh-my-zsh-git              `# for zsh plugins`      \
+		zsh-theme-powerlevel10k    `# make zsh look pretty` \
 }
 
 
 # #################### [ INSTALL ] ####################
 
 backup() {
-	dconf dump / > "$SCRIPT_DIR/dconf.conf"
-	# copy /home/pomp directory
-	# timeshift settings
-	sudo timeshift --create --comments "auto created by developomp setup script"
-}
+	TIMESTAMP=$(date +%s)
+	# backup dconf configuration
+	dconf dump / > "$SCRIPT_DIR/dconf$TIMESTAMP.conf"
 
-install_arch() {
-	:
-	# check if drives exist
-	# if $RESET$BOLD/media/pomp/data$GREEN exists in fstab and is mounted
+	# make a home directory backup
+	rsync -a --info=progress2 --perms /home/pomp "$DATA_PATH/backup$TIMESTAMP"
+
+	# create timeshift backup
+	if ! command -v timeshift &> /dev/null; then
+		error "failed to create timeshift backup. Timeshift command not found."
+	else
+		sudo timeshift --create --comments "auto created by developomp setup script ($TIMESTAMP)"
+	fi
 }
 
 
@@ -657,7 +644,7 @@ fi
 
 # move to script directory (repo root)
 cd "$SCRIPT_DIR" || {
-	error "FAILED TO FIND SCRIPT DIRECTORY"
+	error "FAILED TO GO TO SCRIPT DIRECTORY"
 	exit
 }
 
@@ -678,13 +665,10 @@ fi
 
 setup_essentials
 
-cmd=(dialog --separate-output --checklist "Select Setup Operations to perform" 20 50 5) 
-
 options=(
 	"4k_video_downloader"          ""  off
 	"blender"                      ""  off
 	"brave"                        ""  off
-	"deno"                         ""  off
 	"discord"                      ""  off
 	"dotnet"                       ""  off
 	"fonts"                        ""  off
@@ -711,6 +695,8 @@ options=(
 	"zoom"                         ""  off
 )
 
+# choose from available options
+cmd=(dialog --separate-output --checklist "Select Setup Operations to perform" 20 50 5) 
 choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices; do
@@ -721,8 +707,6 @@ for choice in $choices; do
 			setup_blender;;
 		"brave")
 			setup_brave;;
-		"deno")
-			setup_deno;;
 		"discord")
 			setup_discord;;
 		"dotnet")
