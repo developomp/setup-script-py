@@ -17,7 +17,7 @@ Result:<br />
 
 > **WARNING:** This script is written for my laptop ONLY.
 
-1. Install arch linux via [archinstall](https://gitlab.archlinux.org/archlinux/archinstall).
+1. Install arch linux via [archfi](https://github.com/MatMoul/archfi).
 
    - latest arch linux version as of writing: `2021.10.01`
 
