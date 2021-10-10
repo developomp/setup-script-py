@@ -15,14 +15,11 @@ Result:<br />
 
 ## Instructions
 
-> **WARNING:** This script is written for my laptop ONLY. If you're looking for a arch installer, there's [archfi](https://github.com/MatMoul/archfi) and [anarchy installer](https://gitlab.com/anarchyinstaller/installer).
+> **WARNING:** This script is written for my laptop ONLY.
 
-Install script: https://github.com/MatMoul/archfi
+1. Install arch linux via [archinstall](https://gitlab.archlinux.org/archlinux/archinstall).
 
-1. Install arch linux via [archfi](https://github.com/MatMoul/archfi).
-
-   - latest version as of writing: `2021.10.01`
-   - DE: gdm
+   - latest arch linux version as of writing: `2021.10.01`
 
 2. Execute the [`setup.sh`](./setup.sh) script.
 3. Profit.
