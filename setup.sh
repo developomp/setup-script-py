@@ -318,34 +318,59 @@ setup_gimp() {
 }
 
 setup_gnome() {
-	# nvidia driver, optimus manager, etc.
+	# gnome, nvidia driver, and optimus manager
+
+	# install gnome
+	package_install                                                                           \
+		gdm-prime                 `# gdm patched for optimus laptops`                         \
+		gnome-backgrounds         `# wallpapers and shit`                                     \
+		gnome-shell-extensions    `# gnome shell extensions`                                  \
+		gwe                       `# nvidia GPU overclocking https://gitlab.com/leinardi/gwe` \
+		nvidia                    `# nvidia GPU support`                                      \
+		optimus-manager-qt        `# https://github.com/Shatur/optimus-manager-qt`            \
+
+	sudo systemctl enable gdm
 
 	# Not using power switching
 	# read this wiki[^1] about power management with acpi call for more information
 	# [^1]: https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options#configuration-4--acpi_call
 
-	package_install \
-		gwe                   `# nvidia GPU overclocking https://gitlab.com/leinardi/gwe` \
-		optimus-manager       `# https://github.com/Askannz/optimus-manager`              \
-		optimus-manager-qt    `# https://github.com/Shatur/optimus-manager-qt`            \
-		gdm-prime             `# `                                                        \
+	# todo: auto start optimus on login
+	# todo: optimus set nvidia as default
 
-	# launch on startup
-	# nvidia as default
+	# todo: add profile (Performance: 250, 650)
 
-	# Performance: 265, 750
-	# Energy Saver: -155, -365
+	# install gnome apps
+	package_install                                                                           \
+		baobab                         `# Disk usage analysis`                                \
+		cheese                         `# take photo/video with camera`                       \
+		dconf-editor                   `# GUI for dconf`                                      \
+		eog                            `# photo viewer`                                       \
+		evince                         `# document viewer`                                    \
+		file-roller                    `# compress & decompress files/directories`            \
+		gnome-calculator               `# scientific calculator`                              \
+		gnome-characters               `# Search for emojis, special characters, and symbols` \
+		gnome-clocks                   `# For multiple clocks for different time zones`       \
+		gnome-control-center           `# gnome settings`                                     \
+		gnome-disk-utility             `# gnome disk management`                              \
+		gnome-font-viewer              `# Managing fonts`                                     \
+		gnome-keyring                  `# passwords and keys`                                 \
+		gnome-logs                     `# GUI for systemd journal`                            \
+		gnome-screenshot               `# take screenshots`                                   \
+		gnome-system-monitor           `# show system processes`                              \
+		gnome-terminal                 `# terminal app`                                       \
+		gnome-terminal-transparency    `# Transparent gnome terminal`                         \
+		gnome-tweaks                   `# shows extra settings`                               \
+		gnome-usage                    `# System resource statistics`                         \
+		gpick                          `# color picker`                                       \
+		nautilus                       `# gnome file manager`                                 \
+		sushi                          `# quick previewer for nautilus`                       \
 
+	POST_INSTALL+=("gnome: reboot")
+}
+
+setup_gnome_extensions() {
 	package_install                                                                               \
-		baobab                             `# Disk usage analysis`                                \
-		gpick                              `# color picker`                                       \
-		dconf-editor                       `# GUI for dconf`                                      \
-		gnome-characters                   `# Search for emojis, special characters, and symbols` \
-		gnome-clocks                       `# For multiple clocks for different time zones`       \
-		gnome-font-viewer                  `# Managing fonts`                                     \
-		gnome-logs                         `# GUI for system journal`                             \
-		gnome-usage                        `# System resource statistics`                         \
-		gnome-terminal-transparency        `# Transparent gnome terminal`                         \
 		gnome-shell-extension-installer    `# Installation of gnome extensions from command line` \
 
 	# install gnome extensions
@@ -369,8 +394,8 @@ setup_gnome() {
 	log "Restarting gnome shell"
 	killall -3 gnome-shell
 
+	# todo: automate extension enabling
 	POST_INSTALL+=("gnome: enable gnome extensions")
-	POST_INSTALL+=("gnome: reboot")
 }
 
 setup_go() {
@@ -666,33 +691,34 @@ fi
 setup_essentials
 
 options=(
-	"4k_video_downloader"          ""  off
-	"blender"                      ""  off
-	"brave"                        ""  off
-	"discord"                      ""  off
-	"dotnet"                       ""  off
-	"fonts"                        ""  off
-	"gimp"                         ""  off
-	"gnome"                        ""  off
-	"go"                           ""  off
-	"godot"                        ""  off
-	"gsmartcontrol"                ""  off
-	"inkscape"                     ""  off
-	"kdenlive"                     ""  off
-	"keyboard"                     ""  off
-	"obs"                          ""  off
-	"osu"                          ""  off
-	"piper"                        ""  off
-	"rust"                         ""  off
-	"torrential"                   ""  off
-	"unity"                        ""  off
-	"vim"                          ""  off
-	"virtualbox"                   ""  off
-	"vlc"                          ""  off
-	"vscode"                       ""  off
-	"wireshark"                    ""  off
-	"wps_office"                   ""  off
-	"zoom"                         ""  off
+	"4k_video_downloader"    ""    off
+	"blender"                ""    off
+	"brave"                  ""    off
+	"discord"                ""    off
+	"dotnet"                 ""    off
+	"fonts"                  ""    off
+	"gimp"                   ""    off
+	"gnome"                  ""    off
+	"gnome_extensions"       ""    off
+	"go"                     ""    off
+	"godot"                  ""    off
+	"gsmartcontrol"          ""    off
+	"inkscape"               ""    off
+	"kdenlive"               ""    off
+	"keyboard"               ""    off
+	"obs"                    ""    off
+	"osu"                    ""    off
+	"piper"                  ""    off
+	"rust"                   ""    off
+	"torrential"             ""    off
+	"unity"                  ""    off
+	"vim"                    ""    off
+	"virtualbox"             ""    off
+	"vlc"                    ""    off
+	"vscode"                 ""    off
+	"wireshark"              ""    off
+	"wps_office"             ""    off
+	"zoom"                   ""    off
 )
 
 # choose from available options
@@ -717,6 +743,8 @@ for choice in $choices; do
 			setup_gimp;;
 		"gnome")
 			setup_gnome;;
+		"gnome_extensions")
+			setup_gnome_extensions;;
 		"go")
 			setup_go;;
 		"godot")
