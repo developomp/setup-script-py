@@ -168,13 +168,6 @@ setup_cpu_undervolting() {
 	sudo systemctl enable intel-undervolt
 }
 
-setup_cpupower_gui() {
-	package_install                       \
-		cpupower-gui `# CPU overclocking` \
-
-	# todo: add performance profile
-}
-
 setup_dconf() {
 	:
 	# must be done after install to make sure configs are not overwritten
@@ -400,6 +393,7 @@ setup_gnome_extensions() {
 		355     # status-area-horizontal-spacing
 		841     # freon
 		906     # sound-output-device-chooser
+		945     # cpu-power-manager
 		2741    # remove-alttab-delay-v2
 		4000    # babar
 
@@ -714,7 +708,6 @@ options=(
 	"blender"				""	off
 	"brave"					""	off
 	"cpu_undervolting"		""	off
-	"cpupower_gui"			""	off
 	"discord"				""	off
 	"dotnet"				""	off
 	"fonts"					""	off
@@ -762,7 +755,6 @@ for choice in $choices; do
 		"blender")				setup_blender;;
 		"brave")				setup_brave;;
 		"cpu_undervolting")		setup_cpu_undervolting;;
-		"cpupower_gui")			setup_cpupower_gui;;
 		"discord")				setup_discord;;
 		"dotnet")				setup_dotnet;;
 		"fonts")				setup_fonts;;
