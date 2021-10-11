@@ -719,6 +719,7 @@ options=(
 	"fonts"					""	off
 	"gimp"					""	off
 	"gnome"					""	off
+	"gnome_apps"			""	off
 	"gnome_extensions"		""	off
 	"go"					""	off
 	"godot"					""	off
@@ -748,64 +749,36 @@ choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices; do
 	case "$choice" in
-		"4k_video_downloader")
-			setup_4kvideodownloader;;
-		"blender")
-			setup_blender;;
-		"brave")
-			setup_brave;;
-		"discord")
-			setup_discord;;
-		"dotnet")
-			setup_dotnet;;
-		"fonts")
-			setup_fonts;;
-		"gimp")
-			setup_gimp;;
-		"gnome")
-			setup_gnome;;
-		"gnome_extensions")
-			setup_gnome_extensions;;
-		"go")
-			setup_go;;
-		"godot")
-			setup_godot;;
-		"gsmartcontrol")
-			setup_gsmartcontrol;;
-		"inkscape")
-			setup_inkscape;;
-		"kdenlive")
-			setup_kdenlive;;
-		"keyboard")
-			setup_keyboard;;
-		"obs")
-			setup_obs;;
-		"osu")
-			setup_osu;;
-		"piper")
-			setup_piper;;
-		"rust")
-			setup_rust;;
-		"torrential")
-			setup_torrential;;
-		"unity")
-			setup_unity;;
-		"vim")
-			setup_vim;;
-		"virtualbox")
-			setup_virtualbox;;
-		"vlc")
-			setup_vlc;;
-		"vscode")
-			setup_vscode;;
-		"wireshark")
-			setup_wireshark;;
-		"wps_office")
-			setup_wps_office;;
-		"zoom")
-			setup_zoom;;
-		"zsh")
-			setup_zsh;;
+		"4k_video_downloader")	setup_4kvideodownloader;;
+		"blender")				setup_blender;;
+		"brave")				setup_brave;;
+		"discord")				setup_discord;;
+		"dotnet")				setup_dotnet;;
+		"fonts")				setup_fonts;;
+		"gimp")					setup_gimp;;
+		"gnome")				setup_gnome;;
+		"gnome_apps")			setup_gnome_apps;;
+		"gnome_extensions")		setup_gnome_extensions;;
+		"go")					setup_go;;
+		"godot")				setup_godot;;
+		"gsmartcontrol")		setup_gsmartcontrol;;
+		"inkscape")				setup_inkscape;;
+		"kdenlive")				setup_kdenlive;;
+		"keyboard")				setup_keyboard;;
+		"obs")					setup_obs;;
+		"osu")					setup_osu;;
+		"piper")				setup_piper;;
+		"rust")					setup_rust;;
+		"torrential")			setup_torrential;;
+		"unity")				setup_unity;;
+		"vim")					setup_vim;;
+		"virtualbox")			setup_virtualbox;;
+		"vlc")					setup_vlc;;
+		"vscode")				setup_vscode;;
+		"wireshark")			setup_wireshark;;
+		"wps_office")			setup_wps_office;;
+		"zoom")					setup_zoom;;
+		"zsh")					setup_zsh;;
 	esac
 done
 
