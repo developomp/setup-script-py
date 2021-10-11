@@ -69,8 +69,8 @@ install_paru() {
 	smart_mkdir "$SCRIPT_DIR/tmp"
 	cd "$SCRIPT_DIR/tmp" || (error "failed to move to $SCRIPT_DIR/tmp for paru installation" && exit 1)
 	sudo pacman --noconfirm -S --needed base-devel git
-	git clone https://aur.archlinux.org/paru.git
-	cd ./paru && makepkg -si
+	git clone https://aur.archlinux.org/paru-bin.git
+	cd ./paru-bin && makepkg -si
 
 	cd "$SCRIPT_DIR" || (error "failed to come back to working directory after installing paru" && exit 1)
 }
@@ -329,6 +329,8 @@ setup_gnome() {
 		nvidia                    `# nvidia GPU support`                                      \
 		optimus-manager-qt        `# https://github.com/Shatur/optimus-manager-qt`            \
 
+	setup_gnome_apps
+
 	sudo systemctl enable gdm
 
 	# Not using power switching
@@ -340,6 +342,10 @@ setup_gnome() {
 
 	# todo: add profile (Performance: 250, 650)
 
+	POST_INSTALL+=("gnome: reboot")
+}
+
+setup_gnome_apps() {
 	# install gnome apps
 	package_install                                                                           \
 		baobab                         `# Disk usage analysis`                                \
@@ -366,7 +372,6 @@ setup_gnome() {
 		nautilus                       `# gnome file manager`                                 \
 		sushi                          `# quick previewer for nautilus`                       \
 
-	POST_INSTALL+=("gnome: reboot")
 }
 
 setup_gnome_extensions() {
@@ -579,7 +584,7 @@ setup_vscode() {
 }
 
 setup_vim() {
-	package_install \
+	package_install                        \
 		vim-plug    `# vim plugin manager` \
 
 	cp .vimrc ~/.vimrc
@@ -625,6 +630,9 @@ setup_zoom() {
 }
 
 setup_zsh() {
+	package_install \
+		zsh \
+
 	if [[ ! -d /home/pomp/.oh-my-zsh ]]; then
 		# install oh my zsh
 		sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -639,7 +647,7 @@ setup_zsh() {
 }
 
 
-# #################### [ INSTALL ] ####################
+# #################### [ ETC ] ####################
 
 backup() {
 	TIMESTAMP=$(date +%s)
@@ -681,6 +689,9 @@ cd "$SCRIPT_DIR" || {
 	exit
 }
 
+# remove temporary files and folders that was not removed from previous run
+rm -rf "./tmp"
+
 echo
 warn_no_label "NOTICE"
 warn_no_label "  This is not a completely hands off process."
@@ -692,6 +703,7 @@ if [[ $REPLY =~ ^[^Yy]$ ]]; then
 	echo
 	exit
 fi
+echo
 
 
 # #################### [ MAIN ] ####################
