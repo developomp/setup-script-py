@@ -107,12 +107,6 @@ setup_4kvideodownloader() {
 
 }
 
-setup_alacarte() {
-	package_install \
-		alacarte    \
-
-}
-
 setup_blender() {
 	package_install \
 		blender     \
@@ -358,29 +352,30 @@ EOL
 
 setup_gnome_apps() {
 	# install gnome apps
-	package_install                                                                           \
-		baobab                         `# Disk usage analysis`                                \
-		cheese                         `# take photo/video with camera`                       \
-		dconf-editor                   `# GUI for dconf`                                      \
-		eog                            `# photo viewer`                                       \
-		evince                         `# document viewer`                                    \
-		file-roller                    `# compress & decompress files/directories`            \
-		gnome-calculator               `# scientific calculator`                              \
-		gnome-characters               `# Search for emojis, special characters, and symbols` \
-		gnome-clocks                   `# For multiple clocks for different time zones`       \
-		gnome-control-center           `# gnome settings`                                     \
-		gnome-disk-utility             `# gnome disk management`                              \
-		gnome-font-viewer              `# Managing fonts`                                     \
-		gnome-keyring                  `# passwords and keys`                                 \
-		gnome-logs                     `# GUI for systemd journal`                            \
-		gnome-screenshot               `# take screenshots`                                   \
-		gnome-system-monitor           `# show system processes`                              \
-		gnome-terminal-transparency    `# Transparent gnome terminal`                         \
-		gnome-tweaks                   `# shows extra settings`                               \
-		gnome-usage                    `# System resource statistics`                         \
-		gpick                          `# color picker`                                       \
-		nautilus                       `# gnome file manager`                                 \
-		sushi                          `# quick previewer for nautilus`                       \
+	package_install																				\
+		alacarte						`# application menu editor`								\
+		baobab							`# Disk usage analysis`									\
+		cheese							`# take photo/video with camera`						\
+		dconf-editor					`# GUI for dconf`										\
+		eog								`# photo viewer`										\
+		evince							`# document viewer`										\
+		file-roller						`# compress & decompress files/directories`				\
+		gnome-calculator				`# scientific calculator`								\
+		gnome-characters				`# Search for emojis, special characters, and symbols`	\
+		gnome-clocks					`# For multiple clocks for different time zones`		\
+		gnome-control-center			`# gnome settings`										\
+		gnome-disk-utility				`# gnome disk management`								\
+		gnome-font-viewer				`# Managing fonts`										\
+		gnome-keyring					`# passwords and keys`									\
+		gnome-logs						`# GUI for systemd journal`								\
+		gnome-screenshot				`# take screenshots`									\
+		gnome-system-monitor			`# show system processes`								\
+		gnome-terminal-transparency		`# Transparent gnome terminal`							\
+		gnome-tweaks					`# shows extra settings`								\
+		gnome-usage						`# System resource statistics`							\
+		gpick							`# color picker`										\
+		nautilus						`# gnome file manager`									\
+		sushi							`# quick previewer for nautilus`						\
 
 }
 
