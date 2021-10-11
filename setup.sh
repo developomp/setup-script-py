@@ -97,6 +97,10 @@ remove_unused() {
 
 }
 
+load_dconf() {
+	dconf load / < "./dconf/$1"
+}
+
 
 # #################### [ DEFINING SETUP ] ####################
 # Define instructions on how to setup applications & stuff
@@ -140,8 +144,8 @@ setup_cpu_undervolting() {
 	# Undervolting for intel CPU
 	# https://wiki.archlinux.org/index.php/Undervolting_CPU
 
-	package_install																		\
-		intel-undervolt		`# CPU undervolting for less heat and power consumption`	\
+	package_install                                                                  \
+		intel-undervolt    `# CPU undervolting for less heat and power consumption` \
 
 	config_file=/etc/intel-undervolt.conf
 
@@ -318,11 +322,17 @@ setup_gnome() {
 	# install gnome
 	package_install                                                                           \
 		gdm-prime                 `# gdm patched for optimus laptops`                         \
+		xcursor-breeze            `# cursor design`                                           \
+		matcha-gtk-theme          `# gtk theme`                                               \
+		papirus-icon-theme        `# icon theme`                                              \
 		gnome-backgrounds         `# wallpapers and shit`                                     \
 		gnome-shell-extensions    `# gnome shell extensions`                                  \
 		gwe                       `# nvidia GPU overclocking https://gitlab.com/leinardi/gwe` \
 		nvidia                    `# nvidia GPU support`                                      \
 		optimus-manager-qt        `# https://github.com/Shatur/optimus-manager-qt`            \
+
+	load_dconf "gnome-desktop-interface.conf"
+	sudo systemctl enable gdm
 
 	setup_gnome_apps
 
@@ -336,8 +346,6 @@ XDG_MUSIC_DIR="/media/pomp/data/Music"
 XDG_PICTURES_DIR="/media/pomp/data/Pictures"
 XDG_VIDEOS_DIR="/media/pomp/data/Videos"
 EOL
-
-	sudo systemctl enable gdm
 
 	# Not using power switching
 	# read this wiki[^1] about power management with acpi call for more information
@@ -353,57 +361,62 @@ EOL
 
 setup_gnome_apps() {
 	# install gnome apps
-	package_install																				\
-		alacarte						`# application menu editor`								\
-		baobab							`# Disk usage analysis`									\
-		cheese							`# take photo/video with camera`						\
-		dconf-editor					`# GUI for dconf`										\
-		eog								`# photo viewer`										\
-		evince							`# document viewer`										\
-		file-roller						`# compress & decompress files/directories`				\
-		gnome-calculator				`# scientific calculator`								\
-		gnome-characters				`# Search for emojis, special characters, and symbols`	\
-		gnome-clocks					`# For multiple clocks for different time zones`		\
-		gnome-control-center			`# gnome settings`										\
-		gnome-disk-utility				`# gnome disk management`								\
-		gnome-font-viewer				`# Managing fonts`										\
-		gnome-keyring					`# passwords and keys`									\
-		gnome-logs						`# GUI for systemd journal`								\
-		gnome-screenshot				`# take screenshots`									\
-		gnome-system-monitor			`# show system processes`								\
-		gnome-terminal-transparency		`# Transparent gnome terminal`							\
-		gnome-tweaks					`# shows extra settings`								\
-		gnome-usage						`# System resource statistics`							\
-		gpick							`# color picker`										\
-		nautilus						`# gnome file manager`									\
-		sushi							`# quick previewer for nautilus`						\
+	package_install                                                                              \
+		alacarte                       `# application menu editor`                               \
+		baobab                         `# Disk usage analysis`                                   \
+		cheese                         `# take photo/video with camera`                          \
+		dconf-editor                   `# GUI for dconf`                                         \
+		eog                            `# photo viewer`                                          \
+		evince                         `# document viewer`                                       \
+		file-roller                    `# compress & decompress files/directories`               \
+		gnome-calculator               `# scientific calculator`                                 \
+		gnome-characters               `# Search for emojis, special characters, and symbols`    \
+		gnome-clocks                   `# For multiple clocks for different time zones`          \
+		gnome-control-center           `# gnome settings`                                        \
+		gnome-disk-utility             `# gnome disk management`                                 \
+		gnome-font-viewer              `# Managing fonts`                                        \
+		gnome-keyring                  `# passwords and keys`                                    \
+		gnome-logs                     `# GUI for systemd journal`                               \
+		gnome-screenshot               `# take screenshots`                                      \
+		gnome-system-monitor           `# show system processes`                                 \
+		gnome-terminal-transparency    `# Transparent gnome terminal`                            \
+		gnome-tweaks                   `# shows extra settings`                                  \
+		gnome-usage                    `# System resource statistics`                            \
+		gpick                          `# color picker`                                          \
+		nautilus                       `# gnome file manager`                                    \
+		sushi                          `# quick previewer for nautilus`                          \
 
 }
 
 setup_gnome_extensions() {
 	package_install                                                                               \
 		gnome-shell-extension-installer    `# Installation of gnome extensions from command line` \
+		gnome-shell-extension-pop-shell    `# for window tiling`                                  \
 
 	# install gnome extensions
 	log "installing gnome extensions"
 	extension_ids=(
 		36      # lock-keys
-		131     # touchpad-indicator
 		355     # status-area-horizontal-spacing
-		800     # remove-dropdown-arrows
 		841     # freon
 		906     # sound-output-device-chooser
 		2741    # remove-alttab-delay-v2
 		4000    # babar
+
+		# waiting for gnome 40 support
+		# 131     # touchpad-indicator
+		# 800     # remove-dropdown-arrows
 	)
 
 	for extension_id in "${extension_ids[@]}"; do
-		log "- https://extensions.gnome.org/extension/$extension_id"
-		gnome-shell-extension-installer --yes $extension_id
+		log "installing: https://extensions.gnome.org/extension/$extension_id"
+		gnome-shell-extension-installer $extension_id
 	done
 
-	log "Restarting gnome shell"
-	killall -3 gnome-shell
+	load_dconf "extension-barbar.conf"
+	load_dconf "extension-freon.conf"
+	load_dconf "extension-lockkeys.conf"
+	load_dconf "extension-status-area-horizontal-spacing.conf"
 
 	# todo: automate extension enabling
 	POST_INSTALL+=("gnome: enable gnome extensions")
@@ -476,7 +489,7 @@ setup_mystiq() {
 setup_node() {
 	package_install                               \
 		nodejs    `# Javascript on servers!`      \
-        yarn      `# better node package manager` \
+		yarn      `# better node package manager` \
 
 	# https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 	# export PATH="$(yarn global bin):$PATH"
@@ -748,7 +761,7 @@ for choice in $choices; do
 		"4k_video_downloader")	setup_4kvideodownloader;;
 		"blender")				setup_blender;;
 		"brave")				setup_brave;;
-		"cpu_undervolting"		setup_cpu_undervolting;;
+		"cpu_undervolting")		setup_cpu_undervolting;;
 		"cpupower_gui")			setup_cpupower_gui;;
 		"discord")				setup_discord;;
 		"dotnet")				setup_dotnet;;
@@ -765,22 +778,22 @@ for choice in $choices; do
 		"keyboard")				setup_keyboard;;
 		"obs")					setup_obs;;
 		"osu")					setup_osu;;
-		"middleclickpaste"		setup_middleclickpaste;;
-		"mystiq"				setup_mystiq;;
-		"node"					setup_node;;
-		"pamac"					setup_pamac;;
-		"pavucontrol"			setup_pavucontrol;;
-		"pip"					setup_pip;;
+		"middleclickpaste")		setup_middleclickpaste;;
+		"mystiq")				setup_mystiq;;
+		"node")					setup_node;;
+		"pamac")				setup_pamac;;
+		"pavucontrol")			setup_pavucontrol;;
+		"pip")					setup_pip;;
 		"piper")				setup_piper;;
 		"rust")					setup_rust;;
-		"timeshift"				setup_timeshift;;
+		"timeshift")			setup_timeshift;;
 		"torrential")			setup_torrential;;
 		"unity")				setup_unity;;
 		"vim")					setup_vim;;
 		"virtualbox")			setup_virtualbox;;
 		"vlc")					setup_vlc;;
 		"vscode")				setup_vscode;;
-		"wine"					setup_wine;;
+		"wine")					setup_wine;;
 		"wireshark")			setup_wireshark;;
 		"wps_office")			setup_wps_office;;
 		"zoom")					setup_zoom;;
