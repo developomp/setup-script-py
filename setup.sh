@@ -364,7 +364,6 @@ setup_gnome_apps() {
 		gnome-logs                     `# GUI for systemd journal`                            \
 		gnome-screenshot               `# take screenshots`                                   \
 		gnome-system-monitor           `# show system processes`                              \
-		gnome-terminal                 `# terminal app`                                       \
 		gnome-terminal-transparency    `# Transparent gnome terminal`                         \
 		gnome-tweaks                   `# shows extra settings`                               \
 		gnome-usage                    `# System resource statistics`                         \
