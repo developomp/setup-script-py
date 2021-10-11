@@ -140,8 +140,8 @@ setup_cpu_undervolting() {
 	# Undervolting for intel CPU
 	# https://wiki.archlinux.org/index.php/Undervolting_CPU
 
-	package_install                                                                 \
-		intel-undervolt    `# CPU undervolting for less heat and power consumption` \
+	package_install																		\
+		intel-undervolt		`# CPU undervolting for less heat and power consumption`	\
 
 	config_file=/etc/intel-undervolt.conf
 
@@ -168,6 +168,7 @@ setup_cpupower_gui() {
 	package_install                       \
 		cpupower-gui `# CPU overclocking` \
 
+	# todo: add performance profile
 }
 
 setup_dconf() {
@@ -239,9 +240,10 @@ setup_discord() {
 	done
 }
 
-setup_dns() {
-	:
-	# https://1.1.1.1
+setup_dotnet() {
+	package_install                \
+		dotnet-sdk    `# .NET SDK` \
+
 }
 
 setup_fonts() {
@@ -299,10 +301,9 @@ setup_fonts() {
 
 }
 
-setup_dotnet() {
-	package_install                \
-		dotnet-sdk    `# .NET SDK` \
-
+setup_dns() {
+	:
+	# https://1.1.1.1
 }
 
 setup_gimp() {
@@ -432,13 +433,6 @@ setup_inkscape() {
 
 }
 
-setup_java() {
-	package_install                                                              \
-		jdk                                `# oracle java development kit`       \
-		jdk8                               `# oracle JDK but license is not gay` \
-
-}
-
 setup_kdenlive() {
 	package_install                            \
 		kdenlive-appimage    `# video editing` \
@@ -452,17 +446,18 @@ setup_keyboard() {
 	POST_INSTALL+=("keyboard: setup korean keyboard and reboot")
 }
 
-setup_local() {
-	# setup for applications in second drive
-	# add to application menu
+setup_obs() {
+	package_install                                                                                     \
+		obs-plugin-input-overlay-bin    `# show inputs in OBS`                                          \
+		obs-studio-browser              `# screen recording and streaming with browser overlay support` \
 
-	if [[ -d /media/pomp/data/programs/dnSpy-net-win32 ]]; then
-		log "dnspy"
-	fi
+}
 
-	if [[ -d /media/pomp/data/programs/tor-browser ]]; then
-		log "tor browser"
-	fi
+setup_osu() {
+	package_install                     \
+		osu              `# osu stable` \
+		osu-lazer-bin    `# osu lazer`  \
+
 }
 
 setup_middleclickpaste() {
@@ -485,20 +480,6 @@ setup_node() {
 
 	# https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 	# export PATH="$(yarn global bin):$PATH"
-}
-
-setup_obs() {
-	package_install                                                                                     \
-		obs-plugin-input-overlay-bin    `# show inputs in OBS`                                          \
-		obs-studio-browser              `# screen recording and streaming with browser overlay support` \
-
-}
-
-setup_osu() {
-	package_install                     \
-		osu              `# osu stable` \
-		osu-lazer-bin    `# osu lazer`  \
-
 }
 
 setup_pacman() {
@@ -555,6 +536,13 @@ setup_unity() {
 	POST_INSTALL+=("Change editors location")
 }
 
+setup_vim() {
+	package_install                        \
+		vim-plug    `# vim plugin manager` \
+
+	cp .vimrc ~/.vimrc
+}
+
 setup_virtualbox() {
 	# https://wiki.archlinux.org/title/VirtualBox
 
@@ -568,24 +556,17 @@ setup_virtualbox() {
 	sudo modprobe vboxdrv
 }
 
+setup_vlc() {
+	package_install                                                       \
+		vlc-luajit    `# media player compatible with obs-studio-browser` \
+
+}
+
 setup_vscode() {
 	package_install                                            \
 		visual-studio-code-bin    `# proprietary vscode build` \
 
 	POST_INSTALL+=("vscode: log in")
-}
-
-setup_vim() {
-	package_install                        \
-		vim-plug    `# vim plugin manager` \
-
-	cp .vimrc ~/.vimrc
-}
-
-setup_vlc() {
-	package_install                                                       \
-		vlc-luajit    `# media player compatible with obs-studio-browser` \
-
 }
 
 setup_wine() {
@@ -657,6 +638,19 @@ backup() {
 	fi
 }
 
+setup_local() {
+	# setup for applications in second drive
+	# add to application menu
+
+	if [[ -d /media/pomp/data/programs/dnSpy-net-win32 ]]; then
+		log "dnspy"
+	fi
+
+	if [[ -d /media/pomp/data/programs/tor-browser ]]; then
+		log "tor browser"
+	fi
+}
+
 
 # #################### [ TEST ] ####################
 # Tests if script is ready to be executed
@@ -706,6 +700,8 @@ options=(
 	"4k_video_downloader"	""	off
 	"blender"				""	off
 	"brave"					""	off
+	"cpu_undervolting"		""	off
+	"cpupower_gui"			""	off
 	"discord"				""	off
 	"dotnet"				""	off
 	"fonts"					""	off
@@ -721,14 +717,22 @@ options=(
 	"keyboard"				""	off
 	"obs"					""	off
 	"osu"					""	off
+	"middleclickpaste"		""	off
+	"mystiq"				""	off
+	"node"					""	off
+	"pamac"					""	off
+	"pavucontrol"			""	off
+	"pip"					""	off
 	"piper"					""	off
 	"rust"					""	off
+	"timeshift"				""	off
 	"torrential"			""	off
 	"unity"					""	off
 	"vim"					""	off
 	"virtualbox"			""	off
 	"vlc"					""	off
 	"vscode"				""	off
+	"wine"					""	off
 	"wireshark"				""	off
 	"wps_office"			""	off
 	"zoom"					""	off
@@ -744,6 +748,8 @@ for choice in $choices; do
 		"4k_video_downloader")	setup_4kvideodownloader;;
 		"blender")				setup_blender;;
 		"brave")				setup_brave;;
+		"cpu_undervolting"		setup_cpu_undervolting;;
+		"cpupower_gui")			setup_cpupower_gui;;
 		"discord")				setup_discord;;
 		"dotnet")				setup_dotnet;;
 		"fonts")				setup_fonts;;
@@ -759,14 +765,22 @@ for choice in $choices; do
 		"keyboard")				setup_keyboard;;
 		"obs")					setup_obs;;
 		"osu")					setup_osu;;
+		"middleclickpaste"		setup_middleclickpaste;;
+		"mystiq"				setup_mystiq;;
+		"node"					setup_node;;
+		"pamac"					setup_pamac;;
+		"pavucontrol"			setup_pavucontrol;;
+		"pip"					setup_pip;;
 		"piper")				setup_piper;;
 		"rust")					setup_rust;;
+		"timeshift"				setup_timeshift;;
 		"torrential")			setup_torrential;;
 		"unity")				setup_unity;;
 		"vim")					setup_vim;;
 		"virtualbox")			setup_virtualbox;;
 		"vlc")					setup_vlc;;
 		"vscode")				setup_vscode;;
+		"wine"					setup_wine;;
 		"wireshark")			setup_wireshark;;
 		"wps_office")			setup_wps_office;;
 		"zoom")					setup_zoom;;
