@@ -371,8 +371,8 @@ setup_gnome_apps() {
 
 setup_gnome_extensions() {
 	package_install                                                                               \
-		gnome-shell-extension-installer    `# Installation of gnome extensions from command line` \
-		gnome-shell-extension-pop-shell    `# for window tiling`                                  \
+		gnome-shell-extension-installer        `# Installation of gnome extensions from command line` \
+		gnome-shell-extension-pop-shell-git    `# for window tiling`                                  \
 
 	# install gnome extensions
 	log "installing gnome extensions"
