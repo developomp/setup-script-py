@@ -21,8 +21,17 @@ Result:<br />
 
    - latest arch linux version as of writing: `2021.10.01`
 
-2. Execute the [`setup.sh`](./setup.sh) script.
-3. Profit.
+2. Create user `pomp`
+
+   ```bash
+   useradd -m pomp # create user and home directory
+   EDITOR=vim visudo # edit sudoers file with vim
+   # enable wheel group
+   usermod -aG wheel pomp # give pomp sudo access
+   ```
+
+3. Execute the [`setup.sh`](./setup.sh) script.
+4. Profit.
 
 Full setup could easily take more than a hour depending on the internet speed.
 
