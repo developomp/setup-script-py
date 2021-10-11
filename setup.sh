@@ -582,7 +582,7 @@ setup_vim() {
 	package_install \
 		vim-plug    `# vim plugin manager` \
 
-	# todo: install plugins
+	cp .vimrc ~/.vimrc
 }
 
 setup_vlc() {
@@ -628,6 +628,7 @@ setup_zsh() {
 	package_install                                         \
 		oh-my-zsh-git              `# for zsh plugins`      \
 		zsh-theme-powerlevel10k    `# make zsh look pretty` \
+
 }
 
 
@@ -691,34 +692,35 @@ fi
 setup_essentials
 
 options=(
-	"4k_video_downloader"    ""    off
-	"blender"                ""    off
-	"brave"                  ""    off
-	"discord"                ""    off
-	"dotnet"                 ""    off
-	"fonts"                  ""    off
-	"gimp"                   ""    off
-	"gnome"                  ""    off
-	"gnome_extensions"       ""    off
-	"go"                     ""    off
-	"godot"                  ""    off
-	"gsmartcontrol"          ""    off
-	"inkscape"               ""    off
-	"kdenlive"               ""    off
-	"keyboard"               ""    off
-	"obs"                    ""    off
-	"osu"                    ""    off
-	"piper"                  ""    off
-	"rust"                   ""    off
-	"torrential"             ""    off
-	"unity"                  ""    off
-	"vim"                    ""    off
-	"virtualbox"             ""    off
-	"vlc"                    ""    off
-	"vscode"                 ""    off
-	"wireshark"              ""    off
-	"wps_office"             ""    off
-	"zoom"                   ""    off
+	"4k_video_downloader"	""	off
+	"blender"				""	off
+	"brave"					""	off
+	"discord"				""	off
+	"dotnet"				""	off
+	"fonts"					""	off
+	"gimp"					""	off
+	"gnome"					""	off
+	"gnome_extensions"		""	off
+	"go"					""	off
+	"godot"					""	off
+	"gsmartcontrol"			""	off
+	"inkscape"				""	off
+	"kdenlive"				""	off
+	"keyboard"				""	off
+	"obs"					""	off
+	"osu"					""	off
+	"piper"					""	off
+	"rust"					""	off
+	"torrential"			""	off
+	"unity"					""	off
+	"vim"					""	off
+	"virtualbox"			""	off
+	"vlc"					""	off
+	"vscode"				""	off
+	"wireshark"				""	off
+	"wps_office"			""	off
+	"zoom"					""	off
+	"zsh"					""	off
 )
 
 # choose from available options
@@ -783,6 +785,8 @@ for choice in $choices; do
 			setup_wps_office;;
 		"zoom")
 			setup_zoom;;
+		"zsh")
+			setup_zsh;;
 	esac
 done
 
