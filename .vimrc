@@ -1,28 +1,26 @@
 " auto-install vim-plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
-call plug#begin('~/.config/nvim/autoload/plugged')
+call plug#begin('~/.vim/plugged')
 
-    Plug 'jiangmiao/auto-pairs'						"auto pairs for '(' '[' '{'
-    Plug 'joshdick/onedark.vim'						"theme
-    Plug 'preservim/nerdtree'						"File explorer
+	Plug 'jiangmiao/auto-pairs'						"auto pairs for '(' '[' '{'
+	Plug 'joshdick/onedark.vim'						"theme
+	Plug 'preservim/nerdtree'						"File explorer
 	Plug 'Xuyuanp/nerdtree-git-plugin'				"nerdtree git status
 	Plug 'Xuyuanp/nerdtree-git-plugin'				"show git status in nerdtree
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'	"file/folder icons in nerdtree
-    Plug 'ryanoasis/vim-devicons'					"icons
-    Plug 'vim-airline/vim-airline'					"bottom bar
-    Plug 'sheerun/vim-polyglot'						"common langauge syntax
+	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'	"file/folder icons in nerdtree
+	Plug 'ryanoasis/vim-devicons'					"icons
+	Plug 'vim-airline/vim-airline'					"bottom bar
+	Plug 'sheerun/vim-polyglot'						"common langauge syntax
 	Plug 'prettier/vim-prettier'					"code formatting
 
-    Plug 'KabbAmine/vCoolor.vim'					"color picker
-    Plug 'lilydjwg/colorizer'						"highlight color values (rgb, hex, etc.)
+	Plug 'KabbAmine/vCoolor.vim'					"color picker
+	Plug 'lilydjwg/colorizer'						"highlight color values (rgb, hex, etc.)
 
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }	"Golang support
+	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }	"Golang support
 
 call plug#end()
 
@@ -53,7 +51,7 @@ set formatoptions-=o				"same as line above
 
 " Keybinds
 
-map			<c-s>		:w<CR>|			    	"save on ctrl+s
+map			<c-s>		:w<CR>|					"save on ctrl+s
 map			<a-Up>		:m-2<CR>gv=gv|			"move selected lines up one line
 map			<a-Down>	:m'>+<CR>gv=gv|			"move selected lines down one line
 nnoremap	<C-t>		:NERDTreeToggle<CR>|	"toggle nerdtree visibility
