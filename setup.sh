@@ -393,8 +393,8 @@ setup_gnome_extensions() {
 		355     # status-area-horizontal-spacing
 		841     # freon
 		906     # sound-output-device-chooser
-		945     # cpu-power-manager
 		2741    # remove-alttab-delay-v2
+		2890    # tray-icons-reloaded
 		4000    # babar
 
 		# waiting for gnome 40 support
@@ -705,6 +705,7 @@ setup_essentials
 
 options=(
 	"4k_video_downloader"	""	off
+	"backup"				""	off
 	"blender"				""	off
 	"brave"					""	off
 	"cpu_undervolting"		""	off
@@ -754,6 +755,7 @@ for choice in $choices; do
 		"4k_video_downloader")	setup_4kvideodownloader;;
 		"blender")				setup_blender;;
 		"brave")				setup_brave;;
+		"backup")				backup;;
 		"cpu_undervolting")		setup_cpu_undervolting;;
 		"discord")				setup_discord;;
 		"dotnet")				setup_dotnet;;
