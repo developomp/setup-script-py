@@ -331,6 +331,17 @@ setup_gnome() {
 
 	setup_gnome_apps
 
+	cat > ~/.config/user-dirs.dirs <<EOL
+XDG_DESKTOP_DIR="$HOME/Desktop"
+XDG_DOWNLOAD_DIR="/media/pomp/data/Downloads"
+XDG_TEMPLATES_DIR="$HOME/Templates"
+XDG_PUBLICSHARE_DIR="$HOME/Public"
+XDG_DOCUMENTS_DIR="/media/pomp/data/Documents"
+XDG_MUSIC_DIR="/media/pomp/data/Music"
+XDG_PICTURES_DIR="/media/pomp/data/Pictures"
+XDG_VIDEOS_DIR="/media/pomp/data/Videos"
+EOL
+
 	sudo systemctl enable gdm
 
 	# Not using power switching
@@ -547,19 +558,6 @@ setup_unity() {
 		unityhub    `# game engine` \
 
 	POST_INSTALL+=("Change editors location")
-}
-
-setup_user_directories() {
-	cat > ~/.config/user-dirs.dirs <<EOL
-XDG_DESKTOP_DIR="$HOME/Desktop"
-XDG_DOWNLOAD_DIR="/media/pomp/data/Downloads"
-XDG_TEMPLATES_DIR="$HOME/Templates"
-XDG_PUBLICSHARE_DIR="$HOME/Public"
-XDG_DOCUMENTS_DIR="/media/pomp/data/Documents"
-XDG_MUSIC_DIR="/media/pomp/data/Music"
-XDG_PICTURES_DIR="/media/pomp/data/Pictures"
-XDG_VIDEOS_DIR="/media/pomp/data/Videos"
-EOL
 }
 
 setup_virtualbox() {
