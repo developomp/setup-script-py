@@ -117,8 +117,8 @@ setup_brave() {
 }
 
 setup_conky() {
-	# enable on startup
-	# copy conky files
+	cp ./.conky ~/.conky
+	cp ./autostart/conky.desktop ~/.config/autostart/conky.desktop
 
 	package_install                              \
 		conky                                    \
