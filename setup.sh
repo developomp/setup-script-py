@@ -314,6 +314,7 @@ setup_gnome() {
 
 	load_dconf "gnome-desktop-interface.conf"
 	sudo systemctl enable gdm
+	sudo systemctl enable optimus-manager
 
 	setup_gnome_apps
 
@@ -449,9 +450,10 @@ setup_obs() {
 }
 
 setup_osu() {
+	# todo: enable multilib
+
 	package_install                     \
 		osu              `# osu stable` \
-		osu-lazer-bin    `# osu lazer`  \
 
 }
 
