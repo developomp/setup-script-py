@@ -77,14 +77,6 @@ setup_essentials() {
 	fi
 }
 
-remove_unused() {
-	# unused packages from https://gitlab.archlinux.org/archlinux/archiso/-/blob/master/configs/releng/packages.x86_64
-
-	package_remove \
-		irssi \
-
-}
-
 load_dconf() {
 	dconf load / < "./dconf/$1"
 }
