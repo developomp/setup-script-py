@@ -513,6 +513,12 @@ setup_rust() {
 
 }
 
+setup_steam() {
+	package_install \
+		steam \
+
+}
+
 setup_timeshift() {
 	package_install                                \
 		timeshift    `# backup and restore system` \
@@ -721,6 +727,7 @@ options=(
 	"pip"					""	off
 	"piper"					""	off
 	"rust"					""	off
+	"steam"					""	off
 	"timeshift"				""	off
 	"torrential"			""	off
 	"unity"					""	off
@@ -769,6 +776,7 @@ for choice in $choices; do
 		"pip")					setup_pip;;
 		"piper")				setup_piper;;
 		"rust")					setup_rust;;
+		"steam")				setup_steam;;
 		"timeshift")			setup_timeshift;;
 		"torrential")			setup_torrential;;
 		"unity")				setup_unity;;
