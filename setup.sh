@@ -363,7 +363,6 @@ setup_gnome_apps() {
 		gnome-system-monitor           `# show system processes`                                 \
 		gnome-terminal-transparency    `# Transparent gnome terminal`                            \
 		gnome-tweaks                   `# shows extra settings`                                  \
-		gnome-usage                    `# System resource statistics`                            \
 		gpick                          `# color picker`                                          \
 		nautilus                       `# gnome file manager`                                    \
 		sushi                          `# quick previewer for nautilus`                          \
