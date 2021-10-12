@@ -280,9 +280,11 @@ setup_fonts() {
 	# cleanup
 	rm -rf $fonts_directory
 
-	package_install                                    \
-		noto-fonts-emoji                               \
-		nerd-fonts-noto-sans-mono    `# Terminal font` \
+	package_install                                         \
+		noto-fonts-emoji                                    \
+		nerd-fonts-noto-sans-mono         `# Terminal font` \
+		adobe-source-han-sans-kr-fonts    `# Korean font`   \
+		ttf-baekmuk                       `# Korean font`   \
 
 }
 
