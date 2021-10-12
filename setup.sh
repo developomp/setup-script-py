@@ -117,8 +117,8 @@ setup_brave() {
 }
 
 setup_conky() {
-	cp ./.conky ~/.conky
-	cp ./autostart/conky.desktop ~/.config/autostart/conky.desktop
+	cp ./.conky/ ~
+	cp ./autostart/conky.desktop ~/.config/autostart
 
 	package_install                              \
 		conky                                    \
@@ -314,6 +314,8 @@ setup_gnome() {
 		nvidia                    `# nvidia GPU support`                                      \
 		optimus-manager-qt        `# https://github.com/Shatur/optimus-manager-qt`            \
 
+	# prevent rootless X
+	cp ./Xwrapper.config /etc/X11/
 	load_dconf "gnome-desktop-interface.conf"
 	sudo systemctl enable gdm
 	sudo systemctl enable optimus-manager
@@ -542,7 +544,7 @@ setup_vim() {
 	package_install                        \
 		vim-plug    `# vim plugin manager` \
 
-	cp .vimrc ~/.vimrc
+	cp .vimrc ~
 }
 
 setup_virtualbox() {
@@ -615,7 +617,7 @@ setup_zsh() {
 		# install powerlevel10k theme
 		git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-		cp .zshrc ~/.zshrc
+		cp .zshrc ~
 	else
 		log "zsh already configured. Skipping."
 	fi
