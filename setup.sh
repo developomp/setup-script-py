@@ -412,6 +412,18 @@ setup_godot() {
 
 }
 
+setup_grub() {
+	package_install	                       \
+		grub-theme-vimix    `# grub theme` \
+
+	# /etc/default/grub
+	# GRUB_TIMEOUT=3
+	# GRUB_TIMEOUT_STYLE=hidden
+	# GRUB_THEME="/boot/grub/themes/Vimix/theme.txt"
+
+	sudo grub-mkconfig -o /boot/grub/grub.cfg
+}
+
 setup_gsmartcontrol() {
 	package_install                              \
 		gsmartcontrol    `# disk health checker` \
