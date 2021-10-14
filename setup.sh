@@ -480,6 +480,7 @@ setup_mystiq() {
 setup_node() {
 	package_install                               \
 		nodejs    `# Javascript on servers!`      \
+		npm       `# node package manager`        \
 		yarn      `# better node package manager` \
 
 	# https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
