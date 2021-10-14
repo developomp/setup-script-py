@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ryanoasis/vim-devicons'					"icons
 	Plug 'vim-airline/vim-airline'					"bottom bar
 	Plug 'sheerun/vim-polyglot'						"common langauge syntax
-	Plug 'prettier/vim-prettier'					"code formatting
+	Plug 'prettier/sbdchd/neoformat'				"code formatting
 
 	Plug 'KabbAmine/vCoolor.vim'					"color picker
 	Plug 'lilydjwg/colorizer'						"highlight color values (rgb, hex, etc.)
@@ -23,6 +23,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }	"Golang support
 
 call plug#end()
+
+" auto format on save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
 
 " Configuration
 
