@@ -291,6 +291,15 @@ setup_gimp() {
 
 }
 
+setup_git() {
+	package_install \
+		git \
+
+	git config --global user.email "developomp@gmail.com"
+	git config --global user.name "developomp"
+	git config pull.rebase false
+}
+
 setup_gnome() {
 	# gnome, nvidia driver, and optimus manager
 
@@ -724,6 +733,7 @@ options=(
 	"dotnet"				""	off
 	"fonts"					""	off
 	"gimp"					""	off
+	"git"					""	off
 	"gnome"					""	off
 	"gnome_apps"			""	off
 	"gnome_extensions"		""	off
@@ -773,6 +783,7 @@ for choice in $choices; do
 		"dotnet")				setup_dotnet;;
 		"fonts")				setup_fonts;;
 		"gimp")					setup_gimp;;
+		"git")					setuo_git;;
 		"gnome")				setup_gnome;;
 		"gnome_apps")			setup_gnome_apps;;
 		"gnome_extensions")		setup_gnome_extensions;;
