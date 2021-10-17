@@ -99,7 +99,7 @@ setup_blender() {
 
 setup_brave() {
 	package_install        \
-		brave-beta-browser \
+		brave-bin          \
 
 	# settings: DNS https cloudflare
 	POST_INSTALL+=(
@@ -158,11 +158,11 @@ setup_discord() {
 	# assumes that plugins are located in ~/.config/BetterDiscord/plugins
 
 	package_install                                            \
-		discord                                                \
+		discord-canary                                         \
 		betterdiscordctl-git    `# BetterDiscord installer`    \
 		discord-overlay-git     `# Discord voice chat overlay` \
 
-	betterdiscordctl install
+	betterdiscordctl -f canary install
 
 	BD_PLUGINS=(
 		134    # https://betterdiscord.app/plugin/Avatar%20Hover
@@ -627,6 +627,9 @@ setup_zsh() {
 
 		# install powerlevel10k theme
 		git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+		# install syntax highlighter
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 		cp .zshrc ~
 	else
