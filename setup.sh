@@ -297,7 +297,7 @@ setup_git() {
 
 	git config --global user.email "developomp@gmail.com"
 	git config --global user.name "developomp"
-	git config pull.rebase false
+	git config --global pull.rebase false
 }
 
 setup_gnome() {
