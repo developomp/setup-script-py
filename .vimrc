@@ -10,12 +10,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'joshdick/onedark.vim'						"theme
 	Plug 'preservim/nerdtree'						"File explorer
 	Plug 'Xuyuanp/nerdtree-git-plugin'				"nerdtree git status
-	Plug 'Xuyuanp/nerdtree-git-plugin'				"show git status in nerdtree
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'	"file/folder icons in nerdtree
 	Plug 'ryanoasis/vim-devicons'					"icons
 	Plug 'vim-airline/vim-airline'					"bottom bar
 	Plug 'sheerun/vim-polyglot'						"common langauge syntax
-	Plug 'prettier/sbdchd/neoformat'				"code formatting
+	Plug 'sbdchd/neoformat'							"code formatting
+	Plug 'godlygeek/tabular'						"text alignment
+	Plug 'airblade/vim-gitgutter'					"show git diff
 
 	Plug 'KabbAmine/vCoolor.vim'					"color picker
 	Plug 'lilydjwg/colorizer'						"highlight color values (rgb, hex, etc.)
@@ -54,8 +55,9 @@ noh									"clear highlight when search pattern is empty
 set formatoptions-=c				"don't extend comment to new line
 set formatoptions-=r				"same as line above
 set formatoptions-=o				"same as line above
+let NERDTreeShowHidden=1			"Show hidden files in NERDTree
 
-" Keybinds
+"Keybinds
 
 map			<c-s>		:w<CR>|					"save on ctrl+s
 map			<a-Up>		:m-2<CR>gv=gv|			"move selected lines up one line
