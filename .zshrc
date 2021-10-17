@@ -6,7 +6,7 @@ plugins=(
   zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
-export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="$PATH:$HOME/.yarn/bin:$HOME/.local/bin"
 
 export EDITOR=vim
 export VISUAL=vim
