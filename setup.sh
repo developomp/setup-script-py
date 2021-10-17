@@ -226,6 +226,13 @@ setup_dotnet() {
 setup_fonts() {
 	log "installing fonts"
 
+	package_install                                                     \
+		wget                              `# for downloading zip files` \
+		noto-fonts-emoji                                                \
+		nerd-fonts-noto-sans-mono         `# Terminal font`             \
+		adobe-source-han-sans-kr-fonts    `# Korean font`               \
+		ttf-baekmuk                       `# Korean font`               \
+
 	# path to temporarily save font related files
 	fonts_directory="$SCRIPT_DIR/tmp/fonts"
 
@@ -235,6 +242,7 @@ setup_fonts() {
 		"Comfortaa"
 		"Nanum Gothic"
 		"Source Code Pro"
+		"Varela Round"
 	)
 
 	# create fonts directory if it does not exist
@@ -271,13 +279,6 @@ setup_fonts() {
 
 	# cleanup
 	rm -rf $fonts_directory
-
-	package_install                                         \
-		noto-fonts-emoji                                    \
-		nerd-fonts-noto-sans-mono         `# Terminal font` \
-		adobe-source-han-sans-kr-fonts    `# Korean font`   \
-		ttf-baekmuk                       `# Korean font`   \
-
 }
 
 setup_dns() {
