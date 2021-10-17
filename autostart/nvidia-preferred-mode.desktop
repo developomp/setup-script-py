@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=nvidia=preferred-mode
+Exec=sh /home/pomp/.nvidia-preferred-mode.sh
+StartupNotify=false
+Terminal=false

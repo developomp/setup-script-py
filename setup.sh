@@ -315,11 +315,16 @@ setup_gnome() {
 		nvidia                    `# nvidia GPU support`                                      \
 		optimus-manager-qt        `# https://github.com/Shatur/optimus-manager-qt`            \
 
+	sudo systemctl enable gdm
+	sudo systemctl enable optimus-manager
+
 	# prevent rootless X
 	cp ./Xwrapper.config /etc/X11/
 	load_dconf "gnome-desktop-interface.conf"
-	sudo systemctl enable gdm
-	sudo systemctl enable optimus-manager
+
+	# set nvidia preferred mode on login
+	cp ./.nvidia-preferred-mode.sh ~
+	cp ./autostart/nvidia-preferred-mode.desktop ~/.config/autostart
 
 	setup_gnome_apps
 
