@@ -619,10 +619,9 @@ setup_wireshark() {
 	POST_INSTALL+=("wireshark: reboot")
 }
 
-setup_wps_office() {
-	package_install                             \
-		wps-office       `# MS office but free` \
-		ttf-wps-fonts    `# WPS office fonts`   \
+setup_onlyoffice() {
+	package_install                              \
+		onlyoffice-bin    `# MS office but free` \
 
 }
 
@@ -769,7 +768,7 @@ options=(
 	"vscode"				""	off
 	"wine"					""	off
 	"wireshark"				""	off
-	"wps_office"			""	off
+	"onlyoffice"			""	off
 	"zoom"					""	off
 	"zsh"					""	off
 )
@@ -819,7 +818,7 @@ for choice in $choices; do
 		"vscode")				setup_vscode;;
 		"wine")					setup_wine;;
 		"wireshark")			setup_wireshark;;
-		"wps_office")			setup_wps_office;;
+		"onlyoffice")			setup_onlyoffice;;
 		"zoom")					setup_zoom;;
 		"zsh")					setup_zsh;;
 	esac
