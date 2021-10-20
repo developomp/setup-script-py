@@ -381,7 +381,7 @@ setup_gnome_apps() {
 }
 
 setup_gnome_extensions() {
-	package_install                                                                               \
+	package_install                                                                                   \
 		gnome-shell-extension-installer        `# Installation of gnome extensions from command line` \
 		gnome-shell-extension-pop-shell-git    `# for window tiling`                                  \
 
@@ -392,8 +392,10 @@ setup_gnome_extensions() {
 		355     # status-area-horizontal-spacing
 		841     # freon
 		906     # sound-output-device-chooser
+		1082    # cpufreq
 		2741    # remove-alttab-delay-v2
 		2890    # tray-icons-reloaded
+		3193    # blur-my-shell
 		4000    # babar
 
 		# waiting for gnome 40 support
@@ -538,7 +540,9 @@ setup_piper() {
 setup_rust() {
 	package_install \
 		rust \
+		rustup \
 
+	rustup install stable
 }
 
 setup_steam() {
