@@ -328,6 +328,7 @@ setup_gnome() {
 	cp ./autostart/nvidia-preferred-mode.desktop ~/.config/autostart
 
 	setup_gnome_apps
+	setup_hyper
 
 	cat > ~/.config/user-dirs.dirs <<EOL
 XDG_DESKTOP_DIR="$HOME/Desktop"
@@ -372,7 +373,6 @@ setup_gnome_apps() {
 		gnome-logs                     `# GUI for systemd journal`                               \
 		gnome-screenshot               `# take screenshots`                                      \
 		gnome-system-monitor           `# show system processes`                                 \
-		gnome-terminal-transparency    `# Transparent gnome terminal`                            \
 		gnome-tweaks                   `# shows extra settings`                                  \
 		gpick                          `# color picker`                                          \
 		nautilus                       `# gnome file manager`                                    \
@@ -445,6 +445,13 @@ setup_gsmartcontrol() {
 	package_install                              \
 		gsmartcontrol    `# disk health checker` \
 
+}
+
+setup_hyper() {
+	package_install	\
+		hyper-bin \
+
+	cp .hyper.js ~
 }
 
 setup_inkscape() {
@@ -749,6 +756,7 @@ options=(
 	"go"					""	off
 	"godot"					""	off
 	"gsmartcontrol"			""	off
+	"hyper"					""	off
 	"inkscape"				""	off
 	"kdenlive"				""	off
 	"keyboard"				""	off
@@ -799,6 +807,7 @@ for choice in $choices; do
 		"go")					setup_go;;
 		"godot")				setup_godot;;
 		"gsmartcontrol")		setup_gsmartcontrol;;
+		"hyper")				setup_hyper;;
 		"inkscape")				setup_inkscape;;
 		"kdenlive")				setup_kdenlive;;
 		"keyboard")				setup_keyboard;;
