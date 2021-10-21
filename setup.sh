@@ -286,6 +286,12 @@ setup_dns() {
 	# https://1.1.1.1
 }
 
+setup_geogebra() {
+	package_install \
+		geogebra \
+
+}
+
 setup_gimp() {
 	package_install                    \
 		gimp    `# photoshop but FOSS` \
@@ -748,6 +754,7 @@ options=(
 	"discord"				""	off
 	"dotnet"				""	off
 	"fonts"					""	off
+	"geogebra"				""	off
 	"gimp"					""	off
 	"git"					""	off
 	"gnome"					""	off
@@ -799,6 +806,7 @@ for choice in $choices; do
 		"discord")				setup_discord;;
 		"dotnet")				setup_dotnet;;
 		"fonts")				setup_fonts;;
+		"geogebra")				setup_geogebra;;
 		"gimp")					setup_gimp;;
 		"git")					setuo_git;;
 		"gnome")				setup_gnome;;
