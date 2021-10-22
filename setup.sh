@@ -158,11 +158,9 @@ setup_discord() {
 	# assumes that plugins are located in ~/.config/BetterDiscord/plugins
 
 	package_install                                            \
-		discord-canary                                         \
+		discord                                                \
 		betterdiscordctl-git    `# BetterDiscord installer`    \
 		discord-overlay-git     `# Discord voice chat overlay` \
-
-	betterdiscordctl -f canary install
 
 	BD_PLUGINS=(
 		134    # https://betterdiscord.app/plugin/Avatar%20Hover
@@ -215,6 +213,8 @@ setup_discord() {
 		log "installing $BD_PLUGIN_URL"
 		wget --content-disposition --no-clobber -P ~/.config/BetterDiscord/plugins "$BD_PLUGIN_URL"
 	done
+
+	POST_INSTALL+=("discord: run betterdiscordctl install")
 }
 
 setup_dotnet() {
