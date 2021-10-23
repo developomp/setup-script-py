@@ -109,4 +109,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 ## Future
 
-1TB hard drive for backup + redundancy
+- 1TB hard drive for backup + redundancy
+- Switch to wayland
+  - Fix: 120Hz monitor not working on wayland
+  - Wait: https://github.com/NVIDIA/nvidia-settings/issues/69
