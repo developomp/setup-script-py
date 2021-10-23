@@ -398,6 +398,7 @@ setup_gnome_extensions() {
 		355     # status-area-horizontal-spacing
 		841     # freon
 		906     # sound-output-device-chooser
+		1078    # twitchlive-panel
 		1082    # cpufreq
 		2741    # remove-alttab-delay-v2
 		2890    # tray-icons-reloaded
@@ -549,6 +550,12 @@ setup_rust() {
 		rustup \
 
 	rustup install stable
+}
+
+setup_shfmt() {
+	package_install \
+		shfmt \
+
 }
 
 setup_steam() {
@@ -769,6 +776,7 @@ options=(
 	"pip"					""	off
 	"piper"					""	off
 	"rust"					""	off
+	"shfmt"					""	off
 	"steam"					""	off
 	"timeshift"				""	off
 	"torrential"			""	off
@@ -820,6 +828,7 @@ for choice in $choices; do
 		"pip")					setup_pip;;
 		"piper")				setup_piper;;
 		"rust")					setup_rust;;
+		"shfmt")				setup_shfmt;;
 		"steam")				setup_steam;;
 		"timeshift")			setup_timeshift;;
 		"torrential")			setup_torrential;;
