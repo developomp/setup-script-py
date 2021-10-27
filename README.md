@@ -4,7 +4,7 @@
 
 ---
 
-[![LICENSE: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](./LICENSE)
+[![LICENSE: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](./LICENSE) [![FORMATTER: SHFMT](https://img.shields.io/badge/formatter-shfmt-darkgrey?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format)
 
 ## Purpose
 
