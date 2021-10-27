@@ -525,11 +525,6 @@ setup_keyboard() {
 	POST_INSTALL+=("keyboard: setup korean keyboard and reboot")
 }
 
-setup_marktext() {
-	package_install \
-		marktext-bin
-}
-
 setup_middleclickpaste() {
 	# prevents middle click paste
 	package_install \
@@ -854,7 +849,6 @@ options=(
 	"keyboard" "" off
 	"obs" "" off
 	"osu" "" off
-	"marktext" "" off
 	"middleclickpaste" "" off
 	"mystiq" "" off
 	"node" "" off
@@ -907,7 +901,6 @@ for choice in $choices; do
 	"keyboard") setup_keyboard ;;
 	"obs") setup_obs ;;
 	"osu") setup_osu ;;
-	"marktext") setup_marktext ;;
 	"middleclickpaste") setup_middleclickpaste ;;
 	"mystiq") setup_mystiq ;;
 	"node") setup_node ;;
