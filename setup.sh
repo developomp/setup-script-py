@@ -88,13 +88,11 @@ load_dconf() {
 setup_4kvideodownloader() {
 	package_install       \
 		4kvideodownloader \
-
 }
 
 setup_blender() {
 	package_install \
 		blender     \
-
 }
 
 setup_brave() {
@@ -112,20 +110,21 @@ setup_conky() {
 	cp ./.conky/ ~
 	cp ./autostart/conky.desktop ~/.config/autostart
 
+	# vnstat: network traffic statistics
 	package_install                              \
 		conky                                    \
-		vnstat    `# network traffic statistics` \
+		vnstat     \
 
 	sudo systemctl enable vnstat
 	sudo systemctl start vnstat
 }
 
 setup_cpu_undervolting() {
-	# Undervolting for intel CPU
+	# intel CPU undervolting for less heat and power consumption
 	# https://wiki.archlinux.org/index.php/Undervolting_CPU
 
 	package_install                                                                  \
-		intel-undervolt    `# CPU undervolting for less heat and power consumption` \
+		intel-undervolt     \
 
 	config_file=/etc/intel-undervolt.conf
 
@@ -157,10 +156,13 @@ setup_dconf() {
 setup_discord() {
 	# assumes that plugins are located in ~/.config/BetterDiscord/plugins
 
+	# betterdiscordctl-git: BetterDiscord installer
+	# discord-overlay-git:  Discord voice chat overlay
+
 	package_install                                            \
 		discord                                                \
-		betterdiscordctl-git    `# BetterDiscord installer`    \
-		discord-overlay-git     `# Discord voice chat overlay` \
+		betterdiscordctl-git        \
+		discord-overlay-git      \
 
 	BD_PLUGINS=(
 		134    # https://betterdiscord.app/plugin/Avatar%20Hover
@@ -219,19 +221,23 @@ setup_discord() {
 
 setup_dotnet() {
 	package_install                \
-		dotnet-sdk    `# .NET SDK` \
-
+		dotnet-sdk     \
 }
 
 setup_fonts() {
 	log "installing fonts"
 
+	# wget:                           For downloading zip files
+	# nerd-fonts-noto-sans-mono:      Terminal font
+	# adobe-source-han-sans-kr-fonts: Korean font
+	# ttf-baekmuk:                    Korean font
+
 	package_install                                                     \
-		wget                              `# for downloading zip files` \
+		wget                               \
 		noto-fonts-emoji                                                \
-		nerd-fonts-noto-sans-mono         `# Terminal font`             \
-		adobe-source-han-sans-kr-fonts    `# Korean font`               \
-		ttf-baekmuk                       `# Korean font`               \
+		nerd-fonts-noto-sans-mono                      \
+		adobe-source-han-sans-kr-fonts                   \
+		ttf-baekmuk                                      \
 
 	# path to temporarily save font related files
 	fonts_directory="$SCRIPT_DIR/tmp/fonts"
@@ -289,13 +295,13 @@ setup_dns() {
 setup_geogebra() {
 	package_install \
 		geogebra \
-
 }
 
 setup_gimp() {
-	package_install                    \
-		gimp    `# photoshop but FOSS` \
+	# photoshop but FOSS
 
+	package_install                    \
+		gimp     \
 }
 
 setup_git() {
@@ -305,14 +311,24 @@ setup_git() {
 	git config --global user.email "developomp@gmail.com"
 	git config --global user.name "developomp"
 	git config --global pull.rebase false
+	git config --global init.defaultBranch master
 }
 
 setup_gnome() {
 	# gnome, nvidia driver, and optimus manager
 
-	# install gnome
+	# gdm-prime:              gdm patched for optimus laptops
+	# xcursor-breeze:         cursor design
+	# matcha-gtk-theme:       gtk theme
+	# papirus-icon-theme:     icon theme
+	# gnome-backgrounds:      wallpapers and shit
+	# gnome-shell-extensions: gnome shell extensions
+	# gwe:                    nvidia GPU overclocking https://gitlab.com/leinardi/gwe
+	# nvidia:                 nvidia GPU support
+	# optimus-manager-qt:     https://github.com/Shatur/optimus-manager-qt
+
 	package_install                                                                           \
-		gdm-prime                 `# gdm patched for optimus laptops`                         \
+		gdm-prime                                          \
 		xcursor-breeze            `# cursor design`                                           \
 		matcha-gtk-theme          `# gtk theme`                                               \
 		papirus-icon-theme        `# icon theme`                                              \
@@ -473,19 +489,9 @@ setup_keyboard() {
 	POST_INSTALL+=("keyboard: setup korean keyboard and reboot")
 }
 
-setup_obs() {
-	package_install                                                                                     \
-		obs-plugin-input-overlay-bin    `# show inputs in OBS`                                          \
-		obs-studio-browser              `# screen recording and streaming with browser overlay support` \
-
-}
-
-setup_osu() {
-	# todo: enable multilib
-
-	package_install                     \
-		osu              `# osu stable` \
-
+setup_marktext() {
+	package_install \
+		marktext-bin
 }
 
 setup_middleclickpaste() {
@@ -509,6 +515,21 @@ setup_node() {
 
 	# https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 	# export PATH="$(yarn global bin):$PATH"
+}
+
+setup_obs() {
+	package_install                                                                                     \
+		obs-plugin-input-overlay-bin    `# show inputs in OBS`                                          \
+		obs-studio-browser              `# screen recording and streaming with browser overlay support` \
+
+}
+
+setup_osu() {
+	# todo: enable multilib
+
+	package_install                     \
+		osu              `# osu stable` \
+
 }
 
 setup_pacman() {
@@ -768,6 +789,7 @@ options=(
 	"keyboard"				""	off
 	"obs"					""	off
 	"osu"					""	off
+	"marktext"				""	off
 	"middleclickpaste"		""	off
 	"mystiq"				""	off
 	"node"					""	off
@@ -820,6 +842,7 @@ for choice in $choices; do
 		"keyboard")				setup_keyboard;;
 		"obs")					setup_obs;;
 		"osu")					setup_osu;;
+		"marktext")				setup_marktext;;
 		"middleclickpaste")		setup_middleclickpaste;;
 		"mystiq")				setup_mystiq;;
 		"node")					setup_node;;
