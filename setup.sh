@@ -225,6 +225,11 @@ setup_dotnet() {
 
 }
 
+setup_filezilla() {
+	package_install \
+		filezilla
+}
+
 setup_fonts() {
 	log "installing fonts"
 
@@ -834,6 +839,7 @@ options=(
 	"cpu_undervolting" "" off
 	"discord" "" off
 	"dotnet" "" off
+	"filezilla" "" off
 	"fonts" "" off
 	"geogebra" "" off
 	"gimp" "" off
@@ -886,6 +892,7 @@ for choice in $choices; do
 	"cpu_undervolting") setup_cpu_undervolting ;;
 	"discord") setup_discord ;;
 	"dotnet") setup_dotnet ;;
+	"filezilla") setup_filezilla ;;
 	"fonts") setup_fonts ;;
 	"geogebra") setup_geogebra ;;
 	"gimp") setup_gimp ;;
