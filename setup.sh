@@ -106,6 +106,11 @@ setup_brave() {
 	)
 }
 
+setup_btop() {
+	# top but better
+	package_install btop
+}
+
 setup_conky() {
 	cp ./.conky/ ~
 	cp ./autostart/conky.desktop ~/.config/autostart
@@ -722,12 +727,12 @@ setup_wireshark() {
 	POST_INSTALL+=("wireshark: reboot")
 }
 
-setup_onlyoffice() {
+setup_office() {
 	# MS office but free
 
 	package_install \
-		onlyoffice-bin
-
+		onlyoffice-bin \
+		freeoffice
 }
 
 setup_zoom() {
@@ -836,6 +841,7 @@ options=(
 	"backup" "" off
 	"blender" "" off
 	"brave" "" off
+	"btop" "" off
 	"cpu_undervolting" "" off
 	"discord" "" off
 	"dotnet" "" off
@@ -874,7 +880,7 @@ options=(
 	"vscode" "" off
 	"wine" "" off
 	"wireshark" "" off
-	"onlyoffice" "" off
+	"office" "" off
 	"zoom" "" off
 	"zsh" "" off
 )
@@ -888,6 +894,7 @@ for choice in $choices; do
 	"4k_video_downloader") setup_4kvideodownloader ;;
 	"blender") setup_blender ;;
 	"brave") setup_brave ;;
+	"btop") setup_btop ;;
 	"backup") backup ;;
 	"cpu_undervolting") setup_cpu_undervolting ;;
 	"discord") setup_discord ;;
@@ -927,7 +934,7 @@ for choice in $choices; do
 	"vscode") setup_vscode ;;
 	"wine") setup_wine ;;
 	"wireshark") setup_wireshark ;;
-	"onlyoffice") setup_onlyoffice ;;
+	"office") setup_onlyoffice ;;
 	"zoom") setup_zoom ;;
 	"zsh") setup_zsh ;;
 	esac
