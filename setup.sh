@@ -238,15 +238,19 @@ setup_filezilla() {
 setup_fonts() {
 	log "installing fonts"
 
-	# wget:                           For downloading zip files
-	# nerd-fonts-noto-sans-mono:      Terminal font
-	# adobe-source-han-sans-kr-fonts: Korean font
-	# ttf-baekmuk:                    Korean font
+	# wget:                             For downloading zip files
+	# noto-fonts-emoji:                 Emoji fonts
+	# nerd-fonts-noto-sans-mono:        Terminal font
+	# adobe-source-han-sans-otc-fonts:  OpenType font
+	# adobe-source-han-serif-otc-fonts: OpenType font
+	# ttf-baekmuk:                      Korean font
 
 	package_install \
 		wget \
 		noto-fonts-emoji \
 		nerd-fonts-noto-sans-mono \
+		adobe-source-han-sans-otc-fonts \
+		adobe-source-han-serif-otc-fonts \
 		adobe-source-han-sans-kr-fonts \
 		ttf-baekmuk
 
