@@ -454,11 +454,10 @@ setup_gnome_extensions() {
 	log "installing gnome extensions"
 	extension_ids=(
 		36   # lock-keys
-		355  # status-area-horizontal-spacing
 		841  # freon
 		906  # sound-output-device-chooser
+		945  # cpu-power-manager
 		1078 # twitchlive-panel
-		1082 # cpufreq
 		2741 # remove-alttab-delay-v2
 		2890 # tray-icons-reloaded
 		3193 # blur-my-shell
