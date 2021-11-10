@@ -523,6 +523,18 @@ setup_inkscape() {
 
 }
 
+setup_jdk() {
+	# jdk-openjdk:   latest jdk (17 as of writing)
+	# jdk8-openjdk:  jdk8
+	# jdk11-openjdk: jdk11
+
+	package_install \
+		jdk-openjdk \
+		jdk8-openjdk \
+		jdk11-openjdk
+
+}
+
 setup_kdenlive() {
 	# video editing
 	package_install \
@@ -860,6 +872,7 @@ options=(
 	"godot" "" off
 	"gsmartcontrol" "" off
 	"inkscape" "" off
+	"jdk" "" off
 	"kdenlive" "" off
 	"keyboard" "" off
 	"obs" "" off
@@ -914,6 +927,7 @@ for choice in $choices; do
 	"godot") setup_godot ;;
 	"gsmartcontrol") setup_gsmartcontrol ;;
 	"inkscape") setup_inkscape ;;
+	"jdk") setup_jdk ;;
 	"kdenlive") setup_kdenlive ;;
 	"keyboard") setup_keyboard ;;
 	"obs") setup_obs ;;
