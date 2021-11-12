@@ -89,6 +89,13 @@ setup_4kvideodownloader() {
 
 }
 
+setup_alacritty() {
+	package_install alacritty
+
+	mkdir ~/.config/alacritty/
+	cp alacritty.yml ~/.config/alacritty/alacritty.yml
+}
+
 setup_blender() {
 	package_install \
 		blender
@@ -367,6 +374,7 @@ setup_gnome() {
 	cp ./autostart/nvidia-preferred-mode.desktop ~/.config/autostart
 
 	setup_gnome_apps
+	setup_alacritty # so I have a terminal to work with when only gnome is installed
 
 	cat >~/.config/user-dirs.dirs <<EOL
 XDG_DESKTOP_DIR="$HOME/Desktop"
@@ -410,7 +418,6 @@ setup_gnome_apps() {
 	# gnome-logs:                  GUI for systemd journal
 	# gnome-screenshot:            take screenshots
 	# gnome-system-monitor:        show system processes
-	# gnome-terminal-transparency: Transparent gnome terminal
 	# gnome-tweaks:                shows extra settings
 	# gpick:                       color picker
 	# nautilus:                    gnome file manager
@@ -434,7 +441,6 @@ setup_gnome_apps() {
 		gnome-logs \
 		gnome-screenshot \
 		gnome-system-monitor \
-		gnome-terminal-transparency \
 		gnome-tweaks \
 		gpick \
 		nautilus \
@@ -853,6 +859,7 @@ setup_essentials
 
 options=(
 	"4k_video_downloader" "" off
+	"alacritty" "" off
 	"backup" "" off
 	"blender" "" off
 	"brave" "" off
@@ -908,6 +915,7 @@ clear
 for choice in $choices; do
 	case "$choice" in
 	"4k_video_downloader") setup_4kvideodownloader ;;
+	"alacritty") setup_alacritty ;;
 	"blender") setup_blender ;;
 	"brave") setup_brave ;;
 	"btop") setup_btop ;;
