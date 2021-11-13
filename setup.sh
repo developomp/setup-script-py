@@ -92,6 +92,7 @@ setup_4kvideodownloader() {
 setup_alacritty() {
 	package_install alacritty
 
+	rm -rf ~/.config/alacritty/
 	mkdir ~/.config/alacritty/
 	cp alacritty.yml ~/.config/alacritty/alacritty.yml
 }
