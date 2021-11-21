@@ -601,13 +601,9 @@ setup_obs() {
 }
 
 setup_osu() {
-	# osu! stable
-	# todo: enable multilib
-	# todo: change to lazer when it can give pp
-
 	package_install \
-		osu
-
+		osu \
+		osu-lazer-bin
 }
 
 setup_pacman() {
@@ -631,6 +627,7 @@ setup_pamac() {
 
 	# idk why but the permissions is set like this
 	sudo install -g root -o root -m u=rwx,g=rx,o=rx ./etc/pamac.conf /etc/pamac.conf
+	sudo install -g root -o root -m u=rw,g=r,o=r ./etc/pacman.conf /etc/pacman.conf
 }
 
 setup_pavucontrol() {
@@ -901,6 +898,7 @@ options=(
 	"mystiq" "" off
 	"node" "" off
 	"pavucontrol" "" off
+	"pamac" "" off
 	"pip" "" off
 	"piper" "" off
 	"rust" "" off
@@ -957,6 +955,7 @@ for choice in $choices; do
 	"mystiq") setup_mystiq ;;
 	"node") setup_node ;;
 	"pavucontrol") setup_pavucontrol ;;
+	"pamac") setup_pamac ;;
 	"pip") setup_pip ;;
 	"piper") setup_piper ;;
 	"rust") setup_rust ;;
