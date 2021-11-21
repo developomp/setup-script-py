@@ -97,7 +97,7 @@ setup_alacritty() {
 
 	rm -rf ~/.config/alacritty/
 	mkdir ~/.config/alacritty/
-	cp alacritty.yml ~/.config/alacritty/alacritty.yml
+	cp ./home/pomp/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 }
 
 setup_blender() {
@@ -381,11 +381,11 @@ setup_gnome() {
 	sudo systemctl enable optimus-manager
 
 	# prevent rootless X
-	cp ./Xwrapper.config /etc/X11/
+	cp ./etc/X11/Xwrapper.config /etc/X11/
 	load_dconf "gnome-desktop-interface.conf"
 
 	# set nvidia preferred mode on login
-	cp ./.nvidia-preferred-mode.sh ~
+	cp ./home/pomp/.nvidia-preferred-mode.sh ~
 	cp ./home/pomp/.config/autostart/nvidia-preferred-mode.desktop ~/.config/autostart
 
 	setup_gnome_apps
@@ -710,7 +710,7 @@ setup_vim() {
 	package_install \
 		vim-plug
 
-	cp .vimrc ~
+	cp ./home/pomp/.vimrc ~
 }
 
 setup_virtualbox() {
@@ -799,7 +799,7 @@ setup_zsh() {
 		# install syntax highlighter
 		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-		cp .zshrc ~
+		cp ./home/pomp/.zshrc ~
 	else
 		log "zsh already configured. Skipping."
 	fi
