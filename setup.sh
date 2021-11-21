@@ -628,6 +628,8 @@ setup_pamac() {
 	# idk why but the permissions is set like this
 	sudo install -g root -o root -m u=rwx,g=rx,o=rx ./etc/pamac.conf /etc/pamac.conf
 	sudo install -g root -o root -m u=rw,g=r,o=r ./etc/pacman.conf /etc/pacman.conf
+
+	sudo pacman -Syyuu
 }
 
 setup_pavucontrol() {
