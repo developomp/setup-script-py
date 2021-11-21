@@ -900,7 +900,6 @@ options=(
 	"middleclickpaste" "" off
 	"mystiq" "" off
 	"node" "" off
-	"pamac" "" off
 	"pavucontrol" "" off
 	"pip" "" off
 	"piper" "" off
@@ -957,7 +956,6 @@ for choice in $choices; do
 	"middleclickpaste") setup_middleclickpaste ;;
 	"mystiq") setup_mystiq ;;
 	"node") setup_node ;;
-	"pamac") setup_pamac ;;
 	"pavucontrol") setup_pavucontrol ;;
 	"pip") setup_pip ;;
 	"piper") setup_piper ;;
