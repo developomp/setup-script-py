@@ -11,7 +11,7 @@
 To provide myself materials (script, guide, and other files) for cases when I need to transfer to other machine or reinstall the OS.
 
 Result:<br />
-![result image](./result.png)
+![result image](./.repo/result.png)
 
 ## Instructions
 
@@ -36,10 +36,10 @@ Result:<br />
 Full setup could easily take more than a hour depending on the internet speed.
 
 Execution:<br />
-![Execution](./execution.png)
+![Execution](./.repo/execution.png)
 
 Selection Menu:<br />
-![Menu](./menu.png)
+![Menu](./.repo/menu.png)
 
 ## Hardware
 
