@@ -92,20 +92,26 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 ## Sources
 
-### Wallpaper 1
+### latest Wallpaper
 
-<img alt="wallpaper 1. Cozy cafe with large window" src="./wallpaper1.png" width="75%">
+<img alt="latest wallpaper" src="./wallpaper.png" width="75%">
+
+- made by [u/nullcriminal](https://www.reddit.com/r/unixporn/comments/b4dt3y) on reddit
+
+### 2nd Wallpaper
+
+<img alt="2nd wallpaper" src="./.repo/wallpaper2.png" width="75%">
+
+- image from [wallpaperaccess](https://wallpaperaccess.com/full/2752569.png)
+- the [image list](https://wallpaperaccess.com/simple-earth) I found it from
+
+### 1st Wallpaper
+
+<img alt="1st wallpaper" src="./.repo/wallpaper1.png" width="75%">
 
 - [a video](https://www.youtube.com/watch?v=QEWV6fiYaDU) from [Chillhop Music](https://www.youtube.com/channel/UCOxqgCwgOqC2lMqC5PYz_Dg)
 - Artwork by [Jeff Östberg](https://jeffostberg.se​)
 - Animation by [Geneviève Delacroix](http://www.genevievelacroix.com)
-
-### Wallpaper 2
-
-<img alt="wallpaper 2. An astronaut on moon looking at earth" src="./wallpaper2.png" width="75%">
-
-- image from [wallpaperaccess](https://wallpaperaccess.com/full/2752569.png)
-- the [image list](https://wallpaperaccess.com/simple-earth) I found it from
 
 ## Future
 
