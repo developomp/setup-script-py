@@ -63,6 +63,7 @@ package_remove() {
 }
 
 setup_essentials() {
+	setup_fstab
 	sudo pacman -S --needed base-devel wget
 
 	# install pamac if it does not exist
@@ -312,6 +313,15 @@ setup_fonts() {
 
 	# cleanup
 	rm -rf $fonts_directory
+}
+
+setup_fstab() {
+	if cat /etc/fstab | grep "/media/pomp/data" &>/dev/null; then
+		return
+	fi
+
+	echo "UUID=1cea13a5-ea19-4023-99dd-4bfd062a288c /media/pomp/data ext4 defaults 0 2" | sudo tee -a /etc/fstab >/dev/null
+	log "added /media/pomp/data to fstab"
 }
 
 setup_dns() {
@@ -881,6 +891,7 @@ options=(
 	"dotnet" "" off
 	"filezilla" "" off
 	"fonts" "" off
+	"fstab" "" off
 	"geogebra" "" off
 	"gimp" "" off
 	"git" "" off
@@ -938,6 +949,7 @@ for choice in $choices; do
 	"dotnet") setup_dotnet ;;
 	"filezilla") setup_filezilla ;;
 	"fonts") setup_fonts ;;
+	"fstab") setup_fstab ;;
 	"geogebra") setup_geogebra ;;
 	"gimp") setup_gimp ;;
 	"git") setup_git ;;
