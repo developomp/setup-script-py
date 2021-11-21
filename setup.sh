@@ -122,7 +122,7 @@ setup_btop() {
 }
 
 setup_conky() {
-	cp ./.conky/ ~
+	cp -r ./.conky/ ~
 	cp ./autostart/conky.desktop ~/.config/autostart
 
 	# vnstat: network traffic statistics
@@ -866,6 +866,7 @@ options=(
 	"blender" "" off
 	"brave" "" off
 	"btop" "" off
+	"conky" "" off
 	"cpu_undervolting" "" off
 	"discord" "" off
 	"dotnet" "" off
@@ -922,6 +923,7 @@ for choice in $choices; do
 	"brave") setup_brave ;;
 	"btop") setup_btop ;;
 	"backup") backup ;;
+	"conky") setup_conky ;;
 	"cpu_undervolting") setup_cpu_undervolting ;;
 	"discord") setup_discord ;;
 	"dotnet") setup_dotnet ;;
