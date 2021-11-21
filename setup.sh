@@ -63,6 +63,8 @@ package_remove() {
 }
 
 setup_essentials() {
+	sudo pacman -S --needed base-devel wget
+
 	# install pamac if it does not exist
 	if ! command -v pamac &>/dev/null; then
 		log "pamac was not installed already. Installing now..."
@@ -615,12 +617,20 @@ setup_pacman() {
 
 setup_pamac() {
 	smart_mkdir "$SCRIPT_DIR/tmp"
+
 	cd "$SCRIPT_DIR/tmp" || (error "failed to move to $SCRIPT_DIR/tmp for pamac installation" && exit 1)
 	sudo pacman --noconfirm -S --needed git
+	git clone https://aur.archlinux.org/libpamac-aur.git
+	cd ./libpamac-aur && makepkg -si
+
+	cd "$SCRIPT_DIR/tmp" || (error "failed to move to $SCRIPT_DIR/tmp for pamac installation" && exit 1)
 	git clone https://aur.archlinux.org/pamac-aur.git
 	cd ./pamac-aur && makepkg -si
 
 	cd "$SCRIPT_DIR" || (error "failed to come back to working directory after installing pamac" && exit 1)
+
+	# idk why but the permissions is set like this
+	sudo install -g root -o root -m u=rwx,g=rx,o=rx ./etc/pamac.conf /etc/pamac.conf
 }
 
 setup_pavucontrol() {
