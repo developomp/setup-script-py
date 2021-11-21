@@ -928,7 +928,7 @@ for choice in $choices; do
 	"fonts") setup_fonts ;;
 	"geogebra") setup_geogebra ;;
 	"gimp") setup_gimp ;;
-	"git") setuo_git ;;
+	"git") setup_git ;;
 	"gnome") setup_gnome ;;
 	"gnome_apps") setup_gnome_apps ;;
 	"gnome_extensions") setup_gnome_extensions ;;
@@ -960,7 +960,7 @@ for choice in $choices; do
 	"vscode") setup_vscode ;;
 	"wine") setup_wine ;;
 	"wireshark") setup_wireshark ;;
-	"office") setup_onlyoffice ;;
+	"office") setup_office ;;
 	"zoom") setup_zoom ;;
 	"zsh") setup_zsh ;;
 	esac
