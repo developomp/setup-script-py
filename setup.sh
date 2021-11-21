@@ -104,6 +104,8 @@ setup_blender() {
 }
 
 setup_brave() {
+	# brave://sync-internals/
+
 	package_install \
 		brave-bin
 
@@ -753,8 +755,7 @@ setup_office() {
 	# MS office but free
 
 	package_install \
-		onlyoffice-bin \
-		freeoffice
+		onlyoffice-bin
 }
 
 setup_zoom() {
