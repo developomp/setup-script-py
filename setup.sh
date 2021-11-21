@@ -89,7 +89,6 @@ load_dconf() {
 setup_4kvideodownloader() {
 	package_install \
 		4kvideodownloader
-
 }
 
 setup_alacritty() {
@@ -103,7 +102,6 @@ setup_alacritty() {
 setup_blender() {
 	package_install \
 		blender
-
 }
 
 setup_brave() {
@@ -240,7 +238,6 @@ setup_discord() {
 setup_dotnet() {
 	package_install \
 		dotnet-sdk
-
 }
 
 setup_filezilla() {
@@ -332,7 +329,6 @@ setup_dns() {
 setup_geogebra() {
 	package_install \
 		geogebra
-
 }
 
 setup_gimp() {
@@ -340,7 +336,6 @@ setup_gimp() {
 
 	package_install \
 		gimp
-
 }
 
 setup_git() {
@@ -460,7 +455,6 @@ setup_gnome_apps() {
 		gpick \
 		nautilus \
 		sushi
-
 }
 
 setup_gnome_extensions() {
@@ -507,14 +501,12 @@ setup_go() {
 	# programming language
 	package_install \
 		go
-
 }
 
 setup_godot() {
 	# game engine
 	package_install \
 		godot
-
 }
 
 setup_grub() {
@@ -534,14 +526,12 @@ setup_gsmartcontrol() {
 	# disk health checker
 	package_install \
 		gsmartcontrol
-
 }
 
 setup_inkscape() {
 	# adobe illustrator but FOSS
 	package_install \
 		inkscape
-
 }
 
 setup_jdk() {
@@ -553,14 +543,12 @@ setup_jdk() {
 		jdk-openjdk \
 		jdk8-openjdk \
 		jdk11-openjdk
-
 }
 
 setup_kdenlive() {
 	# video editing
 	package_install \
 		kdenlive-appimage
-
 }
 
 setup_keyboard() {
@@ -583,7 +571,6 @@ setup_mystiq() {
 	# video converter
 	package_install \
 		mystiq
-
 }
 
 setup_node() {
@@ -607,7 +594,6 @@ setup_obs() {
 	package_install \
 		obs-plugin-input-overlay-bin \
 		obs-studio-browser
-
 }
 
 setup_osu() {
@@ -646,21 +632,18 @@ setup_pavucontrol() {
 	# PulseAudio settings I use for redirecting desktop audio to microphone input
 	package_install \
 		pavucontrol
-
 }
 
 setup_pip() {
 	# package installer for python
 	package_install \
 		python-pip
-
 }
 
 setup_piper() {
 	# gaming mouse settings GUI
 	package_install \
 		piper
-
 }
 
 setup_rust() {
@@ -674,27 +657,23 @@ setup_rust() {
 setup_shfmt() {
 	package_install \
 		shfmt
-
 }
 
 setup_steam() {
 	package_install \
 		steam
-
 }
 
 setup_timeshift() {
 	# backup and restore system
 	package_install \
 		timeshift
-
 }
 
 setup_torrential() {
 	# torrent client
 	package_install \
 		torrential
-
 }
 
 setup_unity() {
@@ -731,7 +710,6 @@ setup_vlc() {
 
 	package_install \
 		vlc-luajit
-
 }
 
 setup_vscode() {
@@ -782,7 +760,6 @@ setup_zoom() {
 
 	package_install \
 		zoom
-
 }
 
 setup_zsh() {
