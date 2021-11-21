@@ -125,8 +125,8 @@ setup_btop() {
 }
 
 setup_conky() {
-	cp -r ./.conky/ ~
-	cp ./autostart/conky.desktop ~/.config/autostart
+	cp -r ./home/pomp/.conky/ ~
+	cp ./home/pomp/.config/autostart/conky.desktop ~/.config/autostart
 
 	# vnstat: network traffic statistics
 	package_install \
@@ -386,7 +386,7 @@ setup_gnome() {
 
 	# set nvidia preferred mode on login
 	cp ./.nvidia-preferred-mode.sh ~
-	cp ./autostart/nvidia-preferred-mode.desktop ~/.config/autostart
+	cp ./home/pomp/.config/autostart/nvidia-preferred-mode.desktop ~/.config/autostart
 
 	setup_gnome_apps
 	setup_alacritty # so I have a terminal to work with when only gnome is installed
