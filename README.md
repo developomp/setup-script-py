@@ -15,7 +15,10 @@ Result:<br />
 
 ## Instructions
 
-> **WARNING:** This script is written for my laptop ONLY.
+> **WARNING:**
+>
+> - This script is written for my laptop ONLY.
+> - The script assumes a clean installation (no unnecessary packages installed already).
 
 1. Install arch linux via [archfi](https://github.com/MatMoul/archfi).
 
