@@ -599,6 +599,8 @@ setup_osu() {
 	package_install \
 		osu \
 		osu-lazer-bin
+
+	ln -s ~/.local/share/osu ~/.osu
 }
 
 setup_pacman() {
