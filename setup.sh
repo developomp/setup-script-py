@@ -462,6 +462,7 @@ setup_gnome_extensions() {
 	# gnome-shell-extension-pop-shell-git: for window tiling
 
 	package_install \
+		chrome-gnome-shell \
 		gnome-shell-extension-installer \
 		gnome-shell-extension-pop-shell-git
 
