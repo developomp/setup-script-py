@@ -514,10 +514,9 @@ setup_grub() {
 	package_install \
 		grub-theme-vimix
 
-	# /etc/default/grub
-	# GRUB_TIMEOUT=3
-	# GRUB_TIMEOUT_STYLE=hidden
-	# GRUB_THEME="/boot/grub/themes/Vimix/theme.txt"
+	sudo sed -i '/GRUB_TIMEOUT=/c\GRUB_TIMEOUT=1' /etc/default/grub
+	sudo sed -i '/GRUB_TIMEOUT_STYLE=/c\GRUB_TIMEOUT_STYLE=hidden' /etc/default/grub
+	sudo sed -i '/GRUB_THEME=/c\GRUB_THEME="/boot/grub/themes/Vimix/theme.txt"' /etc/default/grub
 
 	sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
@@ -877,6 +876,7 @@ options=(
 	"gnome_extensions" "" off
 	"go" "" off
 	"godot" "" off
+	"grub" "" off
 	"gsmartcontrol" "" off
 	"inkscape" "" off
 	"jdk" "" off
@@ -935,6 +935,7 @@ for choice in $choices; do
 	"gnome_extensions") setup_gnome_extensions ;;
 	"go") setup_go ;;
 	"godot") setup_godot ;;
+	"grub") setup_grub ;;
 	"gsmartcontrol") setup_gsmartcontrol ;;
 	"inkscape") setup_inkscape ;;
 	"jdk") setup_jdk ;;
