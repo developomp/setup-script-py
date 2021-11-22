@@ -5,7 +5,9 @@ plugins=(
   zsh-interactive-cd
   zsh-syntax-highlighting
 )
+
 source $ZSH/oh-my-zsh.sh
+source /usr/share/nvm/init-nvm.sh
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

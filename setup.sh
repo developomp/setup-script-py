@@ -359,6 +359,7 @@ setup_gnome() {
 	# gnome-shell-extensions: gnome shell extensions
 	# gwe:                    nvidia GPU overclocking https://gitlab.com/leinardi/gwe
 	# nvidia:                 nvidia GPU support
+	# lib32-nvidia-utils      32bit nvidia driver utils
 	# optimus-manager-qt:     https://github.com/Shatur/optimus-manager-qt
 
 	package_install \
@@ -370,13 +371,14 @@ setup_gnome() {
 		gnome-shell-extensions \
 		gwe \
 		nvidia \
+		lib32-nvidia-utils \
 		optimus-manager-qt
 
 	sudo systemctl enable gdm
 	sudo systemctl enable optimus-manager
 
 	# prevent rootless X
-	cp ./etc/X11/Xwrapper.config /etc/X11/
+	sudo install -g root -o root -m u=rw,g=r,o=r ./etc/X11/Xwrapper.config /etc/X11/Xwrapper.config
 	load_dconf "gnome-desktop-interface.conf"
 
 	# set nvidia preferred mode on login
@@ -575,11 +577,13 @@ setup_mystiq() {
 
 setup_node() {
 	# nodejs: Javascript on servers!
+	# nvm:    Node.JS version manager
 	# npm:    node package manager
 	# yarn:   better node package manager
 
 	package_install \
 		nodejs \
+		nvm \
 		npm \
 		yarn
 
