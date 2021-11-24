@@ -356,7 +356,6 @@ setup_gnome() {
 	# matcha-gtk-theme:       gtk theme
 	# papirus-icon-theme:     icon theme
 	# gnome-backgrounds:      wallpapers and shit
-	# gnome-shell-extensions: gnome shell extensions
 	# gwe:                    nvidia GPU overclocking https://gitlab.com/leinardi/gwe
 	# nvidia:                 nvidia GPU support
 	# lib32-nvidia-utils      32bit nvidia driver utils
@@ -368,7 +367,6 @@ setup_gnome() {
 		matcha-gtk-theme \
 		papirus-icon-theme \
 		gnome-backgrounds \
-		gnome-shell-extensions \
 		gwe \
 		nvidia \
 		lib32-nvidia-utils \
