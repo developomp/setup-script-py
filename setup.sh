@@ -449,6 +449,7 @@ setup_gnome_apps() {
 }
 
 setup_gnome_extensions() {
+	# chrome-gnome-shell: GNOME shell integration for Chrome
 	# gnome-shell-extension-installer: Installation of gnome extensions from command line
 	# gnome-shell-extension-pop-shell-git: for window tiling
 
@@ -457,36 +458,47 @@ setup_gnome_extensions() {
 		gnome-shell-extension-installer \
 		gnome-shell-extension-pop-shell-git
 
+	load_dconf "extension-pop-shell.conf"
+
+	# twitchlive but it works
+	rm -rf ~/.local/share/gnome-shell/extensions/TwitchLive_Panel@extensions.maweki.de
+	git clone https://github.com/developomp/twitchlive-extension ~/.local/share/gnome-shell/extensions/TwitchLive_Panel@extensions.maweki.de
+
+	load_dconf "extension-twitchlive.conf"
+
 	# install gnome extensions
 	log "installing gnome extensions"
-	extension_ids=(
-		36   # lock-keys
-		841  # freon
-		906  # sound-output-device-chooser
-		945  # cpu-power-manager
-		1078 # twitchlive-panel
-		2741 # remove-alttab-delay-v2
-		2890 # tray-icons-reloaded
-		3193 # blur-my-shell
-		4000 # babar
 
-		# waiting for gnome 40 support
-		# 131     # touchpad-indicator
-		# 800     # remove-dropdown-arrows
+	extensions=(
+		36,"extension-lockkeys.conf"                     # lock-keys
+		906,"extension-sound-output-device-chooser.conf" # sound-output-device-chooser
+		1460,"extension-vitals.conf"                     # vitals
+		2741,""                                          # remove-alttab-delay-v2
+		2890,"extension-trayIconsReloaded.conf"          # tray-icons-reloaded
+		3193,"extension-blur-my-shell.conf"              # blur-my-shell
+		4000,"extension-barbar.conf"                     # babar
+		4158,""                                          # gnome-40-ui-improvements
 	)
 
-	for extension_id in "${extension_ids[@]}"; do
-		log "installing: https://extensions.gnome.org/extension/$extension_id"
-		gnome-shell-extension-installer $extension_id
+	for i in "${extensions[@]}"; do
+		IFS=","
+		set -- $i
+
+		# $1: extension id
+		# $2: extension dconf
+
+		log "installing: https://extensions.gnome.org/extension/$1"
+		gnome-shell-extension-installer $1 --yes --update
+
+		if [ ! -z $2 ]; then
+			load_dconf $2
+		fi
 	done
 
-	load_dconf "extension-barbar.conf"
-	load_dconf "extension-freon.conf"
-	load_dconf "extension-lockkeys.conf"
-	load_dconf "extension-status-area-horizontal-spacing.conf"
+	# enable extensions
+	load_dconf "extensions.conf"
 
-	# todo: automate extension enabling
-	POST_INSTALL+=("gnome: enable gnome extensions")
+	gnome-shell-extension-installer --restart-shell
 }
 
 setup_go() {
