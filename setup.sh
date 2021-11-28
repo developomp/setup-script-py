@@ -650,11 +650,6 @@ setup_timeshift() {
 	package_install timeshift
 }
 
-setup_torrential() {
-	# torrent client
-	package_install torrential
-}
-
 setup_unity() {
 	# game engine
 	package_install unityhub
@@ -688,12 +683,12 @@ setup_vlc() {
 	package_install vlc-luajit
 }
 
-setup_vscode() {
-	# proprietary vscode build
+setup_vscodium() {
+	# vscode without microsoft
 
-	package_install visual-studio-code-bin
+	package_install vscodium-bin
 
-	POST_INSTALL+=("vscode: log in")
+	# todo: settings and extension
 }
 
 setup_wine() {
@@ -869,12 +864,11 @@ options=(
 	"shfmt" "" off
 	"steam" "" off
 	"timeshift" "" off
-	"torrential" "" off
 	"unity" "" off
 	"vim" "" off
 	"virtualbox" "" off
 	"vlc" "" off
-	"vscode" "" off
+	"vscodium" "" off
 	"wine" "" off
 	"wireshark" "" off
 	"office" "" off
@@ -930,12 +924,11 @@ for choice in $choices; do
 	"shfmt") setup_shfmt ;;
 	"steam") setup_steam ;;
 	"timeshift") setup_timeshift ;;
-	"torrential") setup_torrential ;;
 	"unity") setup_unity ;;
 	"vim") setup_vim ;;
 	"virtualbox") setup_virtualbox ;;
 	"vlc") setup_vlc ;;
-	"vscode") setup_vscode ;;
+	"vscodium") setup_vscodium ;;
 	"wine") setup_wine ;;
 	"wireshark") setup_wireshark ;;
 	"office") setup_office ;;
