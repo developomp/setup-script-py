@@ -1,0 +1,16 @@
+{
+    "workbench.colorTheme": "One Dark Pro Flat",
+    "workbench.iconTheme": "material-icon-theme",
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "terminal.integrated.fontFamily": "'NotoSansMono Nerd Font'",
+    "editor.codeLensFontFamily": "'Source Code Pro'",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false
+}

@@ -696,7 +696,30 @@ setup_vscodium() {
 
 	package_install vscodium-bin
 
-	# todo: settings and extension
+	extensions=(
+		aaron-bond.better-comments
+		dbaeumer.vscode-eslint
+		dsznajder.es7-react-js-snippets
+		eamodio.gitlens
+		earshinov.sort-lines-by-selection
+		EditorConfig.EditorConfig
+		esbenp.prettier-vscode
+		foxundermoon.shell-format
+		golang.go
+		jpoissonnier.vscode-styled-components
+		ms-python.python
+		ms-toolsai.jupyter
+		PKief.material-icon-theme
+		redwan-hossain.auto-rename-tag-clone
+		streetsidesoftware.code-spell-checker
+		zhuangtongfa.material-theme
+	)
+
+	for extension in "${extensions[@]}"; do
+		codium --install-extension $extension
+	done
+
+	install ./home/pomp/.config/VSCodium/User/settings.json ~/.config/VSCodium/User/settings.json
 }
 
 setup_wine() {
