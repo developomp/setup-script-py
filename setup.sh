@@ -87,8 +87,7 @@ load_dconf() {
 # Define instructions on how to setup applications & stuff
 
 setup_4kvideodownloader() {
-	package_install \
-		4kvideodownloader
+	package_install 4kvideodownloader
 }
 
 setup_alacritty() {
@@ -104,15 +103,13 @@ setup_annotator() {
 }
 
 setup_blender() {
-	package_install \
-		blender
+	package_install blender
 }
 
 setup_brave() {
 	# brave://sync-internals/
 
-	package_install \
-		brave-bin
+	package_install brave-bin
 
 	# settings: DNS https cloudflare
 	POST_INSTALL+=(
@@ -143,8 +140,7 @@ setup_cpu_undervolting() {
 	# intel CPU undervolting for less heat and power consumption
 	# https://wiki.archlinux.org/index.php/Undervolting_CPU
 
-	package_install \
-		intel-undervolt
+	package_install intel-undervolt
 
 	config_file=/etc/intel-undervolt.conf
 
@@ -240,13 +236,11 @@ setup_discord() {
 }
 
 setup_dotnet() {
-	package_install \
-		dotnet-sdk
+	package_install dotnet-sdk
 }
 
 setup_filezilla() {
-	package_install \
-		filezilla
+	package_install filezilla
 }
 
 setup_fonts() {
@@ -331,20 +325,17 @@ setup_dns() {
 }
 
 setup_geogebra() {
-	package_install \
-		geogebra
+	package_install geogebra
 }
 
 setup_gimp() {
 	# photoshop but FOSS
 
-	package_install \
-		gimp
+	package_install gimp
 }
 
 setup_git() {
-	package_install \
-		git
+	package_install git
 
 	git config --global user.email "developomp@gmail.com"
 	git config --global user.name "developomp"
@@ -504,38 +495,29 @@ setup_gnome_extensions() {
 
 setup_go() {
 	# programming language
-	package_install \
-		go
+	package_install go
 }
 
 setup_godot() {
 	# game engine
-	package_install \
-		godot
+	package_install godot
 }
 
 setup_grub() {
-	# grub theme
-	package_install \
-		grub-theme-vimix
-
 	sudo sed -i '/GRUB_TIMEOUT=/c\GRUB_TIMEOUT=1' /etc/default/grub
 	sudo sed -i '/GRUB_TIMEOUT_STYLE=/c\GRUB_TIMEOUT_STYLE=hidden' /etc/default/grub
-	sudo sed -i '/GRUB_THEME=/c\GRUB_THEME="/boot/grub/themes/Vimix/theme.txt"' /etc/default/grub
 
 	sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 setup_gsmartcontrol() {
 	# disk health checker
-	package_install \
-		gsmartcontrol
+	package_install gsmartcontrol
 }
 
 setup_inkscape() {
 	# adobe illustrator but FOSS
-	package_install \
-		inkscape
+	package_install inkscape
 }
 
 setup_jdk() {
@@ -551,30 +533,26 @@ setup_jdk() {
 
 setup_kdenlive() {
 	# video editing
-	package_install \
-		kdenlive-appimage
+	package_install kdenlive-appimage
 }
 
 setup_keyboard() {
 	# Korean keyboard support
-	package_install \
-		ibus-hangul
+	package_install ibus-hangul
 
 	POST_INSTALL+=("keyboard: setup korean keyboard and reboot")
 }
 
 setup_middleclickpaste() {
 	# prevents middle click paste
-	package_install \
-		xmousepasteblock-git
+	package_install xmousepasteblock-git
 
 	# todo: make it autostart
 }
 
 setup_mystiq() {
 	# video converter
-	package_install \
-		mystiq
+	package_install mystiq
 }
 
 setup_node() {
@@ -638,20 +616,17 @@ setup_pamac() {
 
 setup_pavucontrol() {
 	# PulseAudio settings I use for redirecting desktop audio to microphone input
-	package_install \
-		pavucontrol
+	package_install pavucontrol
 }
 
 setup_pip() {
 	# package installer for python
-	package_install \
-		python-pip
+	package_install python-pip
 }
 
 setup_piper() {
 	# gaming mouse settings GUI
-	package_install \
-		piper
+	package_install piper
 }
 
 setup_rust() {
@@ -663,39 +638,33 @@ setup_rust() {
 }
 
 setup_shfmt() {
-	package_install \
-		shfmt
+	package_install shfmt
 }
 
 setup_steam() {
-	package_install \
-		steam
+	package_install steam
 }
 
 setup_timeshift() {
 	# backup and restore system
-	package_install \
-		timeshift
+	package_install timeshift
 }
 
 setup_torrential() {
 	# torrent client
-	package_install \
-		torrential
+	package_install torrential
 }
 
 setup_unity() {
 	# game engine
-	package_install \
-		unityhub
+	package_install unityhub
 
 	POST_INSTALL+=("Change editors location")
 }
 
 setup_vim() {
 	# vim plugin manager
-	package_install \
-		vim-plug
+	package_install vim-plug
 
 	cp ./home/pomp/.vimrc ~
 }
@@ -716,15 +685,13 @@ setup_virtualbox() {
 setup_vlc() {
 	# media player compatible with obs-studio-browser
 
-	package_install \
-		vlc-luajit
+	package_install vlc-luajit
 }
 
 setup_vscode() {
 	# proprietary vscode build
 
-	package_install \
-		visual-studio-code-bin
+	package_install visual-studio-code-bin
 
 	POST_INSTALL+=("vscode: log in")
 }
@@ -749,8 +716,7 @@ setup_wine() {
 setup_wireshark() {
 	# network protocol analyzer with gtk frontend
 
-	package_install \
-		wireshark-gtk2
+	package_install wireshark-gtk2
 
 	sudo usermod -a -G wireshark $USER
 	POST_INSTALL+=("wireshark: reboot")
@@ -759,20 +725,17 @@ setup_wireshark() {
 setup_office() {
 	# MS office but free
 
-	package_install \
-		onlyoffice-bin
+	package_install onlyoffice-bin
 }
 
 setup_zoom() {
 	# gay video conference app
 
-	package_install \
-		zoom
+	package_install zoom
 }
 
 setup_zsh() {
-	package_install \
-		zsh
+	package_install zsh
 
 	if [[ ! -d /home/pomp/.oh-my-zsh ]]; then
 		# install oh my zsh
