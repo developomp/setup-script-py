@@ -86,10 +86,6 @@ load_dconf() {
 # #################### [ DEFINING SETUP ] ####################
 # Define instructions on how to setup applications & stuff
 
-setup_4kvideodownloader() {
-	package_install 4kvideodownloader
-}
-
 setup_alacritty() {
 	package_install alacritty
 
@@ -822,7 +818,6 @@ echo
 setup_essentials
 
 options=(
-	"4k_video_downloader" "" off
 	"alacritty" "" off
 	"annotator" "" off
 	"backup" "" off
@@ -882,7 +877,6 @@ choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 clear
 for choice in $choices; do
 	case "$choice" in
-	"4k_video_downloader") setup_4kvideodownloader ;;
 	"alacritty") setup_alacritty ;;
 	"annotator") setup_annotator ;;
 	"blender") setup_blender ;;
