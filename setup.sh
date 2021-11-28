@@ -342,15 +342,16 @@ setup_git() {
 setup_gnome() {
 	# gnome, nvidia driver, and optimus manager
 
-	# gdm-prime:              gdm patched for optimus laptops
-	# xcursor-breeze:         cursor design
-	# matcha-gtk-theme:       gtk theme
-	# papirus-icon-theme:     icon theme
-	# gnome-backgrounds:      wallpapers and shit
-	# gwe:                    nvidia GPU overclocking https://gitlab.com/leinardi/gwe
-	# nvidia:                 nvidia GPU support
-	# lib32-nvidia-utils      32bit nvidia driver utils
-	# optimus-manager-qt:     https://github.com/Shatur/optimus-manager-qt
+	# gdm-prime             gdm patched for optimus laptops
+	# xcursor-breeze        cursor design
+	# matcha-gtk-theme      gtk theme
+	# papirus-icon-theme    icon theme
+	# gnome-backgrounds     wallpapers and shit
+	# gwe                   nvidia GPU overclocking https://gitlab.com/leinardi/gwe
+	# nvidia                nvidia GPU support
+	# nvidia-settings       nvidia settings
+	# lib32-nvidia-utils    32bit nvidia driver utils
+	# optimus-manager-qt    https://github.com/Shatur/optimus-manager-qt
 
 	package_install \
 		gdm-prime \
@@ -360,6 +361,7 @@ setup_gnome() {
 		gnome-backgrounds \
 		gwe \
 		nvidia \
+		nvidia-settings \
 		lib32-nvidia-utils \
 		optimus-manager-qt
 
