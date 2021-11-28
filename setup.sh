@@ -99,6 +99,10 @@ setup_alacritty() {
 	cp ./home/pomp/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 }
 
+setup_annotator() {
+	package_install annotator
+}
+
 setup_blender() {
 	package_install \
 		blender
@@ -598,12 +602,12 @@ setup_obs() {
 		obs-studio-browser
 }
 
-setup_osu() {
-	package_install \
-		osu \
-		osu-lazer-bin
+setup_ordne() {
+	package_install ordne
+}
 
-	ln -s ~/.local/share/osu ~/.osu
+setup_osu() {
+	package_install osu-lazer-bin
 }
 
 setup_pacman() {
@@ -862,6 +866,7 @@ setup_essentials
 options=(
 	"4k_video_downloader" "" off
 	"alacritty" "" off
+	"annotator" "" off
 	"backup" "" off
 	"blender" "" off
 	"brave" "" off
@@ -888,6 +893,7 @@ options=(
 	"kdenlive" "" off
 	"keyboard" "" off
 	"obs" "" off
+	"ordne" "" off
 	"osu" "" off
 	"middleclickpaste" "" off
 	"mystiq" "" off
@@ -921,6 +927,7 @@ for choice in $choices; do
 	case "$choice" in
 	"4k_video_downloader") setup_4kvideodownloader ;;
 	"alacritty") setup_alacritty ;;
+	"annotator") setup_annotator ;;
 	"blender") setup_blender ;;
 	"brave") setup_brave ;;
 	"btop") setup_btop ;;
@@ -947,6 +954,7 @@ for choice in $choices; do
 	"kdenlive") setup_kdenlive ;;
 	"keyboard") setup_keyboard ;;
 	"obs") setup_obs ;;
+	"ordne") setup_ordne ;;
 	"osu") setup_osu ;;
 	"middleclickpaste") setup_middleclickpaste ;;
 	"mystiq") setup_mystiq ;;
