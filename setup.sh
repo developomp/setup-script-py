@@ -89,9 +89,8 @@ load_dconf() {
 setup_alacritty() {
 	package_install alacritty
 
-	rm -rf ~/.config/alacritty/
 	mkdir ~/.config/alacritty/
-	cp ./home/pomp/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+	install ./home/pomp/.config/alacritty/alacritty.yml ~/.config/alacritty/
 }
 
 setup_annotator() {
@@ -120,8 +119,8 @@ setup_btop() {
 }
 
 setup_conky() {
-	cp -r ./home/pomp/.conky/ ~
-	cp ./home/pomp/.config/autostart/conky.desktop ~/.config/autostart
+	cp -r ./home/pomp/.conky/ ~/
+	install ./home/pomp/.config/autostart/conky.desktop ~/.config/autostart/
 
 	# vnstat: network traffic statistics
 	package_install \
@@ -141,7 +140,7 @@ setup_cpu_undervolting() {
 	config_file=/etc/intel-undervolt.conf
 
 	# create backup in case anything goes wrong
-	sudo cp $config_file $config_file.bak
+	sudo install --backup $config_file $config_file.bak
 
 	# Explanation:
 	#   for lines that are not comments (lines that do not start with a hash)
@@ -373,8 +372,8 @@ setup_gnome() {
 	load_dconf "gnome-desktop-interface.conf"
 
 	# set nvidia preferred mode on login
-	cp ./home/pomp/.nvidia-preferred-mode.sh ~
-	cp ./home/pomp/.config/autostart/nvidia-preferred-mode.desktop ~/.config/autostart
+	install ./home/pomp/.nvidia-preferred-mode.sh ~/
+	install ./home/pomp/.config/autostart/nvidia-preferred-mode.desktop ~/.config/autostart/
 
 	setup_gnome_apps
 	setup_alacritty # so I have a terminal to work with when only gnome is installed
@@ -671,7 +670,7 @@ setup_vim() {
 	# vim plugin manager
 	package_install vim-plug
 
-	cp ./home/pomp/.vimrc ~
+	install ./home/pomp/.vimrc ~
 }
 
 setup_virtualbox() {
@@ -775,7 +774,7 @@ setup_zsh() {
 		# install syntax highlighter
 		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-		cp ./home/pomp/.zshrc ~
+		install ./home/pomp/.zshrc ~/
 	else
 		log "zsh already configured. Skipping."
 	fi
