@@ -106,6 +106,8 @@ setup_brave() {
 
 	package_install brave-bin
 
+	install ./home/pomp/.config/autostart/brave-browser.desktop ~/.config/autostart/
+
 	# settings: DNS https cloudflare
 	POST_INSTALL+=(
 		"brave: sync device"
@@ -174,6 +176,8 @@ setup_discord() {
 		discord \
 		betterdiscordctl-git \
 		discord-overlay-git
+
+	install ./home/pomp/.config/autostart/discord.desktop ~/.config/autostart/
 
 	BD_PLUGINS=(
 		134 # https://betterdiscord.app/plugin/Avatar%20Hover
@@ -367,6 +371,9 @@ setup_gnome() {
 	sudo systemctl enable gdm
 	sudo systemctl enable optimus-manager
 
+	install ./home/pomp/.config/autostart/gwe.desktop ~/.config/autostart/
+	install ./home/pomp/.config/autostart/io.optimus_manager.OptimusManagerQt.desktop ~/.config/autostart/
+
 	# prevent rootless X
 	sudo install -g root -o root -m u=rw,g=r,o=r ./etc/X11/Xwrapper.config /etc/X11/Xwrapper.config
 	load_dconf "gnome-desktop-interface.conf"
@@ -393,10 +400,7 @@ EOL
 	# read this wiki[^1] about power management with acpi call for more information
 	# [^1]: https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options#configuration-4--acpi_call
 
-	# todo: auto start optimus on login
-	# todo: optimus set nvidia as default
-
-	# todo: add profile (Performance: 250, 650)
+	# todo: gwe mode: ultra(270,660)
 
 	POST_INSTALL+=("gnome: reboot")
 }
@@ -720,6 +724,7 @@ setup_vscodium() {
 		codium --install-extension $extension
 	done
 
+	install ./home/pomp/.config/autostart/codium.desktop ~/.config/autostart/
 	install ./home/pomp/.config/VSCodium/User/settings.json ~/.config/VSCodium/User/settings.json
 }
 
