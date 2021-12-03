@@ -711,11 +711,14 @@ setup_vscodium() {
 		esbenp.prettier-vscode
 		foxundermoon.shell-format
 		golang.go
+		johnsoncodehk.volar
 		jpoissonnier.vscode-styled-components
+		mhutchie.git-graph
 		ms-python.python
 		ms-toolsai.jupyter
 		PKief.material-icon-theme
 		redwan-hossain.auto-rename-tag-clone
+		rust-lang.rust
 		streetsidesoftware.code-spell-checker
 		zhuangtongfa.material-theme
 	)
@@ -726,6 +729,7 @@ setup_vscodium() {
 
 	install ./home/pomp/.config/autostart/codium.desktop ~/.config/autostart/
 	install ./home/pomp/.config/VSCodium/User/settings.json ~/.config/VSCodium/User/settings.json
+	install ./home/pomp/.config/VSCodium/product.json ~/.config/VSCodium/product.json
 }
 
 setup_wine() {
