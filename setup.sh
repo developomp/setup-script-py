@@ -209,9 +209,7 @@ setup_discord() {
 		94  # https://betterdiscord.app/plugin/ReadAllNotificationsButton
 		179 # https://betterdiscord.app/plugin/RedditMentions
 		97  # https://betterdiscord.app/plugin/RevealAllSpoilersOption
-		139 # https://betterdiscord.app/plugin/SecretRingTone
 		98  # https://betterdiscord.app/plugin/SendLargeMessages
-		99  # https://betterdiscord.app/plugin/ServerCounter
 		159 # https://betterdiscord.app/plugin/ShowAllActivities
 		291 # https://betterdiscord.app/plugin/ShowConnections
 		103 # https://betterdiscord.app/plugin/ShowHiddenChannels
