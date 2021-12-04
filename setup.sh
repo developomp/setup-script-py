@@ -262,6 +262,7 @@ setup_fonts() {
 		"Audiowide"
 		"Varela Round"
 		"Ubuntu Mono"
+		"Nanum Gothic Coding"
 	)
 
 	# create fonts directory if it does not exist
