@@ -446,25 +446,17 @@ setup_gnome_apps() {
 }
 
 setup_gnome_extensions() {
-	# chrome-gnome-shell: GNOME shell integration for Chrome
-	# gnome-shell-extension-installer: Installation of gnome extensions from command line
-	# gnome-shell-extension-pop-shell-git: for window tiling
+	log "installing gnome extensions"
 
+	# chrome-gnome-shell                     GNOME shell integration for Chrome
+	# gnome-shell-extension-installer        Installation of gnome extensions from command line
+	# gnome-shell-extension-pop-shell-git    for window tiling
 	package_install \
 		chrome-gnome-shell \
 		gnome-shell-extension-installer \
 		gnome-shell-extension-pop-shell-git
 
 	load_dconf "extension-pop-shell.conf"
-
-	# twitchlive but it works
-	rm -rf ~/.local/share/gnome-shell/extensions/TwitchLive_Panel@extensions.maweki.de
-	git clone https://github.com/developomp/twitchlive-extension ~/.local/share/gnome-shell/extensions/TwitchLive_Panel@extensions.maweki.de
-
-	load_dconf "extension-twitchlive.conf"
-
-	# install gnome extensions
-	log "installing gnome extensions"
 
 	extensions=(
 		36,"extension-lockkeys.conf"                     # lock-keys
