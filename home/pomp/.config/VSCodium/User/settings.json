@@ -1,16 +1,28 @@
 {
-    "workbench.colorTheme": "One Dark Pro Flat",
-    "workbench.iconTheme": "material-icon-theme",
-    "security.workspace.trust.untrustedFiles": "open",
-    "git.enableSmartCommit": true,
-    "git.confirmSync": false,
-    "git.autofetch": true,
-    "terminal.integrated.fontFamily": "'NotoSansMono Nerd Font'",
-    "editor.codeLensFontFamily": "'Source Code Pro'",
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false,
-    "gitlens.statusBar.enabled": false
+  "workbench.colorTheme": "One Dark Pro Flat",
+  "workbench.iconTheme": "material-icon-theme",
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "terminal.integrated.fontFamily": "'NotoSansMono Nerd Font'",
+  "editor.fontSize": 16,
+  "editor.fontFamily": "'Ubuntu Mono'",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "explorer.compactFolders": false,
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }

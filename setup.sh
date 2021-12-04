@@ -246,17 +246,12 @@ setup_fonts() {
 	# wget:                             For downloading zip files
 	# noto-fonts-emoji:                 Emoji fonts
 	# nerd-fonts-noto-sans-mono:        Terminal font
-	# adobe-source-han-sans-otc-fonts:  OpenType font
-	# adobe-source-han-serif-otc-fonts: OpenType font
 	# ttf-baekmuk:                      Korean font
 
 	package_install \
 		wget \
 		noto-fonts-emoji \
 		nerd-fonts-noto-sans-mono \
-		adobe-source-han-sans-otc-fonts \
-		adobe-source-han-serif-otc-fonts \
-		adobe-source-han-sans-kr-fonts \
 		ttf-baekmuk
 
 	# path to temporarily save font related files
@@ -265,10 +260,8 @@ setup_fonts() {
 	# fonts to download
 	font_names=(
 		"Audiowide"
-		"Comfortaa"
-		"Nanum Gothic"
-		"Source Code Pro"
 		"Varela Round"
+		"Ubuntu Mono"
 	)
 
 	# create fonts directory if it does not exist
