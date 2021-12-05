@@ -232,6 +232,12 @@ setup_discord() {
 	POST_INSTALL+=("discord: run betterdiscordctl install")
 }
 
+setup_docker() {
+	package_install docker
+
+	sudo systemctl --user --now enable docker
+}
+
 setup_dotnet() {
 	package_install dotnet-sdk
 }
@@ -856,6 +862,7 @@ options=(
 	"conky" "" off
 	"cpu_undervolting" "" off
 	"discord" "" off
+	"docker" "" off
 	"dotnet" "" off
 	"filezilla" "" off
 	"fonts" "" off
@@ -915,6 +922,7 @@ for choice in $choices; do
 	"conky") setup_conky ;;
 	"cpu_undervolting") setup_cpu_undervolting ;;
 	"discord") setup_discord ;;
+	"docker") setup_docker ;;
 	"dotnet") setup_dotnet ;;
 	"filezilla") setup_filezilla ;;
 	"fonts") setup_fonts ;;
