@@ -8,6 +8,8 @@
   "editor.fontSize": 16,
   "editor.fontFamily": "'Ubuntu Mono', 'NanumGothicCoding'",
   "terminal.integrated.fontFamily": "'NotoSansMono Nerd Font'",
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "gitlens.currentLine.enabled": false,
