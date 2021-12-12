@@ -344,8 +344,8 @@ setup_gnome() {
 	# gnome, nvidia driver, and optimus manager
 
 	# gdm-prime             gdm patched for optimus laptops
-	# xcursor-breeze        cursor design
-	# matcha-gtk-theme      gtk theme
+	# vimix-cursors         cursors
+	# vimix-gtk-themes-git  gtk theme
 	# papirus-icon-theme    icon theme
 	# gnome-backgrounds     wallpapers and shit
 	# gwe                   nvidia GPU overclocking https://gitlab.com/leinardi/gwe
@@ -356,8 +356,8 @@ setup_gnome() {
 
 	package_install \
 		gdm-prime \
-		xcursor-breeze \
-		matcha-gtk-theme \
+		vimix-cursors \
+		vimix-gtk-themes-git \
 		papirus-icon-theme \
 		gnome-backgrounds \
 		gwe \
