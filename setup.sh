@@ -235,7 +235,8 @@ setup_discord() {
 setup_docker() {
 	package_install docker
 
-	sudo systemctl --user --now enable docker
+	sudo usermod -aG docker "${USER}"
+	sudo systemctl --now enable docker
 }
 
 setup_dotnet() {
