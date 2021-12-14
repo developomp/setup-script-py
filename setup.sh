@@ -692,8 +692,10 @@ setup_vscodium() {
 
 	package_install vscodium-bin
 
+	# codium --list-extensions
 	extensions=(
 		aaron-bond.better-comments
+		bierner.jsdoc-markdown-highlighting
 		dbaeumer.vscode-eslint
 		dsznajder.es7-react-js-snippets
 		eamodio.gitlens
@@ -701,16 +703,27 @@ setup_vscodium() {
 		EditorConfig.EditorConfig
 		esbenp.prettier-vscode
 		foxundermoon.shell-format
+		geequlim.godot-tools
 		golang.go
-		johnsoncodehk.volar
-		jpoissonnier.vscode-styled-components
+		matklad.rust-analyzer
 		mhutchie.git-graph
 		ms-python.python
 		ms-toolsai.jupyter
+		ms-toolsai.jupyter-keymap
+		ms-toolsai.jupyter-renderers
+		ms-vscode.hexeditor
+		naumovs.color-highlight
+		nico-castell.linux-desktop-file
 		PKief.material-icon-theme
+		qwtel.sqlite-viewer
+		Razoric.gdscript-toolkit-formatter
 		redwan-hossain.auto-rename-tag-clone
-		rust-lang.rust
+		serayuzgur.crates
 		streetsidesoftware.code-spell-checker
+		styled-components.vscode-styled-components
+		svelte.svelte-vscode
+		tamasfe.even-better-toml
+		XadillaX.viml
 		zhuangtongfa.material-theme
 	)
 
