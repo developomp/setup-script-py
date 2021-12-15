@@ -166,6 +166,10 @@ setup_dconf() {
 	# dconf load / < dconf/configuration.conf
 }
 
+setup_deno() {
+	package_install deno
+}
+
 setup_discord() {
 	# assumes that plugins are located in ~/.config/BetterDiscord/plugins
 
@@ -875,6 +879,7 @@ options=(
 	"btop" "" off
 	"conky" "" off
 	"cpu_undervolting" "" off
+	"deno" "" off
 	"discord" "" off
 	"docker" "" off
 	"dotnet" "" off
@@ -935,6 +940,7 @@ for choice in $choices; do
 	"backup") backup ;;
 	"conky") setup_conky ;;
 	"cpu_undervolting") setup_cpu_undervolting ;;
+	"deno") setup_deno ;;
 	"discord") setup_discord ;;
 	"docker") setup_docker ;;
 	"dotnet") setup_dotnet ;;

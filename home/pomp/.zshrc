@@ -12,6 +12,7 @@ source /usr/share/nvm/init-nvm.sh
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH="$PATH:$HOME/.yarn/bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.deno/bin"
 
 export EDITOR=vim
 export VISUAL=vim
