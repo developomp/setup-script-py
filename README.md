@@ -23,6 +23,14 @@ This repo is here to provide myself materials (script, guide, config files, and 
 
 ![result image 3](./.repo/result3.png)
 
+### Script Execution
+
+![Execution](./.repo/execution.png)
+
+### Selection Menu
+
+![Menu](./.repo/menu.png)
+
 </details>
 
 ## Instructions
@@ -49,12 +57,6 @@ This repo is here to provide myself materials (script, guide, config files, and 
 4. Profit.
 
 Full setup could easily take more than a hour depending on the internet speed.
-
-Execution:<br />
-![Execution](./.repo/execution.png)
-
-Selection Menu:<br />
-![Menu](./.repo/menu.png)
 
 ## Hardware
 
