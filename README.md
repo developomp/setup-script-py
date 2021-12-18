@@ -8,7 +8,7 @@
 
 This repo is here to provide myself materials (script, guide, config files, and other files) for cases when I need to transfer to other machine or reinstall the OS.
 
-## Result
+## Images
 
 ![result image 1](./.repo/result1.png)
 
@@ -127,7 +127,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 <img alt="1st wallpaper" src="./.repo/wallpaper1.png" width="75%">
 
 - [a video](https://www.youtube.com/watch?v=QEWV6fiYaDU) from [Chillhop Music](https://www.youtube.com/channel/UCOxqgCwgOqC2lMqC5PYz_Dg)
-- Artwork by [Jeff Östberg](https://jeffostberg.se​)
+- Artwork by [Jeff Östberg](https://jeffostberg.se)
 - Animation by [Geneviève Delacroix](http://www.genevievelacroix.com)
 
 ## Future
