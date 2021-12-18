@@ -2,8 +2,6 @@
   My <a href="https://archlinux.org">Arch Linux</a> desktop setup
 </h1>
 
----
-
 [![LICENSE: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](./LICENSE)
 
 ## Purpose
