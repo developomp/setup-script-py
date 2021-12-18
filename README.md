@@ -1,17 +1,31 @@
-<p align="center">
-  My <a href="https://archlinux.org">Arch linux</a> desktop setup
-</p>
+<h1 align="center">
+  My <a href="https://archlinux.org">Arch Linux</a> desktop setup
+</h1>
 
 ---
 
-[![LICENSE: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](./LICENSE) [![FORMATTER: SHFMT](https://img.shields.io/badge/formatter-shfmt-darkgrey?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format)
+[![LICENSE: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](./LICENSE)
 
 ## Purpose
 
-To provide myself materials (script, guide, and other files) for cases when I need to transfer to other machine or reinstall the OS.
+This repo is here to provide myself materials (script, guide, config files, and other files) for cases when I need to transfer to other machine or reinstall the OS.
 
-Result:<br />
-![result image](./.repo/result.png)
+## Result
+
+![result image 1](./.repo/result1.png)
+
+<details>
+<summary>Click here to see more images</summary>
+
+### Some windows
+
+![result image 2](./.repo/result2.png)
+
+### Minimalism at its finest
+
+![result image 3](./.repo/result3.png)
+
+</details>
 
 ## Instructions
 
@@ -121,5 +135,5 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 - 1TB HDD for long-term backup
 - [Framework laptop](https://frame.work)
   - AMD eGPU
-  - Wait: 120+Hz display
-  - Wait: Korean keyboard
+  - Waiting for: 120+Hz display
+  - Waiting for: Korean keyboard
