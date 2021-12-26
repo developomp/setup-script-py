@@ -312,6 +312,12 @@ setup_fonts() {
 	rm -rf $fonts_directory
 }
 
+setup_freetube() {
+	pamac install freetube-bin
+
+	# todo: freetube data
+}
+
 setup_fstab() {
 	if cat /etc/fstab | grep "/media/pomp/data" &>/dev/null; then
 		return
@@ -885,6 +891,7 @@ options=(
 	"dotnet" "" off
 	"filezilla" "" off
 	"fonts" "" off
+	"freetube" "" off
 	"fstab" "" off
 	"geogebra" "" off
 	"gimp" "" off
@@ -946,6 +953,7 @@ for choice in $choices; do
 	"dotnet") setup_dotnet ;;
 	"filezilla") setup_filezilla ;;
 	"fonts") setup_fonts ;;
+	"freetube") setup_freetube ;;
 	"fstab") setup_fstab ;;
 	"geogebra") setup_geogebra ;;
 	"gimp") setup_gimp ;;
