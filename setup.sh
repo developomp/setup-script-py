@@ -156,12 +156,6 @@ setup_cpu_undervolting() {
 	sudo systemctl enable intel-undervolt
 }
 
-setup_dconf() {
-	:
-	# must be done after install to make sure configs are not overwritten
-	# dconf load / < dconf/configuration.conf
-}
-
 setup_deno() {
 	package_install deno
 }
