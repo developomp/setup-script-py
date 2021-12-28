@@ -174,12 +174,10 @@ setup_discord() {
 	# assumes that plugins are located in ~/.config/BetterDiscord/plugins
 
 	# betterdiscordctl-git: BetterDiscord installer
-	# discord-overlay-git:  Discord voice chat overlay
 
 	package_install \
 		discord \
-		betterdiscordctl-git \
-		discord-overlay-git
+		betterdiscordctl-git
 
 	install ./home/pomp/.config/autostart/discord.desktop ~/.config/autostart/
 
