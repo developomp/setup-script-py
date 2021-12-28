@@ -93,10 +93,6 @@ setup_alacritty() {
 	install ./home/pomp/.config/alacritty/alacritty.yml ~/.config/alacritty/
 }
 
-setup_annotator() {
-	package_install annotator
-}
-
 setup_blender() {
 	package_install blender
 }
@@ -876,7 +872,6 @@ setup_essentials
 
 options=(
 	"alacritty" "" off
-	"annotator" "" off
 	"backup" "" off
 	"blender" "" off
 	"brave" "" off
@@ -938,7 +933,6 @@ clear
 for choice in $choices; do
 	case "$choice" in
 	"alacritty") setup_alacritty ;;
-	"annotator") setup_annotator ;;
 	"blender") setup_blender ;;
 	"brave") setup_brave ;;
 	"btop") setup_btop ;;
