@@ -670,6 +670,7 @@ setup_vim() {
 	package_install vim-plug
 
 	install ./home/pomp/.vimrc ~
+	POST_INSTALL+=("Install vim plugins with :PlugInstall command")
 }
 
 setup_virtualbox() {
@@ -701,6 +702,7 @@ setup_vscodium() {
 		aaron-bond.better-comments
 		bierner.jsdoc-markdown-highlighting
 		dbaeumer.vscode-eslint
+		denoland.vscode-deno
 		dsznajder.es7-react-js-snippets
 		eamodio.gitlens
 		earshinov.sort-lines-by-selection
@@ -709,6 +711,8 @@ setup_vscodium() {
 		foxundermoon.shell-format
 		geequlim.godot-tools
 		golang.go
+		jeff-tian.markdown-katex
+		jock.svg
 		matklad.rust-analyzer
 		mhutchie.git-graph
 		ms-python.python
