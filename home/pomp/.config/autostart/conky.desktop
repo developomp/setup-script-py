@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=conky
-Exec=sh /home/pomp/.conky/conky-startup.sh
-StartupNotify=false
-Terminal=false
-Icon=conky-logomark-violet
-Categories=System;Monitor;

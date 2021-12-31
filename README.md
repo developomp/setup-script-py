@@ -109,9 +109,11 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 ## Sources
 
-### latest Wallpaper
+I randomly change between these wallpapers depending on my mood.
 
-<img alt="latest wallpaper" src="./wallpaper.png" width="75%">
+### 3rd Wallpaper
+
+<img alt="3rd wallpaper" src="./.repo/wallpaper3.png" width="75%">
 
 - made by [u/nullcriminal](https://www.reddit.com/r/unixporn/comments/b4dt3y) on reddit
 
@@ -129,6 +131,14 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 - [a video](https://www.youtube.com/watch?v=QEWV6fiYaDU) from [Chillhop Music](https://www.youtube.com/channel/UCOxqgCwgOqC2lMqC5PYz_Dg)
 - Artwork by [Jeff Östberg](https://jeffostberg.se)
 - Animation by [Geneviève Delacroix](http://www.genevievelacroix.com)
+
+### System monitor
+
+https://github.com/developomp/pomky
+
+this [file](./home/pomp/.local/bin/pomky) right here
+
+commit: b0c34f6
 
 ## Future
 
