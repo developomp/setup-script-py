@@ -138,7 +138,7 @@ https://github.com/developomp/pomky
 
 this [file](./home/pomp/.local/bin/pomky) right here
 
-commit: b0c34f6
+commit: aecec82
 
 ## Future
 

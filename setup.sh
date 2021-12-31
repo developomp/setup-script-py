@@ -116,19 +116,6 @@ setup_btop() {
 	package_install btop
 }
 
-setup_conky() {
-	cp -r ./home/pomp/.conky/ ~/
-	install ./home/pomp/.config/autostart/conky.desktop ~/.config/autostart/
-
-	# vnstat: network traffic statistics
-	package_install \
-		conky \
-		vnstat
-
-	sudo systemctl enable vnstat
-	sudo systemctl start vnstat
-}
-
 setup_cpu_undervolting() {
 	# intel CPU undervolting for less heat and power consumption
 	# https://wiki.archlinux.org/index.php/Undervolting_CPU
@@ -631,6 +618,11 @@ setup_piper() {
 	package_install piper
 }
 
+setup_pomky() {
+	install ./home/pomp/.local/bin/pomky ~/.local/bin/
+	install ./home/pomp/.config/autostart/pomky.desktop ~/.config/autostart/
+}
+
 setup_rust() {
 	package_install \
 		rust \
@@ -874,7 +866,6 @@ options=(
 	"blender" "" off
 	"brave" "" off
 	"btop" "" off
-	"conky" "" off
 	"cpu_undervolting" "" off
 	"deno" "" off
 	"discord" "" off
@@ -908,6 +899,7 @@ options=(
 	"pamac" "" off
 	"pip" "" off
 	"piper" "" off
+	"pomky" "" off
 	"rust" "" off
 	"shfmt" "" off
 	"steam" "" off
@@ -935,7 +927,6 @@ for choice in $choices; do
 	"brave") setup_brave ;;
 	"btop") setup_btop ;;
 	"backup") backup ;;
-	"conky") setup_conky ;;
 	"cpu_undervolting") setup_cpu_undervolting ;;
 	"deno") setup_deno ;;
 	"discord") setup_discord ;;
@@ -969,6 +960,7 @@ for choice in $choices; do
 	"pamac") setup_pamac ;;
 	"pip") setup_pip ;;
 	"piper") setup_piper ;;
+	"pomky") setup_pomky ;;
 	"rust") setup_rust ;;
 	"shfmt") setup_shfmt ;;
 	"steam") setup_steam ;;
