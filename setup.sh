@@ -689,6 +689,7 @@ setup_vscodium() {
 		bierner.jsdoc-markdown-highlighting
 		dbaeumer.vscode-eslint
 		denoland.vscode-deno
+		DigitalBrainstem.javascript-ejs-support
 		dsznajder.es7-react-js-snippets
 		eamodio.gitlens
 		earshinov.sort-lines-by-selection
