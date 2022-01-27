@@ -18,29 +18,22 @@ def minimal_check():
     Full checks will happen after downloading codes from the internet
     """
 
-    #
-    # check if OS is linux and if pacman exists
-    #
+    # check if the script is running as root
+    # todo: allow running script as root when implementing user creation/arch installation logic
+    if os.geteuid() == 0:
+        print("Do not run this script as root.", file=sys.stderr)
+        exit(1)
 
+    # check if OS is linux and if pacman exists
+    print("Checking if system is compatible")
     if "linux" not in sys.platform.lower() or os.system(
         "command -v pacman &> /dev/null"
     ):
         print("This script should only be used on arch linux.", file=sys.stderr)
         exit(1)
 
-    #
-    # check if the script is running as root
-    #
-
-    # todo: allow running script as root when implementing user creation/arch installation logic
-    if os.geteuid() == 0:
-        print("Do not run this script as root.", file=sys.stderr)
-        exit(1)
-
-    #
-    # check if there's internet connection
-    #
-
+    # ping archlinux.org to test if there's internet connection
+    print("Checking if there's internet connection")
     if os.system("ping -c 1 archlinux.org &> /dev/null"):
         print("Failed to connect to internet.", file=sys.stderr)
         exit(1)
@@ -52,10 +45,7 @@ def minimal_initialization():
     Full initialization will happen after downloading codes from the internet.
     """
 
-    #
-    # Install git
-    #
-
+    print("Initializing git")
     if os.system("command -v git &> /dev/null"):
         print("git was not installed already. Installing now.")
         os.system("sudo pacman -S --noconfirm --needed git")
@@ -63,6 +53,8 @@ def minimal_initialization():
     #
     # Download necessary files
     #
+
+    print("Cloning git repository")
 
     tmp_dir = "/tmp/com.developomp.setup"
 
