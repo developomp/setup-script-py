@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["developomp", "pamac"]
+  "cSpell.words": ["developomp", "flatpak", "pamac"],
+  "python.formatting.provider": "black"
 }
