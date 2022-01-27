@@ -22,9 +22,8 @@ def minimal_check():
     # check if OS is linux and if pacman exists
     #
 
-    if (
-        "linux" not in sys.platform.lower()
-        or os.system("command -v pacman &> /dev/null") != 0
+    if "linux" not in sys.platform.lower() or os.system(
+        "command -v pacman &> /dev/null"
     ):
         print("This script should only be used on arch linux.", file=sys.stderr)
         exit(1)
@@ -42,7 +41,7 @@ def minimal_check():
     # check if there's internet connection
     #
 
-    if os.system("ping -c 1 archlinux.org &> /dev/null") != 0:
+    if os.system("ping -c 1 archlinux.org &> /dev/null"):
         print("Failed to connect to internet.", file=sys.stderr)
         exit(1)
 
@@ -57,7 +56,7 @@ def minimal_initialization():
     # Install git
     #
 
-    if os.system("command -v git &> /dev/null") != 0:
+    if os.system("command -v git &> /dev/null"):
         print("git was not installed already. Installing now.")
         os.system("sudo pacman -S --noconfirm --needed git")
 
@@ -72,17 +71,14 @@ def minimal_initialization():
         rmtree(tmp_dir)
 
     # todo: change branch to master when merging with master
-    if (
-        os.system(
-            f"git clone --depth 1 -b dev https://github.com/developomp/setup.git {tmp_dir} &> /dev/null"
-        )
-        != 0
+    if os.system(
+        f"git clone --depth 1 -b dev https://github.com/developomp/setup.git {tmp_dir} &> /dev/null"
     ):
         print("Failed to clone repository", file=sys.stderr)
         exit(1)
 
     # allow everyone to read and write but not execute.
-    if os.system(f"chmod -R a+rw {tmp_dir}") != 0:
+    if os.system(f"chmod -R a+rw {tmp_dir}"):
         print("Failed to change file permission for cloned repo", file=sys.stderr)
         exit(1)
 
