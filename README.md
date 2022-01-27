@@ -2,8 +2,6 @@
   My <a href="https://archlinux.org">Arch Linux</a> desktop setup
 </h1>
 
-[![LICENSE: MIT](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](./LICENSE)
-
 ## Purpose
 
 This repo is here to provide myself materials (script, guide, config files, and other files) for cases when I need to transfer to other machine or reinstall the OS.
@@ -33,30 +31,30 @@ This repo is here to provide myself materials (script, guide, config files, and 
 
 </details>
 
-## Instructions
+## Usage
 
-> **WARNING:**
->
-> - This script is written for my laptop ONLY.
-> - The script assumes a clean installation (no unnecessary packages installed already).
+### WARNING
 
-1. Install arch linux via [archfi](https://github.com/MatMoul/archfi).
+- This script is written to work in my hardware **EXCLUSIVELY**.
+- The script assumes a clean installation of arch linux. That is, no extra packages installed already.
 
-   - latest arch linux version as of writing: `2021.10.01`
+### Instructions
 
-2. Create user `pomp`
+1. Install arch linux via [archfi](https://github.com/MatMoul/archfi) (included installer via [archinstall](https://github.com/archlinux/archinstall) coming soon).
+
+2. download the setup script
 
    ```bash
-   useradd -m pomp # create user and home directory
-   EDITOR=vim visudo # edit sudoers file with vim
-   # enable wheel group
-   usermod -aG wheel pomp # give pomp sudo access
+   curl -LO setup.developomp.com
    ```
 
-3. Execute the [`setup.sh`](./setup.sh) script.
-4. Profit.
+3. Execute it.
 
 Full setup could easily take more than a hour depending on the internet speed.
+
+## How does it work?
+
+[Github pages](https://pages.github.com) allows the developers to deploy a static website using a branch of their repositories to store the static files. I set up github action so that the [`setup.py`](./setup.py) script gets copied to the `index.html` file in the [`gh-pages`](https://github.com/developomp/setup/tree/gh-pages) branch where it is deployed to https://setup.developomp.com. The script then downloads necessary files and packages when necessary.
 
 ## Hardware
 
@@ -143,7 +141,4 @@ commit: aecec82
 ## Future
 
 - 1TB HDD for long-term backup
-- [Framework laptop](https://frame.work)
-  - AMD eGPU
-  - Waiting for: 120+Hz display
-  - Waiting for: Korean keyboard
+- [wannabuy](https://developomp.com/wannabuy)
