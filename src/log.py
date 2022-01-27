@@ -1,15 +1,15 @@
 # https://stackoverflow.com/a/33206814/12979111
 
-RESET = "\e[0m"
+RESET = "\033[0m"
 
 # style
-BOLD = "\e[1m"
-INVERT = "\e[7m"
+BOLD = "\033[1m"
+INVERT = "\033[7m"
 
 # colors
-RED = "\e[91m"  # actually light red
-GREEN = "\e[92m"  # actually light green
-YELLOW = "\e[33m"
+RED = "\033[91m"  # actually light red
+GREEN = "\033[92m"  # actually light green
+YELLOW = "\033[33m"
 
 
 def log_no_label(msg: str):
