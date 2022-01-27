@@ -18,6 +18,12 @@ def initialize():
         log.error("Failed to install pip from archlinux package repository")
         exit(1)
 
+    # https://pypi.org/project/PyYAML
+    log.log("Initializing PyYAML")
+    if os.system("pip install PyYAML &> /dev/null"):
+        log.error("Failed to install PyYAML from pip")
+        exit(1)
+
     # https://github.com/bczsalba/pytermgui
     log.log("Initializing pytermgui")
     if os.system("pip install pytermgui &> /dev/null"):
