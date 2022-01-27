@@ -24,6 +24,8 @@ def minimal_check():
         print("Do not run this script as root.", file=sys.stderr)
         exit(1)
 
+    # todo: check if python version is higher than 3.7
+
     # check if OS is linux and if pacman exists
     print("Checking if system is compatible")
     if "linux" not in sys.platform.lower() or os.system(
