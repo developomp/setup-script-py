@@ -36,7 +36,7 @@ jobs:
 
       - name: Deploy
         run: |
-          git config --local user.email 'developomp@users.noreply.github.com'
+          git config --local user.email "developomp@users.noreply.github.com"
           git config --local user.name "developomp"
           mv ./setup.py ./index.html  # overwrite index.html
           git commit -ma "auto deploy from workflow"
