@@ -9,9 +9,9 @@ on:
       - setup.py
 
 jobs:
-  build_and_deploy:
+  get_script:
     if: ${{ github.repository_owner == 'developomp' }} # prevents workflow from running in forked repos
-    name: Deploy
+    name: Get script
     runs-on: ubuntu-latest
     steps:
       - name: Checkout master
@@ -23,6 +23,12 @@ jobs:
           name: setup
           path: setup.py
 
+  deploy_script:
+    if: ${{ github.repository_owner == 'developomp' }} # prevents workflow from running in forked repos
+    name: Deploy script
+    runs-on: ubuntu-latest
+    needs: get_script
+    steps:
       - name: Checkout gh-pages
         uses: actions/checkout@v2
         with:
@@ -37,16 +43,19 @@ jobs:
           path: setup.py
 
       - name: Overwrite index.html
-        run: mv ./setup.py ./index.html
+        run: |
+          mv ./setup.py/setup.py ./index.html
+          rm -rf ./setup.py
 
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git commit -m "auto deploy from workflow" -a
+          git add index.html
+          git commit -m "auto deploy from workflow"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: gh-pages
