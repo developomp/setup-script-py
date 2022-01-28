@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - setup.py
 
 jobs:
   build_and_deploy:
@@ -11,7 +13,7 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
+      - name: Checkout master
         uses: actions/checkout@v2
 
       - name: Archive Artifact
@@ -20,9 +22,10 @@ jobs:
           name: setup
           path: setup.py
 
-      - name: Switch branch
-        run: |
-          git checkout gh-pages
+      - name: Checkout gh-pages
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
 
       - name: Download Artifact
         uses: actions/download-artifact@v2
