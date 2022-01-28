@@ -33,6 +33,8 @@ This repo is here to provide myself materials (script, guide, config files, and 
 
 ## Usage
 
+This project is undergoing a rewrite. Use the [old](https://github.com/developomp/setup/tree/old) branch for now.
+
 ### WARNING
 
 - This script is written to work in my hardware **EXCLUSIVELY**.
