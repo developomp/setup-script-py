@@ -64,9 +64,8 @@ def minimal_initialization():
     if os.path.exists(tmp_dir):
         rmtree(tmp_dir)
 
-    # todo: change branch to master when merging with master
     if os.system(
-        f"git clone --depth 1 -b dev https://github.com/developomp/setup.git {tmp_dir} &> /dev/null"
+        f"git clone --depth 1 https://github.com/developomp/setup.git {tmp_dir} &> /dev/null"
     ):
         print("Failed to clone repository", file=sys.stderr)
         exit(1)
