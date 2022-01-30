@@ -34,10 +34,6 @@ setup_cpu_undervolting() {
 	sudo systemctl enable intel-undervolt
 }
 
-setup_deno() {
-	package_install deno
-}
-
 setup_discord() {
 	# assumes that plugins are located in ~/.config/BetterDiscord/plugins
 
@@ -109,10 +105,6 @@ setup_docker() {
 	sudo systemctl --now enable docker
 }
 
-setup_dotnet() {
-	package_install dotnet-sdk
-}
-
 setup_filezilla() {
 	package_install filezilla
 }
@@ -178,12 +170,6 @@ setup_fonts() {
 	rm -rf $fonts_directory
 }
 
-setup_freetube() {
-	pamac install freetube-bin
-
-	# todo: freetube data
-}
-
 setup_fstab() {
 	if cat /etc/fstab | grep "/media/pomp/data" &>/dev/null; then
 		return
@@ -196,16 +182,6 @@ setup_fstab() {
 setup_dns() {
 	:
 	# https://1.1.1.1
-}
-
-setup_geogebra() {
-	package_install geogebra
-}
-
-setup_gimp() {
-	# photoshop but FOSS
-
-	package_install gimp
 }
 
 setup_git() {
@@ -378,11 +354,6 @@ setup_go() {
 	package_install go
 }
 
-setup_godot() {
-	# game engine
-	package_install godot
-}
-
 setup_grub() {
 	sudo sed -i '/GRUB_TIMEOUT=/c\GRUB_TIMEOUT=1' /etc/default/grub
 	sudo sed -i '/GRUB_TIMEOUT_STYLE=/c\GRUB_TIMEOUT_STYLE=hidden' /etc/default/grub
@@ -462,10 +433,6 @@ setup_obs() {
 
 setup_ordne() {
 	package_install ordne
-}
-
-setup_osu() {
-	package_install osu-lazer-bin
 }
 
 setup_pacman() {
