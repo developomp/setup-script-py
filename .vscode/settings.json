@@ -1,4 +1,11 @@
 {
-  "cSpell.words": ["developomp", "flatpak", "pamac"],
+  "cSpell.words": [
+    "alacritty",
+    "btop",
+    "developomp",
+    "flatpak",
+    "pamac",
+    "ungoogled"
+  ],
   "python.formatting.provider": "black"
 }
