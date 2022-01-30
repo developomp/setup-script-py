@@ -38,70 +38,6 @@ setup_cpu_undervolting() {
 	sudo systemctl enable intel-undervolt
 }
 
-setup_discord() {
-	# assumes that plugins are located in ~/.config/BetterDiscord/plugins
-
-	# betterdiscordctl-git: BetterDiscord installer
-
-	package_install \
-		discord \
-		betterdiscordctl-git
-
-	install ./home/pomp/.config/autostart/discord.desktop ~/.config/autostart/
-
-	BD_PLUGINS=(
-		134 # https://betterdiscord.app/plugin/Avatar%20Hover
-		60  # https://betterdiscord.app/plugin/BadgesEverywhere
-		119 # https://betterdiscord.app/plugin/BetterCodeblocks
-		62  # https://betterdiscord.app/plugin/BetterNsfwTag
-		63  # https://betterdiscord.app/plugin/BetterSearchPage
-		228 # https://betterdiscord.app/plugin/CallTimeCounter
-		64  # https://betterdiscord.app/plugin/CharCounter
-		67  # https://betterdiscord.app/plugin/CompleteTimestamps
-		176 # https://betterdiscord.app/plugin/Copier
-		68  # https://betterdiscord.app/plugin/CopyRawMessage
-		69  # https://betterdiscord.app/plugin/CreationDate
-		186 # https://betterdiscord.app/plugin/DoNotTrack
-		132 # https://betterdiscord.app/plugin/EmoteReplacer
-		245 # https://betterdiscord.app/plugin/FreeEmojis
-		81  # https://betterdiscord.app/plugin/GoogleTranslateOption
-		284 # https://betterdiscord.app/plugin/GrammarCorrect
-		220 # https://betterdiscord.app/plugin/GuildProfile
-		83  # https://betterdiscord.app/plugin/ImageUtilities
-		295 # https://betterdiscord.app/plugin/InvisibleTyping
-		84  # https://betterdiscord.app/plugin/JoinedAtDate
-		85  # https://betterdiscord.app/plugin/LastMessageDate
-		287 # https://betterdiscord.app/plugin/Link-Profile-Picture
-		11  # https://betterdiscord.app/plugin/MemberCount
-		29  # https://betterdiscord.app/plugin/PermissionsViewer
-		158 # https://betterdiscord.app/plugin/PlatformIndicators
-		93  # https://betterdiscord.app/plugin/QuickMention
-		94  # https://betterdiscord.app/plugin/ReadAllNotificationsButton
-		179 # https://betterdiscord.app/plugin/RedditMentions
-		97  # https://betterdiscord.app/plugin/RevealAllSpoilersOption
-		98  # https://betterdiscord.app/plugin/SendLargeMessages
-		159 # https://betterdiscord.app/plugin/ShowAllActivities
-		291 # https://betterdiscord.app/plugin/ShowConnections
-		103 # https://betterdiscord.app/plugin/ShowHiddenChannels
-		104 # https://betterdiscord.app/plugin/SpellCheck
-		162 # https://betterdiscord.app/plugin/StaffTag
-		8   # https://betterdiscord.app/plugin/SuppressReplyMentions
-		253 # https://betterdiscord.app/plugin/Typing%20Users%20Avatars
-		196 # https://betterdiscord.app/plugin/TypingIndicator
-		293 # https://betterdiscord.app/plugin/UserDetails
-	)
-
-	log "installing betterdiscord plugins"
-
-	for id in "${BD_PLUGINS[@]}"; do
-		BD_PLUGIN_URL="https://betterdiscord.app/Download?id=$id"
-		log "installing $BD_PLUGIN_URL"
-		wget --content-disposition --no-clobber -P ~/.config/BetterDiscord/plugins "$BD_PLUGIN_URL"
-	done
-
-	POST_INSTALL+=("discord: run betterdiscordctl install")
-}
-
 setup_docker() {
 	package_install docker
 
@@ -306,51 +242,6 @@ setup_gnome_apps() {
 		gpick \
 		nautilus \
 		sushi
-}
-
-setup_gnome_extensions() {
-	log "installing gnome extensions"
-
-	# chrome-gnome-shell                     GNOME shell integration for Chrome
-	# gnome-shell-extension-installer        Installation of gnome extensions from command line
-	# gnome-shell-extension-pop-shell-git    for window tiling
-	package_install \
-		chrome-gnome-shell \
-		gnome-shell-extension-installer \
-		gnome-shell-extension-pop-shell-git
-
-	load_dconf "extension-pop-shell.conf"
-
-	extensions=(
-		36,"extension-lockkeys.conf"                     # lock-keys
-		906,"extension-sound-output-device-chooser.conf" # sound-output-device-chooser
-		1460,"extension-vitals.conf"                     # vitals
-		2741,""                                          # remove-alttab-delay-v2
-		2890,"extension-trayIconsReloaded.conf"          # tray-icons-reloaded
-		3193,"extension-blur-my-shell.conf"              # blur-my-shell
-		4000,"extension-barbar.conf"                     # babar
-		4158,""                                          # gnome-40-ui-improvements
-	)
-
-	for i in "${extensions[@]}"; do
-		IFS=","
-		set -- $i
-
-		# $1: extension id
-		# $2: extension dconf
-
-		log "installing: https://extensions.gnome.org/extension/$1"
-		gnome-shell-extension-installer $1 --yes --update
-
-		if [ ! -z $2 ]; then
-			load_dconf $2
-		fi
-	done
-
-	# enable extensions
-	load_dconf "extensions.conf"
-
-	gnome-shell-extension-installer --restart-shell
 }
 
 setup_grub() {
