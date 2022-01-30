@@ -1,4 +1,4 @@
-from .. import deno, dotnet, rust, vscodiumm
+from .. import deno, dotnet, go, jdk, rust, vscodiumm
 
 name = "dev"
 
@@ -8,5 +8,7 @@ def setup():
 
     deno.setup()
     dotnet.setup()
+    go.setup()
+    jdk.setup()
     rust.setup()
     vscodium.setup()

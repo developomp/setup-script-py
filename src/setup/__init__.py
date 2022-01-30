@@ -353,11 +353,6 @@ setup_gnome_extensions() {
 	gnome-shell-extension-installer --restart-shell
 }
 
-setup_go() {
-	# programming language
-	package_install go
-}
-
 setup_grub() {
 	sudo sed -i '/GRUB_TIMEOUT=/c\GRUB_TIMEOUT=1' /etc/default/grub
 	sudo sed -i '/GRUB_TIMEOUT_STYLE=/c\GRUB_TIMEOUT_STYLE=hidden' /etc/default/grub
@@ -368,17 +363,6 @@ setup_grub() {
 setup_gsmartcontrol() {
 	# disk health checker
 	package_install gsmartcontrol
-}
-
-setup_jdk() {
-	# jdk-openjdk:   latest jdk (17 as of writing)
-	# jdk8-openjdk:  jdk8
-	# jdk11-openjdk: jdk11
-
-	package_install \
-		jdk-openjdk \
-		jdk8-openjdk \
-		jdk11-openjdk
 }
 
 setup_keyboard() {
@@ -398,15 +382,6 @@ setup_middleclickpaste() {
 setup_mystiq() {
 	# video converter
 	package_install mystiq
-}
-
-setup_obs() {
-	# obs-plugin-input-overlay-bin: show inputs in OBS
-	# obs-studio-browser:           screen recording and streaming with browser overlay support
-
-	package_install \
-		obs-plugin-input-overlay-bin \
-		obs-studio-browser
 }
 
 setup_pacman() {
