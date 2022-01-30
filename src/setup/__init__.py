@@ -1,6 +1,10 @@
 """
 setup scripts require two things: name and setup function.
 name is a string that contains what it'll show in the list, and setup() is what'll run when it is selected.
+
+name: string
+post_install: array or string
+setup: function
 """
 
 from . import *
@@ -366,11 +370,6 @@ setup_gsmartcontrol() {
 	package_install gsmartcontrol
 }
 
-setup_inkscape() {
-	# adobe illustrator but FOSS
-	package_install inkscape
-}
-
 setup_jdk() {
 	# jdk-openjdk:   latest jdk (17 as of writing)
 	# jdk8-openjdk:  jdk8
@@ -380,11 +379,6 @@ setup_jdk() {
 		jdk-openjdk \
 		jdk8-openjdk \
 		jdk11-openjdk
-}
-
-setup_kdenlive() {
-	# video editing
-	package_install kdenlive-appimage
 }
 
 setup_keyboard() {
@@ -406,22 +400,6 @@ setup_mystiq() {
 	package_install mystiq
 }
 
-setup_node() {
-	# nodejs: Javascript on servers!
-	# nvm:    Node.JS version manager
-	# npm:    node package manager
-	# yarn:   better node package manager
-
-	package_install \
-		nodejs \
-		nvm \
-		npm \
-		yarn
-
-	# https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
-	# export PATH="$(yarn global bin):$PATH"
-}
-
 setup_obs() {
 	# obs-plugin-input-overlay-bin: show inputs in OBS
 	# obs-studio-browser:           screen recording and streaming with browser overlay support
@@ -429,10 +407,6 @@ setup_obs() {
 	package_install \
 		obs-plugin-input-overlay-bin \
 		obs-studio-browser
-}
-
-setup_ordne() {
-	package_install ordne
 }
 
 setup_pacman() {
@@ -471,22 +445,9 @@ setup_pip() {
 	package_install python-pip
 }
 
-setup_piper() {
-	# gaming mouse settings GUI
-	package_install piper
-}
-
 setup_pomky() {
 	install ./home/pomp/.local/bin/pomky ~/.local/bin/
 	install ./home/pomp/.config/autostart/pomky.desktop ~/.config/autostart/
-}
-
-setup_rust() {
-	package_install \
-		rust \
-		rustup
-
-	rustup install stable
 }
 
 setup_shfmt() {
@@ -502,32 +463,12 @@ setup_timeshift() {
 	package_install timeshift
 }
 
-setup_unity() {
-	# game engine
-	package_install unityhub
-
-	POST_INSTALL+=("Change editors location")
-}
-
 setup_vim() {
 	# vim plugin manager
 	package_install vim-plug
 
 	install ./home/pomp/.vimrc ~
 	POST_INSTALL+=("Install vim plugins with :PlugInstall command")
-}
-
-setup_virtualbox() {
-	# https://wiki.archlinux.org/title/VirtualBox
-
-	package_install \
-		virtualbox \
-		virtualbox-host-modules-arch \
-		virtualbox-ext-oracle
-
-	sudo systemctl enable systemd-modules-load
-	sudo systemctl start systemd-modules-load
-	sudo modprobe vboxdrv
 }
 
 setup_wine() {
