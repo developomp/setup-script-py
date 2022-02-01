@@ -4,7 +4,7 @@
 
 ## Purpose
 
-This repo is here to provide myself materials (script, guide, config files, and other files) for cases when I need to transfer to other machine or reinstall the OS.
+This repository is here to provide myself materials (script, guide, configuration, and other files) for cases when I need to transfer to other machine or reinstall the OS.
 
 ## Images
 
@@ -37,7 +37,6 @@ This project is undergoing a rewrite. Use the [old](https://github.com/developom
 
 ### WARNING
 
-- This script is written to work in my hardware **EXCLUSIVELY**.
 - The script assumes a clean installation of arch linux. That is, no extra packages installed already.
 
 ### Instructions
@@ -56,9 +55,14 @@ Full setup could easily take more than a hour depending on the internet speed.
 
 ## How does it work?
 
-[Github pages](https://pages.github.com) allows the developers to deploy a static website using a branch of their repositories to store the static files. I set up github action so that the [`setup.py`](./setup.py) script gets copied to the `index.html` file in the [`gh-pages`](https://github.com/developomp/setup/tree/gh-pages) branch where it is deployed to https://setup.developomp.com. The script then downloads necessary files and packages when necessary.
+[Github pages](https://pages.github.com) allows the developers to deploy a static website directly from their repositories. I set up github action so that the [`setup.py`](./setup.py) script gets copied to the [`index.html`](https://github.com/developomp/setup/blob/gh-pages/index.html) file in the [`gh-pages`](https://github.com/developomp/setup/tree/gh-pages) branch where it can be accessed from https://setup.developomp.com. The script then downloads necessary files and packages so it can start doing its thing.
 
 ## Hardware
+
+<details>
+  <summary>Click to see hardware information</summary>
+
+### Laptop
 
 | name    | model                                  |
 | ------- | -------------------------------------- |
@@ -107,9 +111,12 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 |     headphone | [NOX NX-2](https://www.e-nox.co.kr/theme/s007/index/product_view01.php?wr_id=16)                                                                                                                             |
 | laptop cooler | [ABKO NCORE NC500](http://ncore.co.kr/shop/product_item.php?ItId=2586312930)                                                                                                                                 |
 
+</details>
+
 ## Sources
 
-I randomly change between these wallpapers depending on my mood.
+- I randomly change between these wallpapers depending on my mood.
+- Some wallpaper images are intentionally blurred to improve transparent overlay readability.
 
 ### 3rd Wallpaper
 
@@ -142,5 +149,82 @@ commit: aecec82
 
 ## Future
 
-- 1TB HDD for long-term backup
-- [wannabuy](https://developomp.com/wannabuy)
+<details>
+  <summary>Click to show future plans</summary>
+
+### Laptop
+
+#### Features
+
+- Korean keyboard
+- Full size arrow keys and number pad
+- DP port
+
+maybe:
+
+- ARM / RISC-V CPU
+- SoC powered (like apple's M1)
+
+#### Candidates
+
+- [Framework laptop DIY edition](https://frame.work/products/laptop-diy-edition)
+
+Total price: $1098
+
+|               option | my choice                                                                                                  |
+| -------------------: | :--------------------------------------------------------------------------------------------------------- |
+|          Motherboard | Intel i5-1135G7 (8M Cache, up to 4.20 GHz)                                                                 |
+|                 WiFi | Intel® Wi-Fi 6E AX210 No vPro®                                                                             |
+|              Storage | 500GB - WD_BLACK™ SN850 NVMe™                                                                              |
+|     Operating system | None                                                                                                       |
+|               Memory | 16GB (2 x 8GB) DDR4-3200                                                                                   |
+|             Keyboard | **waiting** for Korean keyboard w/ full size arrow key and number pad                                      |
+|              Display | **waiting** for 120+Hz display                                                                             |
+|        Power Adapter | **waiting** for [Schuko plug (type f plug)](https://www.worldstandards.eu/electricity/plugs-and-sockets/f) |
+| Port expansion cards | 1xDP 3xUSB-A 2xUSB-C 1xHDMI + **waiting** for RJ-45 ethernet port                                          |
+
+### Storage
+
+1TB HDD for long-term backup
+
+### Mouse
+
+#### Features
+
+- consistent tracking
+- 1000Hz+ polling rate
+
+#### Candidates
+
+- [Logitech G pro wireless](https://www.logitechg.com/en-us/products/gaming-mice/pro-wireless-mouse)
+- [logitech G pro X](https://www.logitechg.com/en-us/products/gaming-mice/pro-x-superlight-wireless-mouse)
+
+with:
+
+- [Logitech powerplay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging)
+
+### Monitor
+
+#### Features
+
+- Refresh rate: 165Hz
+- resolution: 1920x1080 (FHD)
+
+#### Candidates
+
+- [Newsync X250FG ZERO](http://prod.danawa.com/info/?pcode=9295200)
+
+### Keyboard
+
+#### Features
+
+- programmable
+- pantograph
+- number pad
+- full size arrow keys
+
+#### Candidates
+
+None
+
+</details>
