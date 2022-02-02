@@ -11,6 +11,7 @@
     "FOSS",
     "noto",
     "pamac",
+    "pytermgui",
     "ungoogled"
   ],
   "python.formatting.provider": "black"
