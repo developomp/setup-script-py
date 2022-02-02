@@ -209,11 +209,6 @@ setup_middleclickpaste() {
 	# todo: make it autostart
 }
 
-setup_mystiq() {
-	# video converter
-	package_install mystiq
-}
-
 setup_pacman() {
 	# enable multilib, color, parallel download, and total download in /etc/pacman.conf
 	:
@@ -243,11 +238,6 @@ setup_pamac() {
 setup_pavucontrol() {
 	# PulseAudio settings I use for redirecting desktop audio to microphone input
 	package_install pavucontrol
-}
-
-setup_pip() {
-	# package installer for python
-	package_install python-pip
 }
 
 setup_pomky() {
