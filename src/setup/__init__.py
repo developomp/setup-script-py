@@ -49,67 +49,6 @@ setup_filezilla() {
 	package_install filezilla
 }
 
-setup_fonts() {
-	log "installing fonts"
-
-	# wget:                             For downloading zip files
-	# noto-fonts-emoji:                 Emoji fonts
-	# nerd-fonts-noto-sans-mono:        Terminal font
-	# ttf-baekmuk:                      Korean font
-
-	package_install \
-		wget \
-		noto-fonts-emoji \
-		nerd-fonts-noto-sans-mono \
-		ttf-baekmuk
-
-	# path to temporarily save font related files
-	fonts_directory="$SCRIPT_DIR/tmp/fonts"
-
-	# fonts to download
-	font_names=(
-		"Audiowide"
-		"Varela Round"
-		"Ubuntu Mono"
-		"Nanum Gothic Coding"
-	)
-
-	# create fonts directory if it does not exist
-	if [ ! -d "$fonts_directory" ]; then
-		mkdir -p "$fonts_directory"
-	fi
-
-	# download and unzip font files if they're not downloaded already
-	for font_name in "${font_names[@]}"; do
-		zip_path="$fonts_directory/$font_name.zip"
-
-		# download and unzip if either zip file or unzipped directory exists
-		if [ ! -f "$zip_path" ] && [ ! -d "$fonts_directory/$font_name" ]; then
-			wget -O "$zip_path" "https://fonts.google.com/download?family=$font_name" # download zip file
-			unzip "$zip_path" -d "$fonts_directory/$font_name"                        # unzip file
-			rm "$zip_path"                                                            # remove zip file
-		fi
-	done
-
-	font_install_dir="$HOME/.local/share/fonts"
-
-	# create local fonts directory if it does not exist already
-	if [ ! -d "$font_install_dir" ]; then
-		mkdir -p "$font_install_dir"
-	fi
-
-	# "install" all fonts
-	find "$fonts_directory" -type f -name "*.ttf" | while read ttf_file_path; do
-		mv -f "$ttf_file_path" "$font_install_dir/${ttf_file_path##*/}"
-	done
-
-	# regenerate font cache
-	fc-cache -vf
-
-	# cleanup
-	rm -rf $fonts_directory
-}
-
 setup_fstab() {
 	if cat /etc/fstab | grep "/media/pomp/data" &>/dev/null; then
 		return

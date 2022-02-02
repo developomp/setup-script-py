@@ -10,22 +10,28 @@ def initialize():
 
     log.log("Initializing flatpak")
     if os.system("sudo pacman -S --noconfirm --needed flatpak &> /dev/null"):
-        log.error("Failed to install flatpak form archlinux package repository")
+        log.error("Failed to install flatpak via pacman")
         exit(1)
 
     log.log("Initializing pip")
     if os.system("sudo pacman -S --noconfirm --needed python-pip &> /dev/null"):
-        log.error("Failed to install pip from archlinux package repository")
+        log.error("Failed to install pip via pacman")
+        exit(1)
+
+    # https://pypi.org/project/requests
+    log.log("Initializing requests")
+    if os.system("pip install requests &> /dev/null"):
+        log.error("Failed to install requests via pip")
         exit(1)
 
     # https://pypi.org/project/PyYAML
     log.log("Initializing PyYAML")
     if os.system("pip install PyYAML &> /dev/null"):
-        log.error("Failed to install PyYAML from pip")
+        log.error("Failed to install PyYAML via pip")
         exit(1)
 
     # https://github.com/bczsalba/pytermgui
     log.log("Initializing pytermgui")
     if os.system("pip install pytermgui &> /dev/null"):
-        log.error("Failed to install pytermgui from pip")
+        log.error("Failed to install pytermgui via pip")
         exit(1)

@@ -1,6 +1,9 @@
+from .constants import tmp_dir
+
 from os import system, makedirs
 from shutil import copy
-from .constants import tmp_dir
+import zipfile
+
 
 # todo: remove all uses of AUR (use pacman instead of pamac)
 def pamac_install(packages: str | list[str]) -> None:
@@ -33,6 +36,7 @@ def smart_mkdir(path: str):
     """
     Recursively create directories if it doesn't exist already.
     """
+
     try:
         makedirs(path)
     except OSError:
@@ -56,6 +60,22 @@ def load_dconf(file_name: str):
     """Loads dconf configuration"""
 
     system(f'dconf load / < "{tmp_dir}/dconf/{file_name}"')
+
+
+def download(file_name: str, url: str):
+    """Downloads a file from a url."""
+    r = requests.get(url)
+
+    with open(file_name, "wb") as f:
+        f.write(r.content)
+
+
+def unzip(zip_path: str, dst_dir: str):
+    """Unzips a .zip file to a directory."""
+
+    smart_mkdir(dst_dir)
+    with zipfile.ZipFile(zip_path, "r") as zip_ref:
+        zip_ref.extractall(dst_dir)
 
 
 """
