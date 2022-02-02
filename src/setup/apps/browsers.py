@@ -1,5 +1,5 @@
-from ..util import flatpak_install, smart_copy
-from ..constants import tmp_dir
+from ...util import flatpak_install, smart_copy
+from ...constants import tmp_dir
 
 name = "Browsers"
 post_install = ["restore onetab"]
@@ -17,7 +17,6 @@ def setup():
 
     # install ungoogled chromium
     flatpak_install("com.github.Eloston.UngoogledChromium")
-
 
     # todo: DNS https cloudflare
     # todo: tor browser

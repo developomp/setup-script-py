@@ -1,6 +1,6 @@
-from ..util import pamac_install, smart_copy
-from ..constants import tmp_dir
-from .. import log
+from ...util import pamac_install, smart_copy
+from ...constants import tmp_dir
+from ... import log
 
 from os.path import isdir
 from os import system

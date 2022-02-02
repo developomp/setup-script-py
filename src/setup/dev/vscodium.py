@@ -1,5 +1,5 @@
-from ..util import flatpak_install, smart_copy
-from ..constants import tmp_dir
+from ...util import flatpak_install, smart_copy
+from ...constants import tmp_dir
 
 from os import system
 

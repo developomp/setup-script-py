@@ -1,4 +1,4 @@
-from ..util import pamac_install
+from ...util import pamac_install
 
 name = ".NET"
 

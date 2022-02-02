@@ -1,4 +1,4 @@
-from ..util import flatpak_install
+from ...util import flatpak_install
 
 name = "Zoom"
 

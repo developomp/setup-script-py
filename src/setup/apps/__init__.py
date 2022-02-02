@@ -1,1 +1,3 @@
+"""Regular applications"""
+
 from . import *

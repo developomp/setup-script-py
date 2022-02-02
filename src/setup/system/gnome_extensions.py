@@ -1,5 +1,5 @@
-from ..util import pamac_install, load_dconf
-from .. import log
+from ...util import pamac_install, load_dconf
+from ... import log
 
 name = "Gnome extensions"
 
