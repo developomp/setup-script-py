@@ -38,17 +38,6 @@ setup_cpu_undervolting() {
 	sudo systemctl enable intel-undervolt
 }
 
-setup_docker() {
-	package_install docker
-
-	sudo usermod -aG docker "${USER}"
-	sudo systemctl --now enable docker
-}
-
-setup_filezilla() {
-	package_install filezilla
-}
-
 setup_fstab() {
 	if cat /etc/fstab | grep "/media/pomp/data" &>/dev/null; then
 		return
@@ -190,23 +179,11 @@ setup_grub() {
 	sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 
-setup_gsmartcontrol() {
-	# disk health checker
-	package_install gsmartcontrol
-}
-
 setup_keyboard() {
 	# Korean keyboard support
 	package_install ibus-hangul
 
 	POST_INSTALL+=("keyboard: setup korean keyboard and reboot")
-}
-
-setup_middleclickpaste() {
-	# prevents middle click paste
-	package_install xmousepasteblock-git
-
-	# todo: make it autostart
 }
 
 setup_pacman() {
@@ -233,11 +210,6 @@ setup_pamac() {
 	sudo install -g root -o root -m u=rw,g=r,o=r ./etc/pacman.conf /etc/pacman.conf
 
 	sudo pacman -Syyuu
-}
-
-setup_pavucontrol() {
-	# PulseAudio settings I use for redirecting desktop audio to microphone input
-	package_install pavucontrol
 }
 
 setup_pomky() {
