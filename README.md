@@ -141,11 +141,9 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 ### System monitor
 
-https://github.com/developomp/pomky
+- [pomky](https://github.com/developomp/pomky) (commit: aecec82)
 
 this [file](./home/pomp/.local/bin/pomky) right here
-
-commit: aecec82
 
 ## Future
 
