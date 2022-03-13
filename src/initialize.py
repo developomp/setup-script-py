@@ -30,8 +30,8 @@ def initialize():
         log.error("Failed to install PyYAML via pip")
         exit(1)
 
-    # https://github.com/bczsalba/pytermgui
-    log.log("Initializing pytermgui")
-    if os.system("pip install pytermgui &> /dev/null"):
+    # https://github.com/magmax/python-inquirer
+    log.log("Initializing inquirer")
+    if os.system("pip install inquirer &> /dev/null"):
         log.error("Failed to install pytermgui via pip")
         exit(1)

@@ -1,7 +1,10 @@
 from .initialize import initialize
-from .ui.show_main_menu import show_main_menu
 
 
 def entry():
     initialize()
-    show_main_menu()
+
+    # import should happen after the `initialize` function is called
+    from .interface.choose_action import choose_action
+
+    choose_action()
