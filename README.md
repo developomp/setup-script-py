@@ -2,6 +2,12 @@
   My <a href="https://archlinux.org">Arch Linux</a> desktop setup
 </h1>
 
+<p align="center">
+  <b>
+    This project is undergoing a rewrite. Use the <a href="https://github.com/developomp/setup/tree/old">old</a> branch for now.
+  </b>
+</p>
+
 ## Purpose
 
 This repository is here to provide myself materials (script, guide, configuration, and other files) for cases when I need to transfer to other machine or reinstall the OS.
@@ -32,8 +38,6 @@ This repository is here to provide myself materials (script, guide, configuratio
 </details>
 
 ## Usage
-
-This project is undergoing a rewrite. Use the [old](https://github.com/developomp/setup/tree/old) branch for now.
 
 ### WARNING
 
