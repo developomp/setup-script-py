@@ -88,7 +88,6 @@ def main():
 
     from src.entry import entry
 
-    # hand over control to cloned code
     entry()
 
 
