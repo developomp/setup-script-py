@@ -1,5 +1,6 @@
 from .constants import tmp_dir
 
+from importlib.machinery import SourceFileLoader
 from os import system, makedirs
 from shutil import copy
 import zipfile
@@ -76,6 +77,10 @@ def unzip(zip_path: str, dst_dir: str):
     smart_mkdir(dst_dir)
     with zipfile.ZipFile(zip_path, "r") as zip_ref:
         zip_ref.extractall(dst_dir)
+
+
+def import_file(name, path):
+    return SourceFileLoader(name, path).load_module()
 
 
 """
