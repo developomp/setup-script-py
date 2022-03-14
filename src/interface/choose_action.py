@@ -1,5 +1,6 @@
 import inquirer
 from glob import glob
+from ..util import import_file
 
 
 def choose_action():
@@ -16,4 +17,6 @@ def choose_action():
         ]
     )
 
-    print(response["actions"])
+    for action_name in response["actions"]:
+        module = import_file(action_name, f"src/setup/{action_name}")
+        print(module.name)
