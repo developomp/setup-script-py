@@ -1,6 +1,7 @@
 import inquirer
 from glob import glob
 from ..util import import_file
+from src.log import log
 
 
 def choose_action():
@@ -19,4 +20,6 @@ def choose_action():
 
     for action_name in response["actions"]:
         module = import_file(action_name, f"src/setup/{action_name}")
-        print(module.name)
+        # todo: deal with module.post_install
+        log(f"Setting up: {module.name} ({action_name})")
+        module.setup()
