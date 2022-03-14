@@ -1,5 +1,5 @@
 from ...constants import tmp_dir
-from ...util import pamac_install, smart_copy
+from src.util import pamac_install, smart_copy
 
 from os import makedirs
 

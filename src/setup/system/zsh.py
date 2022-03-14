@@ -1,4 +1,4 @@
-from ...util import pamac_install, smart_copy
+from src.util import pamac_install, smart_copy
 from ...constants import tmp_dir
 from ... import log
 

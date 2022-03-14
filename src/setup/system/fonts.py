@@ -1,4 +1,4 @@
-from ...util import pamac_install, smart_mkdir, download, unzip
+from src.util import pamac_install, smart_mkdir, download, unzip
 from ...constants import tmp_dir
 from shutil import rmtree, move
 from os import remove, system

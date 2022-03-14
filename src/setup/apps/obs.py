@@ -1,4 +1,4 @@
-from ...util import flatpak_install, pamac_install
+from src.util import flatpak_install, pamac_install
 
 name = "OBS studio"
 

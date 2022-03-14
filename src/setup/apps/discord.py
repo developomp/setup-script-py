@@ -1,4 +1,4 @@
-from ...util import flatpak_install, pamac_install, smart_copy
+from src.util import flatpak_install, pamac_install, smart_copy
 from ...constants import tmp_dir
 from ... import log
 from os import system
