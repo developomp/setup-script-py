@@ -1,5 +1,5 @@
 from src.util import flatpak_install, smart_copy
-from ...constants import tmp_dir
+from src.constants import tmp_dir
 
 name = "Browsers"
 post_install = ["restore onetab"]

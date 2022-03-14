@@ -1,6 +1,6 @@
 from src.util import flatpak_install, pamac_install, smart_copy
-from ...constants import tmp_dir
-from ... import log
+from src.constants import tmp_dir
+from src import log
 from os import system
 
 name = "Discord"
