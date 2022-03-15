@@ -20,7 +20,6 @@
   - [Some windows](#some-windows)
   - [Minimalism at its finest](#minimalism-at-its-finest)
   - [Script Execution](#script-execution)
-  - [Selection Menu](#selection-menu)
 - [How does it work?](#how-does-it-work)
 - [Usage](#usage)
 - [Hardware](#hardware)
@@ -69,10 +68,6 @@
 ### Script Execution
 
 ![Execution](./.repo/execution.png)
-
-### Selection Menu
-
-![Menu](./.repo/menu.png)
 
 </details>
 
