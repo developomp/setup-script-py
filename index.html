@@ -11,7 +11,7 @@ import os
 import sys
 from shutil import rmtree
 
-# must be synced with `src/__init__.py`
+# must be synced with `src/constants.py`
 tmp_dir = "/tmp/com.developomp.setup"
 
 #
