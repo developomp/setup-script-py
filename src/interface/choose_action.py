@@ -2,7 +2,7 @@ import inquirer
 from glob import glob
 from ..util import import_file
 from src.log import log
-from src import tmp_dir
+from src.constants import tmp_dir
 
 
 def choose_action():
