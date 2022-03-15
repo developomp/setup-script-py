@@ -2,15 +2,13 @@
   My <a href="https://archlinux.org">Arch Linux</a> desktop setup
 </h1>
 
+[![what's this?](https://img.shields.io/badge/what's_this%3F-grey?style=for-the-badge)](https://developomp.com/portfolio/linux-setup-script)
+
 <p align="center">
   <b>
-    This project is undergoing a rewrite. Use the <a href="https://github.com/developomp/setup/tree/old">old</a> branch for now.
+    This project is undergoing a rewrite. Use the <a href="https://github.com/developomp/setup/tree/old">old branch</a> for now.
   </b>
 </p>
-
-## Purpose
-
-This repository is here to provide myself materials (script, guide, configuration, and other files) for cases when I need to transfer to other machine or reinstall the OS.
 
 ## Images
 
@@ -37,6 +35,10 @@ This repository is here to provide myself materials (script, guide, configuratio
 
 </details>
 
+## How does it work?
+
+[Github pages](https://pages.github.com) allows the developers to deploy a static website directly from their repositories. I set up github action so that the [`setup.py`](./setup.py) script gets copied to the [`index.html`](https://github.com/developomp/setup/blob/gh-pages/index.html) file in the [`gh-pages`](https://github.com/developomp/setup/tree/gh-pages) branch where it can be accessed from https://setup.developomp.com. The script then downloads necessary files and packages so it can start doing its thing.
+
 ## Usage
 
 ### WARNING
@@ -56,10 +58,6 @@ This repository is here to provide myself materials (script, guide, configuratio
 3. Execute it.
 
 Full setup could easily take more than a hour depending on the internet speed.
-
-## How does it work?
-
-[Github pages](https://pages.github.com) allows the developers to deploy a static website directly from their repositories. I set up github action so that the [`setup.py`](./setup.py) script gets copied to the [`index.html`](https://github.com/developomp/setup/blob/gh-pages/index.html) file in the [`gh-pages`](https://github.com/developomp/setup/tree/gh-pages) branch where it can be accessed from https://setup.developomp.com. The script then downloads necessary files and packages so it can start doing its thing.
 
 ## Hardware
 
@@ -126,7 +124,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 <img alt="3rd wallpaper" src="./.repo/wallpaper3.png" width="75%">
 
-- made by [u/nullcriminal](https://www.reddit.com/r/unixporn/comments/b4dt3y) on reddit
+- made by [u/nullcriminal](https://www.reddit.com/r/unixporn/comments/b4dt3y)
 
 ### 2nd Wallpaper
 
@@ -134,6 +132,8 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 - image from [wallpaperaccess](https://wallpaperaccess.com/full/2752569.png)
 - the [image list](https://wallpaperaccess.com/simple-earth) I found it from
+- Effects
+  - blur
 
 ### 1st Wallpaper
 
@@ -142,6 +142,9 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 - [a video](https://www.youtube.com/watch?v=QEWV6fiYaDU) from [Chillhop Music](https://www.youtube.com/channel/UCOxqgCwgOqC2lMqC5PYz_Dg)
 - Artwork by [Jeff Östberg](https://jeffostberg.se)
 - Animation by [Geneviève Delacroix](http://www.genevievelacroix.com)
+- Effects
+  - blur (GIMP gaussian blur 3.5)
+  - [nerdified](https://github.com/Schrodinger-Hat/ImageGoNord) (filtering option toggled)
 
 ### System monitor
 
