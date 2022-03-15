@@ -10,6 +10,47 @@
   </b>
 </p>
 
+## Table of contents
+
+<details>
+<summary>Click to expand</summary>
+
+- [Table of contents](#table-of-contents)
+- [Images](#images)
+  - [Some windows](#some-windows)
+  - [Minimalism at its finest](#minimalism-at-its-finest)
+  - [Script Execution](#script-execution)
+  - [Selection Menu](#selection-menu)
+- [How does it work?](#how-does-it-work)
+- [Usage](#usage)
+- [Hardware](#hardware)
+  - [Laptop](#laptop)
+  - [RAM](#ram)
+  - [Storage](#storage)
+  - [Partitioning](#partitioning)
+  - [Peripherals](#peripherals)
+- [Sources](#sources)
+  - [3rd Wallpaper](#3rd-wallpaper)
+  - [2nd Wallpaper](#2nd-wallpaper)
+  - [1st Wallpaper](#1st-wallpaper)
+  - [System monitor](#system-monitor)
+- [Future](#future)
+  - [Laptop](#laptop-1)
+    - [Features](#features)
+    - [Candidates](#candidates)
+  - [Storage](#storage-1)
+  - [Mouse](#mouse)
+    - [Features](#features-1)
+    - [Candidates](#candidates-1)
+  - [Monitor](#monitor)
+    - [Features](#features-2)
+    - [Candidates](#candidates-2)
+  - [Keyboard](#keyboard)
+    - [Features](#features-3)
+    - [Candidates](#candidates-3)
+
+</details>
+
 ## Images
 
 ![result image 1](./.repo/result1.png)
@@ -41,11 +82,7 @@
 
 ## Usage
 
-### WARNING
-
-- The script assumes a clean installation of arch linux. That is, no extra packages installed already.
-
-### Instructions
+> The script assumes a clean installation of arch linux. That is, no extra packages installed already.
 
 1. Install arch linux via [archfi](https://github.com/MatMoul/archfi) (included installer via [archinstall](https://github.com/archlinux/archinstall) coming soon).
 
