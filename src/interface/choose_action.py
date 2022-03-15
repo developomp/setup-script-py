@@ -31,6 +31,7 @@ def choose_action():
         log(f"Setting up: {module.name} ({action_name})")
         module.setup()
 
-    print("POST INStALL TASKS:")
-    for post_install_task in post_install_tasks:
-        print(f"- {post_install_task}")
+    if post_install_tasks:
+        print("POST INStALL TASKS:")
+        for post_install_task in post_install_tasks:
+            print(f"- {post_install_task}")
