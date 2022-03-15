@@ -165,7 +165,8 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 - image from [wallpaperaccess](https://wallpaperaccess.com/full/2752569.png)
 - the [image list](https://wallpaperaccess.com/simple-earth) I found it from
 - Effects
-  - blur
+  - lv1 compression (GIMP)
+  - blur (GIMP gaussian blur 3.0)
 
 ### 1st Wallpaper
 
@@ -175,6 +176,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 - Artwork by [Jeff Östberg](https://jeffostberg.se)
 - Animation by [Geneviève Delacroix](http://www.genevievelacroix.com)
 - Effects
+  - lv1 compression (GIMP)
   - blur (GIMP gaussian blur 3.5)
   - [nerdified](https://github.com/Schrodinger-Hat/ImageGoNord) (filtering option toggled)
 
