@@ -7,7 +7,6 @@ from src import tmp_dir
 
 def choose_action():
     files = glob(f"{tmp_dir}/src/setup/**/*.py")
-    print(files)
     files = [
         s.removeprefix(f"{tmp_dir}/src/setup/") for s in files if "__init__.py" not in s
     ]
