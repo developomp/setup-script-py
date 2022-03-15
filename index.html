@@ -11,6 +11,9 @@ import os
 import sys
 from shutil import rmtree
 
+# must be synced with `src/__init__.py`
+tmp_dir = "/tmp/com.developomp.setup"
+
 
 def minimal_check():
     """
@@ -57,8 +60,6 @@ def minimal_initialization():
     #
 
     print("Cloning git repository")
-
-    tmp_dir = "/tmp/com.developomp.setup"
 
     # remove existing files
     if os.path.exists(tmp_dir):
