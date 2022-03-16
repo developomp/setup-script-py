@@ -2,7 +2,7 @@ from .constants import tmp_dir
 
 from importlib.machinery import SourceFileLoader
 from os import system, makedirs
-from shutil import copy
+from os.path import dirname
 import zipfile
 
 
@@ -44,17 +44,18 @@ def smart_mkdir(path: str):
         pass
 
 
-def smart_copy(src: str, dst: str):
+def smart_copy(src: str, dst: str, mode="644"):
     """
     Copies src to dst.
-    Errors if parent directory/directories of dst does not exist.
+    Automatically creates parent directory/directories of dst does not exist already.
 
-    arguments:
-        src: A path-like object or string pointing to a file.
+    parameters:
+        src: A path-like object or string pointing to a file or a directory.
         dst: A path-like object or string pointing to a file or a directory.
+        mode: Permission mode (as in chmod). Defaults to 644 (rw-r--r--)
     """
 
-    copy(src, dst)
+    system(f"install -Dm{mode} {src} {dst}")
 
 
 def load_dconf(file_name: str):
