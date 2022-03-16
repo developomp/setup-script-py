@@ -27,7 +27,14 @@ def setup():
                   ttf-baekmuk: Korean font
     """
 
-    pamac_install(["noto-fonts-emoji", "nerd-fonts-noto-sans-mono", "ttf-baekmuk"])
+    pamac_install(
+        [
+            "noto-fonts-emoji",
+            "nerd-fonts-noto-sans-mono",
+            "ttf-baekmuk",
+            "ttf-iosevka-nerd",
+        ]
+    )
 
     smart_mkdir(TMP_FONTS_DIRECTORY)
 
