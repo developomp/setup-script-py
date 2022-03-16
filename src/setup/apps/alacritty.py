@@ -10,7 +10,8 @@ def setup() -> None:
     """terminal app written in rust"""
 
     pamac_install("alacritty")
-    makedirs("~/.config/alacritty/")
+
+    # copy configuration file
     smart_copy(
         f"{tmp_dir}/home/pomp/.config/alacritty/alacritty.yml",
         "~/.config/alacritty/alacritty.yml",
