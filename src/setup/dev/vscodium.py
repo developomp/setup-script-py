@@ -1,4 +1,4 @@
-from src.util import flatpak_install, smart_copy
+from src.util import flatpak_install, copy_file
 from src.constants import tmp_dir
 
 from os import system
@@ -55,19 +55,19 @@ def setup():
         system(f"codium --install-extension {extension}")
 
     # autostart vscodium
-    smart_copy(
+    copy_file(
         f"{tmp_dir}/home/pomp/.config/autostart/codium.desktop",
         "~/.config/autostart/codium.desktop",
     )
 
     # vscodium settings
-    smart_copy(
+    copy_file(
         f"{tmp_dir}/home/pomp/.config/VSCodium/User/settings.json",
         "~/.config/VSCodium/User/settings.json",
     )
 
     # enable vscode extension store
-    smart_copy(
+    copy_file(
         f"{tmp_dir}/home/pomp/.config/VSCodium/product.json",
         "~/.config/VSCodium/product.json",
     )

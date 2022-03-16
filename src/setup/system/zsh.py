@@ -1,4 +1,4 @@
-from src.util import pamac_install, smart_copy
+from src.util import pamac_install, copy_file
 from src.constants import tmp_dir
 from src import log
 
@@ -33,4 +33,4 @@ def setup():
     )
 
     # apply zshrc configuration
-    smart_copy(f"{tmp_dir}/home/pomp/.zshrc", "~/.zshrc")
+    copy_file(f"{tmp_dir}/home/pomp/.zshrc", "~/.zshrc")

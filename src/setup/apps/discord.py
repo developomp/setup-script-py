@@ -1,4 +1,4 @@
-from src.util import flatpak_install, pamac_install, smart_copy
+from src.util import flatpak_install, pamac_install, copy_file
 from src.constants import tmp_dir
 from src import log
 from os import system
@@ -54,7 +54,7 @@ def setup():
     flatpak_install("com.discordapp.Discord")
     pamac_install("betterdiscordctl-git")
 
-    smart_copy(
+    copy_file(
         f"{tmp_dir}/home/pomp/.config/autostart/discord.desktop",
         "~/.config/autostart/discord.desktop",
     )

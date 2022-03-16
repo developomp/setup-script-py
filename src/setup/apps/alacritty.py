@@ -1,5 +1,5 @@
 from src.constants import tmp_dir
-from src.util import pamac_install, smart_copy
+from src.util import pamac_install, copy_file
 
 from os import makedirs
 
@@ -12,7 +12,7 @@ def setup() -> None:
     pamac_install("alacritty")
 
     # copy configuration file
-    smart_copy(
+    copy_file(
         f"{tmp_dir}/home/pomp/.config/alacritty/alacritty.yml",
         "~/.config/alacritty/alacritty.yml",
     )

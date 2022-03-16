@@ -44,18 +44,30 @@ def smart_mkdir(path: str):
         pass
 
 
-def smart_copy(src: str, dst: str, mode="644"):
+def copy_file(src: str, dst: str, mode="644"):
     """
     Copies src to dst.
-    Automatically creates parent directory/directories of dst does not exist already.
+    Automatically creates parent directory/directories of dst if it does not exist already.
 
     parameters:
-        src: A path-like object or string pointing to a file or a directory.
-        dst: A path-like object or string pointing to a file or a directory.
+        src: A path-like object or string pointing to a file.
+        dst: A path-like object or string pointing to a file.
         mode: Permission mode (as in chmod). Defaults to 644 (rw-r--r--)
     """
 
     system(f"install -Dm{mode} {src} {dst}")
+
+
+def copy_directory(src: str, dst: str):
+    """Copy a directory.
+    Automatically creates parent directory/directories of dst if it does not exist already
+
+    parameters:
+        src: A path-like object or string pointing to a directory.
+        dst: A path-like object or string pointing to a directory.
+    """
+
+    system(f"cp -r {src} {dst}")
 
 
 def load_dconf(file_name: str):
