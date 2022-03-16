@@ -1,23 +1,23 @@
 {
-  "workbench.colorTheme": "One Dark Pro Flat",
-  "workbench.iconTheme": "material-icon-theme",
-  "security.workspace.trust.untrustedFiles": "open",
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false,
-  "git.autofetch": true,
+  "cSpell.useGitignore": false,
+  "editor.fontFamily": "'Ubuntu Mono', 'NanumGothicCoding', 'Iosevka Nerd Font'",
   "editor.fontSize": 16,
-  "editor.fontFamily": "'Ubuntu Mono', 'NanumGothicCoding'",
-  "terminal.integrated.fontFamily": "'NotoSansMono Nerd Font'",
-  "terminal.integrated.enablePersistentSessions": false,
-  "terminal.integrated.persistentSessionReviveProcess": "never",
-  "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "explorer.compactFolders": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
-  "gitlens.codeLens.enabled": false,
   "gitlens.statusBar.enabled": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "explorer.compactFolders": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.fontFamily": "'NotoSansMono Nerd Font'",
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "workbench.colorTheme": "One Dark Pro Flat",
+  "workbench.iconTheme": "material-icon-theme",
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -26,5 +26,59 @@
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+  "[gdscript]": {
+    "editor.defaultFormatter": "Razoric.gdscript-toolkit-formatter"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "matklad.rust-analyzer"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    }
+  },
+  "[go.mod]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "python.formatting.provider": "black",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "color-highlight.markerType": "underline",
+  "cSpell.userWords": ["dotfile", "dotfiles"]
 }
