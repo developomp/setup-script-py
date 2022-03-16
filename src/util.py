@@ -3,6 +3,7 @@ from .constants import tmp_dir
 from importlib.machinery import SourceFileLoader
 from os import system, makedirs
 from os.path import dirname
+from shutil import rmtree
 import zipfile
 
 
@@ -41,6 +42,13 @@ def smart_mkdir(path: str):
     try:
         makedirs(path)
     except OSError:
+        pass
+
+
+def smart_rmtree(path):
+    try:
+        rmtree(path)
+    except:
         pass
 
 
