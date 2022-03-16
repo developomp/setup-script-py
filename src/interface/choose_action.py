@@ -1,14 +1,22 @@
 import inquirer
 from glob import glob
+from os.path import exists
+
 from ..util import import_file
 from src.log import log
 from src.constants import tmp_dir
 
 
 def choose_action():
-    files = glob(f"{tmp_dir}/src/setup/**/*.py")
+    directory_to_search = tmp_dir
+    if exists("src/"):
+        directory_to_search = "."
+
+    files = glob(f"{directory_to_search}/src/setup/**/*.py")
     files = [
-        s.removeprefix(f"{tmp_dir}/src/setup/") for s in files if "__init__.py" not in s
+        s.removeprefix(f"{directory_to_search}/src/setup/")
+        for s in files
+        if "__init__.py" not in s
     ]
 
     response = inquirer.prompt(
@@ -23,7 +31,9 @@ def choose_action():
 
     post_install_tasks = []
     for action_name in response["actions"]:
-        module = import_file(action_name, f"{tmp_dir}/src/setup/{action_name}")
+        module = import_file(
+            action_name, f"{directory_to_search}/src/setup/{action_name}"
+        )
 
         if hasattr(module, "post_install"):
             if isinstance(module.post_install, str):
