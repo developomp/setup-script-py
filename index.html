@@ -7,9 +7,10 @@ This file is all that's needed for execution.
 It'll download all the dependencies and related files automatically.
 """
 
-import os
-import sys
+from os import system, geteuid
+from os.path import exists
 from shutil import rmtree
+import sys
 
 # must be synced with `src/constants.py`
 tmp_dir = "/tmp/com.developomp.setup"
@@ -22,7 +23,7 @@ tmp_dir = "/tmp/com.developomp.setup"
 def cleanup():
     """Removes temporary files and folders downloaded by this script"""
 
-    if os.path.exists(tmp_dir):
+    if exists(tmp_dir):
         rmtree(tmp_dir)
 
 
@@ -35,7 +36,7 @@ def exit_if_root():
     """Exits script if it was executed as root"""
 
     # todo: allow running script as root when implementing user creation/arch installation logic
-    if os.geteuid() == 0:
+    if geteuid() == 0:
         print("Do not run this script as root.", file=sys.stderr)
         exit(1)
 
@@ -52,9 +53,7 @@ def exit_if_system_not_compatible():
     """Exits script if the OS is not linux or if pacman does not exist"""
 
     print("Checking if system is compatible")
-    if "linux" not in sys.platform.lower() or os.system(
-        "command -v pacman &> /dev/null"
-    ):
+    if "linux" not in sys.platform.lower() or system("command -v pacman &> /dev/null"):
         print("This script should only be used on arch linux.", file=sys.stderr)
         exit(1)
 
@@ -64,7 +63,7 @@ def exit_if_no_internet():
     Pings archlinux.org for testing."""
 
     print("Checking if there's internet connection")
-    if os.system("ping -c 1 archlinux.org &> /dev/null"):
+    if system("ping -c 1 archlinux.org &> /dev/null"):
         print("Failed to connect to internet.", file=sys.stderr)
         exit(1)
 
@@ -78,9 +77,9 @@ def install_git():
     """Installs git if it's not installed already"""
 
     print("Initializing git")
-    if os.system("command -v git &> /dev/null"):
+    if system("command -v git &> /dev/null"):
         print("git was not installed already. Installing now.")
-        os.system("sudo pacman -S --noconfirm --needed git")
+        system("sudo pacman -S --noconfirm --needed git")
 
 
 def clone_repository():
@@ -92,14 +91,14 @@ def clone_repository():
     cleanup()
 
     # clone repository
-    if os.system(
+    if system(
         f"git clone --depth 1 https://github.com/developomp/setup.git {tmp_dir} &> /dev/null"
     ):
         print("Failed to clone repository", file=sys.stderr)
         exit(1)
 
     # allow everyone to read and write.
-    if os.system(f"chmod -R a+rw {tmp_dir}"):
+    if system(f"chmod -R a+rw {tmp_dir}"):
         print("Failed to change file permission for cloned repo", file=sys.stderr)
         exit(1)
 
@@ -128,6 +127,11 @@ def minimal_initialization():
     """
 
     install_git()
+
+    # skip if testing
+    if exists(".git/") and exists("src/"):
+        return
+
     clone_repository()
 
     # Add cloned directory to system path
