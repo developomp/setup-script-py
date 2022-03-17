@@ -9,6 +9,9 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 # top bar
 $HOME/.config/polybar/launch.sh
 
+# restore screen brightness
+brightnessctl --restore
+
 # wallpaper
 nitrogen --set-zoom /media/pomp/data/Pictures/Wallpapers/cozy_blur.png
 

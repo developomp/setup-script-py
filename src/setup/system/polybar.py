@@ -7,7 +7,7 @@ name = "polybar"
 def setup():
     """Top bar thingy"""
 
-    pamac_install(["polybar", "ttf-iosevka-nerd"])
+    pamac_install(["polybar", "brightnessctl", "ttf-iosevka-nerd"])
 
     # remove existing files
     remove_directory("~/.config/polybar")
