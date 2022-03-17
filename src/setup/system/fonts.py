@@ -1,5 +1,5 @@
 from src.util import pamac_install, smart_mkdir, download, unzip
-from src.constants import tmp_dir
+from src.constants import content_dir
 from shutil import rmtree, move
 from os import remove, system
 from os.path import exists
@@ -9,7 +9,7 @@ import glob
 name = "fonts"
 
 # path to temporarily save font related files
-TMP_FONTS_DIRECTORY = f"{tmp_dir}/tmp/fonts"
+TMP_FONTS_DIRECTORY = f"{content_dir}/tmp/fonts"
 
 # fonts to download
 FONT_NAMES = ("Audiowide", "Varela Round", "Ubuntu Mono", "Nanum Gothic Coding")

@@ -1,5 +1,5 @@
 from src.util import flatpak_install, copy_file
-from src.constants import tmp_dir
+from src.constants import content_dir
 
 from os import system
 
@@ -56,18 +56,18 @@ def setup():
 
     # autostart vscodium
     copy_file(
-        f"{tmp_dir}/home/pomp/.config/autostart/codium.desktop",
+        f"{content_dir}/home/pomp/.config/autostart/codium.desktop",
         "~/.config/autostart/codium.desktop",
     )
 
     # vscodium settings
     copy_file(
-        f"{tmp_dir}/home/pomp/.config/VSCodium/User/settings.json",
+        f"{content_dir}/home/pomp/.config/VSCodium/User/settings.json",
         "~/.config/VSCodium/User/settings.json",
     )
 
     # enable vscode extension store
     copy_file(
-        f"{tmp_dir}/home/pomp/.config/VSCodium/product.json",
+        f"{content_dir}/home/pomp/.config/VSCodium/product.json",
         "~/.config/VSCodium/product.json",
     )

@@ -1,4 +1,4 @@
-from .constants import tmp_dir
+from .constants import content_dir
 
 from importlib.machinery import SourceFileLoader
 from os import system, makedirs
@@ -75,13 +75,13 @@ def copy_directory(src: str, dst: str):
         dst: A path-like object or string pointing to a directory.
     """
 
-    system(f"cp -r {src} {dst}")
+    system(f"cp -R {src} {dst}")
 
 
 def load_dconf(file_name: str):
     """Loads dconf configuration"""
 
-    system(f'dconf load / < "{tmp_dir}/dconf/{file_name}"')
+    system(f'dconf load / < "{content_dir}/dconf/{file_name}"')
 
 
 def download(file_name: str, url: str):

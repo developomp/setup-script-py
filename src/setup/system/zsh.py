@@ -1,5 +1,5 @@
 from src.util import pamac_install, copy_file
-from src.constants import tmp_dir
+from src.constants import content_dir
 from src import log
 
 from os.path import isdir
@@ -33,4 +33,4 @@ def setup():
     )
 
     # apply zshrc configuration
-    copy_file(f"{tmp_dir}/home/pomp/.zshrc", "~/.zshrc")
+    copy_file(f"{content_dir}/home/pomp/.zshrc", "~/.zshrc")
