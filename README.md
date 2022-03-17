@@ -167,6 +167,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 - Effects
   - lv1 compression (GIMP)
   - blur (GIMP gaussian blur 3.0)
+  - [nordified](https://github.com/Schrodinger-Hat/ImageGoNord) (filtering option toggled)
 
 ### 1st Wallpaper
 
@@ -178,7 +179,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 - Effects
   - lv1 compression (GIMP)
   - blur (GIMP gaussian blur 3.5)
-  - [nerdified](https://github.com/Schrodinger-Hat/ImageGoNord) (filtering option toggled)
+  - [nordified](https://github.com/Schrodinger-Hat/ImageGoNord) (filtering option toggled)
 
 ### System monitor
 
