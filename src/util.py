@@ -44,6 +44,14 @@ def smart_mkdir(path: str):
         pass
 
 
+def remove_directory(path):
+    try:
+        system(f"rm -rf {path}")
+    except Exception as err:
+        print(f"Failed to remove directory: {path}")
+        raise err
+
+
 def copy_file(src: str, dst: str, mode="644"):
     """
     Copies src to dst.
