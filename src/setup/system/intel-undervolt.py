@@ -6,7 +6,7 @@ name = "Intel CPU undervolting"
 
 def setup():
     """
-    Haha efficiency go brrrrt
+    Adds -100mV undervolting to CPU and CPU cache
     https://wiki.archlinux.org/index.php/Undervolting_CPU
     """
 
