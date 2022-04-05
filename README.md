@@ -33,10 +33,11 @@
   - [2nd Wallpaper](#2nd-wallpaper)
   - [1st Wallpaper](#1st-wallpaper)
   - [System monitor](#system-monitor)
-- [Future](#future)
+- [Future plans](#future-plans)
   - [Laptop](#laptop-1)
     - [Features](#features)
     - [Candidates](#candidates)
+      - [Framework laptop DIY edition](#framework-laptop-diy-edition)
   - [Storage](#storage-1)
   - [Mouse](#mouse)
     - [Features](#features-1)
@@ -47,6 +48,8 @@
   - [Keyboard](#keyboard)
     - [Features](#features-3)
     - [Candidates](#candidates-3)
+      - [COX CK01 PBT SL](#cox-ck01-pbt-sl)
+      - [GK787S OfficeMaster](#gk787s-officemaster)
 
 </details>
 
@@ -187,7 +190,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 this [file](./home/pomp/.local/bin/pomky) right here
 
-## Future
+## Future plans
 
 <details>
   <summary>Click to show future plans</summary>
@@ -203,11 +206,12 @@ this [file](./home/pomp/.local/bin/pomky) right here
 maybe:
 
 - ARM / RISC-V CPU
-- SoC powered (like apple's M1)
+- SoC
+- Apple M1
 
 #### Candidates
 
-- [Framework laptop DIY edition](https://frame.work/products/laptop-diy-edition)
+##### [Framework laptop DIY edition](https://frame.work/products/laptop-diy-edition)
 
 Total price: $1098
 
@@ -258,13 +262,25 @@ with:
 
 #### Features
 
-- programmable
-- pantograph
+- programmable (optional)
+- quiet
 - number pad
 - full size arrow keys
 
 #### Candidates
 
-None
+##### [COX CK01 PBT SL](http://prod.danawa.com/info/?pcode=15185441)
+
+- switch: GTMX silent white
+- keycap material: PBT
+- actuation force: 60g
+- con: no plate
+
+##### [GK787S OfficeMaster](http://prod.danawa.com/info/?pcode=11731784&)
+
+- switch: cherry MX silent red
+- keycap material: PBT
+- actuation force: 45g
+- korean letters are laser engraved instead of being molded
 
 </details>
