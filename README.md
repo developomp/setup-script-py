@@ -45,11 +45,6 @@
   - [Monitor](#monitor)
     - [Features](#features-2)
     - [Candidates](#candidates-2)
-  - [Keyboard](#keyboard)
-    - [Features](#features-3)
-    - [Candidates](#candidates-3)
-      - [COX CK01 PBT SL](#cox-ck01-pbt-sl)
-      - [GK787S OfficeMaster](#gk787s-officemaster)
 
 </details>
 
@@ -147,6 +142,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 |         mouse | [Logitech G402 Hyperion fury](https://www.logitechg.com/en-eu/products/gaming-mice/g402-hyperion-fury-fps-gaming-mouse.html) I got from a [giveaway event](https://blog.naver.com/yjcomicsblog/221432692995) |
 |     headphone | [NOX NX-2](https://www.e-nox.co.kr/theme/s007/index/product_view01.php?wr_id=16)                                                                                                                             |
 | laptop cooler | [ABKO NCORE NC500](http://ncore.co.kr/shop/product_item.php?ItId=2586312930)                                                                                                                                 |
+|      Keyboard | [COX CK01 PBT SL](https://www.abko.co.kr/brand/detail.php?it_id=1630976438)                                                                                                                                  |
 
 </details>
 
@@ -257,30 +253,5 @@ with:
 #### Candidates
 
 - [Newsync X250FG ZERO](http://prod.danawa.com/info/?pcode=9295200)
-
-### Keyboard
-
-#### Features
-
-- programmable (optional)
-- quiet
-- number pad
-- full size arrow keys
-
-#### Candidates
-
-##### [COX CK01 PBT SL](http://prod.danawa.com/info/?pcode=15185441)
-
-- switch: GTMX silent white
-- keycap material: PBT
-- actuation force: 60g
-- con: no plate
-
-##### [GK787S OfficeMaster](http://prod.danawa.com/info/?pcode=11731784&)
-
-- switch: cherry MX silent red
-- keycap material: PBT
-- actuation force: 45g
-- korean letters are laser engraved instead of being molded
 
 </details>
