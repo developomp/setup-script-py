@@ -184,7 +184,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 - [pomky](https://github.com/developomp/pomky) (commit: aecec82)
 
-this [file](./home/pomp/.local/bin/pomky) right here
+[this file](./home/pomp/.local/bin/pomky) right here
 
 ## Future plans
 
