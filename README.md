@@ -148,6 +148,9 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 ## Sources
 
+<details>
+  <summary>Click to show asset source</summary>
+
 - I randomly change between these wallpapers depending on my mood.
 - Some wallpaper images are intentionally blurred to improve transparent overlay readability.
 
@@ -185,6 +188,8 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 - [pomky](https://github.com/developomp/pomky) (commit: aecec82)
 
 [this file](./home/pomp/.local/bin/pomky) right here
+
+</details>
 
 ## Future plans
 
