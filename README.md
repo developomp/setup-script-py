@@ -35,16 +35,9 @@
   - [System monitor](#system-monitor)
 - [Future plans](#future-plans)
   - [Laptop](#laptop-1)
-    - [Features](#features)
-    - [Candidates](#candidates)
-      - [Framework laptop DIY edition](#framework-laptop-diy-edition)
   - [Storage](#storage-1)
   - [Mouse](#mouse)
-    - [Features](#features-1)
-    - [Candidates](#candidates-1)
   - [Monitor](#monitor)
-    - [Features](#features-2)
-    - [Candidates](#candidates-2)
 
 </details>
 
@@ -198,65 +191,37 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 ### Laptop
 
-#### Features
-
-- Korean keyboard
-- Full size arrow keys and number pad
-- DP port
-
-maybe:
-
-- ARM / RISC-V CPU
-- SoC
-- Apple M1
-
-#### Candidates
-
-##### [Framework laptop DIY edition](https://frame.work/products/laptop-diy-edition)
-
-Total price: $1098
-
-|               option | my choice                                                                                                  |
-| -------------------: | :--------------------------------------------------------------------------------------------------------- |
-|          Motherboard | Intel i5-1135G7 (8M Cache, up to 4.20 GHz)                                                                 |
-|                 WiFi | Intel® Wi-Fi 6E AX210 No vPro®                                                                             |
-|              Storage | 500GB - WD_BLACK™ SN850 NVMe™                                                                              |
-|     Operating system | None                                                                                                       |
-|               Memory | 16GB (2 x 8GB) DDR4-3200                                                                                   |
-|             Keyboard | **waiting** for Korean keyboard w/ full size arrow key and number pad                                      |
-|              Display | **waiting** for 120+Hz display                                                                             |
-|        Power Adapter | **waiting** for [Schuko plug (type f plug)](https://www.worldstandards.eu/electricity/plugs-and-sockets/f) |
-| Port expansion cards | 1xDP 3xUSB-A 2xUSB-C 1xHDMI + **waiting** for RJ-45 ethernet port                                          |
+- Features:
+  - Korean keyboard
+  - Full size arrow keys and number pad
+  - DP port
+  - maybe:
+    - ARM / RISC-V CPU
+    - SoC
+    - Apple M1
+- Candidates:
+  - [Framework laptop DIY edition](https://frame.work/products/laptop-diy-edition)
 
 ### Storage
 
-1TB HDD for long-term backup
+- 1TB HDD for long-term backup
 
 ### Mouse
 
-#### Features
-
-- consistent tracking
-- 1000Hz+ polling rate
-
-#### Candidates
-
-- [Logitech G pro wireless](https://www.logitechg.com/en-us/products/gaming-mice/pro-wireless-mouse)
-- [logitech G pro X](https://www.logitechg.com/en-us/products/gaming-mice/pro-x-superlight-wireless-mouse)
-
-with:
-
-- [Logitech powerplay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging)
+- Features:
+  - 1000Hz+ polling rate
+  - <=100g weight w/o cable
+- Candidates:
+  - [Logitech G pro wireless](https://www.logitechg.com/en-us/products/gaming-mice/pro-wireless-mouse)
+  - [logitech G pro X](https://www.logitechg.com/en-us/products/gaming-mice/pro-x-superlight-wireless-mouse)
+  - With:
+    - [Logitech powerplay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging)
 
 ### Monitor
 
-#### Features
-
-- Refresh rate: 165Hz
-- resolution: 1920x1080 (FHD)
-
-#### Candidates
-
-- [Newsync X250FG ZERO](http://prod.danawa.com/info/?pcode=9295200)
+- Features
+  - Refresh rate: 240Hz
+  - resolution: 1920x1080 (FHD)
+  - Panel (priority sorted): burn-in free OLED, TN, IPS
 
 </details>
