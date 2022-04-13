@@ -89,11 +89,11 @@ Full setup could easily take more than a hour depending on the internet speed.
 
 ### Laptop
 
-| name    | model                                  |
-| ------- | -------------------------------------- |
-| Machine | LG 15U480-KP50ML Laptop (15U480-KA5MK) |
-| CPU     | intel i5-8250U                         |
-| GPU     | Nvidia MX 150                          |
+| name    | model                                                                                                          |
+| ------- | -------------------------------------------------------------------------------------------------------------- |
+| Machine | [LG 15U480-KP50ML](https://www.lge.co.kr/kr/business/product/common/redirectProductDetail.do?prdId=MD00040678) |
+| CPU     | intel i5-8250U                                                                                                 |
+| GPU     | Nvidia MX 150                                                                                                  |
 
 ### RAM
 
@@ -220,8 +220,9 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 ### Monitor
 
 - Features
-  - Refresh rate: 240Hz
+  - Refresh rate: 144Hz+
   - resolution: 1920x1080 (FHD)
-  - Panel (priority sorted): burn-in free OLED, TN, IPS
+  - Panel (priority sorted): IPS
+  <!-- - Candidates: -->
 
 </details>
