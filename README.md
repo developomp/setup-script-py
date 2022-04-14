@@ -223,6 +223,8 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
   - Refresh rate: 144Hz if HDMI version is 1.3+, 240Hz if 2.0+
   - resolution: 1920x1080 (FHD)
   - Panel (priority sorted): IPS
-  <!-- - Candidates: -->
+- Candidates:
+  - 144Hz: [AOC 24G2](http://prod.danawa.com/info/?pcode=10286187)
+  - 240Hz: [VF2780](http://prod.danawa.com/info/?pcode=15724832)
 
 </details>
