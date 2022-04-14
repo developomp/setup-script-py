@@ -219,8 +219,8 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 ### Monitor
 
-- Features
-  - Refresh rate: 144Hz+
+- Features:
+  - Refresh rate: 144Hz if HDMI version is 1.3+, 240Hz if 2.0+
   - resolution: 1920x1080 (FHD)
   - Panel (priority sorted): IPS
   <!-- - Candidates: -->
