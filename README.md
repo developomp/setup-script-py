@@ -178,7 +178,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 ### System monitor
 
-- [pomky](https://github.com/developomp/pomky) (commit: aecec82)
+- [pomky](https://github.com/developomp/pomky) (commit: 8fce169)
 
 [this file](./home/pomp/.local/bin/pomky) right here
 
