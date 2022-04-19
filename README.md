@@ -225,6 +225,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
   - resolution: 1920x1080 (FHD)
   - Panel (priority sorted): IPS
 - Candidates:
+  - [HP X24ih](http://prod.danawa.com/info/?pcode=12600965) ([review](https://www.rtings.com/monitor/reviews/hp/x24ih))
   - [AOC 24G2](http://prod.danawa.com/info/?pcode=10286187) ([review](https://www.rtings.com/monitor/reviews/aoc/24g2))
 
 </details>
