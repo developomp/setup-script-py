@@ -220,11 +220,11 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 ### Monitor
 
 - Features:
-  - Refresh rate: 144Hz if HDMI version is 1.3+, 240Hz if 2.0+
+  - HDMI v1.4 compatible
+  - Refresh rate: 144Hz
   - resolution: 1920x1080 (FHD)
   - Panel (priority sorted): IPS
 - Candidates:
-  - 144Hz: [AOC 24G2](http://prod.danawa.com/info/?pcode=10286187)
-  - 240Hz: [VF2780](http://prod.danawa.com/info/?pcode=15724832)
+  - [AOC 24G2](http://prod.danawa.com/info/?pcode=10286187) ([review](https://www.rtings.com/monitor/reviews/aoc/24g2))
 
 </details>
