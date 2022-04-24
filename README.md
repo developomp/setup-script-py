@@ -195,12 +195,8 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
   - Korean keyboard
   - Full size arrow keys and number pad
   - DP port
-  - maybe:
-    - ARM / RISC-V CPU
-    - SoC
-    - Apple M1
-- Candidates:
-  - [Framework laptop DIY edition](https://frame.work/products/laptop-diy-edition)
+  - x86_64 architecture
+  - NO NVIDIA
 
 ### Storage
 
