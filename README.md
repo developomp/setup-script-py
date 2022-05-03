@@ -72,13 +72,17 @@
 
 1. Install arch linux via [archfi](https://github.com/MatMoul/archfi) (included installer via [archinstall](https://github.com/archlinux/archinstall) coming soon).
 
-2. download the setup script
+2. Download the setup script.
 
    ```bash
-   curl -LO setup.developomp.com
+   wget setup.developomp.com -O setup.py
    ```
 
 3. Execute it.
+
+   ```bash
+   python ./setup.sh
+   ```
 
 Full setup could easily take more than a hour depending on the internet speed.
 
