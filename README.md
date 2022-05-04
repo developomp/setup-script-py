@@ -68,20 +68,38 @@
 
 ## Usage
 
-> The script assumes a clean installation of arch linux. That is, no extra packages installed already.
+1. Install Arch linux.
 
-1. Install arch linux via [archfi](https://github.com/MatMoul/archfi) (included installer via [archinstall](https://github.com/archlinux/archinstall) coming soon).
+   A built-in installer (using [archinstall](https://github.com/archlinux/archinstall)) will be added in the future.
+   In the meantime, use [archfi](https://github.com/MatMoul/archfi) instead.
+   `sudo` and `wget` must be installed.
 
-2. Download the setup script.
+2. Create a user.
+
+   Create a user in wheel group and create a home directory:
+
+   ```bash
+   useradd -G wheel -m pomp
+   ```
+
+   Allow user to use sudo:
+
+   ```bash
+   EDITOR=vim visudo
+   ```
+
+   Now, log in to the user account.
+
+3. Download the setup script.
 
    ```bash
    wget setup.developomp.com -O setup.py
    ```
 
-3. Execute it.
+4. Execute it.
 
    ```bash
-   python ./setup.sh
+   python ./setup.py
    ```
 
 Full setup could easily take more than a hour depending on the internet speed.
