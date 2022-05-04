@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = "timshift"
 
@@ -6,4 +6,4 @@ name = "timshift"
 def setup():
     """System backup and restoring utility"""
 
-    pamac_install("timeshift")
+    paru_install("timeshift")

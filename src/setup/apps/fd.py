@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = "fd"
 
@@ -6,4 +6,4 @@ name = "fd"
 def setup():
     """find but modern and rusty"""
 
-    pamac_install("fd")
+    paru_install("fd")

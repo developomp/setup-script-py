@@ -1,4 +1,4 @@
-from src.util import pamac_install, copy_file
+from src.util import paru_install, copy_file
 from src.constants import content_dir
 from src import log
 
@@ -11,7 +11,7 @@ name = "Zsh"
 def setup():
     """Objectively better shell"""
 
-    pamac_install("zsh")
+    paru_install("zsh")
 
     if not isdir("/home/pomp/.oh-my-zsh"):
         log.log("zsh already configured. Skipping.")

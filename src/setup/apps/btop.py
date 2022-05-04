@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = "Btop"
 
@@ -6,4 +6,4 @@ name = "Btop"
 def setup():
     """top but better"""
 
-    pamac_install("btop")
+    paru_install("btop")

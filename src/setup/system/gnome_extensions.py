@@ -1,5 +1,6 @@
-from src.util import pamac_install, load_dconf
+from src.util import paru_install, load_dconf
 from src import log
+from os import system
 
 name = "Gnome extensions"
 
@@ -25,7 +26,7 @@ def setup():
     gnome-shell-extension-pop-shell-git: window tiling extension
     """
 
-    pamac_install(
+    paru_install(
         ["gnome-shell-extension-installer", "gnome-shell-extension-pop-shell-git"]
     )
 

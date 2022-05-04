@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = "bat"
 
@@ -6,4 +6,4 @@ name = "bat"
 def setup():
     """cat but better"""
 
-    pamac_install("bat")
+    paru_install("bat")

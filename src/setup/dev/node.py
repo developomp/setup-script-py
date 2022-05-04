@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 from os import system
 
 name = "node"
@@ -18,4 +18,4 @@ def setup():
     check .zshrc for bin path stuff
     """
 
-    pamac_install(["nodejs", "nvm", "npm", "yarn"])
+    paru_install(["nodejs", "nvm", "npm", "yarn"])

@@ -1,4 +1,4 @@
-from src.util import flatpak_install, pamac_install
+from src.util import flatpak_install, paru_install
 
 name = "OBS studio"
 
@@ -12,4 +12,4 @@ def setup():
 
     flatpak_install("com.obsproject.Studio")
 
-    pamac_install("obs-plugin-input-overlay-bin")
+    paru_install("obs-plugin-input-overlay-bin")

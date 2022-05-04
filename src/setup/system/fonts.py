@@ -1,4 +1,4 @@
-from src.util import pamac_install, smart_mkdir, download, unzip
+from src.util import paru_install, smart_mkdir, download, unzip
 from src.constants import content_dir
 from shutil import rmtree, move
 from os import remove, system
@@ -27,7 +27,7 @@ def setup():
                   ttf-baekmuk: Korean font
     """
 
-    pamac_install(
+    paru_install(
         [
             "noto-fonts-emoji",
             "nerd-fonts-noto-sans-mono",

@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 from os import system
 
 name = "virtualbox"
@@ -7,7 +7,7 @@ name = "virtualbox"
 def setup():
     """It's a computer inside a computer!"""
 
-    pamac_install(
+    paru_install(
         [
             "virtualbox",
             "virtualbox-host-modules-arch",

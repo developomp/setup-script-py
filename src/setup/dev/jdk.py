@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = "JDK"
 
@@ -13,4 +13,4 @@ def setup():
     jdk11-openjdk: jdk11
     """
 
-    pamac_install(["jdk-openjdk", "jdk8-openjdk", "jdk11-openjdk"])
+    paru_install(["jdk-openjdk", "jdk8-openjdk", "jdk11-openjdk"])

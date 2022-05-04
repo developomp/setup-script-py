@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = ".NET"
 
@@ -6,4 +6,4 @@ name = ".NET"
 def setup():
     """Microsoft java"""
 
-    pamac_install("dotnet-sdk")
+    paru_install("dotnet-sdk")

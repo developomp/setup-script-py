@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = "deno"
 
@@ -10,4 +10,4 @@ def setup():
     check .zshrc for bin path stuff
     """
 
-    pamac_install("deno")
+    paru_install("deno")

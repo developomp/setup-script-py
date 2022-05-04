@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 from os import system
 
 name = "rust"
@@ -7,6 +7,6 @@ name = "rust"
 def setup():
     """The next C"""
 
-    pamac_install(["rust", "rustup"])
+    paru_install(["rust", "rustup"])
 
     system("rustup install stable")

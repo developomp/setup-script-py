@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 from os import system
 
 name = "git"
@@ -7,7 +7,7 @@ name = "git"
 def setup():
     """What's a branch?"""
 
-    pamac_install("git")
+    paru_install("git")
 
     system('git config --global user.email "developomp@gmail.com"')
     system('git config --global user.name "developomp"')

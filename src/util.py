@@ -6,20 +6,19 @@ from os.path import dirname
 import zipfile
 
 
-# todo: remove all uses of AUR (use pacman instead of pamac)
-def pamac_install(packages: str | list[str]) -> None:
+def paru_install(packages: str | list[str]) -> None:
     """
-        Download package from the arch repository and AUR.
+    Download arch linux packages (including AUR).
 
     arguments:
-        packages: space-separated list of packages.
+        packages: Either a string list of packages or a space-separated list of packages.
     """
 
     if type(packages) == str:
-        system(f"pamac install --no-confirm {packages}")
+        system(f"paru -S --noconfirm {packages}")
     elif type(packages) == list[str]:
         packages = packages.join(" ")
-        system(f"pamac install --no-confirm {packages}")
+        system(f"paru -S --noconfirm {packages}")
 
 
 def flatpak_install(packages: str) -> None:
@@ -109,12 +108,6 @@ def setup_essentials():
     setup_fstab
     sudo pacman -S --needed base-devel wget
     dconf
-
-    # install pamac if it does not exist
-    if ! command -v pamac &>/dev/null; then
-        log "pamac was not installed already. Installing now..."
-        setup_pamac
-    fi
 
     # install dialog if it's not installed already
     if ! command -v dialog &>/dev/null; then

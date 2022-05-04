@@ -1,7 +1,7 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = "Davinci Resolve"
 
 
 def setup():
-    pamac_install("davinci-resolve")
+    paru_install("davinci-resolve")

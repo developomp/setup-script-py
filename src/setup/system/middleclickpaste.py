@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = "middle click paste"
 post_install = ["restart"]
@@ -7,4 +7,4 @@ post_install = ["restart"]
 def setup():
     """Prevents middle click paste"""
 
-    pamac_install("xmousepasteblock-git")
+    paru_install("xmousepasteblock-git")

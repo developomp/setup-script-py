@@ -72,7 +72,7 @@
 
    A built-in installer (using [archinstall](https://github.com/archlinux/archinstall)) will be added in the future.
    In the meantime, use [archfi](https://github.com/MatMoul/archfi) instead.
-   `sudo` and `wget` must be installed.
+   [`sudo`](https://archlinux.org/packages/core/x86_64/sudo/) and [`wget`](https://archlinux.org/packages/extra/x86_64/wget/), and [`paru-bin`](https://aur.archlinux.org/packages/paru-bin/) must be installed.
 
 2. Create a user.
 

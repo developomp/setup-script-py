@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = "shfmt"
 
@@ -6,4 +6,4 @@ name = "shfmt"
 def setup():
     """Shell formatter"""
 
-    pamac_install("shfmt")
+    paru_install("shfmt")

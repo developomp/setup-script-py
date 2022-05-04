@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 from os import system
 
 name = "Intel CPU undervolting"
@@ -10,7 +10,7 @@ def setup():
     https://wiki.archlinux.org/index.php/Undervolting_CPU
     """
 
-    pamac_install("intel-undervolt")
+    paru_install("intel-undervolt")
 
     #
     # configuration

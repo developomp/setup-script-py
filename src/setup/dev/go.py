@@ -1,4 +1,4 @@
-from src.util import pamac_install
+from src.util import paru_install
 
 name = "go"
 
@@ -6,4 +6,4 @@ name = "go"
 def setup():
     """Golang stuff"""
 
-    pamac_install("go")
+    paru_install("go")
