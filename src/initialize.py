@@ -33,5 +33,5 @@ def initialize():
     # https://github.com/magmax/python-inquirer
     log.log("Initializing inquirer")
     if os.system("pip install inquirer &> /dev/null"):
-        log.error("Failed to install pytermgui via pip")
+        log.error("Failed to install inquirer via pip")
         exit(1)
