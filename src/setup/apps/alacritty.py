@@ -1,5 +1,5 @@
-from src.constants import content_dir
 from src.util import paru_install, copy_file
+from src.constants import content_dir, home_dir
 
 from os import makedirs
 
@@ -13,6 +13,6 @@ def setup() -> None:
 
     # copy configuration file
     copy_file(
-        f"{content_dir}/home/pomp/.config/alacritty/alacritty.yml",
+        f"{content_dir}{home_dir}/.config/alacritty/alacritty.yml",
         "~/.config/alacritty/alacritty.yml",
     )

@@ -1,5 +1,5 @@
 from src.util import flatpak_install, copy_file
-from src.constants import content_dir
+from src.constants import content_dir, home_dir
 
 name = "Ungoogled chromium"
 post_install = ["restore onetab"]
@@ -10,4 +10,4 @@ def setup():
 
     flatpak_install("com.github.Eloston.UngoogledChromium")
 
-    config_path = "/home/pomp/.var/app/com.github.Eloston.UngoogledChromium/config/chromium/System Profile"
+    config_path = f"{home_dir}/.var/app/com.github.Eloston.UngoogledChromium/config/chromium/System Profile"

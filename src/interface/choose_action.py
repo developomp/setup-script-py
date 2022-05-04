@@ -1,6 +1,6 @@
 import inquirer
 from glob import glob
-from os.path import exists
+from os.path import exists, abspath
 
 from ..util import import_file
 from src.log import log
@@ -9,7 +9,7 @@ from src import constants
 
 def choose_action():
     if exists(".git/") and exists("src/"):
-        constants.content_dir = "."
+        constants.content_dir = abspath(".")
 
     content_dir = constants.content_dir
 

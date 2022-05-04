@@ -1,5 +1,5 @@
 from src.util import flatpak_install, paru_install, copy_file
-from src.constants import content_dir
+from src.constants import content_dir, home_dir
 from src import log
 from os import system
 
@@ -55,7 +55,7 @@ def setup():
     paru_install("betterdiscordctl-git")
 
     copy_file(
-        f"{content_dir}/home/pomp/.config/autostart/discord.desktop",
+        f"{content_dir}{home_dir}/.config/autostart/discord.desktop",
         "~/.config/autostart/discord.desktop",
     )
 

@@ -1,5 +1,5 @@
 from src.util import paru_install, copy_file
-from src.constants import content_dir
+from src.constants import content_dir, home_dir
 from src import log
 
 from os.path import isdir
@@ -13,7 +13,7 @@ def setup():
 
     paru_install("zsh")
 
-    if isdir("/home/pomp/.oh-my-zsh"):
+    if isdir(f"{home_dir}/.oh-my-zsh"):
         log.log("zsh already configured. Skipping.")
         return
 
@@ -33,4 +33,4 @@ def setup():
     )
 
     # apply zshrc configuration
-    copy_file(f"{content_dir}/home/pomp/.zshrc", "~/.zshrc")
+    copy_file(f"{content_dir}{home_dir}/.zshrc", "~/.zshrc")

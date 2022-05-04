@@ -1,21 +1,21 @@
 from src.util import paru_install, smart_mkdir, download, unzip
-from src.constants import content_dir
+from src.constants import tmp_dir, home_dir
 from shutil import rmtree, move
 from os import remove, system
-from os.path import exists
+from os.path import exists, basename
 import requests
 import glob
 
 name = "fonts"
 
 # path to temporarily save font related files
-TMP_FONTS_DIRECTORY = f"{content_dir}/tmp/fonts"
+TMP_FONTS_DIRECTORY = f"{tmp_dir}/tmp/fonts"
 
 # fonts to download
 FONT_NAMES = ("Audiowide", "Varela Round", "Ubuntu Mono", "Nanum Gothic Coding")
 
 # where to unzip the fonts
-FONT_INSTALL_DIR = "~/.local/share/fonts"
+FONT_INSTALL_DIR = f"{home_dir}/.local/share/fonts"
 
 
 def setup():
@@ -43,16 +43,15 @@ def setup():
         zip_path = f"{TMP_FONTS_DIRECTORY}/{font_name}.zip"
 
         # download and unzip if either zip file or unzipped directory exists
-        if exists(zip_path) and exists("{TMP_FONTS_DIRECTORY}/{font_name}"):
-            download(zip_path, f"https://fonts.google.com/download?family={font_name}")
-            unzip(zip_path, f"{TMP_FONTS_DIRECTORY}/{font_name}")
-            remove(zip_path)
+        download(zip_path, f"https://fonts.google.com/download?family={font_name}")
+        unzip(zip_path, f"{TMP_FONTS_DIRECTORY}/{font_name}")
+        remove(zip_path)
 
     smart_mkdir(FONT_INSTALL_DIR)
 
     # "install" fonts
     for ttf_file_path in glob.glob(f"{TMP_FONTS_DIRECTORY}/**/*.ttf"):
-        move(ttf_file_path, f"{FONT_INSTALL_DIR}/{ttf_file_path}")
+        move(ttf_file_path, f"{FONT_INSTALL_DIR}/{basename(ttf_file_path)}")
 
     # regenerate font cache
     system("fc-cache -vf")
