@@ -3,6 +3,7 @@ from .constants import content_dir
 from importlib.machinery import SourceFileLoader
 from os import system, makedirs
 from os.path import dirname
+import requests
 import zipfile
 
 
