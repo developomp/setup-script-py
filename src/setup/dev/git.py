@@ -13,3 +13,4 @@ def setup():
     system('git config --global user.name "developomp"')
     system("git config --global pull.rebase false")
     system("git config --global init.defaultBranch master")
+    system("git config --global credential.helper store")
