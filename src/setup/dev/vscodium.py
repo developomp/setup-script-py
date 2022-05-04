@@ -1,4 +1,4 @@
-from src.util import flatpak_install, copy_file
+from src.util import paru_install, copy_file
 from src.constants import content_dir, home_dir
 
 from os import system
@@ -48,11 +48,11 @@ EXTENSIONS = (
 def setup():
     """vscode without microsoft"""
 
-    flatpak_install("com.vscodium.codium")
+    paru_install("vscodium-bin")
 
     # codium --list-extensions
     for extension in EXTENSIONS:
-        system(f"codium --install-extension {extension}")
+        system(f"codium --install-extension {extension} --force")
 
     # autostart vscodium
     copy_file(
