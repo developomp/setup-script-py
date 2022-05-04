@@ -10,8 +10,4 @@ def setup():
 
     flatpak_install("com.github.Eloston.UngoogledChromium")
 
-    # todo: user profile
-    # todo: extensions (install and configure)
-    # todo: unlock google extension store
-
     config_path = "/home/pomp/.var/app/com.github.Eloston.UngoogledChromium/config/chromium/System Profile"
