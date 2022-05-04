@@ -13,7 +13,7 @@ def setup():
 
     paru_install("zsh")
 
-    if not isdir("/home/pomp/.oh-my-zsh"):
+    if isdir("/home/pomp/.oh-my-zsh"):
         log.log("zsh already configured. Skipping.")
         return
 
