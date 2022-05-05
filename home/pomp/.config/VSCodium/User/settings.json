@@ -1,23 +1,34 @@
 {
-  "cSpell.useGitignore": false,
-  "editor.fontFamily": "'Ubuntu Mono', 'NanumGothicCoding', 'Iosevka Nerd Font'",
-  "editor.fontSize": 18,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
+
+  "editor.fontFamily": "'Noto Sans Mono', 'NanumGothicCoding'",
+  "editor.fontSize": 16,
+
   "explorer.compactFolders": false,
+
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "gitlens.codeLens.enabled": false,
+
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.statusBar.enabled": false,
-  "security.workspace.trust.untrustedFiles": "open",
+
   "terminal.integrated.enablePersistentSessions": false,
-  "terminal.integrated.fontFamily": "'NotoSansMono Nerd Font'",
+  "terminal.integrated.fontFamily": "'Noto Sans Mono'",
   "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.fontSize": 15,
+
   "workbench.colorTheme": "One Dark Pro Flat",
   "workbench.iconTheme": "material-icon-theme",
+
+  "color-highlight.markerType": "underline",
+
+  "security.workspace.trust.untrustedFiles": "open",
+
+  "svelte.enable-ts-plugin": true,
+  "python.formatting.provider": "black",
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -46,15 +57,9 @@
   "[go.mod]": {
     "editor.defaultFormatter": "golang.go"
   },
-  "go.toolsManagement.autoUpdate": true,
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
-  "svelte.enable-ts-plugin": true,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.python"
-  },
-  "python.formatting.provider": "black",
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
@@ -79,6 +84,7 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "color-highlight.markerType": "underline",
-  "cSpell.userWords": ["dotfile", "dotfiles"]
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  }
 }
