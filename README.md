@@ -241,9 +241,8 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
   - HDMI v1.4 compatible
   - Refresh rate: 144Hz
   - resolution: 1920x1080 (FHD)
-  - Panel (priority sorted): IPS
+  - Panel: IPS
 - Candidates:
-  - [HP X24ih](http://prod.danawa.com/info/?pcode=12600965) ([review](https://www.rtings.com/monitor/reviews/hp/x24ih))
-  - [AOC 24G2](http://prod.danawa.com/info/?pcode=10286187) ([review](https://www.rtings.com/monitor/reviews/aoc/24g2))
+  - [ASUS VG249Q1A](http://prod.danawa.com/info/?pcode=10784301) ([review](https://www.rtings.com/monitor/reviews/asus/tuf-gaming-vg249q1a))
 
 </details>
