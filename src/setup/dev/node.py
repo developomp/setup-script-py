@@ -1,4 +1,5 @@
 from src.util import paru_install
+
 from os import system
 
 name = "node"
@@ -18,4 +19,9 @@ def setup():
     check .zshrc for bin path stuff
     """
 
-    paru_install(["nodejs", "nvm", "npm", "yarn"])
+    paru_install("nvm")
+
+    system("nvm install --lts")
+
+    system("npm install --global pnpm")
+    system("npm install --global yarn")
