@@ -3,6 +3,8 @@ from src import log
 from os import system
 
 name = "Gnome extensions"
+post_install = "Restart gnome shell"
+
 
 EXTENSIONS = (
     (36, "extension-lockkeys.conf"),  # lock-keys
@@ -41,4 +43,3 @@ def setup():
 
     # enable extensions
     load_dconf("extensions.conf")
-    system("gnome-shell-extension-installer --restart-shell")
