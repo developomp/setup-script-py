@@ -12,7 +12,13 @@ name = "fonts"
 TMP_FONTS_DIRECTORY = f"{tmp_dir}/tmp/fonts"
 
 # fonts to download
-FONT_NAMES = ("Audiowide", "Varela Round", "Ubuntu Mono", "Nanum Gothic Coding")
+FONT_NAMES = (
+    "Audiowide",
+    "Varela Round",
+    "Noto Sans Mono",
+    "Nanum Gothic Coding",
+    "Noto Emoji",
+)
 
 # where to unzip the fonts
 FONT_INSTALL_DIR = f"{home_dir}/.local/share/fonts"
@@ -22,16 +28,17 @@ def setup():
     """
     System fonts
 
-             noto-fonts-emoji: Emoji fonts
-    nerd-fonts-noto-sans-mono: Terminal font
-                  ttf-baekmuk: Korean font
+    adobe-source-han-sans-kr-fonts: Korean font
+                       ttf-baekmuk: Korean font
+                     unicode-emoji: Colorful emojis
+                  ttf-iosevka-nerd: Terminal font
     """
 
     paru_install(
         [
-            "noto-fonts-emoji",
-            "nerd-fonts-noto-sans-mono",
+            "adobe-source-han-sans-kr-fonts",
             "ttf-baekmuk",
+            "unicode-emoji",
             "ttf-iosevka-nerd",
         ]
     )
