@@ -2,16 +2,16 @@ import inquirer
 from glob import glob
 from os.path import exists, abspath
 
-from ..util import import_file
+from src.util import import_file
 from src.log import log
-from src import constants
+import src.constants
 
 
 def choose_action():
     if exists(".git/") and exists("src/"):
-        constants.content_dir = abspath(".")
+        src.constants.content_dir = abspath(".")
 
-    content_dir = constants.content_dir
+    content_dir = src.constants.content_dir
 
     files = glob(f"{content_dir}/src/setup/**/*.py")
     files = [

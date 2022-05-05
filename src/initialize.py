@@ -1,6 +1,6 @@
 import os
 
-from . import log
+from src import log
 
 
 def initialize():
