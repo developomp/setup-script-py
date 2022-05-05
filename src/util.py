@@ -1,4 +1,5 @@
 from .constants import content_dir
+from .log import error
 
 from importlib.machinery import SourceFileLoader
 from os import system, makedirs
@@ -17,9 +18,11 @@ def paru_install(packages: str | list[str]) -> None:
 
     if type(packages) == str:
         system(f"paru -S --noconfirm {packages}")
-    elif type(packages) == list[str]:
-        packages = packages.join(" ")
+    elif type(packages) == list:
+        packages = " ".join(packages)
         system(f"paru -S --noconfirm {packages}")
+    else:
+        error("Invalid paru packages format.")
 
 
 def flatpak_install(packages: str) -> None:
