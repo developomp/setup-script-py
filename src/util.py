@@ -1,11 +1,11 @@
-from .constants import content_dir
-from .log import error
-
 from importlib.machinery import SourceFileLoader
 from os import system, makedirs
 from os.path import dirname
 import requests
 import zipfile
+
+from src.log import error
+import src.constants
 
 
 def paru_install(packages: str | list[str]) -> None:
@@ -84,7 +84,7 @@ def copy_directory(src: str, dst: str):
 def load_dconf(file_name: str):
     """Loads dconf configuration"""
 
-    system(f'dconf load / < "{content_dir}/dconf/{file_name}"')
+    system(f'dconf load / < "{src.constants.content_dir}/dconf/{file_name}"')
 
 
 def download(file_name: str, url: str):
