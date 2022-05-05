@@ -9,7 +9,6 @@ post_install = "Restart gnome shell"
 EXTENSIONS = (
     (36, "extension-lockkeys.conf"),  # lock-keys
     (906, "extension-sound-output-device-chooser.conf"),  # sound-output-device-chooser
-    (1460, "extension-vitals.conf"),  # vitals
     (2741, ""),  # remove-alttab-delay-v2
     (2890, "extension-trayIconsReloaded.conf"),  # tray-icons-reloaded
     (3193, "extension-blur-my-shell.conf"),  # blur-my-shell
