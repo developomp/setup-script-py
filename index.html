@@ -7,7 +7,7 @@ This file is all that's needed for execution.
 It'll download all the dependencies and related files automatically.
 """
 
-from os import system, geteuid
+from os import system, geteuid, popen
 from os.path import exists
 from shutil import rmtree
 import sys
@@ -21,7 +21,7 @@ tmp_dir = "/tmp/com.developomp.setup"
 
 
 def command_exits(command: str) -> bool:
-    return system(f"command -v {command} &> /dev/null") == 0
+    return len(popen(f"command -v {command}").readlines()) == 1
 
 
 #
