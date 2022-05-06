@@ -114,6 +114,10 @@ def zsh_system(command: str):
     system(f"/usr/bin/zsh -c '{command}'")
 
 
+def command_exists(command: str) -> bool:
+    return system(f"command -v {command} &> /dev/null") == 0
+
+
 """
 def setup_essentials():
     setup_fstab

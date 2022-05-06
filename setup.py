@@ -16,6 +16,15 @@ import sys
 tmp_dir = "/tmp/com.developomp.setup"
 
 #
+# Util
+#
+
+
+def command_exits(command: str) -> bool:
+    return system(f"command -v {command} &> /dev/null") == 0
+
+
+#
 # Common
 #
 
@@ -53,7 +62,7 @@ def exit_if_system_not_compatible():
     """Exits script if the OS is not linux or if pacman does not exist"""
 
     print("Checking if system is compatible")
-    if "linux" not in sys.platform.lower() or system("command -v pacman &> /dev/null"):
+    if "linux" not in sys.platform.lower() or not command_exits("pacman"):
         print("This script should only be used on arch linux.", file=sys.stderr)
         exit(1)
 
@@ -77,7 +86,7 @@ def install_git():
     """Installs git if it's not installed already"""
 
     print("Initializing git")
-    if system("command -v git &> /dev/null"):
+    if not command_exits("git"):
         print("git was not installed already. Installing now.")
         system("sudo pacman -S --noconfirm --needed git")
 

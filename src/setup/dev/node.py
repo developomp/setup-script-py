@@ -1,8 +1,8 @@
 from os import system
 from os.path import isdir
 
-from src.constants import home_dir, is_zsh_available
-from src.util import paru_install, zsh_system
+from src.constants import home_dir
+from src.util import paru_install, zsh_system, command_exists
 from src.setup.system import zsh
 from src import log
 
@@ -21,7 +21,7 @@ def setup():
     """
 
     # Install zsh if it's not installed already
-    if not is_zsh_available:
+    if not command_exists("zsh"):
         zsh.setup()
 
     paru_install("nvm")
