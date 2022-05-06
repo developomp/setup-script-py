@@ -107,6 +107,13 @@ def import_file(name, path):
     return SourceFileLoader(name, path).load_module()
 
 
+def zsh_system(command: str):
+    """os.system but uses zsh.
+    The command should not contain a single quote (') that's not escaped."""
+
+    system(f"/usr/bin/zsh -c '{command}'")
+
+
 """
 def setup_essentials():
     setup_fstab
