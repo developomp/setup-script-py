@@ -235,6 +235,17 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
   - With:
     - [Logitech powerplay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging)
 
+### Keyboard
+
+- Features:
+  - size: TKL
+  - switch: MX cherry silent red
+  - keycap: double shot molded with korean letters
+  - programmable
+  - pre-lubed and modded
+- Candidates:
+  - None
+
 ### Monitor
 
 - Features:
