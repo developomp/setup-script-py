@@ -39,6 +39,3 @@ def setup():
 
         if dconf_file:  # if dconf_file is not empty
             load_dconf(dconf_file)
-
-    # enable extensions
-    load_dconf("extensions.conf")
