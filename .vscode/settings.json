@@ -12,6 +12,7 @@
     "geteuid",
     "noto",
     "paru",
+    "popen",
     "pytermgui",
     "ungoogled"
   ],
