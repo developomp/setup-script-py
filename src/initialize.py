@@ -1,4 +1,4 @@
-from src.util import silent_system, paru_install
+from src.util import silent_system
 from src import log
 
 
@@ -8,12 +8,12 @@ def initialize():
     """
 
     log.log("Initializing flatpak")
-    if paru_install("flatpak"):
+    if silent_system("paru -S --noconfirm flatpak"):
         log.error("Failed to install flatpak via pacman")
         exit(1)
 
     log.log("Initializing pip")
-    if paru_install("python-pip"):
+    if silent_system("paru -S --noconfirm python-pip"):
         log.error("Failed to install pip via pacman")
         exit(1)
 
