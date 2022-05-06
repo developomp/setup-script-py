@@ -1,5 +1,5 @@
 from importlib.machinery import SourceFileLoader
-from os import system, makedirs
+from os import system, makedirs, popen
 from os.path import dirname
 import requests
 import zipfile
@@ -107,15 +107,26 @@ def import_file(name, path):
     return SourceFileLoader(name, path).load_module()
 
 
-def zsh_system(command: str):
+def zsh_system(command: str) -> None:
     """os.system but uses zsh.
-    The command should not contain a single quote (') that's not escaped."""
+    The command should not contain a single quote (') that's not escaped.
+    Use this if the command has output you want to display in real time."""
 
     system(f"/usr/bin/zsh -c '{command}'")
 
 
+def run(command: str) -> list[str]:
+    """Runs command in system shell and return the result.
+    This is a blocking function.
+    Use this if you want to get the output of the command."""
+
+    return popen(command).readlines()
+
+
 def command_exists(command: str) -> bool:
-    return system(f"command -v {command} &> /dev/null") == 0
+    """Check if a command can be found in the current default shell."""
+
+    return len(run(f"command -v {command}")) == 1
 
 
 """
