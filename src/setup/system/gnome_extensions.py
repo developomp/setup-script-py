@@ -2,8 +2,8 @@ from src.util import paru_install, load_dconf
 from src import log
 from os import system
 
-name = "Gnome extensions"
-post_install = "Restart gnome shell"
+name = "GNOME extensions"
+post_install = ["Restart GNOME shell", "enable GNOME extensions"]
 
 
 EXTENSIONS = (

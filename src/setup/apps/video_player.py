@@ -4,6 +4,6 @@ name = "Video player"
 
 
 def setup():
-    """gnome video player"""
+    """GNOME video player"""
 
     flatpak_install("org.gnome.Totem")
