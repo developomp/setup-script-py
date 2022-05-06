@@ -18,6 +18,13 @@ tmp_dir = "/tmp/com.developomp.setup"
 #
 # Util
 #
+# These commands are from `src/util.py`.
+# Comments can only be found over there.
+#
+
+
+def silent_system(command: str) -> None:
+    system(f"{command} &> /dev/null")
 
 
 def command_exits(command: str) -> bool:
@@ -72,7 +79,7 @@ def exit_if_no_internet():
     Pings archlinux.org for testing."""
 
     print("Checking if there's internet connection")
-    if system("ping -c 1 archlinux.org &> /dev/null"):
+    if silent_system("ping -c 1 archlinux.org"):
         print("Failed to connect to internet.", file=sys.stderr)
         exit(1)
 
@@ -100,8 +107,8 @@ def clone_repository():
     cleanup()
 
     # clone repository
-    if system(
-        f"git clone --depth 1 https://github.com/developomp/setup.git {tmp_dir} &> /dev/null"
+    if silent_system(
+        f"git clone --depth 1 https://github.com/developomp/setup.git {tmp_dir}"
     ):
         print("Failed to clone repository", file=sys.stderr)
         exit(1)

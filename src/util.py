@@ -115,6 +115,12 @@ def zsh_system(command: str) -> None:
     system(f"/usr/bin/zsh -c '{command}'")
 
 
+def silent_system(command: str) -> None:
+    """os.system but does not show its log and error to the terminal."""
+
+    system(f"{command} &> /dev/null")
+
+
 def run(command: str) -> list[str]:
     """Runs command in system shell and return the result.
     This is a blocking function.
