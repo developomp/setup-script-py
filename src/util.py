@@ -55,7 +55,7 @@ def remove_directory(path):
         raise err
 
 
-def copy_file(src: str, dst: str, mode="644"):
+def copy_file(src: str, dst: str, mode="644", sudo=False):
     """
     Copies src to dst.
     Automatically creates parent directory/directories of dst if it does not exist already.
@@ -66,7 +66,10 @@ def copy_file(src: str, dst: str, mode="644"):
         mode: Permission mode (as in chmod). Defaults to 644 (rw-r--r--)
     """
 
-    system(f"install -Dm{mode} {src} {dst}")
+    if sudo:
+        system(f"sudo install -Dm{mode} {src} {dst}")
+    else:
+        system(f"install -Dm{mode} {src} {dst}")
 
 
 def copy_directory(src: str, dst: str):
@@ -115,10 +118,13 @@ def zsh_system(command: str) -> None:
     system(f"/usr/bin/zsh -c '{command}'")
 
 
-def silent_system(command: str) -> None:
+def silent_system(command: str, suppress_error: bool = True) -> None:
     """os.system but does not show its log and error to the terminal."""
 
-    system(f"{command} &> /dev/null")
+    if suppress_error:
+        system(f"{command} &> /dev/null")
+    else:
+        system(f"{command} > /dev/null")
 
 
 def run(command: str) -> list[str]:
