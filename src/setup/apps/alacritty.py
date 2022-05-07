@@ -1,8 +1,6 @@
 from src.util import paru_install, copy_file
 from src.constants import content_dir, home_dir
 
-from os import makedirs
-
 name = "Alacritty terminal"
 
 
