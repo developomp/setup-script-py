@@ -4,6 +4,6 @@ name = "bat"
 
 
 def setup():
-    """cat but better"""
+    """cat but better and rusty"""
 
     paru_install("bat")
