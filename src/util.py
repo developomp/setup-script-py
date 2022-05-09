@@ -139,32 +139,3 @@ def command_exists(command: str) -> bool:
     """Check if a command can be found in the current default shell."""
 
     return len(run(f"command -v {command}")) == 1
-
-
-"""
-def setup_essentials():
-    setup_fstab
-    sudo pacman -S --needed base-devel wget
-    dconf
-
-    # install dialog if it's not installed already
-    if ! command -v dialog &>/dev/null; then
-        log "dialog was not installed already. Installing now..."
-        package_install dialog
-    fi
-
-def backup():
-	TIMESTAMP=$(date +%s)
-	# backup dconf configuration
-	dconf dump / >"$SCRIPT_DIR/dconf$TIMESTAMP.conf"
-
-	# make a home directory backup
-	rsync -a --info=progress2 --perms /home/pomp "$DATA_PATH/backup$TIMESTAMP"
-
-	# create timeshift backup
-	if ! command -v timeshift &>/dev/null; then
-		error "failed to create timeshift backup. Timeshift command not found."
-	else
-		sudo timeshift --create --comments "auto created by developomp setup script ($TIMESTAMP)"
-	fi
-"""
