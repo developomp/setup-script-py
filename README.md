@@ -210,11 +210,14 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 ### Laptop
 
 - Features:
+  - less than 1 million KRW (around 780 USD)
   - Korean keyboard
-  - Full size arrow keys and number pad
-  - DP port
+  - FHD monitor
+  - number pad
   - x86_64 architecture
-  - NO NVIDIA
+  - NO NVIDIA GPU
+- Candidates:
+  - [Samsung NT750XDZ-A51A](http://prod.danawa.com/info/?pcode=14186387)
 
 ### Storage
 
@@ -234,7 +237,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 ### Keyboard
 
 - Features:
-  - size: TKL
+  - size: TKL (80%) / full size with the number pad on the left
   - switch: MX cherry silent red
   - keycap: double shot molded with korean letters
   - programmable
