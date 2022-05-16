@@ -62,10 +62,6 @@
 
 </details>
 
-## How does it work?
-
-[Github pages](https://pages.github.com) allows the developers to deploy a static website directly from their repositories. I set up github action so that the [`setup.py`](./setup.py) script gets copied to the [`index.html`](https://github.com/developomp/setup/blob/gh-pages/index.html) file in the [`gh-pages`](https://github.com/developomp/setup/tree/gh-pages) branch where it can be accessed from https://setup.developomp.com. The script then downloads necessary files and packages so it can start doing its thing.
-
 ## Usage
 
 1. Install Arch linux.
