@@ -247,14 +247,4 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 - Candidates:
   - None
 
-### Monitor
-
-- Features:
-  - HDMI v1.4 compatible
-  - Refresh rate: 144Hz
-  - resolution: 1920x1080 (FHD)
-  - Panel: IPS
-- Candidates:
-  - [ASUS VG249Q1A](http://prod.danawa.com/info/?pcode=10784301) ([review](https://www.rtings.com/monitor/reviews/asus/tuf-gaming-vg249q1a))
-
 </details>
