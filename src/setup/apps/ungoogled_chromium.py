@@ -1,4 +1,4 @@
-from src.util import flatpak_install, copy_file
+from src.util import flatpak_install
 from src.constants import content_dir, home_dir
 
 name = "Ungoogled chromium"

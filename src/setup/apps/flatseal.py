@@ -1,5 +1,5 @@
 from src.constants import content_dir
-from src.util import flatpak_install, copy_file
+from src.util import flatpak_install
 
 from os import makedirs
 
