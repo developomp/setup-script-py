@@ -7,6 +7,7 @@ name = "system76 scheduler"
 def setup():
     """Process priority optimizer"""
 
+    # using the git version because "system76-scheduler" builds from source too anyway
     paru_install("system76-scheduler-git")
     copy_file(
         f"{content_dir}/etc/system76-scheduler/assignments/osu.ron",
