@@ -7,6 +7,6 @@ name = "rust"
 def setup():
     """The next C"""
 
-    paru_install(["rust", "rustup"])
+    paru_install("rustup")
 
     system("rustup install stable")
