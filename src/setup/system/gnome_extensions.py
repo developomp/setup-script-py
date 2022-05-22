@@ -1,6 +1,7 @@
+from os import system
+
 from src.util import paru_install, load_dconf
 from src import log
-from os import system
 
 name = "GNOME extensions"
 post_install = ["Restart GNOME shell", "enable GNOME extensions"]
@@ -24,11 +25,16 @@ def setup():
     Intentionally left out chrome-gnome-shell because I won't be using browsers to install GNOME extensions.
 
         gnome-shell-extension-installer: gnome extension installer CLI
-    gnome-shell-extension-pop-shell-git: window tiling extension
+        gnome-shell-extension-pop-shell-git: window tiling extension
     """
 
     paru_install(
-        ["gnome-shell-extension-installer", "gnome-shell-extension-pop-shell-git"]
+        [
+            "gnome-shell-extension-installer",
+            # not using gnome-shell-extension-pop-shell because it builds from source too anyway
+            # not using gnome-shell-extension-pop-shell-bin because GNOME version isn't compatible
+            "gnome-shell-extension-pop-shell-git",
+        ]
     )
 
     load_dconf("extension-pop-shell.conf")
