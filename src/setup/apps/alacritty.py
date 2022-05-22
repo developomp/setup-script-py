@@ -1,5 +1,4 @@
 from src.util import paru_install, copy_file
-from src.constants import content_dir, home_dir
 
 name = "Alacritty terminal"
 
@@ -10,7 +9,4 @@ def setup() -> None:
     paru_install("alacritty")
 
     # copy configuration file
-    copy_file(
-        f"{content_dir}{home_dir}/.config/alacritty/alacritty.yml",
-        "~/.config/alacritty/alacritty.yml",
-    )
+    copy_file("home/.config/alacritty/alacritty.yml")

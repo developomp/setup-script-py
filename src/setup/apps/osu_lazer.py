@@ -1,7 +1,6 @@
 from os.path import exists
 from os import system
 
-from src.constants import content_dir, home_dir
 from src.util import flatpak_install, paru_install, copy_file, silent_system
 from src.setup.system import system76_scheduler
 
@@ -26,10 +25,7 @@ def setup():
     paru_install("opentabletdriver-git")
 
     # apply settings
-    copy_file(
-        f"{content_dir}{home_dir}/.config/OpenTabletDriver/settings.json",
-        "~/.config/OpenTabletDriver/settings.json",
-    )
+    copy_file("home/.config/OpenTabletDriver/settings.json")
 
     # disable built-in kernel modules
     modules_to_disable = [

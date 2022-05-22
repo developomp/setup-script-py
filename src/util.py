@@ -55,21 +55,32 @@ def remove_directory(path):
         raise err
 
 
-def copy_file(src: str, dst: str, mode="644", sudo=False):
+def copy_file(src_file: str, mode="644", sudo=False):
     """
-    Copies src to dst.
-    Automatically creates parent directory/directories of dst if it does not exist already.
+    Copies a file in the repo to the system.
+    If the `src_file` starts with `home/`, it maps to $HOME.
+    Otherwise, it maps to `/`.
+    This function automatically creates parent directories if they do not exist already.
 
     parameters:
-        src: A path-like object or string pointing to a file.
-        dst: A path-like object or string pointing to a file.
-        mode: Permission mode (as in chmod). Defaults to 644 (rw-r--r--)
+    - src_file: A path-like object or string pointing to a file.
+    - mode: Permission mode (as in chmod). Defaults to 644 (rw-r--r--).
+    - sudo: Whether to run command as sudo or not.
     """
 
-    if sudo:
-        system(f"sudo install -Dm{mode} {src} {dst}")
+    dst_file = str(src_file)
+
+    if dst_file.startswith("home/"):
+        dst_file = src.constants.home_dir + dst_file[4:]
     else:
-        system(f"install -Dm{mode} {src} {dst}")
+        dst_file = "/" + dst_file
+
+    command = f"install -Dm{mode} {src.constants.content_dir}/{src_file} {dst_file}"
+
+    if sudo:
+        system(f"sudo {command}")
+    else:
+        system(command)
 
 
 def copy_directory(src: str, dst: str):

@@ -1,7 +1,7 @@
-from src.util import paru_install, copy_file
-from src.constants import content_dir, home_dir
-
 from os import system
+
+from src.util import paru_install, copy_file
+
 
 name = "Vscodium"
 
@@ -55,19 +55,10 @@ def setup():
         system(f"codium --install-extension {extension} --force")
 
     # autostart vscodium
-    copy_file(
-        f"{content_dir}{home_dir}/.config/autostart/codium.desktop",
-        "~/.config/autostart/codium.desktop",
-    )
+    copy_file("home/.config/autostart/codium.desktop")
 
     # vscodium settings
-    copy_file(
-        f"{content_dir}{home_dir}/.config/VSCodium/User/settings.json",
-        "~/.config/VSCodium/User/settings.json",
-    )
+    copy_file("home/.config/VSCodium/User/settings.json")
 
     # enable vscode extension store
-    copy_file(
-        f"{content_dir}{home_dir}/.config/VSCodium/product.json",
-        "~/.config/VSCodium/product.json",
-    )
+    copy_file("home/.config/VSCodium/product.json")

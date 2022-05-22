@@ -1,5 +1,4 @@
 from src.util import flatpak_install, paru_install, copy_file
-from src.constants import content_dir, home_dir
 from src import log
 from os import system
 
@@ -54,10 +53,7 @@ def setup():
     flatpak_install("com.discordapp.Discord")
     paru_install("betterdiscordctl-git")
 
-    copy_file(
-        f"{content_dir}{home_dir}/.config/autostart/discord.desktop",
-        "~/.config/autostart/discord.desktop",
-    )
+    copy_file("home/.config/autostart/discord.desktop")
 
     for id in PLUGINS:
         url = f"https://betterdiscord.app/Download?id={id}"

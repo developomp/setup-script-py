@@ -35,7 +35,7 @@ def setup():
     )
 
     # apply zshrc configuration
-    copy_file(f"{content_dir}{home_dir}/.zshrc", f"{home_dir}/.zshrc")
+    copy_file("home/.zshrc")
 
     # set the default terminal to zsh
     system("chsh -s /bin/zsh")
