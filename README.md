@@ -157,6 +157,17 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 | Drawing tablet | secondhand [wacom CTL-472 (one by wacom)](https://www.wacom.com/en-us/products/pen-tablets/one-by-wacom)                                                                                                     |
 |        Monitor | secondhand [HP X24ih](https://www.hp.com/us-en/shop/pdp/hp-x24ih-gaming-monitor) ([review](https://www.rtings.com/monitor/reviews/hp/x24ih))                                                                 |
 
+#### Keyboard
+
+- Lubed with Krytox 103
+- With a towel underneath
+- With [COX COX1 walnut wrist rest](https://www.abko.co.kr/brand/detail.php?it_id=1609120628)
+
+<p align="center">
+  <b>Video</b>
+  <a href="https://youtu.be/8vBm4MfOPME"><img alt="Keyboard sound test" src="https://img.youtube.com/vi/8vBm4MfOPME/maxresdefault.jpg" /></a>
+</p>
+
 </details>
 
 ## Sources
@@ -240,13 +251,10 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 ### Keyboard
 
-- Features:
-  - size: TKL (80%) / full size with the number pad on the left
-  - switch: MX cherry silent red
-  - keycap: double shot molded with korean letters
-  - programmable
-  - pre-lubed and modded
-- Candidates:
-  - None
+- No plans to buy a new keyboard
+- Planned keyboard mods:
+  - fix stabilizer rattle
+  - lube underlubed keys
+  - add foam sound dampener
 
 </details>
