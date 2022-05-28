@@ -228,13 +228,15 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 ### Mouse
 
 - Features:
-  - 1000Hz+ polling rate
-  - <=100g weight w/o cable
+  - <=7ms wired click latency
+  - <=80g weight
+  - Either from Razer or Logitech
 - Candidates:
-  - [Logitech G pro wireless](https://www.logitechg.com/en-us/products/gaming-mice/pro-wireless-mouse)
-  - [logitech G pro X](https://www.logitechg.com/en-us/products/gaming-mice/pro-x-superlight-wireless-mouse)
-  - With:
-    - [Logitech powerplay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging)
+  - [Razer Viper 8k](https://www.rtings.com/mouse/reviews/razer/viper-8khz/)
+  - [Razer Viper Mini](https://www.rtings.com/mouse/reviews/razer/viper-mini/)
+  - [Razer Viper Ultimate](https://www.rtings.com/mouse/reviews/razer/viper-ultimate/)
+- Notes:
+  - Replace piper with [openrazer](https://github.com/openrazer/openrazer) if switching to Razer mouse
 
 ### Keyboard
 
