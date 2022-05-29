@@ -5,6 +5,7 @@ from src.util import flatpak_install, paru_install, copy_file, silent_system
 from src.setup.system import system76_scheduler
 
 name = "osu!lazer"
+post_install = ["Install osu! skin from https://github.com/developomp/osu-pomp-skin"]
 
 
 def setup():
