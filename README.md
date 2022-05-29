@@ -256,5 +256,6 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
   - fix stabilizer rattle
   - lube underlubed keys
   - add foam sound dampener
+  - Point keycaps for left Win key (master key) and right alt key (language switching key)
 
 </details>
