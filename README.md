@@ -258,4 +258,14 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
   - add foam sound dampener
   - Point keycaps for left Win key (master key) and right alt key (language switching key)
 
+### Monitor
+
+- Features:
+  - panel: burn-in-less OLED (ex: QD-OLED)
+  - refresh rate: 144+ Hz
+  - size: at most 24in
+  - resolution: FHD (1920x1080)
+- Candidates:
+  - None
+
 </details>
