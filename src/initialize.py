@@ -2,35 +2,28 @@ from src.util import silent_system
 from src import log
 
 
+def install_via_pacman(package: str):
+    log.log(f"Initializing {package}")
+    if silent_system(f"paru -S --noconfirm {package}"):
+        log.error(f"Failed to install {package} via pacman")
+        exit(1)
+
+
+def install_via_pip(package: str):
+    log.log(f"Initializing {package}")
+    if silent_system("pip install {package}"):
+        log.error("Failed to install {package} via pip")
+        exit(1)
+
+
 def initialize():
     """
     Initialize before running any code.
     """
 
-    log.log("Initializing flatpak")
-    if silent_system("paru -S --noconfirm flatpak"):
-        log.error("Failed to install flatpak via pacman")
-        exit(1)
+    install_via_pacman("flatpak")
+    install_via_pacman("pip")
 
-    log.log("Initializing pip")
-    if silent_system("paru -S --noconfirm python-pip"):
-        log.error("Failed to install pip via pacman")
-        exit(1)
-
-    # https://pypi.org/project/requests
-    log.log("Initializing requests")
-    if silent_system("pip install requests"):
-        log.error("Failed to install requests via pip")
-        exit(1)
-
-    # https://pypi.org/project/PyYAML
-    log.log("Initializing PyYAML")
-    if silent_system("pip install PyYAML"):
-        log.error("Failed to install PyYAML via pip")
-        exit(1)
-
-    # https://github.com/magmax/python-inquirer
-    log.log("Initializing inquirer")
-    if silent_system("pip install inquirer"):
-        log.error("Failed to install inquirer via pip")
-        exit(1)
+    install_via_pip("requests")
+    install_via_pip("PyYAML")
+    install_via_pip("inquirer")
