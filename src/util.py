@@ -47,11 +47,13 @@ def smart_mkdir(path: str):
         pass
 
 
-def remove_directory(path):
+def trash(path):
+    """Moves a file or directory to freedesktop trash."""
+
     try:
-        system(f"rm -rf {path}")
+        system(f"trash-put {path}")
     except Exception as err:
-        print(f"Failed to remove directory: {path}")
+        print(f"Failed to remove: {path}")
         raise err
 
 

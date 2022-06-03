@@ -1,4 +1,4 @@
-from src.util import paru_install, copy_file, remove_directory
+from src.util import paru_install, copy_file, trash
 from src.constants import content_dir, home_dir
 from src import log
 
@@ -20,7 +20,7 @@ def setup():
 
     log.log("Installing powerlevel10k theme")
     p10k_path = f"{home_dir}/.oh-my-zsh/custom/themes/powerlevel10k"
-    remove_directory(p10k_path)
+    trash(p10k_path)
     system(
         f"git clone --depth=1 https://github.com/romkatv/powerlevel10k.git {p10k_path}"
     )
@@ -29,7 +29,7 @@ def setup():
     zsh_syntax_highlighting_path = (
         f"{home_dir}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
     )
-    remove_directory(zsh_syntax_highlighting_path)
+    trash(zsh_syntax_highlighting_path)
     system(
         f"git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git {zsh_syntax_highlighting_path}"
     )

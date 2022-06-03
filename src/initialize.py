@@ -21,6 +21,7 @@ def initialize():
     Initialize before running any code.
     """
 
+    install_via_pacman("trash-cli")
     install_via_pacman("flatpak")
     install_via_pacman("pip")
 
