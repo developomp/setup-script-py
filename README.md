@@ -161,7 +161,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 - Lubed with Krytox 103
 - With a towel underneath
-- With [COX COX1 walnut wrist rest](https://www.abko.co.kr/brand/detail.php?it_id=1609120628)
+- With [COX COS1 walnut wrist rest](https://www.abko.co.kr/brand/detail.php?it_id=1609120628)
 
 <p align="center">
   <b>Video</b>
@@ -251,12 +251,27 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 ### Keyboard
 
-- No plans to buy a new keyboard
-- Planned keyboard mods:
-  - fix stabilizer rattle
-  - lube underlubed keys
-  - add foam sound dampener
-  - Point keycaps for left Win key (master key) and right alt key (language switching key)
+- Planned mods for current keyboard:
+  - fix stabilizer rattle (holee mod)
+  - lube some under-lubed keys (under-lubed due to not enough lube)
+  - sound dampener
+- Custom keyboard (500 USD budget)
+  - PCB (75% because TKL parts are hard to come by, programmable on Linux, 1000Hz polling rate, hot-swappable, ability to disable RGB): not decided
+  - plate: not decided
+  - case (anodized metal): not decided
+  - switch (linear, silent, milky?): not decided
+  - keycap (with both English and Korean letters, either by die-sub or double-shot injection molded): [matcha green tea](https://kprepublic.com/products/matcha-green-tea-dye-sub-keycap-set-thick-pbt-for-keyboard-gh60-poker-87-tkl-104-ansi-xd64-bm60-xd68-xd84-xd96-janpanese) (ANSI, PBT, XDA V2)
+  - stabilizer: not decided
+  - switch lube: not decided
+  - stabilizer stem lube (dielectric grease): not decided
+  - wrist rest: [COX COS1 TKL walnut](https://www.abko.co.kr/brand/detail.php?it_id=1609120892)
+  - mods:
+    - holee mod
+    - silicon dampener (optional)
+    - memory foam filling
+    - un-warp PBT keycaps with hot water
+    - no:
+      - tempest tape mod
 
 ### Monitor
 

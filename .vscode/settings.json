@@ -10,10 +10,15 @@
     "flatpak",
     "FOSS",
     "geteuid",
+    "holee",
+    "keycap",
+    "keycaps",
+    "MATCHA",
     "noto",
     "paru",
     "popen",
     "pytermgui",
+    "swappable",
     "ungoogled"
   ],
   "python.formatting.provider": "black"
