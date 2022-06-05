@@ -6,14 +6,14 @@
 
 <p align="center">
   <b>
-    This project is undergoing a rewrite. Use the <a href="https://github.com/developomp/setup/tree/old">old branch</a> for now.
+    This project is undergoing a <a href="https://github.com/developomp/setup/issues/46">rewrite</a>. Use the <a href="https://github.com/developomp/setup/tree/old">old branch</a> for now.
   </b>
 </p>
 
 ## Table of contents
 
 <details>
-<summary>Click to expand</summary>
+<summary>Click to show table of contents</summary>
 
 - [Table of contents](#table-of-contents)
 - [Images](#images)
@@ -105,6 +105,10 @@ Full setup could easily take more than a hour depending on the internet speed.
 <details>
   <summary>Click to see hardware information</summary>
 
+### Desktop
+
+No desktop
+
 ### Laptop
 
 | name    | model                                                                                                          |
@@ -175,37 +179,17 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 <details>
   <summary>Click to show asset source</summary>
 
-- I randomly change between these wallpapers depending on my mood.
-- Some wallpaper images are intentionally blurred to improve transparent overlay readability.
+### Wallpaper
 
-### 3rd Wallpaper
-
-<img alt="3rd wallpaper" src="./.repo/wallpaper3.png" width="75%">
-
-- made by [u/nullcriminal](https://www.reddit.com/r/unixporn/comments/b4dt3y)
-
-### 2nd Wallpaper
-
-<img alt="2nd wallpaper" src="./.repo/wallpaper2.png" width="75%">
-
-- image from [wallpaperaccess](https://wallpaperaccess.com/full/2752569.png)
-- the [image list](https://wallpaperaccess.com/simple-earth) I found it from
-- Effects
-  - lv1 compression (GIMP)
-  - blur (GIMP gaussian blur 3.0)
-  - [nordified](https://github.com/Schrodinger-Hat/ImageGoNord) (filtering option toggled)
-
-### 1st Wallpaper
-
-<img alt="1st wallpaper" src="./.repo/wallpaper1.png" width="75%">
+<img alt="wallpaper" src="./.repo/wallpaper.png" width="75%">
 
 - [a video](https://www.youtube.com/watch?v=QEWV6fiYaDU) from [Chillhop Music](https://www.youtube.com/channel/UCOxqgCwgOqC2lMqC5PYz_Dg)
 - Artwork by [Jeff Östberg](https://jeffostberg.se)
 - Animation by [Geneviève Delacroix](http://www.genevievelacroix.com)
-- Effects
-  - lv1 compression (GIMP)
-  - blur (GIMP gaussian blur 3.5)
+- Effects (in order)
   - [nordified](https://github.com/Schrodinger-Hat/ImageGoNord) (filtering option toggled)
+  - GIMP gaussian blur 3.5
+  - level 1 compression (GIMP)
 
 ### System monitor
 
@@ -223,7 +207,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 ### Laptop
 
 - Features:
-  - less than 1 million KRW (around 780 USD)
+  - less than 1 million KRW
   - Korean keyboard
   - FHD monitor
   - number pad
@@ -252,7 +236,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 ### Keyboard
 
 - Planned mods for current keyboard:
-  - fix stabilizer rattle (holee mod)
+  - holee mod
   - lube some under-lubed keys (under-lubed due to running out of lube D:)
   - sound dampener
 - Candidates:
@@ -272,7 +256,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
       - Plate Caps: Black
     - additional parts and accessories:
       - stabilizers: [Durock V2](https://modedesigns.com/products/durock-v2-stabilizers) (gold variant)
-      - switch: [Charry MX silent red](https://smartstore.naver.com/archon/products/2323309526)
+      - switch: [Cherry MX silent red](https://smartstore.naver.com/archon/products/2323309526)
       - keycap: [matcha green tea](https://kprepublic.com/products/matcha-green-tea-dye-sub-keycap-set-thick-pbt-for-keyboard-gh60-poker-87-tkl-104-ansi-xd64-bm60-xd68-xd84-xd96-janpanese) (normal Korean variant)
       - wrist rest: [Keychron K2/K6 wrist rest](https://www.coupang.com/vp/products/5509901546)
       - switch lube: not decided
