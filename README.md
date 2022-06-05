@@ -284,7 +284,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 ### Monitor
 
 - Features:
-  - panel: burn-in-less OLED (ex: QD-OLED)
+  - panel (burn-in-less, non-crystal, self-emitting): does not exist as of the moment :(
   - refresh rate: 144+ Hz
   - size: at most 24in
   - resolution: FHD (1920x1080)
