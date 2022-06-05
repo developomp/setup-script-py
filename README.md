@@ -253,37 +253,33 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 - Planned mods for current keyboard:
   - fix stabilizer rattle (holee mod)
-  - lube some under-lubed keys (under-lubed due to not enough lube)
+  - lube some under-lubed keys (under-lubed due to running out of lube D:)
   - sound dampener
 - Candidates:
-  - [MODE Sonnet](https://modedesigns.com/products/sonnet) (V0G1D2E3A4B5A6A7A8A9A)
-    - option (Base $299, $369 with options, $58.33 shipping):
+  - [MODE Sonnet](https://modedesigns.com/products/sonnet) (V0G1D2E3A4B5A6A7A8A9A, Base $299, $369 with options, additional $58.33 for shipping)
+    - option:
       - Top: White (+$15)
       - Bottom: Gold (+$10)
       - Accent: Gold
       - Internal Weight: Black
       - Plate:
         - Layout: Universal
-        - Variant: Aluminum
+        - Variant: Aluminum (+$10)
       - PCB: Hot-swap (+$10)
       - Silicon Base: Black (+$15)
       - Plate foam: Yes (+$10)
       - Feet: Black
       - Plate Caps: Black
     - additional parts and accessories:
-      - stabilizers: [Durock V2](https://modedesigns.com/products/durock-v2-stabilizers) ($17)
-      - switch (linear, silent, milky?): not decided
+      - stabilizers: [Durock V2](https://modedesigns.com/products/durock-v2-stabilizers) (gold variant)
+      - switch: [Charry MX silent red](https://smartstore.naver.com/archon/products/2323309526)
       - keycap: [matcha green tea](https://kprepublic.com/products/matcha-green-tea-dye-sub-keycap-set-thick-pbt-for-keyboard-gh60-poker-87-tkl-104-ansi-xd64-bm60-xd68-xd84-xd96-janpanese) (normal Korean variant)
-      - wrist rest: not decided
+      - wrist rest: [Keychron K2/K6 wrist rest](https://www.coupang.com/vp/products/5509901546)
       - switch lube: not decided
       - stabilizer stem lube (dielectric grease): not decided
+      - cable: [Black coiled cable](https://www.coupang.com/vp/products/6518112005?vendorItemId=81672718085)
     - mods:
       - holee mod
-      - silicon dampener (optional)
-      - memory foam filling
-      - un-warp PBT keycaps with hot water
-      - no:
-        - tempest tape mod
 
 ### Monitor
 
