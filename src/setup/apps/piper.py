@@ -1,4 +1,4 @@
-from src.util import flatpak_install
+from src.util import paru_install
 
 name = "piper"
 
@@ -6,4 +6,5 @@ name = "piper"
 def setup():
     """gaming mouse configuration utility"""
 
-    flatpak_install("org.freedesktop.Piper")
+    # Not using flatpak version because of some init bugs
+    paru_install("piper")
