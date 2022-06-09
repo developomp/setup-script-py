@@ -62,6 +62,18 @@
 
 </details>
 
+## Overview
+
+|                 Software | Choice                                                                                     |
+| -----------------------: | :----------------------------------------------------------------------------------------- |
+| Desktop Environment - 🚀 | [GNOME](https://www.gnome.org)                                                             |
+|           GTK theme - 🎨 | [vimix-dark-compact-beryl](https://github.com/vinceliuice/vimix-gtk-themes)                |
+|               Shell - 🐚 | [zsh](https://github.com/zsh-users/zsh) with [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) |
+|            Terminal - 🖥️ | [alacritty](https://github.com/alacritty/alacritty)                                        |
+|        File manager - 📂 | [Nautilus](https://gitlab.gnome.org/GNOME/nautilus)                                        |
+|             Browser - 🌐 | [UnGoogled Chromium](https://github.com/ungoogled-software/ungoogled-chromium)             |
+|   Text Editor & IDE - 📝 | [VSCodium](https://github.com/VSCodium/vscodium)                                           |
+
 ## Usage
 
 1. Install Arch linux.
