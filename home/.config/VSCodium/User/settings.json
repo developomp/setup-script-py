@@ -2,8 +2,7 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
 
-  "editor.fontFamily": "'Noto Sans Mono', 'NanumGothicCoding'",
-  "editor.fontSize": 16,
+  "editor.fontFamily": "'Noto Sans Mono', 'NanumGothicCoding', 'Iosevka'",
 
   "explorer.compactFolders": false,
 
@@ -16,9 +15,8 @@
   "gitlens.statusBar.enabled": false,
 
   "terminal.integrated.enablePersistentSessions": false,
-  "terminal.integrated.fontFamily": "'Noto Sans Mono'",
+  "terminal.integrated.fontFamily": "'Noto Sans Mono', 'Iosevka'",
   "terminal.integrated.persistentSessionReviveProcess": "never",
-  "terminal.integrated.fontSize": 15,
 
   "workbench.colorTheme": "One Dark Pro Flat",
   "workbench.iconTheme": "material-icon-theme",
