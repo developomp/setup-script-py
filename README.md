@@ -220,13 +220,12 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
 
 - Features:
   - less than 1 million KRW
-  - Korean keyboard
-  - FHD monitor
-  - number pad
+  - Korean keyboard with number pad
+  - 1920x1080 144Hz IPS display
   - x86_64 architecture
-  - NO NVIDIA GPU
+  - non-Nvidia GPU with at least 2GB of GDDR5 VRAM
 - Candidates:
-  - [Samsung NT750XDZ-A51A](http://prod.danawa.com/info/?pcode=14186387)
+  - None
 
 ### Storage
 
@@ -269,7 +268,7 @@ partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util
     - additional parts and accessories:
       - stabilizers: [Durock V2](https://modedesigns.com/products/durock-v2-stabilizers) (gold variant)
       - switch: [Cherry MX silent red](https://smartstore.naver.com/archon/products/2323309526)
-      - keycap: [matcha green tea](https://kprepublic.com/products/matcha-green-tea-dye-sub-keycap-set-thick-pbt-for-keyboard-gh60-poker-87-tkl-104-ansi-xd64-bm60-xd68-xd84-xd96-janpanese) (normal Korean variant)
+      - keycap (didn't check if it fits): [matcha green tea](https://kprepublic.com/products/matcha-green-tea-dye-sub-keycap-set-thick-pbt-for-keyboard-gh60-poker-87-tkl-104-ansi-xd64-bm60-xd68-xd84-xd96-janpanese) (normal Korean variant)
       - wrist rest: [Keychron K2/K6 wrist rest](https://www.coupang.com/vp/products/5509901546)
       - switch lube: not decided
       - stabilizer stem lube (dielectric grease): not decided
