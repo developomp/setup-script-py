@@ -138,29 +138,17 @@ No desktop
 
 ### Storage
 
-| ID\* | model                                  | Size  |
-| ---- | -------------------------------------- | ----- |
-| 1    | SK Hynix HFS128G39TND-N210A (30002P10) | 128GB |
-| 2    | Samsung SSD 860 PRO 512GB (RVM02B6Q)   | 512GB |
+- Model: [Samsung 860 PRO SSD 512GB](https://www.samsung.com/sec/support/model/MZ-76P512BW/)
+- total size: 512,110,190,592 bytes (476.9 GiB, 512.1 GB)
 
-\*arbitrary index I gave. Has no meaning.
+Partitions sorted by order:
 
-### Partitioning
-
-- unallocated space at the end are for overprovisioning
-- no swap partition
-
-more information about efi partition can be found in [this](https://wiki.archlinux.org/title/GRUB) arch wiki page.
-
-partitioning done with fdisk ([source](https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/tree/disk-utils/fdisk.c), [man](https://man7.org/linux/man-pages/man8/fdisk.8.html)).
-
-| drive id\* | format | size                           | mount location   | purpose                           |
-| ---------- | ------ | ------------------------------ | ---------------- | --------------------------------- |
-| 1          | FAT32  | +300M                          | /boot/efi        | EFI partition                     |
-| 1          | ext4   | -15G                           | /                | root                              |
-| 2          | ext4   | default (all available sector) | /media/pomp/data | data storage (D drive equivalent) |
-
-\*index from [storage](#Storage)
+| format | size (parenthesis = rounded values)         | mount location   | purpose           |
+| ------ | ------------------------------------------- | ---------------- | ----------------- |
+| ext4   | 432,109,780,992 bytes (402.4 GiB, 432.1 GB) | /media/pomp/data | data storage      |
+| FAT32  | 524,288,000 bytes (500.0 MiB, 524.3 MB)     | /boot            | EFI partition     |
+| ext4   | 64,424,509,440 bytes (60.0 GiB, 64.4 GB)    | /                | system root       |
+| N/A    | 15,050,546,688 bytes (14.0 GiB, 15.0 GB)    | N/A              | over-provisioning |
 
 ### Peripherals
 
