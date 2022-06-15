@@ -1,9 +1,9 @@
 from src.util import flatpak_install
 
-name = "GNOME font viewer"
+name = "GNOME Font Viewer"
 
 
 def setup():
-    """GNOME font viewer"""
+    """GNOME font viewing utility"""
 
     flatpak_install("org.gnome.font-viewer")
