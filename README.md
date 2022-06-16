@@ -267,10 +267,16 @@ Partitions sorted by order:
 ### Monitor
 
 - Features:
-  - panel (burn-in-less, non-crystal, self-emitting): does not exist as of the moment :(
+  - panel: not decided / does not exist
+    - no burn-in
+    - fast response time (at least faster than my [current monitor](#peripherals))
+    - individual pixel lighting (for true black)
+    - color accurate
+  - normal RGB stripe subpixel layout
   - refresh rate: 144+ Hz
   - size: at most 24in
   - resolution: FHD (1920x1080)
+  - flicker-free
 - Candidates:
   - None
 
