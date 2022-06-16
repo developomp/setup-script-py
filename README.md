@@ -211,7 +211,8 @@ Partitions sorted by order:
   - Korean keyboard with number pad
   - 1920x1080 144Hz IPS display
   - x86_64 architecture
-  - non-Nvidia GPU with at least 2GB of GDDR5 VRAM
+  - GPU with at least 2GB of GDDR5 VRAM
+  - DDR5 RAM support
 - Candidates:
   - None
 
