@@ -71,7 +71,7 @@
 |               Shell - 🐚 | [zsh](https://github.com/zsh-users/zsh) with [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) |
 |            Terminal - 🖥️ | [alacritty](https://github.com/alacritty/alacritty)                                        |
 |        File manager - 📂 | [Nautilus](https://gitlab.gnome.org/GNOME/nautilus)                                        |
-|             Browser - 🌐 | [UnGoogled Chromium](https://github.com/ungoogled-software/ungoogled-chromium)             |
+|             Browser - 🌐 | [Brave](https://github.com/brave/brave-browser)                                            |
 |   Text Editor & IDE - 📝 | [VSCodium](https://github.com/VSCodium/vscodium)                                           |
 
 ## Usage
