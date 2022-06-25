@@ -34,7 +34,7 @@
     "popen",
     "pytermgui",
     "swappable",
-    "ungoogled"
+    "xorg"
   ],
   "python.formatting.provider": "black"
 }
