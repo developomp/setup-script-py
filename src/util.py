@@ -100,7 +100,7 @@ def copy_directory(src: str, dst: str):
 def load_dconf(file_name: str):
     """Loads dconf configuration"""
 
-    system(f'dconf load / < "{src.constants.content_dir}/dconf/{file_name}"')
+    system(f'dconf load / < "{src.constants.content_dir}/files/dconf/{file_name}"')
 
 
 def download(file_name: str, url: str):
