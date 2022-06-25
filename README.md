@@ -64,6 +64,8 @@
 
 ## Overview
 
+### Software
+
 |                 Software | Choice                                                                                     |
 | -----------------------: | :----------------------------------------------------------------------------------------- |
 | Desktop Environment - 🚀 | [GNOME](https://www.gnome.org)                                                             |
@@ -73,6 +75,16 @@
 |        File manager - 📂 | [Nautilus](https://gitlab.gnome.org/GNOME/nautilus)                                        |
 |             Browser - 🌐 | [Brave](https://github.com/brave/brave-browser)                                            |
 |   Text Editor & IDE - 📝 | [VSCodium](https://github.com/VSCodium/vscodium)                                           |
+
+### Project structure
+
+- `.github/workflows/deploy.yml` - A [github action](https://github.com/features/actions) that makes `setup.py` available at https://setup.developomp.com/
+- `.repo` - Extraneous files that does not serve any functional purpose
+- `etc` - Files that are copied over to the `/etc` directory
+- `home` - Files that are copied over to the `/home/pomp` directory
+- `files` - Files that are used but does not get copied
+  - `dconf` - [dconf](https://wiki.gnome.org/Projects/dconf) files
+- `src` - Python scripts. Check code comments (especially `__init__.py`) for more info
 
 ## Usage
 
