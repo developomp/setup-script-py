@@ -235,37 +235,23 @@ Partitions sorted by order:
 
 ### Keyboard
 
-- Planned mods for current keyboard:
-  - holee mod
-  - lube some under-lubed keys (under-lubed due to running out of lube D:)
-  - sound dampener
 - Features:
-  - 500USD budget including shipping fee
-  - Size: 65%
-  - Layout: ANSI
-  - Case:
-    - material: E-white aluminum
-    - with separator for the arrow keys
-    - with brass weight on the bottom
-  - Plate:
-    - material: aluminum/brass
-    - non-half-size
-  - PCB:
-    - hot-swappable, screw-in stabilizer mounts
-  - Stabilizers:
-    - screw-in
-  - switch: [Cherry MX silent red](https://smartstore.naver.com/archon/products/2323309526)
-    - linear
-    - silent
-  - accessories:
-    - Bottom foam/silicon
-    - keycap (check if it fits): [matcha green tea](https://kprepublic.com/products/matcha-green-tea-dye-sub-keycap-set-thick-pbt-for-keyboard-gh60-poker-87-tkl-104-ansi-xd64-bm60-xd68-xd84-xd96-janpanese) (normal Korean variant)
-    - wrist rest: [Keychron K2/K6 wrist rest](https://www.coupang.com/vp/products/5509901546)
-    - switch lube: not decided
-    - stabilizer stem lube (dielectric grease): not decided
-    - cable: [Black coiled cable](https://www.coupang.com/vp/products/6518112005?vendorItemId=81672718085)
+  - Layout: Ergonomic 65% ANSI
+  - Case: E-white aluminum
+  - PCB: hot-swap sockets
+  - Stabilizers: screw-in
+  - Keycaps: ZDA profile, matcha theme, with Korean letters, die-subbed
+  - Switches: silent linear\
   - mods:
     - holee mod
+- Parts & Accessories:
+  - [Case + PCB + Stabilizers + Cable](https://ymdkey.com/products/icymdk-wings-aluminum-cnc-top-bottom-qmk-rgb-hotswap-v1-pcb-diy-kit-customied-color?variant=39455544901693)
+  - [walnut wrist rest](https://ymdkey.com/products/wooden-wrist-rest-solid-wood-walnut-for-wings-split-keyboard)
+  - [foam](https://ymdkey.com/products/ymdk-wings-foam-mute-cotton)
+  - [Keycaps](https://ymdkey.com/collections/keycap-1/products/matcha-dye-sub-zda-pbt-keycap-similar-to-xda-japanese-korean-russian-for-mx-keyboard-104-87-61-melody-96-kbd75-id80-gk64-tada68?variant=32938817028157)
+  - [Switches](https://ymdkey.com/products/kailh-master-box-silent-yellow-switches-v2-5pin-42gf?_pos=7&_sid=f3d0185e5&_ss=r&variant=39429262049341)
+  - [Lubes](https://ymdkey.com/products/lubricating-grease-oil-lube-lubricant-for-mechanical-keyboard-switch-stem-and-cherry-stabilizer-costar-springs?_pos=2&_sid=0a8fdf867&_ss=r&variant=39263322669117)
+  - [Switch Opener](https://ymdkey.com/products/2-in-1-cnc-aluminum-anodized-cherry-kailh-gateron-ttc-zealios-switch-opener-for-lube-switches-replacing-spring?_pos=2&_sid=4ea0be237&_ss=r&variant=32944329916477)
 
 ### Monitor
 
