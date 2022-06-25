@@ -253,14 +253,14 @@ Partitions sorted by order:
   - PCB: hot-swap sockets
   - Stabilizers: screw-in
   - Keycaps: ZDA profile, matcha theme, with Korean letters, die-subbed
-  - Switches: silent linear\
+  - Switches: silent linear
   - mods:
     - holee mod
 - Parts & Accessories:
   - [Case + PCB + Stabilizers + Cable](https://ymdkey.com/products/icymdk-wings-aluminum-cnc-top-bottom-qmk-rgb-hotswap-v1-pcb-diy-kit-customied-color?variant=39455544901693)
   - [walnut wrist rest](https://ymdkey.com/products/wooden-wrist-rest-solid-wood-walnut-for-wings-split-keyboard)
   - [foam](https://ymdkey.com/products/ymdk-wings-foam-mute-cotton)
-  - [Keycaps](https://ymdkey.com/collections/keycap-1/products/matcha-dye-sub-zda-pbt-keycap-similar-to-xda-japanese-korean-russian-for-mx-keyboard-104-87-61-melody-96-kbd75-id80-gk64-tada68?variant=32938817028157)
+  - [Keycaps](https://ymdkey.com/collections/keycap-1/products/matcha-dye-sub-zda-pbt-keycap-similar-to-xda-japanese-korean-russian-for-mx-keyboard-104-87-61-melody-96-kbd75-id80-gk64-tada68?variant=32991895617597)
   - [Switches](https://ymdkey.com/products/kailh-master-box-silent-yellow-switches-v2-5pin-42gf?_pos=7&_sid=f3d0185e5&_ss=r&variant=39429262049341)
   - [Lubes](https://ymdkey.com/products/lubricating-grease-oil-lube-lubricant-for-mechanical-keyboard-switch-stem-and-cherry-stabilizer-costar-springs?_pos=2&_sid=0a8fdf867&_ss=r&variant=39263322669117)
   - [Switch Opener](https://ymdkey.com/products/2-in-1-cnc-aluminum-anodized-cherry-kailh-gateron-ttc-zealios-switch-opener-for-lube-switches-replacing-spring?_pos=2&_sid=4ea0be237&_ss=r&variant=32944329916477)
