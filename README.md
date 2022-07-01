@@ -270,12 +270,12 @@ Partitions sorted by order:
   - Switch Lube (undecided)
   - Stabilizer Lube (undecided)
   - [Switch Opener](https://ymdkey.com/products/2-in-1-cnc-aluminum-anodized-cherry-kailh-gateron-ttc-zealios-switch-opener-for-lube-switches-replacing-spring?_pos=2&_sid=4ea0be237&_ss=r&variant=32944329916477)
-
-Layer 0:
-![layer 0](.repo/kbd_layer_0.png)
-
-Layer 1:
-![layer 1](.repo/kbd_layer_1.png)
+- QMK config:
+  - [json file](./files/pomp.json) / [hex file](./files/ymdk_wingshs_pomp.hex)
+  - Layer 0
+    ![layer 0](.repo/kbd_layer_0.png)
+  - Layer 1
+    ![layer 1](.repo/kbd_layer_1.png)
 
 ### Monitor
 
