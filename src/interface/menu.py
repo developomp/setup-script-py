@@ -36,7 +36,8 @@ def menu():
         input("Work In Progress (press Enter to return to menu)")
         menu()
     elif choice == Choices.QUIT:
-        exit(0)
+        # return to `setup.py` so it can exit safely
+        return
     else:
         print(
             """You should not have been able to reach this side of the code,
