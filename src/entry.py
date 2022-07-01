@@ -5,6 +5,6 @@ def entry():
     initialize()
 
     # import should happen after the `initialize` function is called
-    from src.interface.choose_action import choose_action
+    from src.interface.menu import menu
 
-    choose_action()
+    menu()
