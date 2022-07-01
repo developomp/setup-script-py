@@ -1,29 +1,29 @@
-from src.util import silent_system
+from os import system
 from src import log
+from src.util import silent_system
 
 
 def install_via_pacman(package: str):
-    log.log(f"Initializing {package}")
     if silent_system(f"paru -S --noconfirm {package}"):
         log.error(f"Failed to install {package} via pacman")
         exit(1)
 
 
 def install_via_pip(package: str):
-    log.log(f"Initializing {package}")
-    if silent_system("pip install {package}"):
-        log.error("Failed to install {package} via pip")
+    if silent_system(f"pip install {package}"):
+        log.error(f"Failed to install {package} via pip")
         exit(1)
 
 
 def initialize():
-    """
-    Initialize before running any code.
-    """
+    """Make sure everything is prepared for the install scripts to run.
+    You may assume Any function can be called after running this function."""
+
+    print("Initializing...")
 
     install_via_pacman("trash-cli")
     install_via_pacman("flatpak")
-    install_via_pacman("pip")
+    install_via_pacman("python-pip")
 
     install_via_pip("requests")
     install_via_pip("PyYAML")
