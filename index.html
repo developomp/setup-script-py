@@ -22,7 +22,7 @@ tmp_dir = "/tmp/com.developomp.setup"
 #
 
 
-def silent_system(command: str, suppress_error: bool = True) -> None:
+def silent_system(command: str, suppress_error: bool = False) -> None:
     if suppress_error:
         system(f"{command} &> /dev/null")
     else:
