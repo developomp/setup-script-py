@@ -1,9 +1,12 @@
-# must be synced with `setup.py`
-# this variable may be altered by the script
-# most notably by `src/interface/choose_action.py`
-
 from os import environ
+from os.path import abspath, dirname
 
-content_dir = "/tmp/com.developomp.setup"
-tmp_dir = content_dir
+# used to look for resources
+# points to repo root
+content_dir = abspath(dirname(dirname(__file__)))
+
+# used to temporarily save files
+# must be synced with `setup.py`
+tmp_dir = "/tmp/com.developomp.setup"
+
 home_dir = environ.get("HOME")

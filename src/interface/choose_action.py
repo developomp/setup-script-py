@@ -4,15 +4,10 @@ from os.path import exists, abspath
 
 from src.util import import_file
 from src.log import log
-import src.constants
+from src.constants import content_dir
 
 
 def choose_action():
-    if exists(".git/") and exists("src/"):
-        src.constants.content_dir = abspath(".")
-
-    content_dir = src.constants.content_dir
-
     files = glob(f"{content_dir}/src/setup/**/*.py")
     files = [
         s.removeprefix(f"{content_dir}/src/setup/")
