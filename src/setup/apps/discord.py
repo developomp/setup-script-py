@@ -53,8 +53,6 @@ def setup():
     flatpak_install("com.discordapp.Discord")
     paru_install("betterdiscordctl-git")
 
-    copy_file("home/.config/autostart/discord.desktop")
-
     for id in PLUGINS:
         url = f"https://betterdiscord.app/Download?id={id}"
         log.log(f"installing {url}")
