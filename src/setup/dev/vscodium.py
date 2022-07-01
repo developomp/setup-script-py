@@ -54,9 +54,6 @@ def setup():
     for extension in EXTENSIONS:
         system(f"codium --install-extension {extension} --force")
 
-    # autostart vscodium
-    copy_file("home/.config/autostart/codium.desktop")
-
     # vscodium settings
     copy_file("home/.config/VSCodium/User/settings.json")
 
