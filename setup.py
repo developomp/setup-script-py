@@ -36,6 +36,11 @@ def run(command: str) -> list[str]:
 def command_exists(command: str) -> bool:
     return len(run(f"command -v {command}")) == 1
 
+def cleanup() -> None:
+    """Remove temporary files downloaded or created by this script"""
+
+    if exists(tmp_dir):
+        rmtree(tmp_dir)
 
 #
 # Check functions
@@ -157,11 +162,7 @@ def clone_repository():
 def main():
     minimal_check()
     bootstrap()
-
-    # Cleanup
-    # Remove temporary files downloaded by this script
-    if exists(tmp_dir):
-        rmtree(tmp_dir)
+    cleanup()
 
 
 if __name__ == "__main__":
