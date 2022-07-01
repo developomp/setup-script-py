@@ -1,5 +1,5 @@
 from src.util import paru_install, copy_file, trash
-from src.constants import content_dir, home_dir
+from src.constants import home_dir
 from src import log
 
 from os.path import isdir
