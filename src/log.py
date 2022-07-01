@@ -1,3 +1,8 @@
+"""
+Everything related to logging
+"""
+
+
 # https://stackoverflow.com/a/33206814/12979111
 
 RESET = "\033[0m"
@@ -33,7 +38,7 @@ def warn(msg: str):
 
 
 def error(msg: str):
-    print(f" {RED}{BOLD}   ERROR |  {msg}{RESET}")
+    print(f" {RED}{BOLD}   ERROR |  {msg}{RESET}", file=sys.stderr)
 
 
 def title(msg: str):
