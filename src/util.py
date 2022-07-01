@@ -132,7 +132,8 @@ def zsh_system(command: str) -> None:
 
 
 def silent_system(command: str, suppress_error: bool = True) -> None:
-    """os.system but does not show its log and error to the terminal."""
+    """os.system but does not show its log and error to the terminal.
+    A copy of this function also exists in `setup.py`."""
 
     if suppress_error:
         system(f"{command} &> /dev/null")
@@ -149,6 +150,7 @@ def run(command: str) -> list[str]:
 
 
 def command_exists(command: str) -> bool:
-    """Check if a command can be found in the current default shell."""
+    """Check if a command can be found in the current default shell.
+    A copy of this function also exists in `setup.py`."""
 
     return len(run(f"command -v {command}")) == 1
