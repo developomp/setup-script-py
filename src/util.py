@@ -131,7 +131,7 @@ def zsh_system(command: str) -> None:
     system(f"/usr/bin/zsh -c '{command}'")
 
 
-def silent_system(command: str, suppress_error: bool = True) -> None:
+def silent_system(command: str, suppress_error: bool = False) -> None:
     """os.system but does not show its log and error to the terminal.
     A copy of this function also exists in `setup.py`."""
 

@@ -4,7 +4,7 @@ from src.util import silent_system
 
 
 def install_via_pacman(package: str):
-    if silent_system(f"paru -S --noconfirm {package}"):
+    if silent_system(f"paru -S --noconfirm {package}", True):
         log.error(f"Failed to install {package} via pacman")
         exit(1)
 
