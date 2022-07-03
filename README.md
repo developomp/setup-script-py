@@ -58,7 +58,11 @@
 
 ### Script Execution
 
-![Execution](./.repo/execution.png)
+Main menu:
+![Execution 0](./.repo/execution0.png)
+
+Choosing Action:
+![Execution 1](./.repo/execution1.png)
 
 </details>
 
