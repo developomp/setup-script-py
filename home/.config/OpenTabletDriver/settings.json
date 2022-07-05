@@ -3,7 +3,7 @@
     {
       "Tablet": "Wacom CTL-472",
       "OutputMode": {
-        "Path": "OpenTabletDriver.Desktop.Output.LinuxArtistMode",
+        "Path": "OpenTabletDriver.Desktop.Output.AbsoluteMode",
         "Settings": [],
         "Enable": true
       },
@@ -17,10 +17,10 @@
           "Rotation": 0.0
         },
         "Tablet": {
-          "Width": 80,
-          "Height": 45,
-          "X": 22.5,
-          "Y": 55.0,
+          "Width": 95.0,
+          "Height": 53.4375,
+          "X": 27.0,
+          "Y": 47.5,
           "Rotation": 270.0
         },
         "EnableClipping": true,
