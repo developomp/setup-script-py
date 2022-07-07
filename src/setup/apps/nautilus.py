@@ -1,6 +1,6 @@
-from src.util import paru_install, load_dconf, command_exists
-from src.setup.apps import alacritty
-from os import system
+from src.util import paru_install, load_dconf, command_exists, run
+from src.setup.apps import terminal
+
 
 name = "Nautilus"
 
@@ -11,23 +11,21 @@ def setup():
     paru_install(
         [
             "nautilus",
-            "nautilus-open-any-terminal",  # allow nautilus to use alacrittty terminal
+            "nautilus-open-any-terminal",  # allow nautilus to use kitty terminal
         ]
     )
 
-    if not command_exists("alacritty"):
-        alacritty.setup()
+    if not command_exists("kitty"):
+        terminal.setup()
 
     # set nautilus settings
     load_dconf("nautilus.conf")
 
     # set nautilus terminal settings
-    system(
-        "gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty"
+    run(
+        "gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty"
     )
-    system(
+    run(
         "gsettings set com.github.stunkymonkey.nautilus-open-any-terminal keybindings ''"
     )
-    system(
-        "gsettings set com.github.stunkymonkey.nautilus-open-any-terminal new-tab true"
-    )
+    run("gsettings set com.github.stunkymonkey.nautilus-open-any-terminal new-tab true")

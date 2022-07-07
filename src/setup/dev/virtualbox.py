@@ -1,5 +1,4 @@
-from src.util import paru_install
-from os import system
+from src.util import paru_install, run
 
 name = "virtualbox"
 
@@ -15,6 +14,6 @@ def setup():
         ]
     )
 
-    system("sudo systemctl enable systemd-modules-load")
-    system("sudo systemctl start systemd-modules-load")
-    system("sudo modprobe vboxdrv")
+    run("sudo systemctl enable systemd-modules-load")
+    run("sudo systemctl start systemd-modules-load")
+    run("sudo modprobe vboxdrv")

@@ -1,4 +1,4 @@
-from os import system
+from src.util import run
 
 name = "fstab"
 
@@ -19,4 +19,4 @@ def setup():
 
     # append a line to the end and ignore output
     # not using python's file interface because I don't wanna deal with permission stuff
-    system(f'echo "{line_to_write}" | sudo tee -a {fstab_path} >/dev/null')
+    run(f'echo "{line_to_write}" | sudo tee -a {fstab_path} >/dev/null')

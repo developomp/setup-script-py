@@ -1,7 +1,7 @@
 from src.util import paru_install, smart_mkdir, download, unzip
 from src.constants import tmp_dir, home_dir
 from shutil import rmtree, move
-from os import remove, system
+from os import remove
 from os.path import exists, basename
 import requests
 import glob
@@ -61,7 +61,7 @@ def setup():
         move(ttf_file_path, f"{FONT_INSTALL_DIR}/{basename(ttf_file_path)}")
 
     # regenerate font cache
-    system("fc-cache -vf")
+    run("fc-cache -vf")
 
     # cleanup
     rmtree(TMP_FONTS_DIRECTORY)

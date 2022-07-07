@@ -1,6 +1,6 @@
-from src.util import flatpak_install, paru_install, copy_file
+from src.util import flatpak_install, paru_install, copy_file, run
 from src import log
-from os import system
+
 
 name = "Discord"
 
@@ -58,8 +58,8 @@ def setup():
         log.log(f"installing {url}")
 
         # assumes that plugins is located in "~/.var/app/com.discordapp.Discord/config/BetterDiscord/plugins" because I'm using flatpak
-        system(
+        run(
             f'wget --content-disposition --no-clobber -P ~/.var/app/com.discordapp.Discord/config/BetterDiscord/plugins "{url}"'
         )
 
-    system("betterdiscordctl -i flatpak install")
+    run("betterdiscordctl -i flatpak install")

@@ -8,7 +8,32 @@ from src.log import error
 import src.constants
 
 
-def paru_install(packages: str | list[str]) -> None:
+def run(command: str, hide_stdout: bool = True, hide_stderr: bool = True) -> None:
+    """os.system but has an option to hide stdout and/or stderr.
+    A copy of this function also exists in `setup.py`."""
+
+    if hide_stderr:
+        system(f"{command} &> /dev/null")
+        return
+
+    if hide_stdout:
+        system(f"{command} > /dev/null")
+        return
+
+    system(command)
+
+
+def run_and_return(command: str) -> list[str]:
+    """Runs command in system shell and return the result.
+    This is a blocking function.
+    Use this if you want to get the output of the command."""
+
+    return popen(command).readlines()
+
+
+def paru_install(
+    packages: str | list[str], hide_stdout: bool = True, hide_stderr: bool = True
+) -> None:
     """
     Download arch linux packages (including AUR).
 
@@ -17,15 +42,19 @@ def paru_install(packages: str | list[str]) -> None:
     """
 
     if type(packages) == str:
-        system(f"paru -S --noconfirm {packages}")
+        pass
     elif type(packages) == list:
         packages = " ".join(packages)
-        system(f"paru -S --noconfirm {packages}")
     else:
         error("Invalid paru packages format.")
+        return
+
+    run(f"paru -S --noconfirm {packages}", hide_stdout, hide_stderr)
 
 
-def flatpak_install(packages: str) -> None:
+def flatpak_install(
+    packages: str, hide_stdout: bool = True, hide_stderr: bool = True
+) -> None:
     """
     Download packages from flathub.
 
@@ -33,10 +62,10 @@ def flatpak_install(packages: str) -> None:
         packages: space-separated list of packages.
     """
 
-    system(f"flatpak install -y {packages}")
+    run(f"flatpak install -y {packages}", hide_stdout, hide_stderr)
 
 
-def smart_mkdir(path: str):
+def smart_mkdir(path: str) -> None:
     """
     Recursively create directories if it doesn't exist already.
     """
@@ -47,17 +76,23 @@ def smart_mkdir(path: str):
         pass
 
 
-def trash(path):
+def trash(path, hide_stdout: bool = True, hide_stderr: bool = True) -> None:
     """Moves a file or directory to freedesktop trash."""
 
     try:
-        system(f"trash-put {path}")
+        run(f"trash-put {path}", hide_stdout, hide_stderr)
     except Exception as err:
         print(f"Failed to remove: {path}")
         raise err
 
 
-def copy_file(src_file: str, mode="644", sudo=False):
+def copy_file(
+    src_file: str,
+    mode="644",
+    sudo=False,
+    hide_stdout: bool = True,
+    hide_stderr: bool = True,
+) -> None:
     """
     Copies a file in the repo to the system.
     If the `src_file` starts with `home/`, it maps to $HOME.
@@ -80,12 +115,14 @@ def copy_file(src_file: str, mode="644", sudo=False):
     command = f"install -Dm{mode} {src.constants.content_dir}/{src_file} {dst_file}"
 
     if sudo:
-        system(f"sudo {command}")
-    else:
-        system(command)
+        command = f"sudo {command}"
+
+    run(command, hide_stdout, hide_stderr)
 
 
-def copy_directory(src: str, dst: str):
+def copy_directory(
+    src: str, dst: str, hide_stdout: bool = True, hide_stderr: bool = True
+) -> None:
     """Copy a directory.
     Automatically creates parent directory/directories of dst if it does not exist already
 
@@ -94,16 +131,22 @@ def copy_directory(src: str, dst: str):
         dst: A path-like object or string pointing to a directory.
     """
 
-    system(f"cp -R {src} {dst}")
+    run(f"cp -R {src} {dst}", hide_stdout, hide_stderr)
 
 
-def load_dconf(file_name: str):
+def load_dconf(
+    file_name: str, hide_stdout: bool = True, hide_stderr: bool = True
+) -> None:
     """Loads dconf configuration"""
 
-    system(f'dconf load / < "{src.constants.content_dir}/files/dconf/{file_name}"')
+    run(
+        f'dconf load / < "{src.constants.content_dir}/files/dconf/{file_name}"',
+        hide_stdout,
+        hide_stderr,
+    )
 
 
-def download(file_name: str, url: str):
+def download(file_name: str, url: str) -> None:
     """Downloads a file from a url."""
     r = requests.get(url)
 
@@ -111,7 +154,7 @@ def download(file_name: str, url: str):
         f.write(r.content)
 
 
-def unzip(zip_path: str, dst_dir: str):
+def unzip(zip_path: str, dst_dir: str) -> None:
     """Unzips a .zip file to a directory."""
 
     smart_mkdir(dst_dir)
@@ -119,38 +162,12 @@ def unzip(zip_path: str, dst_dir: str):
         zip_ref.extractall(dst_dir)
 
 
-def import_file(name, path):
+def import_file(name, path) -> None:
     return SourceFileLoader(name, path).load_module()
-
-
-def zsh_system(command: str) -> None:
-    """os.system but uses zsh.
-    The command should not contain a single quote (') that's not escaped.
-    Use this if the command has output you want to display in real time."""
-
-    system(f"/usr/bin/zsh -c '{command}'")
-
-
-def silent_system(command: str, suppress_error: bool = False) -> None:
-    """os.system but does not show its log and error to the terminal.
-    A copy of this function also exists in `setup.py`."""
-
-    if suppress_error:
-        system(f"{command} &> /dev/null")
-    else:
-        system(f"{command} > /dev/null")
-
-
-def run(command: str) -> list[str]:
-    """Runs command in system shell and return the result.
-    This is a blocking function.
-    Use this if you want to get the output of the command."""
-
-    return popen(command).readlines()
 
 
 def command_exists(command: str) -> bool:
     """Check if a command can be found in the current default shell.
     A copy of this function also exists in `setup.py`."""
 
-    return len(run(f"command -v {command}")) == 1
+    return len(run_and_return(f"command -v {command}")) == 1

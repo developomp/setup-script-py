@@ -1,5 +1,4 @@
-from src.util import paru_install
-from os import system
+from src.util import paru_install, run
 
 name = "git"
 
@@ -9,8 +8,8 @@ def setup():
 
     paru_install("git")
 
-    system('git config --global user.email "developomp@gmail.com"')
-    system('git config --global user.name "developomp"')
-    system("git config --global pull.rebase false")
-    system("git config --global init.defaultBranch master")
-    system("git config --global credential.helper store")
+    run('git config --global user.email "developomp@gmail.com"')
+    run('git config --global user.name "developomp"')
+    run("git config --global pull.rebase false")
+    run("git config --global init.defaultBranch master")
+    run("git config --global credential.helper store")
