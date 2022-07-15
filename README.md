@@ -182,6 +182,7 @@ Partitions sorted by order:
 - Lubed with Krytox 103
 - With a towel underneath
 - With [COX COS1 walnut wrist rest](https://www.abko.co.kr/brand/detail.php?it_id=1609120628)
+- With [matcha keycap w/ Korean letters](https://www.aliexpress.com/item/1005001500813840.html)
 
 <p align="center">
   <b>Video</b>
