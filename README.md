@@ -207,12 +207,6 @@ Partitions sorted by order:
   - GIMP gaussian blur 3.5
   - level 1 compression (GIMP)
 
-### System monitor
-
-- [pomky](https://github.com/developomp/pomky) (commit: 8fce169)
-
-[this file](./home/pomp/.local/bin/pomky) right here
-
 </details>
 
 ## Future plans
