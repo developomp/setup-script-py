@@ -234,15 +234,16 @@ Partitions sorted by order:
 ### Mouse
 
 - Features:
-  - <=7ms wired click latency
-  - <=80g weight
-  - Either from Razer or Logitech
+  - go forward / backward button
+  - wireless
+  - click latency: faster than Logitech G402 without wires
+  - weight: lighter than Logitech G402
+  - size: similar to Logitech G402
+  - max polling rate: no lower, and no higher than 1000Hz
 - Candidates:
-  - [Razer Viper 8k](https://www.rtings.com/mouse/reviews/razer/viper-8khz/)
-  - [Razer Viper Mini](https://www.rtings.com/mouse/reviews/razer/viper-mini/)
-  - [Razer Viper Ultimate](https://www.rtings.com/mouse/reviews/razer/viper-ultimate/)
-- Notes:
-  - Replace piper with [openrazer](https://github.com/openrazer/openrazer) if switching to Razer mouse
+  - [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logitech/g-pro-x-superlight)
+  - [Razer Viper Ultimate](https://www.rtings.com/mouse/reviews/razer/viper-ultimate)
+  - [Razer Viper V2 Pro](https://www.rtings.com/mouse/reviews/razer/viper-v2-pro)
 
 ### Keyboard
 
