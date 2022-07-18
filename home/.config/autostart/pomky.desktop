@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=pomky
-Exec=pomky
+Exec=/home/pomp/.cargo/bin/pomky
 StartupNotify=false
 Terminal=false
 Categories=System;Monitor;
