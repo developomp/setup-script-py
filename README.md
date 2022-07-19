@@ -253,7 +253,8 @@ Partitions sorted by order:
   - PCB: hot-swap sockets
   - Stabilizers: screw-in
   - Keycaps: ZDA profile, matcha theme, with Korean letters, die-subbed
-  - Switches: lightweight (~45g) silent linear
+  - Switches: silent linear
+  - Spring: Bottom force 35g
   - Switch Lube: undecided
   - Stabilizer Lube: undecided
   - mods:
@@ -261,12 +262,14 @@ Partitions sorted by order:
       - [holee mod](https://www.youtube.com/watch?v=-vhpHjlkRgQ)
       - band-aided stabilizer bottom
 - Parts & Accessories:
-  - [Case + PCB + Stabilizers + Cable](https://ymdkey.com/products/icymdk-wings-aluminum-cnc-top-bottom-qmk-rgb-hotswap-v1-pcb-diy-kit-customied-color?variant=39455544901693)
-  - [walnut wrist rest](https://ymdkey.com/products/wooden-wrist-rest-solid-wood-walnut-for-wings-split-keyboard)
-  - [foam](https://ymdkey.com/products/ymdk-wings-foam-mute-cotton)
-  - [Keycaps](https://ymdkey.com/collections/keycap-1/products/matcha-dye-sub-zda-pbt-keycap-similar-to-xda-japanese-korean-russian-for-mx-keyboard-104-87-61-melody-96-kbd75-id80-gk64-tada68?variant=32991895617597)
-  - Switches (undecided)
-  - [Switch Film](https://ymdkey.com/products/clear-white-mx-switch-film-htv-pc-for-cherry-gateron-jwk-mechanical-keyboard-shaft?_pos=1&_sid=04ac7b5a9&_ss=r&variant=39363145400381)
+  - [Case + PCB + Stabilizers + Cable](https://ymdkey.com/products/icymdk-wings-aluminum-cnc-top-bottom-qmk-rgb-hotswap-v1-pcb-diy-kit-customied-color?variant=39455544901693) ([aliexpress](https://ko.aliexpress.com/item/1005003330613995.html))
+  - [walnut wrist rest](https://ymdkey.com/products/wooden-wrist-rest-solid-wood-walnut-for-wings-split-keyboard) ([aliexpress](https://ko.aliexpress.com/item/1005003629440348.html))
+  - [foam](https://ymdkey.com/products/ymdk-wings-foam-mute-cotton) ([aliexpress](https://ko.aliexpress.com/item/1005004451001013.html))
+  - Keycaps: existing matcha keycap
+  - Switches (outemu silent white)
+  - [Switch Opener](https://www.coupang.com/vp/products/6335396443?itemId=13266069688&vendorItemId=80553465572)
+  - [Switch Spring](https://www.coupang.com/vp/products/6477237456?itemId=14162877194&vendorItemId=81576424454)
+  - [Switch Film](https://ymdkey.com/products/clear-white-mx-switch-film-htv-pc-for-cherry-gateron-jwk-mechanical-keyboard-shaft?_pos=1&_sid=04ac7b5a9&_ss=r&variant=39363145400381) ([alternative](https://www.coupang.com/vp/products/6419579272?itemId=13804146985&vendorItemId=81054458804))
   - Switch Lube (undecided)
   - Stabilizer Lube (undecided)
   - [Switch Opener](https://ymdkey.com/products/2-in-1-cnc-aluminum-anodized-cherry-kailh-gateron-ttc-zealios-switch-opener-for-lube-switches-replacing-spring?_pos=2&_sid=4ea0be237&_ss=r&variant=32944329916477)
