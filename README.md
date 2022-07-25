@@ -263,8 +263,7 @@ Partitions sorted by order:
     - light spring
     - silent
     - linear
-  - Switch Lube: undecided
-  - Stabilizer Lube: undecided
+  - Lube: Krytox 205 G0 for both switches and stabilizers
   - mods:
     - stabilizer rattle
       - [holee mod](https://www.youtube.com/watch?v=-vhpHjlkRgQ)
@@ -273,12 +272,11 @@ Partitions sorted by order:
   - [Case + PCB + Stabilizers + Cable](https://ko.aliexpress.com/item/1005003330613995.html)
   - [walnut wrist rest](https://ko.aliexpress.com/item/1005003629440348.html)
   - [foam](https://ko.aliexpress.com/item/1005004451001013.html)
-  - Keycaps: existing matcha keycap
   - [Switches](https://www.aliexpress.com/item/1005003891937604.html)
   - [Switch Opener](https://www.coupang.com/vp/products/6335396443?vendorItemId=80553465572)
   - [Switch Film](https://www.coupang.com/vp/products/6419579272?vendorItemId=81054458804)
-  - Switch Lube (undecided)
-  - Stabilizer Lube (undecided)
+  - [Lube](https://www.coupang.com/vp/products/6429049205?vendorItemId=81117054807)
+  - Keycaps: existing matcha keycap
 - QMK config:
   - [json file](./files/pomp.json) / [hex file](./files/ymdk_wingshs_pomp.hex)
   - Layer 0
