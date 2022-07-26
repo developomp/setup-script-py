@@ -233,6 +233,8 @@ Partitions sorted by order:
 
 ### Mouse
 
+Model: [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logitech/g-pro-x-superlight)
+
 - Features:
   - go forward / backward button
   - wireless
@@ -240,10 +242,8 @@ Partitions sorted by order:
   - weight: lighter than Logitech G402
   - size: similar to Logitech G402
   - max polling rate: no lower, and no higher than 1000Hz
-- Candidates:
-  - [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logitech/g-pro-x-superlight)
-  - [Razer Viper Ultimate](https://www.rtings.com/mouse/reviews/razer/viper-ultimate)
-  - [Razer Viper V2 Pro](https://www.rtings.com/mouse/reviews/razer/viper-v2-pro)
+- Accessories:
+  - [Logitech Powerplay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging.943-000109.html)
 
 ### Keyboard
 
