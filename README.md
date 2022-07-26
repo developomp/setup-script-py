@@ -250,12 +250,13 @@ Model: [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logite
   - Case: E-white aluminum
   - PCB: hot-swap sockets
   - Stabilizers: screw-in
-  - Keycaps: ZDA profile, matcha theme, with Korean letters, die-subbed
   - Switches: Outemu silent peach
     - light spring
     - silent
     - linear
-  - Lube: 10g Krytox 205 G0 for both switches and stabilizers
+  - Switch Film: HTV+PC 0.18mm
+  - Switch Lube: Krytox GPL205G0 for both switches and stabilizers
+  - Keycaps: ZDA profile, matcha theme, with Korean letters, die-subbed
   - mods:
     - stabilizer rattle
       - [holee mod](https://www.youtube.com/watch?v=-vhpHjlkRgQ)
@@ -266,8 +267,8 @@ Model: [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logite
   - [foam](https://ko.aliexpress.com/item/1005004451001013.html)
   - [Switches](https://www.aliexpress.com/item/1005003891937604.html)
   - [Switch Opener](https://www.coupang.com/vp/products/6335396443?vendorItemId=80553465572)
-  - [Switch Film](https://www.coupang.com/vp/products/6419579272?vendorItemId=81054458804)
-  - [Lube](https://www.aliexpress.com/item/1005001968325430.html)
+  - [Switch Film](https://www.aliexpress.com/item/1005002885279946.html)
+  - [Lube](https://www.aliexpress.com/item/1005002297786498.html)
   - [Keycaps](https://www.aliexpress.com/item/1005001500813840.html)
 - QMK config:
   - [json file](./files/pomp.json) / [hex file](./files/ymdk_wingshs_pomp.hex)
