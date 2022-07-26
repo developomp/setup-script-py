@@ -4,12 +4,6 @@
 
 [![what's this?](https://img.shields.io/badge/what's_this%3F-grey?style=for-the-badge)](https://developomp.com/portfolio/linux-setup-script)
 
-<p align="center">
-  <b>
-    This project is undergoing a <a href="https://github.com/developomp/setup/issues/46">rewrite</a>. Use the <a href="https://github.com/developomp/setup/tree/old">old branch</a> for now.
-  </b>
-</p>
-
 ## Table of contents
 
 <details>
