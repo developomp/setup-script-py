@@ -180,9 +180,7 @@ Partitions sorted by order:
 #### Keyboard
 
 - Lubed with Krytox 103
-- With a towel underneath
 - With [COX COS1 walnut wrist rest](https://www.abko.co.kr/brand/detail.php?it_id=1609120628)
-- With [matcha keycap w/ Korean letters](https://www.aliexpress.com/item/1005001500813840.html)
 
 <p align="center">
   <b>Video</b>
@@ -263,7 +261,7 @@ Model: [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logite
     - light spring
     - silent
     - linear
-  - Lube: Krytox 205 G0 for both switches and stabilizers
+  - Lube: 10g Krytox 205 G0 for both switches and stabilizers
   - mods:
     - stabilizer rattle
       - [holee mod](https://www.youtube.com/watch?v=-vhpHjlkRgQ)
@@ -275,8 +273,8 @@ Model: [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logite
   - [Switches](https://www.aliexpress.com/item/1005003891937604.html)
   - [Switch Opener](https://www.coupang.com/vp/products/6335396443?vendorItemId=80553465572)
   - [Switch Film](https://www.coupang.com/vp/products/6419579272?vendorItemId=81054458804)
-  - [Lube](https://www.coupang.com/vp/products/6429049205?vendorItemId=81117054807)
-  - Keycaps: existing matcha keycap
+  - [Lube](https://www.aliexpress.com/item/1005001968325430.html)
+  - [Keycaps](https://www.aliexpress.com/item/1005001500813840.html)
 - QMK config:
   - [json file](./files/pomp.json) / [hex file](./files/ymdk_wingshs_pomp.hex)
   - Layer 0
