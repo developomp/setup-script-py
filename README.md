@@ -191,7 +191,6 @@ Partitions sorted by order:
   - [holee mod](https://www.youtube.com/watch?v=-vhpHjlkRgQ)
   - band-aided stabilizer bottom
 - QMK config:
-  - [json file](./files/pomp.json) / [hex file](./files/ymdk_wingshs_pomp.hex)
   - Layer 0
     ![layer 0](.repo/kbd_layer_0.png)
   - Layer 1
