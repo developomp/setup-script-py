@@ -167,19 +167,44 @@ Partitions sorted by order:
 |          mouse | [Logitech G402 Hyperion fury](https://www.logitechg.com/en-eu/products/gaming-mice/g402-hyperion-fury-fps-gaming-mouse.html) I got from a [giveaway event](https://blog.naver.com/yjcomicsblog/221432692995) |
 |      headphone | [NOX NX-2](https://www.e-nox.co.kr/theme/s007/index/product_view01.php?wr_id=16)                                                                                                                             |
 |  laptop cooler | [ABKO NCORE NC500](http://ncore.co.kr/shop/product_item.php?ItId=2586312930)                                                                                                                                 |
-|       Keyboard | [COX CK01 PBT SL](https://www.abko.co.kr/brand/detail.php?it_id=1630976200)                                                                                                                                  |
+|       Keyboard | YMDK wings                                                                                                                                                                                                   |
 | Drawing tablet | secondhand [wacom CTL-472 (one by wacom)](https://www.wacom.com/en-us/products/pen-tablets/one-by-wacom) (using since May 8, 2022)                                                                           |
 |        Monitor | secondhand [HP X24ih](https://www.hp.com/us-en/shop/pdp/hp-x24ih-gaming-monitor) ([review](https://www.rtings.com/monitor/reviews/hp/x24ih)) (using since May 21, 2022)                                      |
 
 #### Keyboard
 
-- Lubed with Krytox 103
-- With [COX COS1 walnut wrist rest](https://www.abko.co.kr/brand/detail.php?it_id=1609120628)
-
-<p align="center">
+<!-- <p align="center">
   <b>Video</b>
   <a href="https://youtu.be/8vBm4MfOPME"><img alt="Keyboard sound test" src="https://img.youtube.com/vi/8vBm4MfOPME/maxresdefault.jpg" /></a>
-</p>
+</p> -->
+
+- Parts & Accessories:
+  - [Case + PCB + Stabilizers + Cable](https://ko.aliexpress.com/item/1005003330613995.html) (white)
+  - [walnut wrist rest](https://ko.aliexpress.com/item/1005003629440348.html)
+  - [foam](https://ko.aliexpress.com/item/1005004451001013.html) (PCB & Bottom Foam)
+  - [Switches](https://www.aliexpress.com/item/1005003891937604.html) (Outemu silent peach)
+  - [Switch Opener](https://www.coupang.com/vp/products/6176660507?vendorItemId=79812876139)
+  - [Switch Film](https://www.aliexpress.com/item/1005002885279946.html) (HTV+PC 0.18mm)
+  - [Lube](https://www.aliexpress.com/item/1005002297786498.html) (GPL205 G0 7.6g)
+  - [Keycaps](https://www.aliexpress.com/item/1005001500813840.html) (Korean subs)
+- Mods:
+  - [holee mod](https://www.youtube.com/watch?v=-vhpHjlkRgQ)
+  - band-aided stabilizer bottom
+- QMK config:
+  - [json file](./files/pomp.json) / [hex file](./files/ymdk_wingshs_pomp.hex)
+  - Layer 0
+    ![layer 0](.repo/kbd_layer_0.png)
+  - Layer 1
+    ![layer 1](.repo/kbd_layer_1.png)
+
+How to compile and flash the firmware on Linux:
+
+- install qmk cli
+- run qmk setup: `qmk setup -y`
+- copy the [`keyboard`](./files/keyboard/) directory to `~/qmk_firmware/keyboards/ymdk/wingshs/keymaps` and rename it to `pomp`
+- flash the board: `qmk flash --clean --keyboard ymdk/wingshs --keymap pomp`
+  - unplug board
+  - plug it back while holding <kbd>Space</kbd>+<kbd>B</kbd>. Keep holding it for a second
 
 </details>
 
@@ -239,43 +264,11 @@ Model: [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logite
 
 ### Keyboard
 
-- Features:
-  - Layout: Arisu (Ergonomic 65/68% ANSI)
-    - numpad-less
-    - short spacebar
-    - numbers row
-    - aluminum case
-    - non-split
-  - [QMK](https://qmk.fm)-programmable
-  - Case: E-white aluminum
-  - PCB: hot-swap sockets
-  - Stabilizers: screw-in
-  - Switches: Outemu silent peach
-    - light spring
-    - silent
-    - linear
-  - Switch Film: HTV+PC 0.18mm
-  - Switch Lube: Krytox GPL205G0 for both switches and stabilizers
-  - Keycaps: ZDA profile, matcha theme, with Korean letters, die-subbed
-  - mods:
-    - stabilizer rattle
-      - [holee mod](https://www.youtube.com/watch?v=-vhpHjlkRgQ)
-      - band-aided stabilizer bottom
-- Parts & Accessories:
-  - [Case + PCB + Stabilizers + Cable](https://ko.aliexpress.com/item/1005003330613995.html)
-  - [walnut wrist rest](https://ko.aliexpress.com/item/1005003629440348.html)
-  - [foam](https://ko.aliexpress.com/item/1005004451001013.html)
-  - [Switches](https://www.aliexpress.com/item/1005003891937604.html)
-  - [Switch Opener](https://www.coupang.com/vp/products/6176660507?vendorItemId=79812876139)
-  - [Switch Film](https://www.aliexpress.com/item/1005002885279946.html)
-  - [Lube](https://www.aliexpress.com/item/1005002297786498.html)
-  - [Keycaps](https://www.aliexpress.com/item/1005001500813840.html)
-- QMK config:
-  - [json file](./files/pomp.json) / [hex file](./files/ymdk_wingshs_pomp.hex)
-  - Layer 0
-    ![layer 0](.repo/kbd_layer_0.png)
-  - Layer 1
-    ![layer 1](.repo/kbd_layer_1.png)
+- new switch
+  - silent
+  - linear
+  - low actuation distance
+  - change to 35g spring
 
 ### Monitor
 
