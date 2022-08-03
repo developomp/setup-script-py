@@ -234,12 +234,21 @@ How to compile and flash the firmware on Linux:
 ### Laptop
 
 - Features:
-  - less than 1 million KRW
-  - Korean keyboard with number pad
-  - 1920x1080 144Hz IPS display
-  - x86_64 architecture
-  - GPU with at least 2GB of GDDR5 VRAM
-  - DDR5 RAM support
+  - price: less than 1 million KRW
+  - display:
+    sie: 15in
+    resolution: 1920x1080 pixels (FHD)
+    frame rate: 144Hz
+    panel type: IPS
+  - keyboard:
+    - legends: Korean
+    - arrow keys: full size, ㅗ shaped
+  - processor architecture: x86_64 (or ARM architecture if becomes mainstream)
+  - GPU:
+    - non-hybrid, single GPU (preferably internal)
+  - RAM: DDR5 support
+  - SSD: NVMe m.2
+  - OS: None
 - Candidates:
   - None
 
