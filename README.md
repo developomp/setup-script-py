@@ -261,14 +261,6 @@ Model: [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logite
 - Accessories:
   - [Logitech Powerplay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging.943-000109.html)
 
-### Keyboard
-
-- new switch
-  - silent
-  - linear
-  - low actuation distance
-  - change to 35g spring
-
 ### Monitor
 
 - Features:
