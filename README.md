@@ -243,7 +243,7 @@ How to compile and flash the firmware on Linux:
   - keyboard:
     - legends: Korean
     - arrow keys: full size, ㅗ shaped
-  - processor architecture: x86_64 (or ARM architecture if becomes mainstream)
+  - CPU ISA: x86_64 (or ARM architecture if becomes mainstream)
   - GPU:
     - non-hybrid, single GPU (preferably internal)
   - RAM: DDR5 support
