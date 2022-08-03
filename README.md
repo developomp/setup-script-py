@@ -243,12 +243,20 @@ How to compile and flash the firmware on Linux:
   - keyboard:
     - legends: Korean
     - arrow keys: full size, ㅗ shaped
-  - CPU ISA: x86_64 (or ARM architecture if becomes mainstream)
+  - CPU:
+    - performance: better than intel i5-8250U
+    - ISA: x86_64 (or ARM architecture if becomes mainstream)
   - GPU:
+    - performance: better than Nvidia MX-150
     - non-hybrid, single GPU (preferably internal)
-  - RAM: DDR5 support
-  - SSD: NVMe m.2
-  - OS: None
+  - RAM:
+    - gen: DDR5
+    - size: 16G
+  - SSD:
+    - interface: M.2
+    - protocol: NVMe
+    - capacity: 512 GB
+  - OS: None (will install Arch Linux)
 - Candidates:
   - None
 
