@@ -266,8 +266,6 @@ How to compile and flash the firmware on Linux:
 
 ### Mouse
 
-Model: [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logitech/g-pro-x-superlight)
-
 - Features:
   - go forward / backward button
   - wireless
@@ -275,8 +273,8 @@ Model: [Logitech G Pro X Superlight](https://www.rtings.com/mouse/reviews/logite
   - weight: lighter than Logitech G402
   - size: similar to Logitech G402
   - max polling rate: no lower, and no higher than 1000Hz
-- Accessories:
-  - [Logitech Powerplay](https://www.logitechg.com/en-us/products/gaming-mouse-pads/powerplay-wireless-charging.943-000109.html)
+- Candidates:
+  - Razer Viper Ultimate ([rtings review](https://www.rtings.com/mouse/reviews/razer/viper-ultimate), [techpowerup review](https://www.techpowerup.com/review/razer-viper-ultimate/))
 
 ### Monitor
 
