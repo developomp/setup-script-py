@@ -207,6 +207,25 @@ How to compile and flash the firmware on Linux:
 
 </details>
 
+## Game settings
+
+<details>
+  <summary>Click to see game settings</summary>
+
+#### Mouse
+
+- mouse DPI: 4000
+- GNOME mouse settings: `org.gnome.desktop.peripherals.mouse.speed=-0.5`
+
+#### Drawing tablet
+
+- 270 degree rotation
+- 95mm width
+- 53.4375mm height
+- [more info](home/.config/OpenTabletDriver/settings.json)
+
+</details>
+
 ## Sources
 
 <details>
