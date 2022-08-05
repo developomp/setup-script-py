@@ -295,6 +295,10 @@ How to compile and flash the firmware on Linux:
 - Candidates:
   - Razer Viper Ultimate ([rtings review](https://www.rtings.com/mouse/reviews/razer/viper-ultimate), [techpowerup review](https://www.techpowerup.com/review/razer-viper-ultimate/))
 
+### Keyboard
+
+- [New keycap](https://ko.aliexpress.com/item/1005003834670594.html)
+
 ### Monitor
 
 - Features:
