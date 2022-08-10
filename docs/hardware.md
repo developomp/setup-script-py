@@ -51,7 +51,7 @@ Partitions (in order):
   - [walnut wrist rest](https://ko.aliexpress.com/item/1005003629440348.html)
   - [foam](https://ko.aliexpress.com/item/1005004451001013.html) (PCB & Bottom Foam)
   - [Switches](https://www.aliexpress.com/item/1005003891937604.html) (Outemu silent peach)
-  - [Switch Opener](https://www.coupang.com/vp/products/6176660507?vendorItemId=79812876139)
+  - [Switch Opener](https://smartstore.naver.com/ownkeeb/products/6804912949)
   - [Switch Film](https://www.aliexpress.com/item/1005002885279946.html) (HTV+PC 0.18mm)
   - [Lube](https://www.aliexpress.com/item/1005002297786498.html) (GPL205 G0 7.6g)
   - [Keycaps](https://www.aliexpress.com/item/1005003834670594.html) (Korean subs)
