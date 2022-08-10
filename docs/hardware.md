@@ -68,7 +68,7 @@ How to compile and flash the firmware on Linux:
 
 - install qmk cli
 - run qmk setup: `qmk setup -y`
-- copy the [`keyboard`](./files/keyboard/) directory to `~/qmk_firmware/keyboards/ymdk/wingshs/keymaps` and rename it to `pomp`
+- copy the [`keyboard`](../files/keyboard/) directory to `~/qmk_firmware/keyboards/ymdk/wingshs/keymaps` and rename it to `pomp`
 - flash the board: `qmk flash --clean --keyboard ymdk/wingshs --keymap pomp`
   - unplug board
   - plug it back while holding <kbd>Space</kbd>+<kbd>B</kbd>. Keep holding it for a second

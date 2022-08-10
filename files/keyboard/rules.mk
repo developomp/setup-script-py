@@ -16,3 +16,4 @@ UNICODE_ENABLE = no          #
 BLUETOOTH_ENABLE = no        # Enable Bluetooth with the Adafruit EZ-Key HID
 DEBOUNCE_TYPE = sym_eager_pk # https://github.com/qmk/qmk_firmware/blob/master/docs/feature_debounce_type.md
 DEBOUNCE = 5                 #
+VIA_ENABLE = yes             # enable VIA
