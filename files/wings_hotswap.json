@@ -51,7 +51,7 @@
       "KC_RBRC",
       "KC_BSLS",
       "KC_PGUP",
-      "KC_CAPS",
+      "KC_LSFT",
       "KC_A",
       "KC_S",
       "KC_D",
@@ -95,7 +95,7 @@
       "KC_LEFT",
       "KC_DOWN",
       "KC_RGHT",
-      "KC_PSCR"
+      "KC_DEL"
     ],
     [
       "KC_GRV",
@@ -172,7 +172,7 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_TRNS"
+      "KC_PSCR"
     ],
     [
       "KC_TRNS",
