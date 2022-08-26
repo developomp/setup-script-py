@@ -44,7 +44,7 @@ Partitions (in order):
 |       Keyboard | custom YMDK wings                                                                                                                                                                                            | Aug 13, 2022 |
 | Drawing tablet | secondhand [wacom CTL-472 (one by wacom)](https://www.wacom.com/en-us/products/pen-tablets/one-by-wacom)                                                                                                     | May 8, 2022  |
 |        Monitor | secondhand [HP X24ih](https://www.hp.com/us-en/shop/pdp/hp-x24ih-gaming-monitor) ([review](https://www.rtings.com/monitor/reviews/hp/x24ih))                                                                 | May 21, 2022 |
-|     Microphone | secondhand Comsome MIC-600                                                                                                                                                                                   | Aug 24, 2022 |
+|     Microphone | secondhand [Razer Seiren Mini](https://www.razer.com/streaming-microphones/razer-seiren-mini)                                                                                                                | Aug 25, 2022 |
 
 ### Keyboard
 
