@@ -2,19 +2,20 @@
 
 ## Mouse
 
-- mouse DPI: 4000
-- GNOME mouse settings: `org.gnome.desktop.peripherals.mouse.speed=-0.5625`
+- mouse DPI: 1600
+- GNOME mouse speed settings: `org.gnome.desktop.peripherals.mouse.speed=0` (default)
 
-## fps games
+## War Brokers
 
-- 0.35 in-game sens when using raw input
-- 0.3 ADS
+![War Brokers game settings](../.repo/wb_settings.png)
 
 ## Drawing tablet
 
-- 270 degree rotation
-- 95mm width
-- 53.4375mm height
-- [more info](home/.config/OpenTabletDriver/settings.json)
+- [config file](../home/.config/OpenTabletDriver/settings.json)
 
-<!-- grip -->
+![](../.repo/tablet_settings.png)
+
+<p align="center">
+  <a href="https://youtu.be/g9m1SIerox8"><img alt="Keyboard sound test" src="https://img.youtube.com/vi/g9m1SIerox8/maxresdefault.jpg" /></a>
+  <b>Video of my grip</b>
+</p>
