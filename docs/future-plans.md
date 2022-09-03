@@ -10,7 +10,6 @@
     - panel type: IPS
   - keyboard:
     - legends: Korean
-    - arrow keys: full size, ㅗ shaped
   - CPU:
     - performance: better than intel i5-8250U
     - ISA: x86_64 (or ARM architecture if becomes mainstream)
@@ -18,15 +17,19 @@
     - performance: better than Nvidia MX-150
     - non-hybrid, single GPU (preferably internal)
   - RAM:
-    - gen: DDR5
+    - gen: DDR4/DDR5
     - capacity: 16G
   - SSD:
     - interface: M.2
     - protocol: NVMe
     - capacity: 512 GB
+  - IO:
+    - DisplayPort v1.4
   - OS: None (will install Arch Linux)
+  - Power
+    - support CPU and GPU
 - Candidates:
-  - None
+  - [HP Pavilion 15-eg2120TU](https://prod.danawa.com/info/?pcode=17427434)
 
 ## Storage
 
