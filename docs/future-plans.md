@@ -24,7 +24,7 @@
     - protocol: NVMe
     - capacity: 512 GB
   - IO:
-    - DisplayPort v1.4
+    - DisplayPort 1.4 or HDMI 2.0 (for 1920x1080 240Hz support)
   - OS: None (will install Arch Linux)
   - Power
     - support CPU and GPU
