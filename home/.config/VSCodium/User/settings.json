@@ -21,8 +21,6 @@
   "workbench.colorTheme": "One Dark Pro Flat",
   "workbench.iconTheme": "material-icon-theme",
 
-  "color-highlight.markerType": "underline",
-
   "security.workspace.trust.untrustedFiles": "open",
 
   "svelte.enable-ts-plugin": true,
@@ -40,7 +38,7 @@
     "editor.defaultFormatter": "Razoric.gdscript-toolkit-formatter"
   },
   "[rust]": {
-    "editor.defaultFormatter": "matklad.rust-analyzer"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
@@ -84,5 +82,16 @@
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.python"
-  }
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.largeFileOptimizations": false,
+  "editor.stickyScroll.enabled": true,
+  "go.toolsManagement.autoUpdate": true,
+  "svelte.plugin.svelte.note-new-transformation": false,
+  "window.restoreWindows": "none"
 }
