@@ -1,38 +1,50 @@
 {
+  "Revision": "0.7.0.0",
   "Profiles": [
     {
       "Tablet": "Wacom CTL-472",
       "OutputMode": {
         "Path": "OpenTabletDriver.Desktop.Output.AbsoluteMode",
-        "Settings": [],
+        "Settings": [
+          {
+            "Property": "Input",
+            "Value": {
+              "Rotation": 180.0,
+              "Width": 152.0,
+              "Height": 95.0,
+              "XPosition": 76.0,
+              "YPosition": 47.5
+            }
+          },
+          {
+            "Property": "Output",
+            "Value": {
+              "Width": 1920.0,
+              "Height": 1080.0,
+              "XPosition": 960.0,
+              "YPosition": 540.0
+            }
+          },
+          {
+            "Property": "AreaLimiting",
+            "Value": false
+          },
+          {
+            "Property": "AreaClipping",
+            "Value": false
+          },
+          {
+            "Property": "LockToBounds",
+            "Value": true
+          },
+          {
+            "Property": "LockAspectRatio",
+            "Value": false
+          }
+        ],
         "Enable": true
       },
       "Filters": [],
-      "AbsoluteModeSettings": {
-        "Display": {
-          "Width": 1920.0,
-          "Height": 1080.0,
-          "X": 960.0,
-          "Y": 540.0,
-          "Rotation": 0.0
-        },
-        "Tablet": {
-          "Width": 95.0,
-          "Height": 53.4375,
-          "X": 27.0,
-          "Y": 47.5,
-          "Rotation": 270.0
-        },
-        "EnableClipping": true,
-        "EnableAreaLimiting": false,
-        "LockAspectRatio": true
-      },
-      "RelativeModeSettings": {
-        "XSensitivity": 10.0,
-        "YSensitivity": 10.0,
-        "RelativeRotation": 0.0,
-        "RelativeResetDelay": "00:00:00.1000000"
-      },
       "Bindings": {
         "TipActivationThreshold": 0.0,
         "TipButton": {
@@ -47,7 +59,10 @@
         },
         "EraserActivationThreshold": 0.0,
         "EraserButton": null,
-        "PenButtons": [null, null],
+        "PenButtons": [
+          null,
+          null
+        ],
         "AuxButtons": [],
         "MouseButtons": [],
         "MouseScrollUp": null,
@@ -55,7 +70,5 @@
       }
     }
   ],
-  "LockUsableAreaDisplay": true,
-  "LockUsableAreaTablet": true,
   "Tools": []
 }
