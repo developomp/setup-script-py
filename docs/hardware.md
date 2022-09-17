@@ -60,10 +60,13 @@ Partitions (in order):
   - [Lube](https://www.aliexpress.com/item/1005002297786498.html) (GPL205 G0 7.6g)
   - [Keycaps](https://www.aliexpress.com/item/1005003834670594.html) (Korean subs)
 - Mods:
-  - [holee mod](https://www.youtube.com/watch?v=-vhpHjlkRgQ)
-  - band-aided stabilizer bottom
+  - no-stabilizer
 - [keymap](files/wings_hotswap.json):
   - Layer 0
     ![layer 0](../.repo/kbd_layer_0.png)
   - Layer 1
     ![layer 1](../.repo/kbd_layer_1.png)
+
+<!-- ### Microphone
+
+OBS loopback -->
