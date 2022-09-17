@@ -30,6 +30,8 @@
     - support CPU and GPU
 - Candidates:
   - [HP Pavilion 15-eg2120TU](https://prod.danawa.com/info/?pcode=17427434)
+  - without price limit
+    - [LG 2022 gram 15ZD90Q-GX76K](https://prod.danawa.com/info/?pcode=16781837)
 
 ## Storage
 
