@@ -58,7 +58,7 @@ Partitions (in order):
   - [Switch Opener](https://smartstore.naver.com/ownkeeb/products/6804912949)
   - [Switch Film](https://www.aliexpress.com/item/1005002885279946.html) (HTV+PC 0.18mm)
   - [Lube](https://www.aliexpress.com/item/1005002297786498.html) (GPL205 G0 7.6g)
-  - [Keycaps](https://www.aliexpress.com/item/1005003834670594.html) (Korean subs)
+  - [Keycaps](https://www.aliexpress.com/item/1005003834670594.html) (GMK Geoma w/ Korean subs)
 - Mods:
   - no-stabilizer
 - [keymap](files/wings_hotswap.json):
