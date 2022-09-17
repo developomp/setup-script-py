@@ -52,8 +52,7 @@
 ## Monitor
 
 - Features:
-  - panel type: not decided / does not exist
-    - no burn-in
+  - panel type: burn-in-less OLED-like panel
     - pixel response time: 2ms at most
     - individual pixel dimming
     - color accurate
