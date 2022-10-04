@@ -58,7 +58,7 @@
     - color accurate
   - input lag: 4ms at most
   - subpixel layout: standard RGB stripe
-  - refresh rate: at least 120Hz
+  - refresh rate: at least 240Hz
   - size: at most 24inch
   - resolution: exactly FHD (1920x1080)
   - flicker-free
