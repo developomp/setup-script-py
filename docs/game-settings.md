@@ -4,9 +4,9 @@
 
 ### Mouse
 
-- mouse DPI: 5k
-- GNOME mouse speed settings: `org.gnome.desktop.peripherals.mouse.speed=-0.75`
-- 39mm/1920px
+- mouse DPI: 1600 (blue LED)
+- GNOME mouse speed settings: `org.gnome.desktop.peripherals.mouse.speed=-0.25`
+- 4cm/1920px
 
 ### Drawing tablet
 
@@ -25,14 +25,8 @@
 
 <!-- ### pipewire settings -->
 
-## War Brokers
-
-![War Brokers game settings](../.repo/wb_settings.png)
-
-- sens: 550mm/360°
-
 ## osu!
 
 - mouse
   - high precision mouse enabled
-  - 0.25 sens
+  - 0.75 sens
