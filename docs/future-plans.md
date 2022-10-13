@@ -62,3 +62,19 @@
   - flicker-free
 - Candidates
   - None
+
+## Keyboard
+
+- portable
+- wireless (bluetooth)
+- plastic housing
+- 40/60/65%
+- VIA support
+- silent switch
+- low profile?
+
+## Headset
+
+- replaceable parts
+- wires & wireless
+- buy sound card too
