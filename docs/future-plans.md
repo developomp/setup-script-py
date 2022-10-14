@@ -2,34 +2,39 @@
 
 ## Laptop
 
-- price: less than 1 million KRW
+- price: less than 2,000,000 KRW
 - features
+  - design:
+    - non-gamer-y
+    - stealth
   - display
     - size: 15 inch
-    - resolution: 1920x1080 pixels (FHD)
+    - resolution: 1920x1080+
     - panel type: IPS
   - keyboard
+    - number pad: yes
     - legends: Korean
   - CPU
     - performance: better than intel i5-8250U
     - ISA: x86_64 (or ARM architecture if becomes mainstream)
   - GPU
-    - performance: better than Nvidia MX-150
+    - non-nvidia
+    - performance: better than Nvidia MX-150 (can support 240fps for light workloads)
     - non-hybrid, single GPU (preferably internal)
   - RAM
     - gen: DDR4/DDR5
-    - capacity: 16G
+    - capacity: 16G+
   - SSD
     - interface: M.2
     - protocol: NVMe
-    - capacity: 512 GB
+    - capacity: 512GB+
   - IO
-    - DisplayPort 1.4 or HDMI 2.0 (for 1920x1080 240Hz support)
+    - DisplayPort 1.2+ / HDMI 2.0+ (for 1920x1080 240Hz support)
   - OS: None (will install Arch Linux)
   - Power
     - support CPU and GPU
 - Candidates
-  - [Lenovo ideapad Slim5-15ITL Premiere Plus i5](https://prod.danawa.com/info/?pcode=13126763) + [Samsung 970 PRO](https://prod.danawa.com/info/?pcode=6096738)
+  - [ASUS ROG Zephyrus G14 GA402RJ-L8127](https://prod.danawa.com/info/?pcode=17118821)
 
 ## Storage
 
