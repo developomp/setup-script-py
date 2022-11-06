@@ -4,20 +4,13 @@
 
 ### Mouse
 
-- mouse DPI: 1600 (blue LED)
-- GNOME mouse speed settings: `org.gnome.desktop.peripherals.mouse.speed=-0.25`
+- mouse DPI: 1240
+- GNOME mouse speed settings: `org.gnome.desktop.peripherals.mouse.speed=0` (default)
 - 4cm/1920px
 
 ### Drawing tablet
 
 - [config file](../home/.config/OpenTabletDriver/settings.json)
-
-![](../.repo/tablet_settings.png)
-
-<p align="center">
-  <a href="https://youtu.be/g9m1SIerox8"><img alt="Keyboard sound test" src="https://img.youtube.com/vi/g9m1SIerox8/maxresdefault.jpg" /></a>
-  <b>Video of my grip</b>
-</p>
 
 <!-- ### GPU overclock -->
 
@@ -29,4 +22,9 @@
 
 - mouse
   - high precision mouse enabled
-  - 0.75 sens
+  - sensitivity: 1.0 (default)
+
+<p align="center">
+  <b>Video of my grip (click to play)</b>
+  <a href="https://youtu.be/g9m1SIerox8"><img alt="Keyboard sound test" src="https://img.youtube.com/vi/g9m1SIerox8/maxresdefault.jpg" /></a>
+</p>
