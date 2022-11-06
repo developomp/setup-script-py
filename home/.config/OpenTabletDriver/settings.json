@@ -9,11 +9,11 @@
           {
             "Property": "Input",
             "Value": {
-              "Rotation": 180.0,
-              "Width": 152.0,
-              "Height": 95.0,
-              "XPosition": 76.0,
-              "YPosition": 47.5
+              "Rotation": 270.0,
+              "Width": 80.0,
+              "Height": 45.0,
+              "XPosition": 22.5,
+              "YPosition": 55.0
             }
           },
           {
@@ -39,7 +39,7 @@
           },
           {
             "Property": "LockAspectRatio",
-            "Value": false
+            "Value": true
           }
         ],
         "Enable": true
