@@ -36,6 +36,20 @@
     - enough to support CPU and GPU under full load
 - Candidates
   - [ASUS ROG Zephyrus G14 GA402RJ-L8127](https://prod.danawa.com/info/?pcode=17118821)
+  - [Framework Laptop 12th Gen Intel DIY Edition](https://frame.work/products/laptop-diy-12-gen-intel)
+    - CPU: i5-1240P
+    - Storage: 500GB - WD_BLACK™ SN850 NVMe™
+    - Memory: 16GB (2 x 8GB) DDR4-3200
+    - Operating System: None
+    - Keyboard: Korean (not ready)
+    - Power Adapter: None
+    - Expansion Cards
+      - USB-A x3
+      - USB-C x2
+      - DP x1
+      - HDMI x1
+      - Ethernet x1
+    - Price (with customization): $1,116.00
 
 ## NAS
 
