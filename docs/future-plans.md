@@ -2,84 +2,79 @@
 
 ## Laptop
 
-- price: less than 2,000,000 KRW
+- price: 2,000,000 KRW or less
 - features
   - design:
     - non-gamer-y
     - stealth
   - display
-    - size: 15 inch
-    - resolution: 1920x1080+
+    - size: 14in / 15in
+    - resolution: 1920x1080 or more
     - panel type: IPS
   - keyboard
-    - number pad: yes
     - legends: Korean
   - CPU
     - performance: better than intel i5-8250U
-    - ISA: x86_64 (or ARM architecture if becomes mainstream)
+    - ISA: x86_64
+      - or ARM if it becomes mainstream
   - GPU
-    - non-nvidia
-    - performance: better than Nvidia MX-150 (can support 240fps for light workloads)
-    - non-hybrid, single GPU (preferably internal)
+    - performance: better than Nvidia MX-150
+    - VRAM: 2GB or more
   - RAM
-    - gen: DDR4/DDR5
-    - capacity: 16G+
+    - gen: DDR4 or higher
+    - capacity: 16G or more
   - SSD
     - interface: M.2
     - protocol: NVMe
-    - capacity: 512GB+
+    - capacity: 512GB or more
   - IO
-    - DisplayPort 1.2+ / HDMI 2.0+ (for 1920x1080 240Hz support)
-  - OS: None (will install Arch Linux)
+    - DisplayPort 1.2 or higher / HDMI 2.0 or higher
+      - for 1920x1080 240Hz support
+  - OS: None / Irrelevant
+    - will install Arch Linux
   - Power
-    - support CPU and GPU
+    - enough to support CPU and GPU under full load
 - Candidates
   - [ASUS ROG Zephyrus G14 GA402RJ-L8127](https://prod.danawa.com/info/?pcode=17118821)
 
-## Storage
+## NAS
 
-- 1TB HDD for long-term backup
+- Features
+  - capacity: 1TB or more
 
 ## Mouse
 
 - Features
-  - go forward / backward button
-  - wireless
-  - wireless click latency: faster than Logitech G402
-  - weight without wires: lighter than Logitech G402
-  - size: similar to Logitech G402
-  - max polling rate: no lower, and no higher than 1000Hz
+  - extra buttons: go forward / backward
+  - connection: wireless
+  - charge: wireless dock
+  - wireless click latency: 3ms or less
+  - weight without wires: 100g or less
+  - size:
+    - length: ~125mm
+    - height: ~40mm
+    - grip width: ~60mm
+  - max polling rate: 1000Hz or more
 - Candidates:
-  - Razer Viper Ultimate ([rtings review](https://www.rtings.com/mouse/reviews/razer/viper-ultimate) | [techpowerup review](https://www.techpowerup.com/review/razer-viper-ultimate/))
+  - Logitech G PRO X SUPERLIGHT ([rtings review](https://www.rtings.com/mouse/reviews/logitech/g-pro-x-superlight) | [techpowerup review](https://www.techpowerup.com/review/logitech-pro-wireless-mouse))
 
 ## Monitor
 
 - Features
-  - panel type: burn-in-less OLED-like panel
-    - pixel response time: 2ms at most
-    - individual pixel dimming
-    - color accurate
-  - input lag: 4ms at most
+  - panel type: burn-in-less emissive display panel
+    - pixel response time: 1ms or less
+  - input lag: 4ms or less
   - subpixel layout: standard RGB stripe
-  - refresh rate: at least 240Hz
-  - size: at most 24inch
+  - refresh rate: 240Hz or more
+  - size: 24in / 27in
   - resolution: exactly FHD (1920x1080)
   - flicker-free
 - Candidates
   - None
 
-## Keyboard
-
-- portable
-- wireless (bluetooth)
-- plastic housing
-- 40/60/65%
-- VIA support
-- silent switch
-- low profile?
-
 ## Headset
 
-- replaceable parts
-- wires & wireless
-- buy sound card too
+- Features
+  - replaceable parts
+  - connection: 3.5mm jack & wireless
+  - buy sound card too
