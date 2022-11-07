@@ -8,21 +8,6 @@ from src.log import error
 import src.constants
 
 
-def run(command: str, hide_stdout: bool = True, hide_stderr: bool = True) -> None:
-    """os.system but has an option to hide stdout and/or stderr.
-    A copy of this function also exists in `setup.py`."""
-
-    if hide_stderr:
-        system(f"{command} &> /dev/null")
-        return
-
-    if hide_stdout:
-        system(f"{command} > /dev/null")
-        return
-
-    system(command)
-
-
 def run_and_return(command: str) -> list[str]:
     """Runs command in system shell and return the result.
     This is a blocking function.
@@ -31,9 +16,7 @@ def run_and_return(command: str) -> list[str]:
     return popen(command).readlines()
 
 
-def paru_install(
-    packages: str | list[str], hide_stdout: bool = True, hide_stderr: bool = True
-) -> None:
+def paru_install(packages: str | list[str]) -> None:
     """
     Download arch linux packages (including AUR).
 
@@ -49,12 +32,10 @@ def paru_install(
         error("Invalid paru packages format.")
         return
 
-    run(f"paru -S --noconfirm {packages}", hide_stdout, hide_stderr)
+    system(f"paru -S --noconfirm {packages}")
 
 
-def flatpak_install(
-    packages: str, hide_stdout: bool = True, hide_stderr: bool = True
-) -> None:
+def flatpak_install(packages: str) -> None:
     """
     Download packages from flathub.
 
@@ -62,7 +43,7 @@ def flatpak_install(
         packages: space-separated list of packages.
     """
 
-    run(f"flatpak install -y {packages}", hide_stdout, hide_stderr)
+    system(f"flatpak install -y {packages}")
 
 
 def smart_mkdir(path: str) -> None:
@@ -76,23 +57,17 @@ def smart_mkdir(path: str) -> None:
         pass
 
 
-def trash(path, hide_stdout: bool = True, hide_stderr: bool = True) -> None:
+def trash(path) -> None:
     """Moves a file or directory to freedesktop trash."""
 
     try:
-        run(f"trash-put {path}", hide_stdout, hide_stderr)
+        system(f"trash-put {path}")
     except Exception as err:
         print(f"Failed to remove: {path}")
         raise err
 
 
-def copy_file(
-    src_file: str,
-    mode="644",
-    sudo=False,
-    hide_stdout: bool = True,
-    hide_stderr: bool = True,
-) -> None:
+def copy_file(src_file: str, mode="644", sudo=False) -> None:
     """
     Copies a file in the repo to the system.
     If the `src_file` starts with `home/`, it maps to $HOME.
@@ -117,12 +92,10 @@ def copy_file(
     if sudo:
         command = f"sudo {command}"
 
-    run(command, hide_stdout, hide_stderr)
+    system(command)
 
 
-def copy_directory(
-    src: str, dst: str, hide_stdout: bool = True, hide_stderr: bool = True
-) -> None:
+def copy_directory(src: str, dst: str) -> None:
     """Copy a directory.
     Automatically creates parent directory/directories of dst if it does not exist already
 
@@ -131,19 +104,13 @@ def copy_directory(
         dst: A path-like object or string pointing to a directory.
     """
 
-    run(f"cp -R {src} {dst}", hide_stdout, hide_stderr)
+    system(f"cp -R {src.constants.content_dir}{src} {dst}")
 
 
-def load_dconf(
-    file_name: str, hide_stdout: bool = True, hide_stderr: bool = True
-) -> None:
+def load_dconf(file_name: str) -> None:
     """Loads dconf configuration"""
 
-    run(
-        f'dconf load / < "{src.constants.content_dir}/files/dconf/{file_name}"',
-        hide_stdout,
-        hide_stderr,
-    )
+    system(f'dconf load / < "{src.constants.content_dir}/files/dconf/{file_name}"')
 
 
 def download(file_name: str, url: str) -> None:

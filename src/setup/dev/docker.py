@@ -1,5 +1,6 @@
-from src.util import paru_install, run
+from src.util import paru_install
 from getpass import getuser
+from os import system
 
 name = "Docker"
 
@@ -9,5 +10,5 @@ def setup():
 
     paru_install("docker")
 
-    run(f'sudo usermod -aG docker "{getuser()}"')
-    run("sudo systemctl --now enable docker")
+    system(f'sudo usermod -aG docker "{getuser()}"')
+    system("sudo systemctl --now enable docker")

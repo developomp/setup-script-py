@@ -1,7 +1,8 @@
-from src.util import flatpak_install, paru_install, copy_file, run
+from src.util import flatpak_install, paru_install, copy_file
 from src.setup.system import system76_scheduler
 
 from os.path import exists
+from os import system
 
 name = "osu!lazer"
 post_install = ["Install osu! skin from https://github.com/developomp/osu-pomp-skin"]
@@ -37,15 +38,15 @@ def setup():
 
     for name in modules_to_disable:
         # Add blacklist rule if it does not exist
-        run(
+        system(
             f'sudo grep -qxF "blacklist {name}" /etc/modprobe.d/blacklist.conf || echo "blacklist {name}" | sudo tee -a /etc/modprobe.d/blacklist.conf'
         )
 
         # remove module from kernel if it's loaded
-        run(f"sudo rmmod {name}")
+        system(f"sudo rmmod {name}")
 
     # Reload the systemd user unit daemon
-    run("systemctl --user daemon-reload")
+    system("systemctl --user daemon-reload")
 
     # Enable and start the user service
-    run("systemctl --user enable opentabletdriver --now")
+    system("systemctl --user enable opentabletdriver --now")

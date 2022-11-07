@@ -1,15 +1,16 @@
+from os import system
+
 from src import log
-from src.util import run
 
 
 def install_via_pacman(package: str):
-    if run(f"paru -S --noconfirm {package}", True):
+    if system(f"paru -S --noconfirm {package}"):
         log.error(f"Failed to install {package} via pacman")
         exit(1)
 
 
 def install_via_pip(package: str):
-    if run(f"pip install {package}"):
+    if system(f"pip install {package}"):
         log.error(f"Failed to install {package} via pip")
         exit(1)
 

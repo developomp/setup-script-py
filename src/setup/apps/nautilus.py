@@ -1,6 +1,6 @@
-from src.util import paru_install, load_dconf, command_exists, run
+from src.util import paru_install, load_dconf, command_exists
 from src.setup.apps import terminal
-
+from os import system
 
 name = "Nautilus"
 
@@ -22,10 +22,12 @@ def setup():
     load_dconf("nautilus.conf")
 
     # set nautilus terminal settings
-    run(
+    system(
         "gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal kitty"
     )
-    run(
+    system(
         "gsettings set com.github.stunkymonkey.nautilus-open-any-terminal keybindings ''"
     )
-    run("gsettings set com.github.stunkymonkey.nautilus-open-any-terminal new-tab true")
+    system(
+        "gsettings set com.github.stunkymonkey.nautilus-open-any-terminal new-tab true"
+    )

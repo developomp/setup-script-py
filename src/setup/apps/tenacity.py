@@ -1,6 +1,6 @@
 # https://github.com/tenacityteam/tenacity-flatpak-nightly
 
-from src.util import run
+from os import system
 
 name = "Tenacity"
 
@@ -8,7 +8,7 @@ name = "Tenacity"
 def setup():
     """Safe audacity fork"""
 
-    run(
+    system(
         "flatpak remote-add tenacity oci+https://tenacityteam.github.io/tenacity-flatpak-nightly"
     )
-    run("flatpak install tenacity org.tenacityaudio.Tenacity")
+    system("flatpak install tenacity org.tenacityaudio.Tenacity")

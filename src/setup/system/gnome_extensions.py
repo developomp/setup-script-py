@@ -1,5 +1,7 @@
-from src.util import paru_install, load_dconf, run
+from src.util import paru_install, load_dconf
 from src import log
+
+from os import system
 
 name = "GNOME extensions"
 post_install = ["Restart GNOME shell", "enable GNOME extensions"]
@@ -39,7 +41,7 @@ def setup():
 
     for (extension, dconf_file) in EXTENSIONS:
         log.log("installing: https://extensions.gnome.org/extension/$1")
-        run(f"gnome-shell-extension-installer {extension} --yes --update")
+        system(f"gnome-shell-extension-installer {extension} --yes --update")
 
         if dconf_file:  # if dconf_file is not empty
             load_dconf(dconf_file)

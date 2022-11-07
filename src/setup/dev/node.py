@@ -1,9 +1,10 @@
 from src.constants import home_dir
-from src.util import paru_install, run, command_exists
+from src.util import paru_install, command_exists
 from src.setup.system import zsh
 from src import log
 
 from os.path import isdir
+from os import system
 
 name = "node"
 
@@ -26,15 +27,15 @@ def setup():
     paru_install("nvm")
 
     log.log("Installing Node.JS LTS")
-    run("source /usr/share/nvm/init-nvm.sh; nvm install --lts")
+    system("source /usr/share/nvm/init-nvm.sh; nvm install --lts")
 
     # todo: add "source /usr/share/nvm/init-nvm.sh" to ~/.zshrc
 
     log.log("Installing npm")
-    run("npm install --global npm")
+    system("npm install --global npm")
 
     log.log("Installing pnpm")
-    run("npm install --global pnpm")
+    system("npm install --global pnpm")
 
     log.log("Installing yarn")
-    run("npm install --global yarn")
+    system("npm install --global yarn")

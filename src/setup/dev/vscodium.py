@@ -1,4 +1,5 @@
-from src.util import paru_install, copy_file, run
+from src.util import paru_install, copy_file
+from os import system
 
 
 name = "Vscodium"
@@ -50,7 +51,7 @@ def setup():
 
     # codium --list-extensions
     for extension in EXTENSIONS:
-        run(f"codium --install-extension {extension} --force")
+        system(f"codium --install-extension {extension} --force")
 
     # vscodium settings
     copy_file("home/.config/VSCodium/User/settings.json")
