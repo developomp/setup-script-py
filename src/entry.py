@@ -5,6 +5,6 @@ def entry():
     initialize()
 
     # import should happen after the `initialize` function is called
-    from src.interface.menu import menu
+    from src.menu import menu
 
     menu()

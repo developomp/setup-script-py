@@ -42,3 +42,12 @@ def choose_action():
         print("POST INStALL TASKS:")
         for post_install_task in post_install_tasks:
             print(f"- {post_install_task}")
+
+
+def menu():
+    """Show menu screen."""
+
+    print("\n")
+    choose_action()
+    input("\nSetup complete! (press Enter to return to menu)")
+    menu()
