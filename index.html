@@ -91,7 +91,7 @@ def exit_if_no_internet():
     """Exits script if there's no internet connection.
     Pings archlinux.org for testing."""
 
-    if system("ping -c 1 archlinux.org"):
+    if system("ping -c 1 archlinux.org > /dev/null"):
         print("  Failed to connect to the internet.", file=sys.stderr)
         exit(1)
 
