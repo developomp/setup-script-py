@@ -47,7 +47,5 @@ def choose_action():
 def menu():
     """Show menu screen."""
 
-    print("\n")
     choose_action()
-    input("\nSetup complete! (press Enter to return to menu)")
-    menu()
+    print("Setup complete!")
