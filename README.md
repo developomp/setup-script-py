@@ -29,6 +29,20 @@ Choosing Action:
 
 </details>
 
+## Usage
+
+1. Install base Arch linux using [archinstall](https://github.com/archlinux/archinstall)
+2. Download the setup script
+   ```bash
+   wget setup.developomp.com -O setup.py
+   ```
+3. Execute it
+   ```bash
+   python ./setup.py
+   ```
+
+Full setup could easily take more than a hour depending on the internet speed.
+
 ## Overview
 
 ### Software
@@ -52,20 +66,6 @@ Choosing Action:
 - `files` - Files that are used but does not get copied
   - `dconf` - [dconf](https://wiki.gnome.org/Projects/dconf) files
 - `src` - Python scripts. Check code comments (especially `__init__.py`) for more info
-
-## Usage
-
-1. Install base Arch linux using [archinstall](https://github.com/archlinux/archinstall)
-2. Download the setup script
-   ```bash
-   wget setup.developomp.com -O setup.py
-   ```
-3. Execute it
-   ```bash
-   python ./setup.py
-   ```
-
-Full setup could easily take more than a hour depending on the internet speed.
 
 ## [Hardware](./docs/hardware.md)
 
