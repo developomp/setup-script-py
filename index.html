@@ -22,18 +22,6 @@ tmp_dir = "/tmp/com.developomp.setup"
 #
 
 
-def run(command: str, hide_stdout: bool = True, hide_stderr: bool = True):
-    if hide_stderr:
-        system(f"{command} &> /dev/null")
-        return
-
-    if hide_stdout:
-        system(f"{command} > /dev/null")
-        return
-
-    system(command)
-
-
 def run_and_return(command: str) -> list[str]:
     return popen(command).readlines()
 
@@ -103,7 +91,7 @@ def exit_if_no_internet():
     """Exits script if there's no internet connection.
     Pings archlinux.org for testing."""
 
-    if run("ping -c 1 archlinux.org"):
+    if system("ping -c 1 archlinux.org"):
         print("  Failed to connect to the internet.", file=sys.stderr)
         exit(1)
 
@@ -139,7 +127,7 @@ def install_git():
     """Install git if it's not installed already."""
 
     if not command_exists("git"):
-        run("sudo pacman -S --noconfirm --needed git")
+        system("sudo pacman -S --noconfirm --needed git")
 
 
 def clone_repository():
@@ -149,12 +137,12 @@ def clone_repository():
     cleanup()
 
     # clone repository
-    if run(f"git clone --depth 1 https://github.com/developomp/setup.git {tmp_dir}"):
+    if system(f"git clone --depth 1 https://github.com/developomp/setup.git {tmp_dir}"):
         print("  Failed to clone repository", file=sys.stderr)
         exit(1)
 
     # allow everyone to read and write.
-    if run(f"chmod -R a+rw {tmp_dir}"):
+    if system(f"chmod -R a+rw {tmp_dir}"):
         print("  Failed to change file permission for cloned repo", file=sys.stderr)
         exit(1)
 
