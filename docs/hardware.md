@@ -6,32 +6,31 @@ No desktop
 
 ## Laptop
 
-|    name | model                                                                                                          |
-| ------: | :------------------------------------------------------------------------------------------------------------- |
-| Machine | [LG 15U480-KP50ML](https://www.lge.co.kr/kr/business/product/common/redirectProductDetail.do?prdId=MD00040678) |
-|     CPU | intel i5-8250U                                                                                                 |
-|     GPU | Nvidia MX 150                                                                                                  |
-
-## RAM
-
-|                             model | capacity |
-| --------------------------------: | :------- |
-| SK Hynix HMA81GS6AFR8N-UH (stock) | 8GB      |
-|  Samsung M471A1K43CB1-CRC (added) | 8GB      |
+|    name | model                                                                                           |
+| ------: | :---------------------------------------------------------------------------------------------- |
+| Machine | secondhand [Lenovo Gaming 3i 15IMH I5 LEGEND PRO](https://prod.danawa.com/info/?pcode=12532946) |
+|     CPU | intel i5-10300H                                                                                 |
+|     GPU | Nvidia GTX1650 Ti                                                                               |
 
 ## Storage
 
-- Model: [Samsung 860 PRO SSD 512GB](https://www.samsung.com/sec/support/model/MZ-76P512BW/)
+### [Samsung 860 PRO SSD 512GB](https://www.samsung.com/sec/support/model/MZ-76P512BW/)
+
 - total size: 512,110,190,592 bytes (476.9 GiB, 512.1 GB)
 
-Partitions (in order):
+| format | size (parenthesis = rounded values)         | mount location    | purpose           |
+| ------ | ------------------------------------------- | ----------------- | ----------------- |
+| ext4   | 432,109,780,992 bytes (402.4 GiB, 432.1 GB) | /media/pomp/hopme | home directory    |
+| N/A    | 15,050,546,688 bytes (14.0 GiB, 15.0 GB)    | N/A               | over-provisioning |
 
-| format | size (parenthesis = rounded values)         | mount location   | purpose           |
-| ------ | ------------------------------------------- | ---------------- | ----------------- |
-| ext4   | 432,109,780,992 bytes (402.4 GiB, 432.1 GB) | /media/pomp/data | data storage      |
-| FAT32  | 524,288,000 bytes (500.0 MiB, 524.3 MB)     | /boot            | EFI partition     |
-| ext4   | 64,424,509,440 bytes (60.0 GiB, 64.4 GB)    | /                | system root       |
-| N/A    | 15,050,546,688 bytes (14.0 GiB, 15.0 GB)    | N/A              | over-provisioning |
+### UMIS RPJTJ256MEE1OWX
+
+- total size: 256,060,514,304 bytes (238.5 GiB, 256.1 GB)
+
+| format | size (parenthesis = rounded values)         | mount location | purpose        |
+| ------ | ------------------------------------------- | -------------- | -------------- |
+| FAT32  | 535,822,336 bytes (511 MiB, 535.8 MB)       | /boot          | boot partition |
+| ext4   | 255,522,242,560 bytes (238.0 GiB, 255.5 GB) | /              | system root    |
 
 ## Peripherals
 
