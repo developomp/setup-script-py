@@ -55,36 +55,12 @@ Choosing Action:
 
 ## Usage
 
-1. Install Arch linux.
-
-   A built-in installer (using [archinstall](https://github.com/archlinux/archinstall)) will be added in the future.
-   In the meantime, use [archfi](https://github.com/MatMoul/archfi) instead.
-   [`sudo`](https://archlinux.org/packages/core/x86_64/sudo/) and [`wget`](https://archlinux.org/packages/extra/x86_64/wget/), and [`paru-bin`](https://aur.archlinux.org/packages/paru-bin/) must be installed.
-
-2. Create a user.
-
-   Create a user in wheel group and create a home directory:
-
-   ```bash
-   useradd -G wheel -m pomp
-   ```
-
-   Allow user to use sudo:
-
-   ```bash
-   EDITOR=vim visudo
-   ```
-
-   Now, log in to the user account.
-
-3. Download the setup script.
-
+1. Install base Arch linux using [archinstall](https://github.com/archlinux/archinstall)
+2. Download the setup script
    ```bash
    wget setup.developomp.com -O setup.py
    ```
-
-4. Execute it.
-
+3. Execute it
    ```bash
    python ./setup.py
    ```
