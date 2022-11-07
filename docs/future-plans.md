@@ -1,63 +1,17 @@
 # Future plans
 
-## Laptop
-
-- price: 2,000,000 KRW or less
-- features
-  - design:
-    - non-gamer-y
-    - stealth
-  - display
-    - size: 14in / 15in
-    - resolution: 1920x1080 or more
-    - panel type: IPS
-  - keyboard
-    - legends: Korean
-  - CPU
-    - performance: better than intel i5-8250U
-    - ISA: x86_64
-      - or ARM if it becomes mainstream
-  - GPU
-    - performance: better than Nvidia MX-150
-    - VRAM: 2GB or more
-  - RAM
-    - gen: DDR4 or higher
-    - capacity: 16G or more
-  - SSD
-    - interface: M.2
-    - protocol: NVMe
-    - capacity: 512GB or more
-  - IO
-    - DisplayPort 1.2 or higher / HDMI 2.0 or higher
-      - for 1920x1080 240Hz support
-  - OS: None / Irrelevant
-    - will install Arch Linux
-  - Power
-    - enough to support CPU and GPU under full load
-- Candidates
-  - [ASUS ROG Zephyrus G14 GA402RJ-L8127](https://prod.danawa.com/info/?pcode=17118821)
-  - [Framework Laptop 12th Gen Intel DIY Edition](https://frame.work/products/laptop-diy-12-gen-intel)
-    - CPU: i5-1240P
-    - Storage: 500GB - WD_BLACK™ SN850 NVMe™
-    - Memory: 16GB (2 x 8GB) DDR4-3200
-    - Operating System: None
-    - Keyboard: Korean (not ready)
-    - Power Adapter: None
-    - Expansion Cards
-      - USB-A x3
-      - USB-C x2
-      - DP x1
-      - HDMI x1
-      - Ethernet x1
-    - Price (with customization): $1,116.00
-
 ## NAS
 
+- why
+  - reduces risk of losing data
+  - can access the same data from multiple devices
 - Features
   - capacity: 1TB or more
 
 ## Mouse
 
+- why
+  - the charging dock of the current mouse isn't reliable
 - Features
   - extra buttons: go forward / backward
   - connection: wireless
@@ -74,12 +28,15 @@
 
 ## Monitor
 
+- why
+  - the current monitor isn't color-accurate enough
+  - the current monitor has a significant amount of motion blur
 - Features
   - panel type: burn-in-less emissive display panel
     - pixel response time: 1ms or less
   - input lag: 4ms or less
   - subpixel layout: standard RGB stripe
-  - refresh rate: 240Hz or more
+  - refresh rate: exactly 240Hz
   - size: 24in / 27in
   - resolution: exactly FHD (1920x1080)
   - flicker-free
@@ -88,6 +45,8 @@
 
 ## Headset
 
+- why
+  - the current headset is falling apart
 - Features
   - replaceable parts
   - connection: 3.5mm jack & wireless
