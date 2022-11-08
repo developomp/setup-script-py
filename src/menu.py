@@ -8,10 +8,13 @@ from src.constants import content_dir
 
 
 def choose_action():
-    files = glob(f"{content_dir}/src/setup/**/*.py")
+    # todo: show names instead of file names
     files = [
-        s.removeprefix(f"{content_dir}/src/setup/")
-        for s in files
+        import_file(
+            s.removeprefix(f"{content_dir}/src/setup/"),
+            s,
+        ).name
+        for s in glob(f"{content_dir}/src/setup/**/*.py")
         if "__init__.py" not in s
     ]
 
