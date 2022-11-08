@@ -1,9 +1,0 @@
-# XDG_DESKTOP_DIR="$HOME/Desktop"
-# XDG_PUBLICSHARE_DIR="$HOME/Public"
-# XDG_TEMPLATES_DIR="$HOME/Templates"
-
-XDG_DOCUMENTS_DIR="/media/pomp/data/Documents"
-XDG_DOWNLOAD_DIR="/media/pomp/data/Downloads"
-XDG_MUSIC_DIR="/media/pomp/data/Music"
-XDG_PICTURES_DIR="/media/pomp/data/Pictures"
-XDG_VIDEOS_DIR="/media/pomp/data/Videos"
