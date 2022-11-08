@@ -10,10 +10,10 @@ from src.constants import content_dir
 def choose_action():
     # todo: show names instead of file names
     files = [
-        import_file(
+        f"""{s.removeprefix(f"{content_dir}/src/setup/")} - {import_file(
             s.removeprefix(f"{content_dir}/src/setup/"),
             s,
-        ).name
+        ).name}"""
         for s in glob(f"{content_dir}/src/setup/**/*.py")
         if "__init__.py" not in s
     ]
@@ -30,7 +30,9 @@ def choose_action():
 
     post_install_tasks = []
     for action_name in response["actions"]:
-        module = import_file(action_name, f"{content_dir}/src/setup/{action_name}")
+        module = import_file(
+            action_name, f"{content_dir}/src/setup/{action_name.split(' - ')[0]}"
+        )
 
         if hasattr(module, "post_install"):
             if isinstance(module.post_install, str):
@@ -38,7 +40,7 @@ def choose_action():
             else:
                 post_install_tasks += module.post_install
 
-        log(f"Setting up: {module.name} ({action_name})")
+        log(f"Setting up: {action_name}")
         module.setup()
 
     if post_install_tasks:
