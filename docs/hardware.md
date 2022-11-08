@@ -6,31 +6,32 @@ No desktop
 
 ## Laptop
 
-|    name | model                                                                                           |
-| ------: | :---------------------------------------------------------------------------------------------- |
-| Machine | secondhand [Lenovo Gaming 3i 15IMH I5 LEGEND PRO](https://prod.danawa.com/info/?pcode=12532946) |
-|     CPU | intel i5-10300H                                                                                 |
-|     GPU | Nvidia GTX1650 Ti                                                                               |
+|    name | model                                                                                                          |
+| ------: | :------------------------------------------------------------------------------------------------------------- |
+| Machine | [LG 15U480-KP50ML](https://www.lge.co.kr/kr/business/product/common/redirectProductDetail.do?prdId=MD00040678) |
+|     CPU | intel i5-8250U                                                                                                 |
+|     GPU | Nvidia MX 150                                                                                                  |
+
+## RAM
+
+|                             model | capacity |
+| --------------------------------: | :------: |
+| SK Hynix HMA81GS6AFR8N-UH (stock) |   8GB    |
+|  Samsung M471A1K43CB1-CRC (added) |   8GB    |
 
 ## Storage
 
 ### [Samsung 860 PRO SSD 512GB](https://www.samsung.com/sec/support/model/MZ-76P512BW/)
 
 - total size: 512,110,190,592 bytes (476.9 GiB, 512.1 GB)
+- Partitions (in order):
 
-| format | size (parenthesis = rounded values)         | mount location    | purpose           |
-| ------ | ------------------------------------------- | ----------------- | ----------------- |
-| ext4   | 432,109,780,992 bytes (402.4 GiB, 432.1 GB) | /media/pomp/hopme | home directory    |
-| N/A    | 15,050,546,688 bytes (14.0 GiB, 15.0 GB)    | N/A               | over-provisioning |
-
-### UMIS RPJTJ256MEE1OWX
-
-- total size: 256,060,514,304 bytes (238.5 GiB, 256.1 GB)
-
-| format | size (parenthesis = rounded values)         | mount location | purpose        |
-| ------ | ------------------------------------------- | -------------- | -------------- |
-| FAT32  | 535,822,336 bytes (511 MiB, 535.8 MB)       | /boot          | boot partition |
-| ext4   | 255,522,242,560 bytes (238.0 GiB, 255.5 GB) | /              | system root    |
+| format | size (parenthesis = rounded values) | mount location | purpose           |
+| ------ | ----------------------------------- | -------------- | ----------------- |
+| ext4   | 367,001,600,000 bytes (376 GB)      | /pomp/home     | home directory    |
+| N/A    | 60,172,533,760 bytes (60 GB)        | N/A            | over-provisioning |
+| ext4   | 83,886,079,488 bytes (84 GB)        | /              | system root       |
+| FAT32  | 1,048,574,976 bytes (1 GB)          | /boot          | EFI partition     |
 
 ## Peripherals
 
