@@ -1,5 +1,6 @@
 from src.util import flatpak_install
 
+name = "Brave"
 
 # Brave handles restoration itself using its own sync stuff
 post_install = ["enable sync"]
