@@ -17,18 +17,6 @@ GREEN = "\033[92m"  # actually light green
 YELLOW = "\033[33m"
 
 
-def log_no_label(msg: str):
-    print(f"{GREEN}{BOLD}{msg}{RESET}")
-
-
-def warn_no_label(msg: str):
-    print(f"{YELLOW}{BOLD}{msg}{RESET}")
-
-
-def error_no_label(msg: str):
-    print(f"{RED}{BOLD}{msg}{RESET}")
-
-
 def log(msg: str):
     print(f" {GREEN}{BOLD}    INFO |  {msg}{RESET}")
 
@@ -39,7 +27,3 @@ def warn(msg: str):
 
 def error(msg: str):
     print(f" {RED}{BOLD}   ERROR |  {msg}{RESET}", file=sys.stderr)
-
-
-def title(msg: str):
-    print(f"\n{BOLD}{GREEN}====================[ {msg} ]===================={RESET}")
