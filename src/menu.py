@@ -7,7 +7,7 @@ from src.log import log
 from src.constants import content_dir
 
 
-def choose_action():
+def choose_action() -> int:
     # todo: show names instead of file names
     files = [
         f"""{s.removeprefix(f"{content_dir}/src/setup/")} - {import_file(
@@ -27,6 +27,9 @@ def choose_action():
             ),
         ]
     )
+
+    if response == None:
+        return -1
 
     post_install_tasks = []
     for action_name in response["actions"]:
@@ -48,9 +51,13 @@ def choose_action():
         for post_install_task in post_install_tasks:
             print(f"- {post_install_task}")
 
+    return 0
+
 
 def menu():
     """Show menu screen."""
 
-    choose_action()
+    if choose_action() < 0:
+        return
+    
     print("Setup complete!")
