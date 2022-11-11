@@ -1,11 +1,31 @@
-from src.util import flatpak_install, paru_install, copy_file
+from src.util import flatpak_install, paru_install, appimage_install, copy_file
 from src.setup.system import system76_scheduler
 
 from os.path import exists
 from os import system
+import requests
+import re
 
 name = "osu!lazer"
 post_install = ["Install osu! skin from https://github.com/developomp/osu-pomp-skin"]
+
+
+def get_latest_osu_lazer_appimage_url() -> str:
+    return (
+        re.search(
+            "(?P<url>https?://[^\s]+)",
+            [
+                t
+                for t in requests.get(
+                    "https://api.github.com/repos/ppy/osu/releases/latest"
+                ).text.split(",")
+                if "browser_download" in t and 'AppImage"' in t
+            ][0],
+        )
+        .group("url")
+        .split(".AppImage")[0]
+        + ".AppImage"
+    )
 
 
 def setup():
@@ -14,7 +34,10 @@ def setup():
     """
 
     # install the game
-    flatpak_install("sh.ppy.osu")
+    appimage_install(
+        get_latest_osu_lazer_appimage_url(),
+        "osu",
+    )
 
     # give CPU scheduler priority
     system76_scheduler.setup()
