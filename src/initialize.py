@@ -4,13 +4,13 @@ from src import log
 
 
 def install_via_pacman(package: str):
-    if system(f"paru -S --noconfirm {package}"):
+    if system(f"paru -S --noconfirm {package} > /dev/null"):
         log.error(f"Failed to install {package} via pacman")
         exit(1)
 
 
 def install_via_pip(package: str):
-    if system(f"pip install {package}"):
+    if system(f"pip install {package} > /dev/null"):
         log.error(f"Failed to install {package} via pip")
         exit(1)
 
