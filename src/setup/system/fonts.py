@@ -15,6 +15,11 @@ TMP_FONTS_DIRECTORY = f"{tmp_dir}/tmp/fonts"
 FONT_NAMES = (
     "Audiowide",
     "Varela Round",
+    "Noto Sans",
+    "Noto Sans KR",  # Korean
+    "Noto Sans JP",  # Japanese
+    "Noto Sans TC",  # Traditional Chinese
+    "Noto Sans SC",  # Simplified Chinese
     "Noto Sans Mono",
     "Nanum Gothic Coding",
     "Noto Emoji",
