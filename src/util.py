@@ -6,6 +6,7 @@ from pathlib import Path
 import requests
 import zipfile
 import shutil
+import re
 
 from src.log import error, log
 import src.constants
@@ -76,6 +77,24 @@ def appimage_install(file_url: str, file_name: str) -> None:
             # save to file
             with open(download_path, "wb") as output:
                 shutil.copyfileobj(raw, output)
+
+
+def get_latest_appimage_url_from_github(repo: str) -> str:
+    return (
+        re.search(
+            "(?P<url>https?://[^\s]+)",
+            [
+                t
+                for t in requests.get(
+                    f"https://api.github.com/repos/{repo}/releases/latest"
+                ).text.split(",")
+                if "browser_download" in t and 'AppImage"' in t
+            ][0],
+        )
+        .group("url")
+        .split(".AppImage")[0]
+        + ".AppImage"
+    )
 
 
 def smart_mkdir(path: str) -> None:
