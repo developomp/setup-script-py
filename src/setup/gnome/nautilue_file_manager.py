@@ -1,5 +1,5 @@
 from src.util import paru_install, load_dconf, command_exists
-from src.setup.apps import terminal
+from src.setup import terminal
 from os import system
 
 name = "Nautilus"

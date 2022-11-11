@@ -1,3 +1,0 @@
-"""Regular applications"""
-
-from . import *
