@@ -1,10 +1,13 @@
 from importlib.machinery import SourceFileLoader
-from os import system, makedirs, popen
-from os.path import dirname
+from os import system, makedirs, popen, remove
+from os.path import dirname, exists
+from tqdm.auto import tqdm
+from pathlib import Path
 import requests
 import zipfile
+import shutil
 
-from src.log import error
+from src.log import error, log
 import src.constants
 
 
@@ -44,6 +47,35 @@ def flatpak_install(packages: str) -> None:
     """
 
     system(f"flatpak install -y {packages}")
+
+
+def appimage_install(file_url: str, file_name: str) -> None:
+    """
+    Install app by downloading .AppImage file to ~/Applications
+    """
+
+    download_path = f"{Path.home()}/Applications/{file_name}.AppImage"
+
+    # install AppImageLauncher if it's not installed already
+    if system("command -v AppImageLauncher &> /dev/null"):
+        paru_install("appimagelauncher")
+
+    log(f"  Downloading AppImage file to {download_path}")
+    log(f"    URL: {file_url}")
+
+    Path(download_path).parent.mkdir(parents=True, exist_ok=True)
+
+    if exists(download_path):
+        remove(download_path)
+
+    with requests.get(file_url, stream=True) as r:
+        total_length = int(r.headers.get("Content-Length"))
+
+        # show progress bar
+        with tqdm.wrapattr(r.raw, "read", total=total_length, desc="") as raw:
+            # save to file
+            with open(download_path, "wb") as output:
+                shutil.copyfileobj(raw, output)
 
 
 def smart_mkdir(path: str) -> None:

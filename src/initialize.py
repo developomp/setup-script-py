@@ -28,3 +28,4 @@ def initialize():
     install_via_pip("requests")
     install_via_pip("PyYAML")
     install_via_pip("inquirer")
+    install_via_pip("tqdm")
