@@ -14,7 +14,7 @@ def choose_action():
             s.removeprefix(f"{content_dir}/src/setup/"),
             s,
         ).name}"""
-        for s in glob(f"{content_dir}/src/setup/**/*.py")
+        for s in glob(f"{content_dir}/src/setup/**/*.py", recursive=True)
         if "__init__.py" not in s
     ]
 
