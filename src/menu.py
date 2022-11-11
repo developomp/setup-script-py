@@ -44,7 +44,7 @@ def choose_action():
         module.setup()
 
     if post_install_tasks:
-        print("POST INStALL TASKS:")
+        print("POST INSTALL TASKS:")
         for post_install_task in post_install_tasks:
             print(f"- {post_install_task}")
 
