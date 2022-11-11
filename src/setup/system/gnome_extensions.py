@@ -1,5 +1,5 @@
 from src.util import paru_install, load_dconf
-from src import log
+from src.log import log
 
 from os import system
 
@@ -39,7 +39,7 @@ def setup():
     load_dconf("extension-pop-shell.conf")
 
     for (extension, dconf_file) in EXTENSIONS:
-        log.log("installing: https://extensions.gnome.org/extension/$1")
+        log("installing: https://extensions.gnome.org/extension/$1")
         system(f"gnome-shell-extension-installer {extension} --yes --update")
 
         if dconf_file:  # if dconf_file is not empty

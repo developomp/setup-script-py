@@ -1,7 +1,7 @@
 from os import system
 
 from src.util import flatpak_install, paru_install, copy_file
-from src import log
+from src.log import log
 
 
 name = "Discord"
@@ -57,7 +57,7 @@ def setup():
 
     for id in PLUGINS:
         url = f"https://betterdiscord.app/Download?id={id}"
-        log.log(f"installing {url}")
+        log(f"installing {url}")
 
         # assumes that plugins is located in "~/.var/app/com.discordapp.Discord/config/BetterDiscord/plugins" because I'm using flatpak
         system(
