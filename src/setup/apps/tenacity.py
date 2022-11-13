@@ -2,12 +2,10 @@
 
 from os import system
 
-name = "Tenacity"
+desc = "Audacity fork that doesn't suck"
 
 
 def setup():
-    """Safe audacity fork"""
-
     system(
         "flatpak remote-add tenacity oci+https://tenacityteam.github.io/tenacity-flatpak-nightly"
     )

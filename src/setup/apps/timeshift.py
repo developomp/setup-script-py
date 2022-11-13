@@ -1,9 +1,7 @@
 from src.util import paru_install
 
-name = "timshift"
+desc = "System backup and restoration utility"
 
 
 def setup():
-    """System backup and restoring utility"""
-
     paru_install("timeshift")

@@ -9,7 +9,7 @@ from src.setup.system import system76_scheduler
 from os import system
 
 
-name = "osu!lazer"
+desc = "A circle-clicking rhythm game."
 post_install = ["Install osu! skin from https://github.com/developomp/osu-pomp-skin"]
 
 
@@ -44,10 +44,6 @@ def setup_open_tablet_driver():
 
 
 def setup():
-    """
-    A circle-clicking rhythm game.
-    """
-
     # install the game
     appimage_install(
         get_latest_appimage_url_from_github("ppy/osu"),

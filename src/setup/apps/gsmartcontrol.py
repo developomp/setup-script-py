@@ -1,6 +1,6 @@
 from src.util import paru_install
 
-name = "SSD Health checker"
+desc = "SSD Health checker"
 
 
 def setup():

@@ -1,13 +1,7 @@
 from src.util import paru_install
 
-name = "deno"
+desc = "nodejs++"
 
 
 def setup():
-    """
-    nodejs++
-
-    check .zshrc for bin path stuff
-    """
-
     paru_install("deno")

@@ -13,7 +13,7 @@ def choose_action() -> int:
         f"""{s.removeprefix(f"{content_dir}/src/setup/")} - {import_file(
             s.removeprefix(f"{content_dir}/src/setup/"),
             s,
-        ).name}"""
+        ).desc}"""
         for s in glob(f"{content_dir}/src/setup/**/*.py", recursive=True)
         if "__init__.py" not in s
     ]
@@ -59,5 +59,5 @@ def menu():
 
     if choose_action() < 0:
         return
-    
+
     print("Setup complete!")

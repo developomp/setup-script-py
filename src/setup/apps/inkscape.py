@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "Inkscape"
+desc = "Adobe Illustrator but FOSS"
 
 
 def setup():
-    """adobe illustrator but FOSS"""
-
     flatpak_install("org.inkscape.Inkscape")

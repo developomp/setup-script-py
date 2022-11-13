@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "Baobab"
+desc = "Disk usage analysis tool"
 
 
 def setup():
-    """Storage usage analysis tool"""
-
     flatpak_install("org.gnome.baobab")

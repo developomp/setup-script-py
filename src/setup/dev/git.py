@@ -1,12 +1,10 @@
 from src.util import paru_install
 from os import system
 
-name = "git"
+desc = "The thing everyone pretends they know how it works"
 
 
 def setup():
-    """What's a branch?"""
-
     paru_install("git")
 
     system('git config --global user.email "developomp@gmail.com"')

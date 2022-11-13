@@ -1,10 +1,8 @@
 from src.util import flatpak_install
 
-name = "Unity hub"
+desc = "Unity version manager"
 post_install = ["Change editors location"]
 
 
 def setup():
-    """Unity hub"""
-
     flatpak_install("com.unity.UnityHub")

@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "Blender"
+desc = "3D graphics tool"
 
 
 def setup():
-    """3D graphics tool"""
-
     flatpak_install("org.blender.Blender")

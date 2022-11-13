@@ -1,10 +1,8 @@
 from src.util import paru_install
 
-name = "piper"
+desc = "Gaming mouse configuration utility"
 
 
 def setup():
-    """gaming mouse configuration utility"""
-
     # Not using flatpak version because of some init bugs
     paru_install("piper")

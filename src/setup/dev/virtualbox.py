@@ -1,12 +1,10 @@
 from src.util import paru_install
 from os import system
 
-name = "virtualbox"
+desc = "containerized OS"
 
 
 def setup():
-    """It's a computer inside a computer!"""
-
     paru_install(
         [
             "virtualbox",

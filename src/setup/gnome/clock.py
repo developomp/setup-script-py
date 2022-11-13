@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "GNOME Clocks"
+desc = "GNOME time management utility"
 
 
 def setup():
-    """For managing multiple time zone clocks."""
-
     flatpak_install("org.gnome.clocks")

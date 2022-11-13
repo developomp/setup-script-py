@@ -4,7 +4,7 @@ from src.util import flatpak_install, paru_install, copy_file
 from src.log import log
 
 
-name = "Discord"
+desc = "Discord and better discord"
 
 PLUGINS = (
     134,  # https://betterdiscord.app/plugin/Avatar%20Hover
@@ -50,8 +50,6 @@ PLUGINS = (
 
 
 def setup():
-    """Discord and better discord"""
-
     flatpak_install("com.discordapp.Discord")
     paru_install("betterdiscordctl-git")
 

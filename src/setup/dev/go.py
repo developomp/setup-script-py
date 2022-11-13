@@ -1,9 +1,7 @@
 from src.util import paru_install
 
-name = "go"
+desc = "Goofy ah language that's popular for some reason"
 
 
 def setup():
-    """Golang stuff"""
-
     paru_install("go")

@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "cheese"
+desc = "GNOME photo taking utility"
 
 
 def setup():
-    """photo/video utility"""
-
     flatpak_install("org.gnome.Cheese")

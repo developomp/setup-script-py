@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "file roller"
+desc = "GNOME compression & decompression utility"
 
 
 def setup():
-    """compression & decompression utility"""
-
     flatpak_install("org.gnome.FileRoller")

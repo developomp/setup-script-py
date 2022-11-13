@@ -1,12 +1,10 @@
 from src.util import copy_file, command_exists
 from src.constants import tmp_dir
 
-name = "pomky"
+desc = "conky but rusty"
 
 
 def setup():
-    """conky but rusty"""
-
     if not command_exists("pomky"):
         system(
             f"git clone --depth 1 https://github.com/developomp/pomky {tmp_dir}/pomky"

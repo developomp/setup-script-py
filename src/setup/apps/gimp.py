@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "GIMP"
+desc = "Photoshop but FOSS"
 
 
 def setup():
-    """photoshop but FOSS"""
-
     flatpak_install("org.gimp.GIMP")

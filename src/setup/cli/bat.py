@@ -1,9 +1,7 @@
 from src.util import paru_install
 
-name = "bat"
+desc = "cat but rusty"
 
 
 def setup():
-    """cat but better and rusty"""
-
     paru_install("bat")

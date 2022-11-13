@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "Wireshark"
+desc = "network analyzer"
 
 
 def setup():
-    """network protocol analyzer GUI"""
-
     flatpak_install("org.wireshark.Wireshark")

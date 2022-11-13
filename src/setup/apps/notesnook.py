@@ -1,11 +1,9 @@
 from src.util import appimage_install
 
-name = "Notesnook"
+desc = "FOSS Note taking utility"
 
 
 def setup():
-    """FOSS Note taking utility"""
-
     appimage_install(
         "https://notesnook.com/releases/linux/notesnook_linux_x86_64.AppImage",
         "notesnook_linux_x86_64",

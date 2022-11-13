@@ -1,13 +1,11 @@
 from src.util import paru_install, load_dconf, command_exists
-from src.setup.dev import terminal
+from src.setup.dev import kitty
 from os import system
 
-name = "Nautilus"
+desc = "GNOME file manager"
 
 
 def setup():
-    """File viewer for GNOME"""
-
     paru_install(
         [
             "nautilus",

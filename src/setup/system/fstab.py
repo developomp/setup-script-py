@@ -1,11 +1,9 @@
 from os import system
 
-name = "fstab"
+desc = "adds /home/pomp to fstab"
 
 
 def setup():
-    """adds /home/pomp drive to fstab"""
-
     fstab_path = "/etc/fstab"
 
     # check if /home/pomp exists already

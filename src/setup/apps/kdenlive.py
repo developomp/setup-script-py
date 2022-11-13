@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "Kdenlive"
+desc = "Adobe Premiere Pro but FOSS"
 
 
 def setup():
-    """FOSS video editing utility"""
-
     flatpak_install("org.kde.kdenlive")

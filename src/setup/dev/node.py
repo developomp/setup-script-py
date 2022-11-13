@@ -6,20 +6,10 @@ from src.log import log
 from os.path import isdir
 from os import system
 
-name = "node"
+desc = "Javascript everywhere!"
 
 
 def setup():
-    """
-    Javascript outside of browsers!
-
-    https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
-
-     nvm: NodejS version manager
-    pnpm: better node package manager
-    yarn: better node package manager
-    """
-
     # Install zsh if it's not installed already
     if not command_exists("zsh"):
         zsh.setup()

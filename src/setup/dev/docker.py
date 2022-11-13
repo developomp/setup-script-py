@@ -2,12 +2,10 @@ from src.util import paru_install
 from getpass import getuser
 from os import system
 
-name = "Docker"
+desc = "Not a VM (TM)"
 
 
 def setup():
-    """Not a VM"""
-
     paru_install("docker")
 
     system(f'sudo usermod -aG docker "{getuser()}"')

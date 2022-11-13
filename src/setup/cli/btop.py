@@ -1,9 +1,7 @@
 from src.util import paru_install
 
-name = "Btop"
+desc = "top but better"
 
 
 def setup():
-    """top but better"""
-
     paru_install("btop")

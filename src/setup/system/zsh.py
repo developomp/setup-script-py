@@ -5,12 +5,10 @@ from src.log import log
 from os.path import isdir
 from os import system
 
-name = "Zsh"
+desc = "bash+++"
 
 
 def setup():
-    """Objectively better shell"""
-
     paru_install("zsh")
 
     log("Installing Oh My Zsh")

@@ -6,7 +6,7 @@ from os.path import exists, basename
 import requests
 import glob
 
-name = "fonts"
+desc = "Like... they're fonts"
 
 # path to temporarily save font related files
 TMP_FONTS_DIRECTORY = f"{tmp_dir}/tmp/fonts"
@@ -30,21 +30,12 @@ FONT_INSTALL_DIR = f"{home_dir}/.local/share/fonts"
 
 
 def setup():
-    """
-    System fonts
-
-    adobe-source-han-sans-kr-fonts: Korean font
-                       ttf-baekmuk: Korean font
-                     unicode-emoji: Colorful emojis
-                  ttf-iosevka-nerd: Terminal font
-    """
-
     paru_install(
         [
-            "adobe-source-han-sans-kr-fonts",
-            "ttf-baekmuk",
-            "unicode-emoji",
-            "ttf-iosevka-nerd",
+            "adobe-source-han-sans-kr-fonts",  # Korean font
+            "ttf-baekmuk",  # Korean font
+            "unicode-emoji",  # Colorful emoji
+            "ttf-iosevka-nerd",  # Terminal font
         ]
     )
 

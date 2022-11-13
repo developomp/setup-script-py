@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "steam"
+desc = "steam game downloader & launcher"
 
 
 def setup():
-    """Game launcher"""
-
     flatpak_install("com.valvesoftware.Steam")

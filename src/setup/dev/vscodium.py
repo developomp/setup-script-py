@@ -2,7 +2,7 @@ from src.util import paru_install, copy_file
 from os import system
 
 
-name = "Vscodium"
+desc = "vscode without spyware"
 
 
 EXTENSIONS = (
@@ -45,8 +45,6 @@ EXTENSIONS = (
 
 
 def setup():
-    """vscode without microsoft"""
-
     paru_install("vscodium-bin")
 
     # codium --list-extensions

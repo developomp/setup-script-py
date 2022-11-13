@@ -1,9 +1,7 @@
 from src.util import flatpak_install
 
-name = "GNOME Characters"
+desc = "GNOME character browser"
 
 
 def setup():
-    """Browser for emojis, special characters, and symbols."""
-
     flatpak_install("org.gnome.Characters")
