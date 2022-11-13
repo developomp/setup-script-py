@@ -6,7 +6,7 @@
 For more information, please refer to the repository (https://github.com/developomp/setup).
 """
 
-from os import system, geteuid, popen
+from os import system, geteuid
 from os.path import exists
 from shutil import rmtree
 import sys
@@ -22,12 +22,8 @@ tmp_dir = "/tmp/com.developomp.setup"
 #
 
 
-def run_and_return(command: str) -> list[str]:
-    return popen(command).readlines()
-
-
 def command_exists(command: str) -> bool:
-    return len(run_and_return(f"command -v {command}")) == 1
+    return system(f"command -v {command} &> /dev/null") == 0
 
 
 def cleanup() -> None:

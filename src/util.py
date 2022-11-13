@@ -1,5 +1,5 @@
 from importlib.machinery import SourceFileLoader
-from os import system, makedirs, popen, remove
+from os import system, makedirs, remove
 from os.path import dirname, exists
 from tqdm.auto import tqdm
 from pathlib import Path
@@ -10,14 +10,6 @@ import re
 
 from src.log import error, log
 import src.constants
-
-
-def run_and_return(command: str) -> list[str]:
-    """Runs command in system shell and return the result.
-    This is a blocking function.
-    Use this if you want to get the output of the command."""
-
-    return popen(command).readlines()
 
 
 def paru_install(packages: str | list[str]) -> None:
@@ -58,7 +50,7 @@ def appimage_install(file_url: str, file_name: str) -> None:
     download_path = f"{Path.home()}/Applications/{file_name}.AppImage"
 
     # install AppImageLauncher if it's not installed already
-    if system("command -v AppImageLauncher &> /dev/null"):
+    if not command_exists("AppImageLauncher"):
         paru_install("appimagelauncher")
 
     log(f"  Downloading AppImage file to {download_path}")
@@ -188,4 +180,4 @@ def command_exists(command: str) -> bool:
     """Check if a command can be found in the current default shell.
     A copy of this function also exists in `setup.py`."""
 
-    return len(run_and_return(f"command -v {command}")) == 1
+    return system(f"command -v {command} &> /dev/null") == 0
