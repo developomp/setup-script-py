@@ -1,4 +1,4 @@
-SSD Health checkerfrom src.util import paru_install
+from src.util import paru_install
 
 name = "SSD Health checker"
 
