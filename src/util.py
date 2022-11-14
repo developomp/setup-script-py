@@ -1,6 +1,8 @@
 from importlib.machinery import SourceFileLoader
 from os import system, makedirs, remove
 from os.path import dirname, exists
+from types import ModuleType
+from typing import Optional
 from tqdm.auto import tqdm
 from pathlib import Path
 import requests
@@ -62,7 +64,12 @@ def appimage_install(file_url: str, file_name: str) -> None:
         remove(download_path)
 
     with requests.get(file_url, stream=True) as r:
-        total_length = int(r.headers.get("Content-Length"))
+        total_length = None
+
+        try:
+            total_length = int(r.headers["Content-Length"])
+        except KeyError:
+            pass
 
         # show progress bar
         with tqdm.wrapattr(r.raw, "read", total=total_length, desc="") as raw:
@@ -71,22 +78,22 @@ def appimage_install(file_url: str, file_name: str) -> None:
                 shutil.copyfileobj(raw, output)
 
 
-def get_latest_appimage_url_from_github(repo: str) -> str:
-    return (
-        re.search(
-            "(?P<url>https?://[^\s]+)",
-            [
-                t
-                for t in requests.get(
-                    f"https://api.github.com/repos/{repo}/releases/latest"
-                ).text.split(",")
-                if "browser_download" in t and 'AppImage"' in t
-            ][0],
-        )
-        .group("url")
-        .split(".AppImage")[0]
-        + ".AppImage"
+def get_latest_appimage_url_from_github(repo: str) -> Optional[str]:
+    matches = re.search(
+        "(?P<url>https?://[^\s]+)",
+        [
+            t
+            for t in requests.get(
+                f"https://api.github.com/repos/{repo}/releases/latest"
+            ).text.split(",")
+            if "browser_download" in t and 'AppImage"' in t
+        ][0],
     )
+
+    if not matches:
+        return None
+
+    return matches.group("url").split(".AppImage")[0] + ".AppImage"
 
 
 def smart_mkdir(path: str) -> None:
@@ -138,7 +145,7 @@ def copy_file(src_file: str, mode="644", sudo=False) -> None:
     system(command)
 
 
-def copy_directory(src: str, dst: str) -> None:
+def copy_directory(src_path: str, dst_path: str) -> None:
     """Copy a directory.
     Automatically creates parent directory/directories of dst if it does not exist already
 
@@ -147,7 +154,7 @@ def copy_directory(src: str, dst: str) -> None:
         dst: A path-like object or string pointing to a directory.
     """
 
-    system(f"cp -R {src.constants.content_dir}{src} {dst}")
+    system(f"cp -R {src.constants.content_dir}{src_path} {dst_path}")
 
 
 def load_dconf(file_name: str) -> None:
@@ -172,7 +179,7 @@ def unzip(zip_path: str, dst_dir: str) -> None:
         zip_ref.extractall(dst_dir)
 
 
-def import_file(name, path) -> None:
+def import_file(name, path) -> ModuleType:
     return SourceFileLoader(name, path).load_module()
 
 

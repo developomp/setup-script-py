@@ -9,4 +9,4 @@ content_dir = abspath(dirname(dirname(__file__)))
 # must be synced with `setup.py`
 tmp_dir = "/tmp/com.developomp.setup"
 
-home_dir = environ.get("HOME")
+home_dir = environ.get("HOME", "/home/pomp")
