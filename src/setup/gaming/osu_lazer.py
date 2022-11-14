@@ -1,9 +1,4 @@
-from src.util import (
-    paru_install,
-    appimage_install,
-    copy_file,
-    get_latest_appimage_url_from_github,
-)
+from src.util import paru_install, flatpak_install, copy_file
 from src.setup.system import system76_scheduler
 
 from os import system
@@ -44,12 +39,11 @@ def setup_open_tablet_driver():
 
 
 def setup():
+    # setup tablet driver
+    setup_open_tablet_driver()
+
     # install the game
-    appimage_install(
-        get_latest_appimage_url_from_github("ppy/osu"),
-        "osu",
-    )
+    flatpak_install("sh.ppy.osu")
 
     # give CPU scheduler priority
     system76_scheduler.setup()
-    setup_open_tablet_driver()
