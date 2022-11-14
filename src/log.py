@@ -2,6 +2,8 @@
 Everything related to logging
 """
 
+from sys import stderr
+
 
 # https://stackoverflow.com/a/33206814/12979111
 
@@ -26,4 +28,4 @@ def warn(msg: str):
 
 
 def error(msg: str):
-    print(f" {RED}{BOLD}   ERROR |  {msg}{RESET}", file=sys.stderr)
+    print(f" {RED}{BOLD}   ERROR |  {msg}{RESET}", file=stderr)
