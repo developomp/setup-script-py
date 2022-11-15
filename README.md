@@ -31,7 +31,7 @@ Choosing Action:
 
 ## Usage
 
-1. Install base Arch linux using [archinstall](https://github.com/archlinux/archinstall)
+1. Install base Arch Linux
 2. Download the setup script
    ```bash
    wget setup.developomp.com -O setup.py
