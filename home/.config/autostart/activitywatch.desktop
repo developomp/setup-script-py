@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Encoding=UTF-8
-Name=ActivityWatch
-Comment=ActivityWatch
-Terminal=false
-Categories=Utility;
-Exec=aw-qt
