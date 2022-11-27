@@ -29,6 +29,7 @@
     "Krytox",
     "lazer",
     "MATCHA",
+    "mypy",
     "noconfirm",
     "Notesnook",
     "noto",
@@ -48,5 +49,6 @@
     "wrapattr",
     "xorg"
   ],
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "python.linting.mypyEnabled": true
 }
