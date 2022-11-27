@@ -90,7 +90,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.largeFileOptimizations": false,
-  "editor.stickyScroll.enabled": true,
   "go.toolsManagement.autoUpdate": true,
   "svelte.plugin.svelte.note-new-transformation": false,
   "window.restoreWindows": "none"
