@@ -14,16 +14,11 @@ PLUGINS = (
     63,  # https://betterdiscord.app/plugin/BetterSearchPage
     228,  # https://betterdiscord.app/plugin/CallTimeCounter
     64,  # https://betterdiscord.app/plugin/CharCounter
-    67,  # https://betterdiscord.app/plugin/CompleteTimestamps
-    176,  # https://betterdiscord.app/plugin/Copier
     68,  # https://betterdiscord.app/plugin/CopyRawMessage
     69,  # https://betterdiscord.app/plugin/CreationDate
     186,  # https://betterdiscord.app/plugin/DoNotTrack
-    132,  # https://betterdiscord.app/plugin/EmoteReplacer
     245,  # https://betterdiscord.app/plugin/FreeEmojis
     81,  # https://betterdiscord.app/plugin/GoogleTranslateOption
-    284,  # https://betterdiscord.app/plugin/GrammarCorrect
-    220,  # https://betterdiscord.app/plugin/GuildProfile
     83,  # https://betterdiscord.app/plugin/ImageUtilities
     295,  # https://betterdiscord.app/plugin/InvisibleTyping
     84,  # https://betterdiscord.app/plugin/JoinedAtDate
