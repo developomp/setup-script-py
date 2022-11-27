@@ -1,4 +1,4 @@
-from src.util import flatpak_install, copy_file
+from src.util import paru_install, copy_file
 from os import system
 
 
@@ -45,14 +45,14 @@ EXTENSIONS = (
 
 
 def setup():
-    flatpak_install("com.vscodium.codium")
+    paru_install("vscodium-bin")
 
     # codium --list-extensions
     for extension in EXTENSIONS:
         system(f"codium --install-extension {extension} --force")
 
     # vscodium settings
-    copy_file("home/.var/app/com.vscodium.codium/config/VSCodium/User/settings.json")
+    copy_file("home/.config/VSCodium/User/settings.json")
 
     # enable vscode extension store
-    copy_file("home/.var/app/com.vscodium.codium/config/VSCodium/product.json")
+    copy_file("home/.config/VSCodium/product.json")

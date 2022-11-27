@@ -92,12 +92,5 @@
   "editor.largeFileOptimizations": false,
   "go.toolsManagement.autoUpdate": true,
   "svelte.plugin.svelte.note-new-transformation": false,
-  "window.restoreWindows": "none",
-  "terminal.integrated.defaultProfile.linux": "bash",
-  "terminal.integrated.profiles.linux": {
-    "bash": {
-      "path": "/usr/bin/flatpak-spawn",
-      "args": ["--host", "--env=TERM=xterm-256color", "zsh"]
-    }
-  }
+  "window.restoreWindows": "none"
 }
