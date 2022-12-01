@@ -1,4 +1,4 @@
-# hardware
+# Hardware
 
 ## Desktop
 
@@ -6,32 +6,25 @@ No desktop
 
 ## Laptop
 
-|    name | model                                                                                                          |
-| ------: | :------------------------------------------------------------------------------------------------------------- |
-| Machine | [LG 15U480-KP50ML](https://www.lge.co.kr/kr/business/product/common/redirectProductDetail.do?prdId=MD00040678) |
-|     CPU | intel i5-8250U                                                                                                 |
-|     GPU | Nvidia MX 150                                                                                                  |
+|    name | model                                                                                                                 |
+| ------: | :-------------------------------------------------------------------------------------------------------------------- |
+| Machine | secondhand [Lenovo IdeaPad Slim5 14ITL 5D M16 (IdeaPad 5 14ITL05-82FE)](https://prod.danawa.com/info/?pcode=12875984) |
+|     CPU | intel i5-1135G7                                                                                                       |
+|     GPU | Nvidia GeForce MX450 (TU117M)                                                                                         |
+|     RAM | 16GB                                                                                                                  |
+|     SSD | a single secondhand 500GB [Samsung 980 NVMe SSD](https://semiconductor.samsung.com/consumer-storage/internal-ssd/980) |
 
-## RAM
+## Partitions
 
-|                             model | capacity |
-| --------------------------------: | :------: |
-| SK Hynix HMA81GS6AFR8N-UH (stock) |   8GB    |
-|  Samsung M471A1K43CB1-CRC (added) |   8GB    |
+- total size: 500,107,862,016 bytes (465.8 GiB, 500.1 GB)
 
-## Storage
-
-### [Samsung 860 PRO SSD 512GB](https://www.samsung.com/sec/support/model/MZ-76P512BW/)
-
-- total size: 512,110,190,592 bytes (476.9 GiB, 512.1 GB)
-- Partitions (in order):
-
-| format | size (parenthesis = rounded values) | mount location | purpose           |
-| ------ | ----------------------------------- | -------------- | ----------------- |
-| ext4   | 367,001,600,000 bytes (376 GB)      | /pomp/home     | home directory    |
-| N/A    | 60,172,533,760 bytes (60 GB)        | N/A            | over-provisioning |
-| ext4   | 83,886,079,488 bytes (84 GB)        | /              | system root       |
-| FAT32  | 1,048,574,976 bytes (1 GB)          | /boot          | EFI partition     |
+| format | size in bytes             | mount location | purpose              |
+| -----: | :------------------------ | :------------: | :------------------- |
+|  FAT32 | 524,288,000 (500MiB)      |     /boot      | boot loader (GRUB)   |
+|   NTFS | 53,687,091,200 (50 GiB)   |      N/A       | Windows installation |
+|   ext4 | 53,687,091,200 (50 GiB)   |       /        | Linux installation   |
+|   ext4 | 375,809,638,400 (250GiB)  |   /home/pomp   | User data            |
+|    N/A | 16,398,704,640 (15.27GiB) |      N/A       | over-provisioning    |
 
 ## Peripherals
 
