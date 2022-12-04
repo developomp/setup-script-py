@@ -1,5 +1,15 @@
 # Future plans
 
+## Laptop
+
+- Features
+  - ARM CPU
+- Candidates
+  - Apple M1
+    - display: 14-inch
+    - RAM: 16GB+
+    - storage: 512GB+
+
 ## NAS
 
 - why
