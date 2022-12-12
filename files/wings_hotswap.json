@@ -87,7 +87,7 @@
       "KC_NO",
       "KC_SPC",
       "KC_LGUI",
-      "MO(1)",
+      "FN_MO13",
       "KC_NO",
       "KC_NO",
       "KC_RALT",
@@ -111,7 +111,7 @@
       "KC_F10",
       "KC_F11",
       "KC_F12",
-      "KC_DEL",
+      "KC_TRNS",
       "KC_NO",
       "KC_TRNS",
       "KC_TRNS",
@@ -126,7 +126,7 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_DEL",
+      "KC_TRNS",
       "KC_HOME",
       "KC_TRNS",
       "KC_TRNS",
@@ -328,5 +328,6 @@
       "KC_TRNS",
       "KC_TRNS"
     ]
-  ]
+  ],
+  "encoders": []
 }
