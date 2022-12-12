@@ -31,14 +31,20 @@ Choosing Action:
 
 ## Usage
 
-1. Install base Arch Linux
-2. Download the setup script
-   ```bash
-   wget setup.developomp.com -O setup.py
+1. Install base Arch Linux with the following packages
+   - `sudo`
+   - `networkmanager`
+   - `base-devel`
+   - `python`
+   - `git`
+2. Log in as a non-root user with sudo permission
+3. Download the setup script
    ```
-3. Execute it
-   ```bash
-   python ./setup.py
+   curl setup.developomp.com -Lo setup.py
+   ```
+4. Execute
+   ```
+   python setup.py
    ```
 
 Full setup could easily take more than a hour depending on the internet speed.
