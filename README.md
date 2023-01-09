@@ -6,26 +6,26 @@
 
 ## Images
 
-![result image 1](./.repo/result1.png)
+![result image 1](./.github/img/result1.png)
 
 <details>
 <summary>Click to see more images</summary>
 
 ### Some windows
 
-![result image 2](./.repo/result2.png)
+![result image 2](./.github/img/result2.png)
 
 ### Minimalism at its finest
 
-![result image 3](./.repo/result3.png)
+![result image 3](./.github/img/result3.png)
 
 ### Script Execution
 
 Main menu:
-![Execution 0](./.repo/execution0.png)
+![Execution 0](./.github/img/execution0.png)
 
 Choosing Action:
-![Execution 1](./.repo/execution1.png)
+![Execution 1](./.github/img/execution1.png)
 
 </details>
 
@@ -66,7 +66,6 @@ Full setup could easily take more than a hour depending on the internet speed.
 ### Project structure
 
 - `.github/workflows/deploy.yml` - A [github action](https://github.com/features/actions) that makes `setup.py` available at https://setup.developomp.com/
-- `.repo` - Extraneous files that does not serve any functional purpose
 - `etc` - Files that are copied over to the `/etc` directory
 - `home` - Files that are copied over to the `/home/pomp` directory
 - `files` - Files that are used but does not get copied
@@ -83,7 +82,7 @@ Full setup could easily take more than a hour depending on the internet speed.
 
 ### Wallpaper
 
-<img alt="wallpaper" src="./.repo/wallpaper.png" width="75%">
+<img alt="wallpaper" src="./.github/img/wallpaper.png" width="75%">
 
 - [a video](https://www.youtube.com/watch?v=QEWV6fiYaDU) from [Chillhop Music](https://www.youtube.com/channel/UCOxqgCwgOqC2lMqC5PYz_Dg)
 - Artwork by [Jeff Östberg](https://jeffostberg.se)

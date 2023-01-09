@@ -41,7 +41,7 @@ No desktop
 
 ### Keyboard
 
-![](../.repo/kbd.png)
+![](../.github/img/kbd.png)
 
 - Parts & Accessories:
   - [Case + PCB + Stabilizers + Cable](https://ko.aliexpress.com/item/1005003330613995.html) (white)
@@ -54,11 +54,7 @@ No desktop
   - [Keycaps](https://www.aliexpress.com/item/1005003834670594.html) (GMK Geoma w/ Korean subs)
 - Mods:
   - no-stabilizer
-- [keymap](files/wings_hotswap.json):
-  - Layer 0
-    ![layer 0](../.repo/kbd_layer_0.png)
-  - Layer 1
-    ![layer 1](../.repo/kbd_layer_1.png)
+- [keymap](files/wings_hotswap.json)
 
 <!-- ### Microphone
 
