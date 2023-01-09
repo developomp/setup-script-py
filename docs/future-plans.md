@@ -3,12 +3,13 @@
 ## Laptop
 
 - Features
-  - ARM CPU
-- Candidates
-  - Apple M1
-    - display: 14-inch
-    - RAM: 16GB+
-    - storage: 512GB+
+  - CPU: i5-1135G7 or better
+  - GPU: MX450 or better
+  - RAM: 16GB+ DDR4+
+  - display: 14 inch ~ 15.6 inch
+  - ports
+    - RK45 Ethernet
+    - HDMI/DP
 
 ## NAS
 
