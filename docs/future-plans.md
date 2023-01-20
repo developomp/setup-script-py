@@ -4,12 +4,18 @@
 
 - Features
   - CPU: i5-1135G7 or better
-  - GPU: MX450 or better
+  - GPU: any Nvidia GPU with 4GB+ VRAM
   - RAM: 16GB+ DDR4+
+  - storage: 1TB+ SSD
   - display: 14 inch ~ 15.6 inch
   - ports
-    - RK45 Ethernet
+    - RJ45 Ethernet
     - HDMI/DP
+- Candidates
+  - Apple silicon MacBook with...
+    - any size display
+    - 1TB+ SSD
+    - 16+GB Unified Memory
 
 ## NAS
 
