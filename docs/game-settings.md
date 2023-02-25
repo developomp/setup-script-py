@@ -4,9 +4,9 @@
 
 ### Mouse
 
-- mouse DPI: 1240
+- mouse DPI: 1100
 - GNOME mouse speed settings: `org.gnome.desktop.peripherals.mouse.speed=0` (default)
-- 4cm/1920px
+- 44mm/1920px
 
 ### Drawing tablet
 
