@@ -76,8 +76,6 @@ Full setup could easily take more than a hour depending on the internet speed.
 
 ## [Game settings](./docs/game-settings.md)
 
-## [Future plans](./docs/future-plans.md)
-
 ## Sources
 
 ### Wallpaper
