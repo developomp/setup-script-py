@@ -2,8 +2,6 @@
   My <a href="https://archlinux.org">Arch Linux</a> desktop setup
 </h1>
 
-[![what's this?](https://img.shields.io/badge/what's_this%3F-grey?style=for-the-badge)](https://developomp.com/portfolio/linux-setup-script)
-
 ## Images
 
 ![result image 1](./.github/img/result1.png)
